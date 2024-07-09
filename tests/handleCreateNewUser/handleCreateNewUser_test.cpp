@@ -150,3 +150,174 @@ TEST_F(handleCreateNewUserTest, onUserNotAdmin)
 
 	EXPECT_EQ(expectedDoc, actualDoc);
 }
+
+TEST_F(handleCreateNewUserTest, onMissingrequiredfields)
+{
+	QByteArray requestData = R"(
+		{
+			"Request": 8,
+			"Data": {
+				"email": "admin@example.com",
+				"newUser": [
+					{
+						"first_name": "New",
+						"email": "newUser@mail.com",
+						"password": "newpass",
+						"role": "user",
+						"initial_balance": 500.0
+					}
+				]
+			}
+		}
+	)";
+
+	QByteArray expectedResponse = R"(
+		{
+			"Response": 8,
+			"Data": {
+				"status": 0,
+				"message": "Missing required fields"
+			}
+		}
+	)";
+
+	QByteArray actualResponse = handler_->makeRequest(requestData);
+
+	// Ensure to strip whitespace before comparing
+	QJsonDocument expectedDoc = QJsonDocument::fromJson(expectedResponse.trimmed());
+	QJsonDocument actualDoc = QJsonDocument::fromJson(actualResponse.trimmed());
+
+	qDebug() << "Expected: " << expectedDoc;
+	qDebug() << "Actual: " << actualDoc;
+
+	EXPECT_EQ(expectedDoc, actualDoc);
+}
+
+TEST_F(handleCreateNewUserTest, onInvalidrole)
+{
+	QByteArray requestData = R"(
+		{
+			"Request": 8,
+			"Data": {
+				"email": "admin@example.com",
+				"newUser": [
+					{
+						"first_name": "New",
+						"last_name": "User",
+						"email": "newUser@mail.com",
+						"password": "newpass",
+						"role": "NotUser",
+						"initial_balance": 500.0
+					}
+				]
+			}
+		}
+	)";
+
+	QByteArray expectedResponse = R"(
+		{
+			"Response": 8,
+			"Data": {
+				"status": 0,
+				"message": "Invalid role"
+			}
+		}
+	)";
+
+	QByteArray actualResponse = handler_->makeRequest(requestData);
+
+	// Ensure to strip whitespace before comparing
+	QJsonDocument expectedDoc = QJsonDocument::fromJson(expectedResponse.trimmed());
+	QJsonDocument actualDoc = QJsonDocument::fromJson(actualResponse.trimmed());
+
+	qDebug() << "Expected: " << expectedDoc;
+	qDebug() << "Actual: " << actualDoc;
+
+	EXPECT_EQ(expectedDoc, actualDoc);
+}
+
+TEST_F(handleCreateNewUserTest, onAdmineCanthaveAccountFail)
+{
+		QByteArray requestData = R"(
+		{
+			"Request": 8,
+			"Data": {
+				"email": "admin@example.com",
+				"newUser": [
+					{
+						"first_name": "New",
+						"last_name": "User",
+						"email": "newAdmin@mail.com",
+						"password": "newpass",
+						"role": "admin",
+						"initial_balance": 500.0
+					}
+				]
+			}
+		}
+	)";
+
+	QByteArray expectedResponse = R"(
+		{
+			"Response": 8,
+			"Data": {
+				"status": 0,
+				"message": "Admin can't have account and initial balance"
+			}
+		}
+	)";
+
+	QByteArray actualResponse = handler_->makeRequest(requestData);
+
+	// Ensure to strip whitespace before comparing
+	QJsonDocument expectedDoc = QJsonDocument::fromJson(expectedResponse.trimmed());
+	QJsonDocument actualDoc = QJsonDocument::fromJson(actualResponse.trimmed());
+
+	qDebug() << "Expected: " << expectedDoc;
+	qDebug() << "Actual: " << actualDoc;
+
+	EXPECT_EQ(expectedDoc, actualDoc);
+}
+
+TEST_F(handleCreateNewUserTest, onAdmineCanthaveAccountSuccess)
+{
+	QByteArray requestData = R"(
+		{
+			"Request": 8,
+			"Data": {
+				"email": "admin@example.com",
+				"newUser": [
+					{
+						"first_name": "New",
+						"last_name": "User",
+						"email": "newAdmin@mail.com",
+						"password": "newpass",
+						"role": "admin",
+						"initial_balance": 0.0
+					}
+				]
+			}
+		}
+	)";
+
+	QByteArray expectedResponse = R"(
+		{
+			"Response": 8,
+			"Data": {
+				"status": 1,
+				"message": "New admin created successfully"
+			}
+		}
+	)";
+
+	QByteArray actualResponse = handler_->makeRequest(requestData);
+
+	// Ensure to strip whitespace before comparing
+	QJsonDocument expectedDoc = QJsonDocument::fromJson(expectedResponse.trimmed());
+	QJsonDocument actualDoc = QJsonDocument::fromJson(actualResponse.trimmed());
+
+	qDebug() << "Expected: " << expectedDoc;
+	qDebug() << "Actual: " << actualDoc;
+
+	EXPECT_EQ(expectedDoc, actualDoc);
+}

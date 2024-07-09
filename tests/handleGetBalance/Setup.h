@@ -16,7 +16,7 @@
 #include "db.h"
 #include "dbresult.h"
 
-class handleGetBalanceNumberTest : public ::testing::Test
+class handleGetBalanceTest : public ::testing::Test
 {
 protected:
 	void SetUp() override
@@ -126,7 +126,7 @@ protected:
 		}
 
 		// Insert a test account for the user1 with account number 111
-		dbManager_->insert("accounts", {{"user_id", 1}, {"balance", 1000.00}, {"account_number", 111}});
+		dbManager_->insert("accounts", {{"user_id", 1}, {"balance", 150.50}, {"account_number", 111}});
 	}
 
 	void setupDatabase()
