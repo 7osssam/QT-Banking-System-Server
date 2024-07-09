@@ -4,18 +4,18 @@
 cmake_minimum_required(VERSION 3.20)
 
 # Set Project Name
-set (PROJECT_NAME "BankApp")
+set (PROJECT_NAME "BankingSystem_Server")
 
 # Set Project Version
 set (PROJECT_VERSION 1.0.0)
 
 # Set Project Description
-set (PROJECT_DESCRIPTION "Bank Application")
+set (PROJECT_DESCRIPTION "This is a qt project for a banking system (Server side)")
 
 # Set supported languages
 set(PROJECT_LANGUAGES C CXX)
 
-# Set generator 
+# Set generator
 set(CMAKE_GENERATOR "Ninja" CACHE INTERNAL "" )
 
 # Set project name
@@ -75,8 +75,6 @@ option(ENABLE_SANITIZE_UNDEF "Enable undefined sanitize." OFF)
 option(ENABLE_SANITIZE_LEAK "Enable leak sanitize (Gcc/Clang only)." OFF)
 option(ENABLE_SANITIZE_THREAD "Enable thread sanitize (Gcc/Clang only)." OFF)
 
-option(ENABLE_PDF_DOCS "Enable PDF Documentation" OFF)
-
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
 
 # Set the output directories for Debug and Release configurations
@@ -92,6 +90,51 @@ include(AddGitSubmodule)
 include(Docs)
 
 
+#==============================================================================
+# QT Configuration
+#==============================================================================
+# Adding Qt Modules
+include(QTModules)
+foreach(library IN LISTS MODULES)
+    find_package(${library} REQUIRED)
+endforeach()
+
+## Link libraries
+#foreach(library IN LISTS MODULES)
+#    target_link_libraries(${PROJECT_NAME} PRIVATE ${library})
+#    if(${PROJECT_NAME}_BUILD_EXECUTABLE)
+#        target_link_libraries(${PROJECT_NAME}_LIB PRIVATE ${library})
+#    endif()
+#endforeach()
+
+## Link Qt libraries
+#foreach(library IN LISTS QT_COMPONENTS)
+#    target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::${library})
+#    if(${PROJECT_NAME}_BUILD_EXECUTABLE)
+#        target_link_libraries(${PROJECT_NAME}_LIB PRIVATE Qt6::${library})
+#    endif()
+#endforeach()
+
+
+# Find the appropriate Qt version
+find_package(QT NAMES Qt6 Qt5 COMPONENTS ${QT_COMPONENTS} REQUIRED)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS ${QT_COMPONENTS} REQUIRED)
+
+# Create a list of Qt libraries
+set(QT_LIBRARIES)
+foreach(component ${QT_COMPONENTS})
+    list(APPEND QT_LIBRARIES Qt${QT_VERSION_MAJOR}::${component})
+endforeach()
+
+# Optionally, you can now link the Qt libraries to your target
+# target_link_libraries(your_target ${QT_LIBRARIES})
+
+
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+
 if(ENABLE_WARNINGS)
     include(Warnings)
 endif()
@@ -105,13 +148,11 @@ if(ENABLE_SANITIZE_ADDR
 endif()
 
 
-# Add your global submodules here
-add_git_submodule(lib/json https://github.com/nlohmann/json)
-
 
 # Add subdirectories
-add_subdirectory(src) # user Modules 
+add_subdirectory(src) # user Modules
 add_subdirectory(app) # Application (main)
+
 
 if (ENABLE_TESTS)
 	enable_testing()
