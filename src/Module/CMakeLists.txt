@@ -28,9 +28,9 @@ target_include_directories(${LIBNAME} PUBLIC
 						   ${CMAKE_CURRENT_SOURCE_DIR}
 
 						   )
-############# etc.... add any other include directories here 
+############# etc.... add any other include directories here
 
-#target_link_libraries(${LIBNAME} PRIVATE [library name])
+#target_link_libraries(${APPNAME} PRIVATE [library name])
 ############# etc.... add any other libraries here
 
 # Set the compile warnings options if enabled
@@ -46,8 +46,8 @@ install(TARGETS ${LIBNAME}
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
         RUNTIME DESTINATION bin )
-		
-# Export the target so other modules can use it 
+
+# Export the target so other modules can use it
 # export(TARGETS ${LIBNAME} FILE ${LIBNAME}Targets.cmake)
 
 message(STATUS "[${ROOT}/${LIBNAME}] Added library target: ${LIBNAME}")
