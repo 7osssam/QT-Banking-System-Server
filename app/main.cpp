@@ -1,27 +1,38 @@
-#include "Bank.hpp"
-#include <iostream>
-#include <nlohmann/json.hpp>
+#include <QCoreApplication>
+#include <QDebug>
+#include <QJsonObject>
 
-int main()
+#include "dbresult.h"
+
+#include <QFile>
+#include <QTextStream>
+
+#include "server.h"
+#include "db.h"
+
+int main(int argc, char* argv[])
 {
-	// Test library linked correctly
-	std::cout << "JSON Lib Version:" << NLOHMANN_JSON_VERSION_MAJOR << "." << NLOHMANN_JSON_VERSION_MINOR << "."
-			  << NLOHMANN_JSON_VERSION_PATCH << "\n";
+	QCoreApplication a(argc, argv);
 
-	std::cout << "Welcome to the Dummy Bank ;)\n";
+	DB::DatabaseManager::setDbSetting("aws-0-us-east-1.pooler.supabase.com", 6543, "postgres.ajfrcwmgtitxbvcnhzwn",
+									  "z7HQs^*#HnmqQ3m2", "postgres");
 
-	Bank bank;
-	//BankAccount(int accountNumber, const std::string& accountHolder, const std::string& accountType,double accountBalance);
-	BankAccount account1(101, "John Doe", "Savings", 1000);
-	BankAccount account2(102, "Jane Doe", "Savings", 2000);
-	BankAccount account3(103, "Jim Doe", "Savings", 3000);
+	DB::DatabaseManager* db = DB::DatabaseManager::createInstance();
 
-	bank.addAccount(account1);
-	bank.addAccount(account2);
-	bank.addAccount(account3);
+	if (db == nullptr)
+	{
+		qCritical() << "Failed to create database instance";
+	}
+	else
+	{
+		qInfo() << "Database instance created";
+	}
 
-	std::cout << "Total Balance: " << bank.getTotalBalance() << std::endl;
-	bank.displayAllAccounts();
+	// !
+	QString error;
+	DB::DatabaseManager::checkConnection(error);
+	Server server;
+	server.start(2222);
 
-	return 0;
+	return a.exec();
 }
