@@ -1,4 +1,4 @@
-#include "setup.h"
+#include "Setup.h"
 
 TEST_F(handleGetTransactionsHistoryTest, onSuccess)
 {
