@@ -231,15 +231,9 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"># 3. Get Balance</div>
-<div class="line"> </div>
-<div class="line">## Send Request:</div>
-<div class="line"> </div>
-<div class="line">```json</div>
-<div class="line"> </div>
-<div class="line">{</div>
+</div><!-- fragment --> <h1>3. Get Balance</h1>
+<h2>Send Request:</h2>
+<div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Request&quot;: 3,</div>
 <div class="line"> </div>
@@ -258,6 +252,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line"> </div>
 <div class="line">    &quot;Data&quot;: {</div>
 <div class="line">        &quot;status&quot;: 1,</div>
+<div class="line">        &quot;message&quot;: &quot;Balance fetched successfully&quot;,</div>
 <div class="line">        &quot;balance&quot;: 500.0</div>
 <div class="line">       </div>
 <div class="line">    }</div>
@@ -270,7 +265,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line"> </div>
 <div class="line">    &quot;Data&quot;: {</div>
 <div class="line">         &quot;status&quot;: 0,</div>
-<div class="line">        &quot;message&quot;: &quot;No account found&quot;</div>
+<div class="line">        &quot;message&quot;: &quot;Account not found&quot;</div>
 <div class="line"> </div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -448,18 +443,18 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line"> </div>
 <div class="line">        &quot;email&quot;: &quot;admin@mail.com&quot;,</div>
 <div class="line"> </div>
-<div class="line">        &quot;password&quot;: &quot;adminpass&quot;</div>
-<div class="line"> </div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">}</div>
 </div><!-- fragment --><h2>Receive Response:</h2>
+<h3>On Success:</h3>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Response&quot;: 7,</div>
 <div class="line"> </div>
 <div class="line">    &quot;Data&quot;: {</div>
 <div class="line">        &quot;status&quot;: 1,</div>
+<div class="line">        &quot;message&quot;: &quot;Database fetched successfully&quot;,</div>
 <div class="line">        &quot;users&quot;: [</div>
 <div class="line"> </div>
 <div class="line">            {</div>
@@ -497,6 +492,28 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        ]</div>
 <div class="line"> </div>
 <div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>On Failure:</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">        &quot;Response&quot;: 7,  </div>
+<div class="line"> </div>
+<div class="line">        &quot;Data&quot;: {   </div>
+<div class="line">            &quot;status&quot;: 0,</div>
+<div class="line">             &quot;message&quot;: &quot;Cannot get database. User is not an admin&quot;,</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><p>or</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">        &quot;Response&quot;: 7,  </div>
+<div class="line"> </div>
+<div class="line">        &quot;Data&quot;: {   </div>
+<div class="line">            &quot;status&quot;: 0,</div>
+<div class="line">             &quot;message&quot;: &quot;No data found&quot;,</div>
+<div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">}</div>
 </div><!-- fragment --><h1>8. Create New User (for admin)</h1>
