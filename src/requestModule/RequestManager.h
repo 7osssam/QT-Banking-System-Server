@@ -73,7 +73,7 @@ public:
 			break;
 			case GetBalance:
 			{
-				//jsonObjResponse = requestHandler_.handleGetBalance(jsonObjRequest, *Mutex_);
+				jsonObjResponse = requestHandler_.handleGetBalance(jsonObjRequest, *Mutex_);
 			}
 			break;
 			case GetTransactionsHistory:

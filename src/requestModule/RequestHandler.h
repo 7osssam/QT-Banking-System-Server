@@ -298,7 +298,7 @@ public:
 			QJsonObject obj = result.data(0);
 
 			data.insert("status", int(true));
-			data.insert("message", "Account found");
+			data.insert("message", "Balance fetched successfully");
 			data.insert("balance", obj.value("balance").toDouble());
 
 			response.insert("Data", data);
@@ -547,7 +547,24 @@ public:
 		QJsonObject response;
 		QJsonObject data;
 
-		response.insert("Response", 6);
+		QString admin_email;
+
+		response.insert("Response", 7);
+
+		// Extract the data array
+		if (jsonObj.contains("Data"))
+		{
+			QJsonObject dataObj = jsonObj["Data"].toObject();
+
+			if (dataObj.contains("email"))
+			{
+				admin_email = dataObj.value("email").toString();
+			}
+		}
+		else
+		{
+			qCritical() << "Data not found";
+		}
 
 		do
 		{
@@ -556,7 +573,37 @@ public:
 				break;
 			}
 
-			DB::DbResult result = dbManager->select("*")->table("users")->exec();
+			// Check if the user is an admin
+			DB::DbResult result = dbManager->select("role")->table("Users")->where("email =", admin_email)->exec();
+
+			if (result.isEmpty())
+			{
+				qDebug() << "email not found";
+
+				data.insert("status", int(false));
+				data.insert("message", "email not found");
+
+				response.insert("Data", data);
+
+				break;
+			}
+
+			QJsonObject obj = result.data(0);
+
+			if (obj.value("role").toString() != "admin")
+			{
+				qDebug() << "Cannot get database. User is not an admin";
+
+				data.insert("status", int(false));
+				data.insert("message", "Cannot get database. User is not an admin");
+
+				response.insert("Data", data);
+
+				break;
+			}
+
+			// Get all users from the database
+			result = dbManager->select("*")->table("Users")->exec();
 
 			if (result.isEmpty())
 			{
@@ -571,24 +618,51 @@ public:
 			}
 
 			QJsonArray userList;
+
 			for (int i = 0; i < result.size(); ++i)
 			{
 				QJsonObject userObj;
 				QJsonObject obj = result.data(i);
 
+				userObj.insert("account_number", QJsonValue::Null);
 				userObj.insert("first_name", obj.value("first_name").toString());
 				userObj.insert("last_name", obj.value("last_name").toString());
 				userObj.insert("email", obj.value("email").toString());
 				userObj.insert("role", obj.value("role").toString());
-				userObj.insert("created_at", obj.value("created_at").toString());
-				userObj.insert("updated_at", obj.value("updated_at").toString());
+				userObj.insert("balance", QJsonValue::Null);
 
 				userList.append(userObj);
 			}
 
+			// Get all accounts from the database that are associated with the users
+			result = dbManager->select("A.account_number, A.balance, U.email")
+						 ->table("Accounts A")
+						 ->join("JOIN Users U ON A.user_id = U.id")
+						 ->exec();
+
+			if (!result.isEmpty())
+			{
+				for (int i = 0; i < result.size(); ++i)
+				{
+					QJsonObject obj = result.data(i);
+
+					for (int j = 0; j < userList.size(); ++j)
+					{
+						QJsonObject userObj = userList[j].toObject();
+						if (userObj.value("email").toString() == obj.value("email").toString())
+						{
+							userObj.insert("account_number", obj.value("account_number").toInt());
+							userObj.insert("balance", obj.value("balance").toDouble());
+							userList[j] = userObj;
+							break;
+						}
+					}
+				}
+			}
+
 			data.insert("status", int(true));
-			data.insert("message", "Data retrieved");
-			data.insert("List", userList);
+			data.insert("message", "Database fetched successfully");
+			data.insert("users", userList);
 
 			response.insert("Data", data);
 		} while (false);
@@ -707,6 +781,45 @@ public:
 				break;
 			}
 
+			if (new_email.isEmpty() || new_password.isEmpty() || first_name.isEmpty() || last_name.isEmpty() ||
+				role.isEmpty())
+			{
+				qDebug() << "Missing required fields";
+
+				data.insert("status", int(false));
+				data.insert("message", "Missing required fields");
+
+				response.insert("Data", data);
+
+				break;
+			}
+
+			// invalid role
+			if (role != "admin" && role != "user")
+			{
+				qDebug() << "Invalid role";
+
+				data.insert("status", int(false));
+				data.insert("message", "Invalid role");
+
+				response.insert("Data", data);
+
+				break;
+			}
+
+			// admin can't have account and initial balance
+			if (role == "admin" && initial_balance != 0)
+			{
+				qDebug() << "Admin can't have account and initial balance";
+
+				data.insert("status", int(false));
+				data.insert("message", "Admin can't have account and initial balance");
+
+				response.insert("Data", data);
+
+				break;
+			}
+
 			// Check if there is a user with the same email
 			result = dbManager->select("*")->table("users")->where("email =", new_email)->exec();
 
@@ -734,6 +847,18 @@ public:
 
 				data.insert("status", int(false));
 				data.insert("message", "Failed to create new user");
+
+				response.insert("Data", data);
+
+				break;
+			}
+
+			if (role == "admin" && initial_balance == 0)
+			{
+				qDebug() << "New admin created successfully";
+
+				data.insert("status", int(true));
+				data.insert("message", "New admin created successfully");
 
 				response.insert("Data", data);
 

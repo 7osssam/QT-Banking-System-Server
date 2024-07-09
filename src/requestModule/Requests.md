@@ -159,7 +159,7 @@ or
 
 }
 
-
+```
 # 3. Get Balance
 
 ## Send Request:
@@ -192,6 +192,7 @@ or
 
     "Data": {
 	    "status": 1,
+		"message": "Balance fetched successfully",
         "balance": 500.0
        
     }
@@ -210,13 +211,17 @@ or
 
     "Data": {
 		 "status": 0,
-        "message": "No account found"
+        "message": "Account not found"
 
     }
 
 }
 
 ```
+
+
+
+
 
 # 4. Get Transactions History
 
@@ -454,8 +459,6 @@ or
 
         "email": "admin@mail.com",
 
-        "password": "adminpass"
-
     }
 
 }
@@ -463,7 +466,7 @@ or
 ```
 
 ## Receive Response:
-
+### On Success:
 ```json
 
 {
@@ -472,6 +475,7 @@ or
 
     "Data": {
 		"status": 1,
+		"message": "Database fetched successfully",
         "users": [
 
             {
@@ -513,6 +517,42 @@ or
 }
 
 ```
+
+### On Failure:
+
+```json
+
+{
+
+	    "Response": 7,	
+
+	    "Data": {	
+			"status": 0,
+        	 "message": "Cannot get database. User is not an admin",
+	    }
+
+}
+
+```
+
+or 
+
+```json
+
+{
+
+	    "Response": 7,	
+
+	    "Data": {	
+			"status": 0,
+        	 "message": "No data found",
+	    }
+
+}
+
+```
+
+
 
 # 8. Create New User (for admin)
 
