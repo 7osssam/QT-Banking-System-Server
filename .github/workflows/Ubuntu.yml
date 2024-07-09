@@ -6,23 +6,43 @@ on:
   pull_request:
     branches: [ main, master, dev ]
 
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: Build and test
+    runs-on: ubuntu-22.04
+
     steps:
-    - uses: actions/checkout@v2
-    - name: install
+    - name: Checkout repo
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
       run: |
         make dependency
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        aqtversion: '==3.1.*'
+        version: '6.7.1'
+        host: 'linux'
+        target: 'desktop'
+        arch: 'linux_gcc_64'
+        modules: 'qtconnectivity qthttpserver qtmultimedia qtnetworkauth qtremoteobjects qtscxml'
+        tools: 'tools_ninja'
+
     - name: prepare
       run: |
         make clean
+
     - name: configure
       run: |
         make clean-cache-reconfigure
+
     - name: building
       run: |
         make build
+
     - name: testing
       run: |
         make test
