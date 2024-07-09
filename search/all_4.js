@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['withdraw_9',['withdraw',['../classBankAccount.html#ad99a7fe9718597bf978d595ceea0336d',1,'BankAccount']]]
+  ['requesthandler_7',['RequestHandler',['../classRequestHandler.html',1,'']]],
+  ['requestmanager_8',['RequestManager',['../classRequestManager.html',1,'']]]
 ];
