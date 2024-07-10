@@ -55,7 +55,7 @@ private:
 		return true;
 	}
 
-	QJsonObject CreateDBConnectionError(QJsonObject response, QJsonObject dataObj)
+	QJsonObject CreateDBConnectionError(QJsonObject& response, QJsonObject& dataObj)
 	{
 		dataObj.insert("status", int(false));
 		dataObj.insert("message", "Internal server error");
@@ -71,7 +71,7 @@ private:
 		return response;
 	}
 
-	QJsonObject CreateErrorResponse(QJsonObject response, QJsonObject dataObj, QString message)
+	QJsonObject CreateErrorResponse(QJsonObject& response, QJsonObject& dataObj, QString message)
 	{
 		dataObj.insert("status", int(false));
 		dataObj.insert("message", message);
