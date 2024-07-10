@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('RequestHandler_8h_source.html',''); in
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QJsonObject CreateDBConnectionError(QJsonObject response, QJsonObject dataObj)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QJsonObject CreateDBConnectionError(QJsonObject&amp; response, QJsonObject&amp; dataObj)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        dataObj.insert(<span class="stringliteral">&quot;status&quot;</span>, <span class="keywordtype">int</span>(<span class="keyword">false</span>));</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        dataObj.insert(<span class="stringliteral">&quot;message&quot;</span>, <span class="stringliteral">&quot;Internal server error&quot;</span>);</div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('RequestHandler_8h_source.html',''); in
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> response;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    QJsonObject CreateErrorResponse(QJsonObject response, QJsonObject dataObj, QString message)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    QJsonObject CreateErrorResponse(QJsonObject&amp; response, QJsonObject&amp; dataObj, QString message)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        dataObj.insert(<span class="stringliteral">&quot;status&quot;</span>, <span class="keywordtype">int</span>(<span class="keyword">false</span>));</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        dataObj.insert(<span class="stringliteral">&quot;message&quot;</span>, message);</div>
