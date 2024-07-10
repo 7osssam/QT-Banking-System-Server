@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['handlegetbalance_6',['handleGetBalance',['../classRequestHandler.html#af3e558222653b159d49e83983dd6a229',1,'RequestHandler']]]
+  ['requesthandler_6',['RequestHandler',['../classRequestHandler.html',1,'']]],
+  ['requestmanager_7',['RequestManager',['../classRequestManager.html',1,'']]]
 ];

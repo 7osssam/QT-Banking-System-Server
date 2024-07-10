@@ -24,7 +24,7 @@ var classDB_1_1DatabaseManager =
     [ "likePost", "classDB_1_1DatabaseManager.html#ae2955b490673aa9873f60b14656459d3", null ],
     [ "limit", "classDB_1_1DatabaseManager.html#a50701f4e45a73502ac02948cebd6c66f", null ],
     [ "reset", "classDB_1_1DatabaseManager.html#a58d1a2ff38fcf44e8a300f5f8282936b", null ],
-    [ "roolback", "classDB_1_1DatabaseManager.html#a9a17be4f38a8bb41b3673534ba1bba15", null ],
+    [ "rollback", "classDB_1_1DatabaseManager.html#ad3a76a2b3324dcf515e07e9610cb8b69", null ],
     [ "select", "classDB_1_1DatabaseManager.html#aa9c79b640a095bb76790c2dffe85c9a0", null ],
     [ "sort", "classDB_1_1DatabaseManager.html#a8cc4779256fe0151f13af004efd602b4", null ],
     [ "start", "classDB_1_1DatabaseManager.html#ad3f3d025d0ff6f90b26732e4ee3759aa", null ],

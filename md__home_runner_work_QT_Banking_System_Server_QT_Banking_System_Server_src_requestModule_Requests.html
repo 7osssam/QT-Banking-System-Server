@@ -497,9 +497,9 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 </div><!-- fragment --><h3>On Failure:</h3>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
-<div class="line">        &quot;Response&quot;: 7,  </div>
+<div class="line">        &quot;Response&quot;: 7,</div>
 <div class="line"> </div>
-<div class="line">        &quot;Data&quot;: {   </div>
+<div class="line">        &quot;Data&quot;: {</div>
 <div class="line">            &quot;status&quot;: 0,</div>
 <div class="line">             &quot;message&quot;: &quot;Cannot get database. User is not an admin&quot;,</div>
 <div class="line">        }</div>
@@ -508,9 +508,9 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 </div><!-- fragment --><p>or</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
-<div class="line">        &quot;Response&quot;: 7,  </div>
+<div class="line">        &quot;Response&quot;: 7,</div>
 <div class="line"> </div>
-<div class="line">        &quot;Data&quot;: {   </div>
+<div class="line">        &quot;Data&quot;: {</div>
 <div class="line">            &quot;status&quot;: 0,</div>
 <div class="line">             &quot;message&quot;: &quot;No data found&quot;,</div>
 <div class="line">        }</div>
@@ -564,6 +564,20 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">}</div>
+</div><!-- fragment --><p>or</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Response&quot;: 8,</div>
+<div class="line"> </div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line"> </div>
+<div class="line">        &quot;status&quot;: 1,</div>
+<div class="line"> </div>
+<div class="line">        &quot;message&quot;: &quot;New admin created successfully&quot;</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">}</div>
 </div><!-- fragment --><h3>On Failure:</h3>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
@@ -592,6 +606,48 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">}</div>
+</div><!-- fragment --><p>or</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Response&quot;: 8,</div>
+<div class="line"> </div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line"> </div>
+<div class="line">        &quot;status&quot;: 0,</div>
+<div class="line"> </div>
+<div class="line">        &quot;message&quot;: &quot;Missing required fields&quot;</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><p>or</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Response&quot;: 8,</div>
+<div class="line"> </div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line"> </div>
+<div class="line">        &quot;status&quot;: 0,</div>
+<div class="line"> </div>
+<div class="line">        &quot;message&quot;: &quot;Invalid role&quot;</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><p>or</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Response&quot;: 8,</div>
+<div class="line"> </div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line"> </div>
+<div class="line">        &quot;status&quot;: 0,</div>
+<div class="line"> </div>
+<div class="line">        &quot;message&quot;: &quot;Admin can&#39;t have account and initial balance&quot;</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">}</div>
 </div><!-- fragment --><h1>9. Delete User (for admin)</h1>
 <h2>Send Request:</h2>
 <div class="fragment"><div class="line">{</div>
@@ -601,8 +657,6 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">    &quot;Data&quot;: {</div>
 <div class="line"> </div>
 <div class="line">        &quot;email&quot;: &quot;admin@mail.com&quot;,</div>
-<div class="line"> </div>
-<div class="line">        &quot;password&quot;: &quot;adminpass&quot;,</div>
 <div class="line"> </div>
 <div class="line">        &quot;account_number&quot;: 123456789</div>
 <div class="line"> </div>
@@ -633,7 +687,20 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line"> </div>
 <div class="line">        &quot;status&quot;: 0,</div>
 <div class="line"> </div>
-<div class="line">        &quot;message&quot;: &quot;User not found&quot;</div>
+<div class="line">        &quot;message&quot;: &quot;Account number does not exist&quot;</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Response&quot;: 9,</div>
+<div class="line"> </div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line"> </div>
+<div class="line">        &quot;status&quot;: 0,</div>
+<div class="line"> </div>
+<div class="line">        &quot;message&quot;: &quot;Unauthorized, Cannot delete user.&quot;</div>
 <div class="line"> </div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -647,8 +714,6 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">    &quot;Data&quot;: {</div>
 <div class="line"> </div>
 <div class="line">        &quot;email&quot;: &quot;admin@mail.com&quot;,</div>
-<div class="line"> </div>
-<div class="line">        &quot;password&quot;: &quot;adminpass&quot;,</div>
 <div class="line"> </div>
 <div class="line">        &quot;account_number&quot;: 123456789,</div>
 <div class="line"> </div>
@@ -691,7 +756,35 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line"> </div>
 <div class="line">        &quot;status&quot;: 0,</div>
 <div class="line"> </div>
-<div class="line">        &quot;message&quot;: &quot;User not found&quot;</div>
+<div class="line">        &quot;message&quot;: &quot;Account number does not exist&quot;</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><p>or</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Response&quot;: 10,</div>
+<div class="line"> </div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line"> </div>
+<div class="line">        &quot;status&quot;: 0,</div>
+<div class="line"> </div>
+<div class="line">        &quot;message&quot;: &quot;Unauthorized, Cannot update user&quot;</div>
+<div class="line"> </div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><p>or</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Response&quot;: 10,</div>
+<div class="line"> </div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line"> </div>
+<div class="line">        &quot;status&quot;: 0,</div>
+<div class="line"> </div>
+<div class="line">        &quot;message&quot;: &quot;Failed to update user&quot;</div>
 <div class="line"> </div>
 <div class="line">    }</div>
 <div class="line"> </div>
