@@ -44,7 +44,7 @@ TEST_F(handleGetDatabaseTest, onSuccess)
                         "role": "user",
                         "balance": 150.00
                     }
-					
+
                 ]
             }
         }
@@ -78,7 +78,7 @@ TEST_F(handleGetDatabaseTest, onUserNotAdmin)
             "Response": 7,
             "Data": {
                 "status": 0,
-                "message": "Cannot get database. User is not an admin"
+                "message": "Unauthorized, Cannot get database. User is not an admin"
             }
         }
     )";
@@ -111,7 +111,7 @@ TEST_F(handleGetDatabaseTest, onEmailNotFound)
             "Response": 7,
             "Data": {
                 "status": 0,
-                "message": "email not found"
+                "message": "you are not registered user!"
             }
         }
     )";

@@ -37,6 +37,8 @@ add_subdirectory(handleMakeTransaction)
 add_subdirectory(handleCreateNewUser)
 add_subdirectory(handleGetBalance)
 add_subdirectory(handleGetDatabase)
+add_subdirectory(handleDeleteUser)
+add_subdirectory(handleUpdateUser)
 #add_subdirectory(RequestManager)
 
 

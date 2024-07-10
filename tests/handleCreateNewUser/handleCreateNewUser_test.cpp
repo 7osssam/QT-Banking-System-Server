@@ -134,7 +134,7 @@ TEST_F(handleCreateNewUserTest, onUserNotAdmin)
 			"Response": 8,
 			"Data": {
 				"status": 0,
-				"message": "Cannot create new user. User is not an admin"
+				"message": "Unauthorized, Cannot create new user. User is not an admin"
 			}
 		}
 	)";
@@ -238,7 +238,7 @@ TEST_F(handleCreateNewUserTest, onInvalidrole)
 
 TEST_F(handleCreateNewUserTest, onAdmineCanthaveAccountFail)
 {
-		QByteArray requestData = R"(
+	QByteArray requestData = R"(
 		{
 			"Request": 8,
 			"Data": {
