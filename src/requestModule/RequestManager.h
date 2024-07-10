@@ -22,7 +22,7 @@ public:
 		GetBalance,
 		GetTransactionsHistory,
 		MakeTransaction,
-		TransferAmount,
+		TransferAmount, // not used for now
 		GetDatabase,
 		CreateNewUser,
 		DeleteUser,
@@ -103,12 +103,12 @@ public:
 			break;
 			case DeleteUser:
 			{
-				// jsonObjResponse = requestHandler_.handleDeleteUser(jsonObjRequest, *Mutex_);
+				jsonObjResponse = requestHandler_.handleDeleteUser(jsonObjRequest, *Mutex_);
 			}
 			break;
 			case UpdateUser:
 			{
-				// jsonObjResponse = requestHandler_.handleUpdateUser(jsonObjRequest, *Mutex_);
+				jsonObjResponse = requestHandler_.handleUpdateUser(jsonObjRequest, *Mutex_);
 			}
 			break;
 			case JsonParseError:

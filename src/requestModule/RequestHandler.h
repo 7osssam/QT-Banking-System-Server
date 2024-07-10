@@ -4,6 +4,7 @@
 
 #include "db.h"
 #include "dbresult.h"
+#include "RequestManager.h"
 #include <QByteArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -35,17 +36,11 @@ class RequestHandler
 private:
 	DB::DatabaseManager* dbManager;
 
-	bool checkDBConnection(QJsonObject response, QJsonObject dataObj)
+	bool isDBConnectionValid()
 	{
 		if (dbManager == nullptr)
 		{
 			qDebug() << "Failed to create instance";
-
-			dataObj.insert("status", int(false));
-			dataObj.insert("message", "Internal server error");
-
-			response.insert("Data", dataObj);
-
 			return false;
 		}
 
@@ -54,16 +49,42 @@ private:
 		if (!DB::DatabaseManager::checkConnection(dbError))
 		{
 			qDebug() << "Failed to connect to db" << dbError;
-
-			dataObj.insert("status", int(false));
-			dataObj.insert("message", "Internal server error");
-
-			response.insert("Data", dataObj);
-
 			return false;
 		}
 
 		return true;
+	}
+
+	QJsonObject CreateDBConnectionError(QJsonObject response, QJsonObject dataObj)
+	{
+		dataObj.insert("status", int(false));
+		dataObj.insert("message", "Internal server error");
+
+		response.insert("Data", dataObj);
+
+		// Convert response to JSON
+		QJsonDocument responseDoc(response);
+		QByteArray	  responseData = responseDoc.toJson();
+
+		qDebug().noquote() << "<-- GetDatabase::Response :\n" << responseDoc.toJson(QJsonDocument::Indented);
+
+		return response;
+	}
+
+	QJsonObject CreateErrorResponse(QJsonObject response, QJsonObject dataObj, QString message)
+	{
+		dataObj.insert("status", int(false));
+		dataObj.insert("message", message);
+
+		response.insert("Data", dataObj);
+
+		// Convert response to JSON
+		QJsonDocument responseDoc(response);
+		QByteArray	  responseData = responseDoc.toJson();
+
+		qDebug().noquote() << "<-- GetDatabase::Response :\n" << responseDoc.toJson(QJsonDocument::Indented);
+
+		return response;
 	}
 
 public:
@@ -109,37 +130,23 @@ public:
 
 		do
 		{
-			if (!checkDBConnection(response, data))
+			if (!isDBConnectionValid())
 			{
-				break;
+				return CreateDBConnectionError(response, data);
 			}
 
 			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
 
 			if (result.isEmpty())
 			{
-				qDebug() << "email not found";
-
-				data.insert("status", int(false));
-				data.insert("message", "email not found");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "email not found");
 			}
 
 			result = dbManager->select("*")->table("users")->where("password =", password)->exec();
 
 			if (result.isEmpty())
 			{
-				qDebug() << "password not found";
-
-				data.insert("status", int(false));
-				data.insert("message", "password not found");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "password not found");
 			}
 
 			QJsonObject obj = result.data(0);
@@ -190,23 +197,16 @@ public:
 
 		do
 		{
-			if (!checkDBConnection(response, data))
+			if (!isDBConnectionValid())
 			{
-				break;
+				return CreateDBConnectionError(response, data);
 			}
 
 			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
 
 			if (result.isEmpty())
 			{
-				qDebug() << "email not found";
-
-				data.insert("status", int(false));
-				data.insert("message", "email not found");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "email not found");
 			}
 
 			result = dbManager->select("A.account_number")
@@ -217,14 +217,7 @@ public:
 
 			if (result.isEmpty())
 			{
-				qDebug() << "No account found";
-
-				data.insert("status", int(false));
-				data.insert("message", "No account found");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "No account found");
 			}
 
 			QJsonObject obj = result.data(0);
@@ -246,7 +239,6 @@ public:
 		return response;
 	}
 
-	//!TODO
 	QJsonObject handleGetBalance(const QJsonObject& jsonObj, QMutex& m)
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -275,9 +267,9 @@ public:
 
 		do
 		{
-			if (!checkDBConnection(response, data))
+			if (!isDBConnectionValid())
 			{
-				break;
+				return CreateDBConnectionError(response, data);
 			}
 
 			DB::DbResult result =
@@ -285,14 +277,7 @@ public:
 
 			if (result.isEmpty())
 			{
-				qDebug() << "Account not found";
-
-				data.insert("status", int(false));
-				data.insert("message", "Account not found");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Account not found");
 			}
 
 			QJsonObject obj = result.data(0);
@@ -342,9 +327,9 @@ public:
 
 		do
 		{
-			if (!checkDBConnection(response, data))
+			if (!isDBConnectionValid())
 			{
-				break;
+				return CreateDBConnectionError(response, data);
 			}
 
 			DB::DbResult result =
@@ -352,14 +337,7 @@ public:
 
 			if (result.isEmpty())
 			{
-				qDebug() << "No transactions found";
-
-				data.insert("status", int(false));
-				data.insert("message", "No transactions found");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "No transactions found");
 			}
 
 			QJsonArray transactionList;
@@ -440,9 +418,9 @@ public:
 
 		do
 		{
-			if (!checkDBConnection(response, data))
+			if (!isDBConnectionValid())
 			{
-				break;
+				return CreateDBConnectionError(response, data);
 			}
 
 			DB::DbResult fromAccountResult =
@@ -450,14 +428,7 @@ public:
 
 			if (fromAccountResult.isEmpty())
 			{
-				qDebug() << "From account not found";
-
-				data.insert("status", int(false));
-				data.insert("message", "Invalid from account number");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Invalid from account number");
 			}
 
 			DB::DbResult toAccountResult =
@@ -465,28 +436,14 @@ public:
 
 			if (toAccountResult.isEmpty())
 			{
-				qDebug() << "To account not found";
-
-				data.insert("status", int(false));
-				data.insert("message", "Invalid to account number");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Invalid to account number");
 			}
 
 			double fromAccountBalance = fromAccountResult.data(0).value("balance").toDouble();
 
 			if (fromAccountBalance < amount)
 			{
-				qDebug() << "Insufficient balance";
-
-				data.insert("status", int(false));
-				data.insert("message", "Insufficient balance");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Insufficient balance");
 			}
 
 			double toAccountBalance = toAccountResult.data(0).value("balance").toDouble();
@@ -506,14 +463,7 @@ public:
 
 			if (!success)
 			{
-				qDebug() << "Failed to log transaction";
-
-				data.insert("status", int(false));
-				data.insert("message", "Failed to log transaction");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Failed to log transaction");
 			}
 
 			// Update the account balances (from)
@@ -568,9 +518,9 @@ public:
 
 		do
 		{
-			if (!checkDBConnection(response, data))
+			if (!isDBConnectionValid())
 			{
-				break;
+				return CreateDBConnectionError(response, data);
 			}
 
 			// Check if the user is an admin
@@ -578,28 +528,14 @@ public:
 
 			if (result.isEmpty())
 			{
-				qDebug() << "email not found";
-
-				data.insert("status", int(false));
-				data.insert("message", "email not found");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "you are not registered user!");
 			}
 
 			QJsonObject obj = result.data(0);
 
 			if (obj.value("role").toString() != "admin")
 			{
-				qDebug() << "Cannot get database. User is not an admin";
-
-				data.insert("status", int(false));
-				data.insert("message", "Cannot get database. User is not an admin");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Unauthorized, Cannot get database. User is not an admin");
 			}
 
 			// Get all users from the database
@@ -607,14 +543,7 @@ public:
 
 			if (result.isEmpty())
 			{
-				qDebug() << "No data found";
-
-				data.insert("status", int(false));
-				data.insert("message", "No data found");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "No data found");
 			}
 
 			QJsonArray userList;
@@ -747,9 +676,9 @@ public:
 
 		do
 		{
-			if (!checkDBConnection(response, data))
+			if (!isDBConnectionValid())
 			{
-				break;
+				return CreateDBConnectionError(response, data);
 			}
 
 			// Check if the user is an admin
@@ -757,67 +686,33 @@ public:
 
 			if (result.isEmpty())
 			{
-				qDebug() << "email not found";
-
-				data.insert("status", int(false));
-				data.insert("message", "email not found");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "you are not registered user!");
 			}
 
 			QJsonObject obj = result.data(0);
 
 			if (obj.value("role").toString() != "admin")
 			{
-				qDebug() << "Cannot create new user. User is not an admin";
-
-				data.insert("status", int(false));
-				data.insert("message", "Cannot create new user. User is not an admin");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data,
+										   "Unauthorized, Cannot create new user. User is not an admin");
 			}
 
 			if (new_email.isEmpty() || new_password.isEmpty() || first_name.isEmpty() || last_name.isEmpty() ||
 				role.isEmpty())
 			{
-				qDebug() << "Missing required fields";
-
-				data.insert("status", int(false));
-				data.insert("message", "Missing required fields");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Missing required fields");
 			}
 
 			// invalid role
 			if (role != "admin" && role != "user")
 			{
-				qDebug() << "Invalid role";
-
-				data.insert("status", int(false));
-				data.insert("message", "Invalid role");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Invalid role");
 			}
 
 			// admin can't have account and initial balance
 			if (role == "admin" && initial_balance != 0)
 			{
-				qDebug() << "Admin can't have account and initial balance";
-
-				data.insert("status", int(false));
-				data.insert("message", "Admin can't have account and initial balance");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Admin can't have account and initial balance");
 			}
 
 			// Check if there is a user with the same email
@@ -825,14 +720,7 @@ public:
 
 			if (!result.isEmpty())
 			{
-				qDebug() << "User already exists";
-
-				data.insert("status", int(false));
-				data.insert("message", "User already exists");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "User already exists");
 			}
 
 			// Create the new user
@@ -843,14 +731,7 @@ public:
 													   {"role", role}});
 			if (!success)
 			{
-				qDebug() << "Failed to create new user";
-
-				data.insert("status", int(false));
-				data.insert("message", "Failed to create new user");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Failed to create new user");
 			}
 
 			if (role == "admin" && initial_balance == 0)
@@ -877,14 +758,7 @@ public:
 
 			if (!success)
 			{
-				qDebug() << "Failed to create account for the new user";
-
-				data.insert("status", int(false));
-				data.insert("message", "Failed to create account for the new user");
-
-				response.insert("Data", data);
-
-				break;
+				return CreateErrorResponse(response, data, "Failed to create account for the new user");
 			}
 
 			data.insert("status", int(true));
@@ -900,6 +774,235 @@ public:
 
 		// Send response
 		qDebug().noquote() << "<-- CreateNewUser::Response :\n" << responseDoc.toJson(QJsonDocument::Indented);
+
+		return response;
+	}
+
+	QJsonObject handleDeleteUser(const QJsonObject& jsonObj, QMutex& m)
+	{
+		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
+
+		QString admin_email;
+		QString account_number;
+
+		QJsonObject response;
+		QJsonObject data;
+
+		response.insert("Response", 9);
+
+		// Extract the data array
+		if (jsonObj.contains("Data"))
+		{
+			QJsonObject dataObj = jsonObj["Data"].toObject();
+
+			if (dataObj.contains("email"))
+			{
+				admin_email = dataObj.value("email").toString();
+			}
+			if (dataObj.contains("account_number"))
+			{
+				account_number = dataObj.value("account_number").toString();
+			}
+		}
+		else
+		{
+			qCritical() << "Data not found";
+		}
+
+		do
+		{
+			if (!isDBConnectionValid())
+			{
+				return CreateDBConnectionError(response, data);
+			}
+
+			// Check if the user is an admin
+			DB::DbResult result = dbManager->select("role")->table("users")->where("email =", admin_email)->exec();
+
+			if (result.isEmpty())
+			{
+				return CreateErrorResponse(response, data, "you are not registered user!");
+			}
+
+			QJsonObject obj = result.data(0);
+
+			if (obj.value("role").toString() != "admin")
+			{
+				return CreateErrorResponse(response, data, "Unauthorized, Cannot delete user.");
+			}
+
+			// Check if the account number is valid
+			result = dbManager->select("*")->table("accounts")->where("account_number =", account_number)->exec();
+
+			if (result.isEmpty())
+			{
+				return CreateErrorResponse(response, data, "Account number does not exist");
+			}
+
+			// Get the user id from the account number
+			int user_id = result.data(0).value("user_id").toInt();
+
+			bool success = dbManager->where("account_number = ", account_number)->del("accounts");
+
+			if (!success)
+			{
+				return CreateErrorResponse(response, data, "Failed to delete account");
+			}
+
+			success = dbManager->where("id = ", user_id)->del("users");
+
+			if (!success)
+			{
+				return CreateErrorResponse(response, data, "Failed to delete user");
+			}
+
+			data.insert("status", int(true));
+			data.insert("message", "User deleted successfully");
+
+			response.insert("Data", data);
+
+		} while (false);
+
+		// Send response
+		qDebug().noquote() << "<-- DeleteUser::Response :\n" << QJsonDocument(response).toJson(QJsonDocument::Indented);
+
+		return response;
+	}
+
+	QJsonObject handleUpdateUser(const QJsonObject& jsonObj, QMutex& m)
+	{
+		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
+
+		QString email;
+		int		account_number;
+		QString new_first_name;
+		QString new_last_name;
+		QString new_email;
+		QString new_role;
+
+		QJsonObject response;
+		QJsonObject data;
+
+		response.insert("Response", 10);
+
+		// Extract the data array
+		if (jsonObj.contains("Data"))
+		{
+			QJsonObject dataObj = jsonObj["Data"].toObject();
+
+			if (dataObj.contains("email"))
+			{
+				email = dataObj.value("email").toString();
+			}
+			if (dataObj.contains("account_number"))
+			{
+				account_number = dataObj.value("account_number").toInt();
+			}
+			if (dataObj.contains("newData"))
+			{
+				QJsonObject newDataObj = dataObj["newData"].toObject();
+
+				if (newDataObj.contains("first_name"))
+				{
+					new_first_name = newDataObj.value("first_name").toString();
+				}
+				if (newDataObj.contains("last_name"))
+				{
+					new_last_name = newDataObj.value("last_name").toString();
+				}
+				if (newDataObj.contains("email"))
+				{
+					new_email = newDataObj.value("email").toString();
+				}
+				if (newDataObj.contains("role"))
+				{
+					new_role = newDataObj.value("role").toString();
+				}
+			}
+		}
+		else
+		{
+			qCritical() << "Data not found";
+		}
+
+		do
+		{
+			if (!isDBConnectionValid())
+			{
+				return CreateDBConnectionError(response, data);
+			}
+
+			// Check if the user is an admin
+			DB::DbResult result = dbManager->select("role")->table("users")->where("email =", email)->exec();
+
+			if (result.isEmpty())
+			{
+				return CreateErrorResponse(response, data, "you are not registered user!");
+			}
+
+			QJsonObject obj = result.data(0);
+
+			if (obj.value("role").toString() != "admin")
+			{
+				return CreateErrorResponse(response, data, "Unauthorized, Cannot update user");
+			}
+
+			// Check if the account number is valid
+			result = dbManager->select("*")->table("accounts")->where("account_number =", account_number)->exec();
+
+			if (result.isEmpty())
+			{
+				return CreateErrorResponse(response, data, "Account number does not exist");
+			}
+
+			// Get the user id from the account number
+			int user_id = result.data(0).value("user_id").toInt();
+
+			// check that new email is not associated with another account or user unless it is the current user
+			result = dbManager->select("*")->table("users")->where("email =", new_email)->exec();
+
+			int new_user_id = result.data(0).value("id").toInt();
+
+			qDebug() << "user_id: " << user_id;
+			qDebug() << "new_user_id: " << new_user_id;
+
+			if (!result.isEmpty() && result.data(0).value("id").toInt() != user_id)
+			{
+				return CreateErrorResponse(response, data, "Email is associated with another account");
+			}
+
+			qDebug() << "Debugging update user";
+			qDebug() << "user_id: " << user_id;
+			qDebug() << "new_email: " << new_email;
+			qDebug() << "new_role: " << new_role;
+			qDebug() << "new_first_name: " << new_first_name;
+			qDebug() << "new_last_name: " << new_last_name;
+
+			// Update the user details
+			bool success = dbManager->where("id = ", user_id)
+							   ->update("users", {{"first_name", new_first_name},
+												  {"last_name", new_last_name},
+												  {"email", new_email},
+												  {"role", new_role}});
+
+			if (!success)
+			{
+				return CreateErrorResponse(response, data, "Failed to update user");
+			}
+
+			data.insert("status", int(true));
+			data.insert("message", "User updated successfully");
+
+			response.insert("Data", data);
+
+		} while (false);
+
+		// Convert response to JSON
+		QJsonDocument responseDoc(response);
+		QByteArray	  responseData = responseDoc.toJson();
+
+		// Send response
+		qDebug().noquote() << "<-- UpdateUser::Response :\n" << QJsonDocument(response).toJson(QJsonDocument::Indented);
 
 		return response;
 	}
