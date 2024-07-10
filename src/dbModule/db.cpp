@@ -455,7 +455,7 @@ bool DatabaseManager::commit()
 	return getDatabase().commit();
 }
 
-bool DatabaseManager::roolback()
+bool DatabaseManager::rollback()
 {
 	return getDatabase().rollback();
 }

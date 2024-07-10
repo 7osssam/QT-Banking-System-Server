@@ -79,7 +79,7 @@ public:
 	DatabaseManager* clone();
 	bool			 beginTransaction();
 	bool			 commit();
-	bool			 roolback();
+	bool			 rollback();
 	inline bool		 isSupportTransaction()
 	{
 		return isSupportTransaction_;
