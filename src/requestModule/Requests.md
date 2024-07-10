@@ -524,9 +524,9 @@ or
 
 {
 
-	    "Response": 7,	
+	    "Response": 7,
 
-	    "Data": {	
+	    "Data": {
 			"status": 0,
         	 "message": "Cannot get database. User is not an admin",
 	    }
@@ -535,15 +535,15 @@ or
 
 ```
 
-or 
+or
 
 ```json
 
 {
 
-	    "Response": 7,	
+	    "Response": 7,
 
-	    "Data": {	
+	    "Data": {
 			"status": 0,
         	 "message": "No data found",
 	    }
@@ -616,6 +616,26 @@ or
 
 ```
 
+or
+
+```json
+
+{
+
+    "Response": 8,
+
+    "Data": {
+
+        "status": 1,
+
+        "message": "New admin created successfully"
+
+    }
+
+}
+
+```
+
 ### On Failure:
 
 ```json
@@ -656,7 +676,65 @@ or
 
 ```
 
+or
 
+```json
+
+{
+
+    "Response": 8,
+
+    "Data": {
+
+        "status": 0,
+
+        "message": "Missing required fields"
+
+    }
+
+}
+
+```
+
+or
+
+```json
+
+{
+
+    "Response": 8,
+
+    "Data": {
+
+        "status": 0,
+
+        "message": "Invalid role"
+
+    }
+
+}
+
+```
+
+or
+
+```json
+
+{
+
+    "Response": 8,
+
+    "Data": {
+
+        "status": 0,
+
+        "message": "Admin can't have account and initial balance"
+
+    }
+
+}
+
+```
 
 
 
@@ -673,8 +751,6 @@ or
     "Data": {
 
         "email": "admin@mail.com",
-
-        "password": "adminpass",
 
         "account_number": 123456789
 
@@ -718,7 +794,25 @@ or
 
         "status": 0,
 
-        "message": "User not found"
+        "message": "Account number does not exist"
+
+    }
+
+}
+
+```
+
+```json
+
+{
+
+    "Response": 9,
+
+    "Data": {
+
+        "status": 0,
+
+        "message": "Unauthorized, Cannot delete user."
 
     }
 
@@ -739,8 +833,6 @@ or
     "Data": {
 
         "email": "admin@mail.com",
-
-        "password": "adminpass",
 
         "account_number": 123456789,
 
@@ -796,7 +888,47 @@ or
 
         "status": 0,
 
-        "message": "User not found"
+        "message": "Account number does not exist"
+
+    }
+
+}
+
+```
+
+or
+
+```json
+
+{
+
+    "Response": 10,
+
+    "Data": {
+
+        "status": 0,
+
+        "message": "Unauthorized, Cannot update user"
+
+    }
+
+}
+
+```
+
+or
+
+```json
+
+{
+
+    "Response": 10,
+
+    "Data": {
+
+        "status": 0,
+
+        "message": "Failed to update user"
 
     }
 
