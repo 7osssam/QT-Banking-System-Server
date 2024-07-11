@@ -89,23 +89,76 @@ protected:
 
 	void CreateTestUsersAndAccounts()
 	{
-		// Insert the test user
+		// Insert the test user 1 with account number 111
 		dbManager_->insert("users", {{"email", "user1@example.com"},
 									 {"password", "pass1"},
 									 {"first_name", "User1"},
 									 {"last_name", "Test1"},
 									 {"role", "user"}});
+		// Insert the test user 2 with account number 222
+		dbManager_->insert("users", {{"email", "user2@example.com"},
+									 {"password", "pass2"},
+									 {"first_name", "User2"},
+									 {"last_name", "Test2"},
+									 {"role", "user"}});
+
+		// Insert the test user 3 to test retrieving only history of the requested account
+		dbManager_->insert("users", {{"email", "user3@example.com"},
+									 {"password", "pass3"},
+									 {"first_name", "User3"},
+									 {"last_name", "Test3"},
+									 {"role", "user"}});
+
+		// Insert the test user 4 with account and no transactions
+		dbManager_->insert("users", {{"email", "user4@example.com"},
+									 {"password", "pass4"},
+									 {"first_name", "User4"},
+									 {"last_name", "Test4"},
+									 {"role", "user"}});
+
+		// Insert the test user 5  with no account
+		dbManager_->insert("users", {{"email", "user5@example.com"},
+									 {"password", "pass5"},
+									 {"first_name", "User5"},
+									 {"last_name", "Test5"},
+									 {"role", "user"}});
+
+		// Insert the test admin user
+		dbManager_->insert("users", {{"email", "admin@mail.com"},
+									 {"password", "admin"},
+									 {"first_name", "Admin"},
+									 {"last_name", "Test"},
+									 {"role", "admin"}});
 
 		// Insert the test accounts with specific account numbers
-		dbManager_->exec("INSERT INTO Accounts (account_number, user_id, balance) VALUES (1000000000, 1, 1000.00)");
-		dbManager_->exec("INSERT INTO Accounts (account_number, user_id, balance) VALUES (1000000001, 1, 1500.00)");
-		dbManager_->exec("INSERT INTO Accounts (account_number, user_id, balance) VALUES (1000000002, 1, 2000.00)");
+		dbManager_->insert("Accounts", {{"account_number", 111}, {"user_id", 1}, {"balance", 1000.00}});
 
-		// Insert test transactions
-		dbManager_->exec("INSERT INTO Transactions (account_number, from_account_number, to_account_number, amount, "
-						 "created_at) VALUES (1000000000, 1000000000, 1000000001, 100.00, '2021-01-01')");
-		dbManager_->exec("INSERT INTO Transactions (account_number, from_account_number, to_account_number, amount, "
-						 "created_at) VALUES (1000000000, 1000000000, 1000000002, 130.00, '2021-01-03')");
+		// Insert the test accounts with specific account numbers
+		dbManager_->insert("Accounts", {{"account_number", 222}, {"user_id", 2}, {"balance", 1000.00}});
+
+		// Insert the test accounts with specific account numbers
+		dbManager_->insert("Accounts", {{"account_number", 333}, {"user_id", 3}, {"balance", 5000.00}});
+
+		// Insert the test accounts with specific account numbers
+		dbManager_->insert("Accounts", {{"account_number", 444}, {"user_id", 4}, {"balance", 50.00}});
+
+		dbManager_->insert("Transactions", {{"account_number", 111},
+											{"from_account_number", 111},
+											{"to_account_number", 222},
+											{"amount", 200.00},
+											{"created_at", "2021-01-01"}});
+
+		dbManager_->insert("Transactions", {{"account_number", 222},
+											{"from_account_number", 222},
+											{"to_account_number", 111},
+											{"amount", 500.50},
+											{"created_at", "2021-01-03"}});
+
+		dbManager_->insert("Transactions", {{"account_number", 222},
+											{"from_account_number", 222},
+											{"to_account_number", 333},
+											{"amount", 700},
+											{"created_at", "2021-01-04"}});
 	}
 
 	void setupDatabase()
@@ -142,4 +195,4 @@ protected:
 	DB::DatabaseManager* dbManager_;
 };
 
-#endif // SETUP_H
+#endif						   // SETUP_H
