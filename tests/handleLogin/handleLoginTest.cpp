@@ -88,7 +88,7 @@ TEST_F(handleLoginTest, onPasswordNotFound)
 			"Response": 1,
 			"Data": {
 				"status": 0,
-				"message": "password not found"
+				"message": "Invalid password"
 				}
 			}
 		)";
