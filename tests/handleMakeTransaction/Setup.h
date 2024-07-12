@@ -107,6 +107,13 @@ protected:
 											   {"last_name", "Test2"},
 											   {"role", "user"}});
 
+		// insert the test user 2
+		success = dbManager_->insert("users", {{"email", "user3@example.com"},
+											   {"password", "pass3"},
+											   {"first_name", "User3"},
+											   {"last_name", "Test3"},
+											   {"role", "user"}});
+
 		// create accounts for the test users with initial balance
 		success = dbManager_->insert("accounts", {{"account_number", 111}, {"user_id", 1}, {"balance", 1000.00}});
 

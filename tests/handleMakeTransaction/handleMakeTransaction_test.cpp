@@ -10,6 +10,7 @@ TEST_F(handleMakeTransactionTest, onSuccess)
             "Data": {
                 "from_account_number": 111,
 				"to_account_number": 222,
+				"to_email": "",
 				"transaction_amount": 100.0
             }
         }
@@ -62,6 +63,7 @@ TEST_F(handleMakeTransactionTest, onInsufficientFunds)
 			"Data": {
 				"from_account_number": 111,
 				"to_account_number": 222,
+				"to_email": "",
 				"transaction_amount": 2000.0
 			}
 		}
@@ -97,6 +99,7 @@ TEST_F(handleMakeTransactionTest, onInvalidFromAccount)
 			"Data": {
 				"from_account_number": 999,
 				"to_account_number": 222,
+				"to_email": "",
 				"transaction_amount": 100.0
 			}
 		}
@@ -107,7 +110,7 @@ TEST_F(handleMakeTransactionTest, onInvalidFromAccount)
 			"Response": 5,
 			"Data": {
 				"status": 0,
-				"message": "Invalid from account number"
+				"message": "You don't have an account"
 			}
 		}
 	)";
@@ -132,6 +135,7 @@ TEST_F(handleMakeTransactionTest, onInvalidToAccount)
 			"Data": {
 				"from_account_number": 111,
 				"to_account_number": 999,
+				"to_email": "",
 				"transaction_amount": 100.0
 			}
 		}
@@ -168,6 +172,7 @@ TEST_F(handleMakeTransactionTest, onMultipleTransactions)
 			"Data": {
 				"from_account_number": 111,
 				"to_account_number": 222,
+				"to_email": "",
 				"transaction_amount": 200.0
 			}
 		}
@@ -201,6 +206,7 @@ TEST_F(handleMakeTransactionTest, onMultipleTransactions)
 			"Data": {
 				"from_account_number": 222,
 				"to_account_number": 111,
+				"to_email": "",
 				"transaction_amount": 50.0
 			}
 		}
@@ -255,4 +261,93 @@ TEST_F(handleMakeTransactionTest, onMultipleTransactions)
 
 	obj = accountResult.data(0);
 	EXPECT_THAT(obj.value("balance").toDouble(), DoubleEq(5150.0));
+}
+
+TEST_F(handleMakeTransactionTest, onEmailInsteadOfAccountNumber)
+{
+	QByteArray requestData = R"(
+        {
+            "Request": 5,
+            "Data": {
+                "from_account_number": 111,
+				"to_account_number": -1,
+				"to_email": "user2@example.com",
+				"transaction_amount": 100.0
+            }
+        }
+    )";
+
+	QByteArray expectedResponse = R"(
+        {
+            "Response": 5,
+            "Data": {
+				"status": 1,
+				"message": "Transaction successful"
+            }
+        }
+    )";
+
+	QByteArray actualResponse = handler_->makeRequest(requestData);
+
+	// Ensure to strip whitespace before comparing
+	QJsonDocument expectedDoc = QJsonDocument::fromJson(expectedResponse.trimmed());
+	QJsonDocument actualDoc = QJsonDocument::fromJson(actualResponse.trimmed());
+
+	qDebug() << "Expected: " << expectedDoc;
+	qDebug() << "Actual: " << actualDoc;
+
+	EXPECT_EQ(expectedDoc, actualDoc);
+
+	// Check if the transaction was recorded in the database
+
+	DB::DbResult historyResult =
+		dbManager_->select("amount")->table("Transactions")->where("from_account_number =", 111)->exec();
+
+	// print the result for debugging purposes
+
+	// Assert using a loop and matchers
+	for (size_t i = 0; i < historyResult.size(); i++)
+	{
+		QJsonObject obj = historyResult.data(i);
+		qDebug() << "Data: " << obj;
+		qDebug() << "amount: " << obj.value("amount").toDouble();
+
+		EXPECT_THAT(obj.value("amount").toDouble(), DoubleEq(100.0));
+	}
+}
+
+TEST_F(handleMakeTransactionTest, onInvalidToEmailWithNoAccount)
+{
+	QByteArray requestData = R"(
+        {
+            "Request": 5,
+            "Data": {
+                "from_account_number": 111,
+				"to_account_number": -1,
+				"to_email": "user3@example.com",
+				"transaction_amount": 100.0
+            }
+        }
+    )";
+
+	QByteArray expectedResponse = R"(
+		{
+			"Response": 5,
+			"Data": {
+				"status": 0,
+				"message": "This email is not associated with any account"
+			}
+		}
+	)";
+
+	QByteArray actualResponse = handler_->makeRequest(requestData);
+
+	// Ensure to strip whitespace before comparing
+	QJsonDocument expectedDoc = QJsonDocument::fromJson(expectedResponse.trimmed());
+	QJsonDocument actualDoc = QJsonDocument::fromJson(actualResponse.trimmed());
+
+	qDebug() << "Expected: " << expectedDoc;
+	qDebug() << "Actual: " << actualDoc;
+
+	EXPECT_EQ(expectedDoc, actualDoc);
 }
