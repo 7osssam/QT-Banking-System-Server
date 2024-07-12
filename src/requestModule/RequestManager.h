@@ -29,6 +29,8 @@ public:
 		UpdateUser,
 		// Special requests
 		UserInit,
+		UpdateEmail,
+		UpdatePassword,
 		JsonParseError = -1
 	};
 
@@ -109,6 +111,21 @@ public:
 			case UpdateUser:
 			{
 				jsonObjResponse = requestHandler_.handleUpdateUser(jsonObjRequest, *Mutex_);
+			}
+			break;
+			case UserInit:
+			{
+				jsonObjResponse = requestHandler_.handleUserInit(jsonObjRequest, *Mutex_);
+			}
+			break;
+			case UpdateEmail:
+			{
+				jsonObjResponse = requestHandler_.handleUpdateEmail(jsonObjRequest, *Mutex_);
+			}
+			break;
+			case UpdatePassword:
+			{
+				jsonObjResponse = requestHandler_.handleUpdatePassword(jsonObjRequest, *Mutex_);
 			}
 			break;
 			case JsonParseError:
