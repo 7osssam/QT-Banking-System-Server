@@ -11,5 +11,8 @@ var classRequestHandler =
     [ "handleJsonParseError", "classRequestHandler.html#a23d928eee1c057ff0c4665d2629ba156", null ],
     [ "handleLogin", "classRequestHandler.html#a2259a791851671340d868bc2bd604ab5", null ],
     [ "handleMakeTransaction", "classRequestHandler.html#aadeea10436724caeb674e4aab95bd61d", null ],
-    [ "handleUpdateUser", "classRequestHandler.html#ac6b7931cf30aa07e36be062407b710cf", null ]
+    [ "handleUpdateEmail", "classRequestHandler.html#acb9711e793fd6934e6d47bd87ac04e48", null ],
+    [ "handleUpdatePassword", "classRequestHandler.html#a1d9d8428feb96062c2554d24cb1feeb6", null ],
+    [ "handleUpdateUser", "classRequestHandler.html#ac6b7931cf30aa07e36be062407b710cf", null ],
+    [ "handleUserInit", "classRequestHandler.html#a29d3deeb800f3c36102086c06e748696", null ]
 ];

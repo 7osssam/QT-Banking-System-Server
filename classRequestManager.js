@@ -12,6 +12,8 @@ var classRequestManager =
       [ "DeleteUser", "classRequestManager.html#af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138", null ],
       [ "UpdateUser", "classRequestManager.html#af9c93ecb9b028e390635d0e155d10310abe9610f90871c52199552ba9a7eee628", null ],
       [ "UserInit", "classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a3d57ea768887ade2528b49470afeee2e", null ],
+      [ "UpdateEmail", "classRequestManager.html#af9c93ecb9b028e390635d0e155d10310ac8974e51516860572533ff425c9162ba", null ],
+      [ "UpdatePassword", "classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a55a93a95e948c8d526ab395d9b56b7bc", null ],
       [ "JsonParseError", "classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b", null ]
     ] ],
     [ "RequestManager", "classRequestManager.html#adf7bfbf17876e300f0f02aaae671535a", null ],

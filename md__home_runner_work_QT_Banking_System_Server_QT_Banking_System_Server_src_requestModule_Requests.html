@@ -272,77 +272,107 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">}</div>
 </div><!-- fragment --><h1>4. Get Transactions History</h1>
 <h2>Send Request:</h2>
+<h2>As User:</h2>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Request&quot;: 4,</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">        &quot;email&quot;: &quot;email@test.com&quot;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><h2>As Admin:</h2>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Request&quot;: 4,</div>
 <div class="line"> </div>
 <div class="line">    &quot;Data&quot;: {</div>
-<div class="line"> </div>
-<div class="line">        &quot;account_number&quot;: 123456789</div>
-<div class="line"> </div>
+<div class="line">        &quot;email&quot;: &quot;admin@test.com&quot;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">}</div>
 </div><!-- fragment --><h2>Receive Response:</h2>
+<h2>As User:</h2>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Request&quot;: 4,</div>
 <div class="line"> </div>
 <div class="line">    &quot;Data&quot;: {</div>
 <div class="line">         &quot;status&quot;: 1,</div>
-<div class="line">        &quot;account_number&quot;: 123456789,</div>
-<div class="line"> </div>
+<div class="line">        &quot;message&quot;: &quot;Transaction history retrieved for account number 123456789&quot;,</div>
 <div class="line">        &quot;List&quot;:</div>
-<div class="line"> </div>
-<div class="line">            [</div>
-<div class="line"> </div>
+<div class="line">            [  // User will get transactions to or from his account only</div>
 <div class="line">                {</div>
-<div class="line"> </div>
+<div class="line">                    &quot;from_account_number&quot;: 123456789,</div>
 <div class="line">                    &quot;to_account_number&quot;: 987654321,</div>
-<div class="line"> </div>
 <div class="line">                    &quot;transaction_amount&quot;: 100.0,</div>
-<div class="line"> </div>
-<div class="line">                    &quot;transaction_type&quot;: &quot;+&quot;, // &quot;+&quot; for deposit</div>
-<div class="line"> </div>
 <div class="line">                    &quot;created_at&quot;: &quot;2021-01-01&quot;</div>
-<div class="line"> </div>
 <div class="line">                },</div>
-<div class="line"> </div>
 <div class="line">                {</div>
-<div class="line"> </div>
-<div class="line">                    &quot;to_account_number&quot;: 987612321,</div>
-<div class="line"> </div>
+<div class="line">                    &quot;from_account_number&quot;: 987654321,</div>
+<div class="line">                    &quot;to_account_number&quot;: 123456789,</div>
 <div class="line">                    &quot;transaction_amount&quot;: 130.0,</div>
-<div class="line"> </div>
-<div class="line">                    &quot;transaction_type&quot;: &quot;Withdrawal&quot;, // &quot;-&quot; for withdrawal</div>
-<div class="line"> </div>
 <div class="line">                    &quot;created_at&quot;: &quot;2021-01-03&quot;</div>
-<div class="line"> </div>
 <div class="line">                }</div>
-<div class="line"> </div>
 <div class="line">            ]</div>
-<div class="line"> </div>
 <div class="line">        }</div>
+<div class="line"> }</div>
+</div><!-- fragment --><h2>As Admin:</h2>
+<div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
-<div class="line">    }</div>
+<div class="line">    &quot;Request&quot;: 4,</div>
 <div class="line"> </div>
-<div class="line">}</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">         &quot;status&quot;: 1,</div>
+<div class="line">        &quot;message&quot;: &quot;Transaction history retrieved for all users&quot;,</div>
+<div class="line">         &quot;List&quot;:</div>
+<div class="line">            [  // Admin will get all transactions in the database</div>
+<div class="line">                {</div>
+<div class="line">                    &quot;from_account_number&quot;: 123456789,</div>
+<div class="line">                    &quot;to_account_number&quot;: 987654321,</div>
+<div class="line">                    &quot;transaction_amount&quot;: 100.0,</div>
+<div class="line">                    &quot;created_at&quot;: &quot;2021-01-01&quot;</div>
+<div class="line">                },</div>
+<div class="line">                {</div>
+<div class="line">                    &quot;from_account_number&quot;: 987654321,</div>
+<div class="line">                    &quot;to_account_number&quot;: 123456789,</div>
+<div class="line">                    &quot;transaction_amount&quot;: 130.0,</div>
+<div class="line">                    &quot;created_at&quot;: &quot;2021-01-03&quot;</div>
+<div class="line">                },</div>
+<div class="line">                {</div>
+<div class="line">                    &quot;from_account_number&quot;: 4343656567,</div>
+<div class="line">                    &quot;to_account_number&quot;: 123232324,</div>
+<div class="line">                    &quot;transaction_amount&quot;: 1435.0,</div>
+<div class="line">                    &quot;created_at&quot;: &quot;2021-01-03&quot;</div>
+<div class="line">                }</div>
+<div class="line">            ]</div>
+<div class="line">        }</div>
+<div class="line"> }</div>
 </div><!-- fragment --><h1>5. Make Transaction</h1>
 <h2>Send Request:</h2>
+<h3>Using email:</h3>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Request&quot;: 5,</div>
 <div class="line"> </div>
 <div class="line">    &quot;Data&quot;: {</div>
-<div class="line"> </div>
-<div class="line">        &quot;from_account_number&quot;: 123456789,</div>
-<div class="line"> </div>
-<div class="line">        &quot;to_account_number&quot;: 1222255555,</div>
-<div class="line"> </div>
+<div class="line">        &quot;from_account_number&quot;: 123456789,</div>
+<div class="line">        &quot;to_account_number&quot;: -1,</div>
+<div class="line">        &quot;to_email&quot;: &quot;user@mail.com&quot;,</div>
 <div class="line">        &quot;transaction_amount&quot;: 100.0</div>
 <div class="line"> </div>
 <div class="line">    }</div>
 <div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --> <h3>Using account number:</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;Request&quot;: 5,</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">        &quot;from_account_number&quot;: 123456789,</div>
+<div class="line">        &quot;to_account_number&quot;: 1222255555,</div>
+<div class="line">        &quot;to_email&quot;: &quot;&quot;,</div>
+<div class="line">        &quot;transaction_amount&quot;: 100.0</div>
+<div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><h2>Receive Response:</h2>
 <h3>On Success:</h3>
@@ -788,6 +818,139 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line"> </div>
 <div class="line">    }</div>
 <div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><h1>Special Requests</h1>
+<h1>11. Init Rquest</h1>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Request&quot;: 11,</div>
+<div class="line">    &quot;Data&quot;:</div>
+<div class="line">        {</div>
+<div class="line">        &quot;email&quot;: &quot;user@example.com&quot;,</div>
+<div class="line">        &quot;password&quot;: &quot;pass&quot;</div>
+<div class="line">        }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2>Receive Response:</h2>
+<h3>on Success:</h3>
+<h3>As user</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;Request&quot;: 11,</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">        &quot;status&quot;: 1,</div>
+<div class="line">        &quot;first_name&quot;: &quot;ahmed&quot;,</div>
+<div class="line">        &quot;role&quot;: &quot;user&quot;,</div>
+<div class="line">        &quot;account_number&quot;: 123456789,</div>
+<div class="line">        &quot;current_balance&quot;: 500.0,</div>
+<div class="line">        &quot;List&quot;: // List of history transactions</div>
+<div class="line">            [</div>
+<div class="line">                {</div>
+<div class="line">                    &quot;to_account_number&quot;: 987654321,</div>
+<div class="line">                    &quot;transaction_amount&quot;: 100.0,</div>
+<div class="line">                    &quot;transaction_type&quot;: &quot;+&quot;, // &quot;+&quot; for deposit</div>
+<div class="line">                    &quot;created_at&quot;: &quot;2021-01-01&quot;</div>
+<div class="line">                },</div>
+<div class="line">                {</div>
+<div class="line">                    &quot;to_account_number&quot;: 987612321,</div>
+<div class="line">                    &quot;transaction_amount&quot;: 130.0,</div>
+<div class="line">                    &quot;transaction_type&quot;: &quot;Withdrawal&quot;, // &quot;-&quot; for withdrawal</div>
+<div class="line">                    &quot;created_at&quot;: &quot;2021-01-03&quot;</div>
+<div class="line">                }</div>
+<div class="line">            ]</div>
+<div class="line">        }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>As admin</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;Request&quot;: 11,</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">        &quot;status&quot;: 1,</div>
+<div class="line">        &quot;first_name&quot;: &quot;ahmed&quot;,</div>
+<div class="line">        &quot;role&quot;: &quot;admin&quot;,</div>
+<div class="line">        &quot;List&quot;: // List of database users</div>
+<div class="line">          [</div>
+<div class="line">           {</div>
+<div class="line">                &quot;account_number&quot;: 123456789, // NULL if admin</div>
+<div class="line">                &quot;first_name&quot;: &quot;Admin&quot;,</div>
+<div class="line">                &quot;last_name&quot;: &quot;User&quot;,</div>
+<div class="line">                &quot;email&quot;: &quot;email@mail.com&quot;,</div>
+<div class="line">                &quot;role&quot;: &quot;user&quot;,</div>
+<div class="line">                &quot;balance&quot;: 500.0</div>
+<div class="line">            },</div>
+<div class="line">            {</div>
+<div class="line">                &quot;account_number&quot;: NULL, // NULL if admin</div>
+<div class="line">                &quot;first_name&quot;: &quot;User&quot;,</div>
+<div class="line">                &quot;last_name&quot;: &quot;User&quot;,</div>
+<div class="line">                &quot;email&quot;: &quot;admin@mail.com&quot;,</div>
+<div class="line">                &quot;role&quot;: &quot;admin&quot;,</div>
+<div class="line">                &quot;balance&quot;: 500.0</div>
+<div class="line">            }</div>
+<div class="line">           ]</div>
+<div class="line">      }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1>12. Update email</h1>
+<h2>Send Request:</h2>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Request&quot;: 12,</div>
+<div class="line">    &quot;Data&quot;:</div>
+<div class="line">        {</div>
+<div class="line">        &quot;email&quot;: &quot;user@example.com&quot;,</div>
+<div class="line">        &quot;password&quot;: &quot;pass&quot;,</div>
+<div class="line">        &quot;new_email&quot;: &quot;newmail@example.com&quot;</div>
+<div class="line">        }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2>Receive Response:</h2>
+<h3>on Success:</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;Response&quot;: 12,</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">        &quot;status&quot;: 1,</div>
+<div class="line">        &quot;message&quot;: &quot;Email updated successfully&quot;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>on Failure:</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;Response&quot;: 12,</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">        &quot;status&quot;: 0,</div>
+<div class="line">        &quot;message&quot;: &quot;Email already exists&quot;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>or</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;Response&quot;: 12,</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">        &quot;status&quot;: 0,</div>
+<div class="line">        &quot;message&quot;: &quot;Invalid password&quot;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1>12. Update Password</h1>
+<h2>Send Request:</h2>
+<div class="fragment"><div class="line">{</div>
+<div class="line"> </div>
+<div class="line">    &quot;Request&quot;: 13,</div>
+<div class="line">    &quot;Data&quot;:</div>
+<div class="line">        {</div>
+<div class="line">        &quot;email&quot;: &quot;user@example.com&quot;,</div>
+<div class="line">        &quot;password&quot;: &quot;pass&quot;,</div>
+<div class="line">        &quot;new_password&quot;: &quot;newPass&quot;</div>
+<div class="line">        }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2>Receive Response:</h2>
+<h3>on Success:</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;Response&quot;: 12,</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">        &quot;status&quot;: 1,</div>
+<div class="line">        &quot;message&quot;: &quot;Password updated successfully&quot;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3>on Failure:</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;Response&quot;: 12,</div>
+<div class="line">    &quot;Data&quot;: {</div>
+<div class="line">        &quot;status&quot;: 0,</div>
+<div class="line">        &quot;message&quot;: &quot;Invalid password&quot;</div>
+<div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
