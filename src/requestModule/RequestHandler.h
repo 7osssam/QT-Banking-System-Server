@@ -13,28 +13,10 @@
 
 #include <QMutexLocker>
 
-// Access the data array
-//QJsonArray dataArray = jsonObj["Data"].toArray();
-
-//for (const auto& item: dataArray)
-//{
-//	qDebug() << "item: " << item;
-//	QJsonObject obj = item.toObject();
-//	qDebug() << "obj: " << obj;
-//	if (obj.contains("email"))
-//	{
-//		email = obj.value("email").toString();
-//	}
-//	if (obj.contains("password"))
-//	{
-//		password = obj.value("password").toString();
-//	}
-//}
-
 class RequestHandler
 {
 private:
-	DB::DatabaseManager* dbManager;
+	DB::DatabaseManager* dbManager = nullptr;
 
 	bool isDBConnectionValid()
 	{
@@ -88,10 +70,11 @@ private:
 	}
 
 public:
-	RequestHandler(/* args */)
+	RequestHandler() : dbManager(DB::DatabaseManager::createInstance())
 	{
-		dbManager = DB::DatabaseManager::createInstance();
+		// doe some random sql query to check if db is connected
 	}
+
 	~RequestHandler()
 	{
 	}
@@ -136,17 +119,17 @@ public:
 			}
 
 			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
+			int			 user_id = result.data(0).value("id").toInt();
 
 			if (result.isEmpty())
 			{
 				return CreateErrorResponse(response, data, "email not found");
 			}
 
-			result = dbManager->select("*")->table("users")->where("password =", password)->exec();
-
-			if (result.isEmpty())
+			result = dbManager->select("password")->table("users")->where("id =", user_id)->exec();
+			if (result.data(0).value("password").toString() != password)
 			{
-				return CreateErrorResponse(response, data, "password not found");
+				return CreateErrorResponse(response, data, "Invalid password");
 			}
 
 			QJsonObject obj = result.data(0);
@@ -303,10 +286,10 @@ public:
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
 
-		int accountNumber;
-
 		QJsonObject response;
 		QJsonObject data;
+		QString		sender_email;
+		QString		sender_role;
 
 		response.insert("Response", 4);
 
@@ -315,9 +298,9 @@ public:
 		{
 			QJsonObject dataObj = jsonObj["Data"].toObject();
 
-			if (dataObj.contains("account_number"))
+			if (dataObj.contains("email"))
 			{
-				accountNumber = dataObj.value("account_number").toInt();
+				sender_email = dataObj.value("email").toString();
 			}
 		}
 		else
@@ -332,42 +315,94 @@ public:
 				return CreateDBConnectionError(response, data);
 			}
 
-			DB::DbResult result =
-				dbManager->select("*")->table("Transactions")->where("account_number =", accountNumber)->exec();
+			// Check if the user is an admin
+			DB::DbResult result = dbManager->select("role")->table("Users")->where("email =", sender_email)->exec();
 
 			if (result.isEmpty())
 			{
-				return CreateErrorResponse(response, data, "No transactions found");
+				return CreateErrorResponse(response, data, "you are not registered user!");
 			}
 
-			QJsonArray transactionList;
-			for (int i = 0; i < result.size(); ++i)
+			QString role = result.data(0).value("role").toString();
+
+			if (role == "user")
 			{
-				QJsonObject transactionObj;
-				QJsonObject obj = result.data(i);
+				// Get the account number for the user
+				result = dbManager->select("A.account_number")
+							 ->table("Users U")
+							 ->join("JOIN Accounts A ON U.id = A.user_id")
+							 ->where("U.email =", sender_email)
+							 ->exec();
 
-				transactionObj.insert("to_account_number", obj.value("to_account_number").toInt());
-				transactionObj.insert("transaction_amount", obj.value("amount").toDouble());
-				transactionObj.insert("created_at", obj.value("created_at").toString());
-
-				if (accountNumber == obj.value("from_account_number").toInt())
+				if (result.isEmpty())
 				{
-					transactionObj.insert("transaction_type", "-"); // Withdrawal
-				}
-				else
-				{
-					transactionObj.insert("transaction_type", "+"); // Deposit
+					return CreateErrorResponse(response, data, "No account found");
 				}
 
-				transactionList.append(transactionObj);
+				int accountNumber = result.data(0).value("account_number").toInt();
+
+				result = dbManager->select("*")
+							 ->table("Transactions")
+							 ->where("from_account_number =", accountNumber)
+							 ->whereOr("to_account_number =" + QString::number(accountNumber))
+							 ->exec();
+
+				if (result.isEmpty())
+				{
+					return CreateErrorResponse(response, data, "No transactions found");
+				}
+
+				QJsonArray transactionList;
+				for (int i = 0; i < result.size(); ++i)
+				{
+					QJsonObject transactionObj;
+					QJsonObject obj = result.data(i);
+
+					transactionObj.insert("from_account_number", obj.value("from_account_number").toInt());
+					transactionObj.insert("to_account_number", obj.value("to_account_number").toInt());
+					transactionObj.insert("amount", obj.value("amount").toDouble());
+					transactionObj.insert("created_at", obj.value("created_at").toString());
+
+					transactionList.append(transactionObj);
+				}
+
+				data.insert("status", int(true));
+				data.insert("message",
+							"Transaction history retrieved for account number " + QString::number(accountNumber));
+				data.insert("List", transactionList);
+
+				response.insert("Data", data);
+			}
+			else if (role == "admin")
+			{
+				result = dbManager->select("*")->table("Transactions")->exec();
+
+				if (result.isEmpty())
+				{
+					return CreateErrorResponse(response, data, "No transactions found");
+				}
+
+				QJsonArray transactionList;
+				for (int i = 0; i < result.size(); ++i)
+				{
+					QJsonObject transactionObj;
+					QJsonObject obj = result.data(i);
+
+					transactionObj.insert("from_account_number", obj.value("from_account_number").toInt());
+					transactionObj.insert("to_account_number", obj.value("to_account_number").toInt());
+					transactionObj.insert("amount", obj.value("amount").toDouble());
+					transactionObj.insert("created_at", obj.value("created_at").toString());
+
+					transactionList.append(transactionObj);
+				}
+
+				data.insert("status", int(true));
+				data.insert("message", "Transaction history retrieved for all users");
+				data.insert("List", transactionList);
+
+				response.insert("Data", data);
 			}
 
-			data.insert("status", int(true));
-			data.insert("message", "Transaction history retrieved");
-			data.insert("account_number", accountNumber);
-			data.insert("List", transactionList);
-
-			response.insert("Data", data);
 		} while (false);
 
 		// Convert response to JSON
@@ -384,9 +419,10 @@ public:
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
 
-		int	   from_account_number{};
-		int	   to_account_number{};
-		double amount{};
+		int		from_account_number{};
+		int		to_account_number{};
+		QString to_email{};
+		double	amount{};
 
 		QJsonObject response;
 		QJsonObject data;
@@ -410,6 +446,10 @@ public:
 			{
 				amount = dataObj.value("transaction_amount").toDouble();
 			}
+			if (dataObj.contains("to_email"))
+			{
+				to_email = dataObj.value("to_email").toString();
+			}
 		}
 		else
 		{
@@ -423,12 +463,29 @@ public:
 				return CreateDBConnectionError(response, data);
 			}
 
+			if (!to_email.isEmpty())
+			{
+				// check if email is valid and get the account number associated with it
+				DB::DbResult result = dbManager->select("account_number")
+										  ->table("Users U")
+										  ->join("JOIN Accounts A ON U.id = A.user_id")
+										  ->where("U.email =", to_email)
+										  ->exec();
+
+				if (result.isEmpty())
+				{
+					return CreateErrorResponse(response, data, "This email is not associated with any account");
+				}
+
+				to_account_number = result.data(0).value("account_number").toInt();
+			}
+
 			DB::DbResult fromAccountResult =
 				dbManager->select("balance")->table("Accounts")->where("account_number =", from_account_number)->exec();
 
 			if (fromAccountResult.isEmpty())
 			{
-				return CreateErrorResponse(response, data, "Invalid from account number");
+				return CreateErrorResponse(response, data, "You don't have an account");
 			}
 
 			DB::DbResult toAccountResult =
@@ -1003,6 +1060,282 @@ public:
 
 		// Send response
 		qDebug().noquote() << "<-- UpdateUser::Response :\n" << QJsonDocument(response).toJson(QJsonDocument::Indented);
+
+		return response;
+	}
+
+	QJsonObject handleUserInit(const QJsonObject& jsonObj, QMutex& m)
+	{
+		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
+
+		QString email;
+		QString password;
+
+		QJsonObject response;
+		QJsonObject data;
+
+		response.insert("Response", 11);
+
+		// Extract the data array
+		if (jsonObj.contains("Data"))
+		{
+			QJsonObject dataObj = jsonObj["Data"].toObject();
+
+			if (dataObj.contains("email"))
+			{
+				email = dataObj.value("email").toString();
+			}
+
+			if (dataObj.contains("password"))
+			{
+				password = dataObj.value("password").toString();
+			}
+		}
+		else
+		{
+			qCritical() << "Data not found";
+		}
+
+		do
+		{
+			if (!isDBConnectionValid())
+			{
+				return CreateDBConnectionError(response, data);
+			}
+
+			// Validate user credentials
+			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
+			int			 user_id = result.data(0).value("id").toInt();
+
+			if (result.isEmpty())
+			{
+				return CreateErrorResponse(response, data, "email not found");
+			}
+
+			result = dbManager->select("password")->table("users")->where("id =", user_id)->exec();
+			if (result.data(0).value("password").toString() != password)
+			{
+				return CreateErrorResponse(response, data, "Invalid password");
+			}
+
+			QJsonObject userObj = result.data(0);
+			QString		role = userObj.value("role").toString();
+
+			data.insert("status", int(true));
+			data.insert("first_name", userObj.value("first_name").toString());
+			data.insert("role", role);
+			data.insert("email", email);
+
+			if (role == "user")
+			{
+				// Retrieve account number and current balance for the user
+				DB::DbResult accountResult = dbManager->select("account_number, balance")
+												 ->table("accounts")
+												 ->where("user_id =", userObj.value("id").toInt())
+												 ->exec();
+
+				QJsonObject accountObj = accountResult.data(0);
+
+				int	   accountNumber = accountObj.value("account_number").toInt();
+				double currentBalance = accountObj.value("balance").toDouble();
+
+				data.insert("account_number", accountNumber);
+				data.insert("current_balance", currentBalance);
+			}
+			//else if (role == "admin")
+			//{
+
+			//}
+
+			response.insert("Data", data);
+		} while (false);
+
+		// Convert response to JSON
+		QJsonDocument responseDoc(response);
+		QByteArray	  responseData = responseDoc.toJson();
+
+		// Send response
+		qDebug().noquote() << "<-- InitRequest::Response :\n" << responseDoc.toJson(QJsonDocument::Indented);
+
+		return response;
+	}
+
+	QJsonObject handleUpdateEmail(const QJsonObject& jsonObj, QMutex& m)
+	{
+		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
+
+		QString email;
+		QString password;
+		QString new_email;
+
+		QJsonObject response;
+
+		QJsonObject data;
+
+		response.insert("Response", 12);
+
+		// Extract the data array
+		if (jsonObj.contains("Data"))
+		{
+			QJsonObject dataObj = jsonObj["Data"].toObject();
+
+			if (dataObj.contains("email"))
+			{
+				email = dataObj.value("email").toString();
+			}
+
+			if (dataObj.contains("password"))
+			{
+				password = dataObj.value("password").toString();
+			}
+
+			if (dataObj.contains("new_email"))
+			{
+				new_email = dataObj.value("new_email").toString();
+			}
+		}
+		else
+		{
+			qCritical() << "Data not found";
+		}
+
+		do
+		{
+			if (!isDBConnectionValid())
+			{
+				return CreateDBConnectionError(response, data);
+			}
+
+			// Validate user credentials
+			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
+			int			 user_id = result.data(0).value("id").toInt();
+
+			if (result.isEmpty())
+			{
+				return CreateErrorResponse(response, data, "email not found");
+			}
+
+			// change the password of that specific user
+			result = dbManager->select("password")->table("users")->where("id =", user_id)->exec();
+			if (result.data(0).value("password").toString() != password)
+			{
+				return CreateErrorResponse(response, data, "Invalid password");
+			}
+
+			// Check if the new email is already associated with another account
+			result = dbManager->select("*")->table("users")->where("email =", new_email)->exec();
+
+			if (!result.isEmpty())
+			{
+				return CreateErrorResponse(response, data, "Email already exists");
+			}
+
+			// Update the email
+			bool success = dbManager->where("email = ", email)->update("users", {{"email", new_email}});
+
+			if (!success)
+			{
+				return CreateErrorResponse(response, data, "Failed to update email");
+			}
+
+			data.insert("status", int(true));
+			data.insert("message", "Email updated successfully");
+
+			response.insert("Data", data);
+
+		} while (false);
+
+		// Convert response to JSON
+		QJsonDocument responseDoc(response);
+		QByteArray	  responseData = responseDoc.toJson();
+
+		// Send response
+		qDebug().noquote() << "<-- UpdateEmail::Response :\n" << responseDoc.toJson(QJsonDocument::Indented);
+
+		return response;
+	}
+
+	QJsonObject handleUpdatePassword(const QJsonObject& jsonObj, QMutex& m)
+	{
+		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
+
+		QString email;
+		QString password;
+		QString new_password;
+
+		QJsonObject response;
+		QJsonObject data;
+
+		response.insert("Response", 13);
+
+		// Extract the data array
+		if (jsonObj.contains("Data"))
+		{
+			QJsonObject dataObj = jsonObj["Data"].toObject();
+
+			if (dataObj.contains("email"))
+			{
+				email = dataObj.value("email").toString();
+			}
+
+			if (dataObj.contains("password"))
+			{
+				password = dataObj.value("password").toString();
+			}
+
+			if (dataObj.contains("new_password"))
+			{
+				new_password = dataObj.value("new_password").toString();
+			}
+		}
+		else
+		{
+			qCritical() << "Data not found";
+		}
+
+		do
+		{
+			if (!isDBConnectionValid())
+			{
+				return CreateDBConnectionError(response, data);
+			}
+
+			// Validate user credentials
+			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
+			int			 user_id = result.data(0).value("id").toInt();
+
+			if (result.isEmpty())
+			{
+				return CreateErrorResponse(response, data, "email not found");
+			}
+
+			result = dbManager->select("password")->table("users")->where("id =", user_id)->exec();
+			if (result.data(0).value("password").toString() != password)
+			{
+				return CreateErrorResponse(response, data, "Invalid password");
+			}
+
+			// Update the password
+			bool success = dbManager->where("email = ", email)->update("users", {{"password", new_password}});
+
+			if (!success)
+			{
+				return CreateErrorResponse(response, data, "Failed to update password");
+			}
+
+			data.insert("status", int(true));
+			data.insert("message", "Password updated successfully");
+
+			response.insert("Data", data);
+
+		} while (false);
+
+		// Convert response to JSON
+		QJsonDocument responseDoc(response);
+		QByteArray	  responseData = responseDoc.toJson();
+
+		// Send response
+		qDebug().noquote() << "<-- UpdatePassword::Response :\n" << responseDoc.toJson(QJsonDocument::Indented);
 
 		return response;
 	}
