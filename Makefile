@@ -38,7 +38,7 @@ clean-cache-reconfigure:
 	@cmake -S . -B $(BUILD_DIR) -DCMAKE_BUILD_TYPE=Debug -G "Ninja"
 
 # Build the project
-build: 
+build:
 	@echo "Building the project..."
 	@cd $(BUILD_DIR) && cmake .. && cmake --build . --config Debug -j 4
 
@@ -63,17 +63,15 @@ pdf:
 doc: html pdf
 	@echo "All Documentation generated successfully!"
 
-# Run tests
 test:
 	@echo "Running tests..."
-	@cd $(BUILD_DIR) && ctest --output-on-failure
-
+	@cd $(BUILD_DIR) && cmake .. -DENABLE_TESTS=ON && cmake --build . && ctest --output-on-failure
 
 diagrams: build
 
 ifeq ($(OS), Windows_NT)
 	@echo "Generating diagrams..."
-	mkdir -p docs/diagrams/plantuml 
+	mkdir -p docs/diagrams/plantuml
 	mkdir -p docs/diagrams/mermaid
 	clang-uml -g plantuml -g json -g mermaid -p
 	@echo "Convert .puml files to svg images"
@@ -85,7 +83,7 @@ ifeq ($(OS), Windows_NT)
 	py util/format_svg.py docs/diagrams/mermaid/*.svg
 else
 	@echo "installing dependencies..."
-	sudo apt-get install -y plantuml npm python3 python3-pip python3-yaml 
+	sudo apt-get install -y plantuml npm python3 python3-pip python3-yaml
 	npm install -g mermaid.cli
 	pip install pyyaml
 	@echo "installing clang-uml..."
@@ -94,7 +92,7 @@ else
 	sudo apt update
 	sudo apt install clang-uml
 	@echo "Generating diagrams..."
-	mkdir -p docs/diagrams/plantuml 
+	mkdir -p docs/diagrams/plantuml
 	mkdir -p docs/diagrams/mermaid
 	clang-uml -g plantuml -g json -g mermaid -p
 	@echo "Convert .puml files to svg images"
