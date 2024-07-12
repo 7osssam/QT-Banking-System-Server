@@ -1107,6 +1107,7 @@ public:
 			// Validate user credentials
 			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
 			int			 user_id = result.data(0).value("id").toInt();
+			QJsonObject	 userObj = result.data(0);
 
 			if (result.isEmpty())
 			{
@@ -1119,8 +1120,7 @@ public:
 				return CreateErrorResponse(response, data, "Invalid password");
 			}
 
-			QJsonObject userObj = result.data(0);
-			QString		role = userObj.value("role").toString();
+			QString role = userObj.value("role").toString();
 
 			data.insert("status", int(true));
 			data.insert("first_name", userObj.value("first_name").toString());
@@ -1143,10 +1143,6 @@ public:
 				data.insert("account_number", accountNumber);
 				data.insert("current_balance", currentBalance);
 			}
-			//else if (role == "admin")
-			//{
-
-			//}
 
 			response.insert("Data", data);
 		} while (false);
