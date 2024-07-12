@@ -97,6 +97,8 @@ var NAVTREEINDEX0 =
 "db_8h_source.html":[3,0,1],
 "dbresult_8h_source.html":[3,0,2],
 "files.html":[3,0],
+"functions.html":[2,3,0],
+"functions_func.html":[2,3,1],
 "hierarchy.html":[2,2],
 "index.html":[0],
 "index.html":[],

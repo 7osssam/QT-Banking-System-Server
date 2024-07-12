@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['requesthandler_6',['RequestHandler',['../classRequestHandler.html',1,'']]],
-  ['requestmanager_7',['RequestManager',['../classRequestManager.html',1,'']]]
+  ['handlecreatenewuser_6',['handleCreateNewUser',['../classRequestHandler.html#a1dbea3a6e108f0351ed974c52279c920',1,'RequestHandler']]]
 ];
