@@ -38,7 +38,7 @@
 
         "first_name": "User",
 
-        "role": "user"
+        "role": "user",
 
         "message": "Login successful"
 

@@ -120,6 +120,7 @@ public:
 
 			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
 			int			 user_id = result.data(0).value("id").toInt();
+			QJsonObject	 obj = result.data(0);
 
 			if (result.isEmpty())
 			{
@@ -131,8 +132,6 @@ public:
 			{
 				return CreateErrorResponse(response, data, "Invalid password");
 			}
-
-			QJsonObject obj = result.data(0);
 
 			data.insert("status", int(true));
 			data.insert("message", "Login successful");
@@ -804,7 +803,10 @@ public:
 			}
 
 			// Get the user id from the last insert operation
-			QVariant lastId = dbManager->lastInsertedId();
+			result = dbManager->select("id")->table("users")->where("email =", new_email)->exec();
+			QVariant lastId = result.data(0).value("id");
+			//QVariant lastId = dbManager->lastInsertedId();
+
 
 			// Create the account for the new user and randomly generate an account number
 			int account_number = rand() % 1000000 + 100000;
