@@ -805,8 +805,7 @@ public:
 			// Get the user id from the last insert operation
 			result = dbManager->select("id")->table("users")->where("email =", new_email)->exec();
 			QVariant lastId = result.data(0).value("id");
-			//QVariant lastId = dbManager->lastInsertedId();
-
+			//! or using QVariant lastId = dbManager->lastInsertedId();
 
 			// Create the account for the new user and randomly generate an account number
 			int account_number = rand() % 1000000 + 100000;
@@ -876,7 +875,7 @@ public:
 			}
 
 			// Check if the user is an admin
-			DB::DbResult result = dbManager->select("role")->table("users")->where("email =", admin_email)->exec();
+			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", admin_email)->exec();
 
 			if (result.isEmpty())
 			{
