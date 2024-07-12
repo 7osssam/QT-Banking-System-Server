@@ -227,6 +227,21 @@ or
 
 ## Send Request:
 
+## As User:
+```json
+
+{
+
+    "Request": 4,
+    "Data": {
+		"email": "email@test.com"
+    }
+
+}
+
+```
+
+## As Admin:
 ```json
 
 {
@@ -234,9 +249,7 @@ or
     "Request": 4,
 
     "Data": {
-
-        "account_number": 123456789
-
+		"email": "admin@test.com"
     }
 
 }
@@ -244,6 +257,8 @@ or
 ```
 
 ## Receive Response:
+
+## As User:
 
 ```json
 
@@ -253,50 +268,70 @@ or
 
     "Data": {
 		 "status": 1,
-        "account_number": 123456789,
-
+		"message": "Transaction history retrieved for account number 123456789",
         "List":
-
-            [
-
+            [  // User will get transactions to or from his account only
                 {
-
+					"from_account_number": 123456789,
                     "to_account_number": 987654321,
-
                     "transaction_amount": 100.0,
-
-					"transaction_type": "+", // "+" for deposit
-
                     "created_at": "2021-01-01"
-
                 },
-
                 {
-
-                    "to_account_number": 987612321,
-
+					"from_account_number": 987654321,
+                    "to_account_number": 123456789,
                     "transaction_amount": 130.0,
-
-					"transaction_type": "Withdrawal", // "-" for withdrawal
-
                     "created_at": "2021-01-03"
-
                 }
-
             ]
-
         }
-
-    }
-
-}
+ }
 
 ```
+
+## As Admin:
+
+```json
+
+{
+
+    "Request": 4,
+
+    "Data": {
+		 "status": 1,
+		"message": "Transaction history retrieved for all users",
+         "List":
+            [  // Admin will get all transactions in the database
+                {
+					"from_account_number": 123456789,
+                    "to_account_number": 987654321,
+                    "transaction_amount": 100.0,
+                    "created_at": "2021-01-01"
+                },
+                {
+					"from_account_number": 987654321,
+                    "to_account_number": 123456789,
+                    "transaction_amount": 130.0,
+                    "created_at": "2021-01-03"
+                },
+                {
+					"from_account_number": 4343656567,
+                    "to_account_number": 123232324,
+                    "transaction_amount": 1435.0,
+                    "created_at": "2021-01-03"
+                }
+            ]
+        }
+ }
+
+```
+
 
 # 5. Make Transaction
 
 ## Send Request:
 
+### Using email:
 ```json
 
 {
@@ -304,15 +339,28 @@ or
     "Request": 5,
 
     "Data": {
-
-        "from_account_number": 123456789,
-
-        "to_account_number": 1222255555,
-
+		"from_account_number": 123456789,
+        "to_account_number": -1,
+		"to_email": "user@mail.com",
         "transaction_amount": 100.0
 
     }
 
+}
+
+```
+### Using account number:
+
+```json
+
+{
+    "Request": 5,
+    "Data": {
+		"from_account_number": 123456789,
+        "to_account_number": 1222255555,
+		"to_email": "",
+        "transaction_amount": 100.0
+    }
 }
 
 ```
@@ -932,6 +980,202 @@ or
 
     }
 
+}
+
+```
+
+
+# Special Requests
+# 11. Init Rquest
+```json
+
+{
+
+    "Request": 11,
+    "Data":
+        {
+        "email": "user@example.com",
+        "password": "pass"
+        }
+}
+
+```
+
+## Receive Response:
+
+### on Success:
+
+### As user
+
+```json
+{
+    "Request": 11,
+    "Data": {
+		"status": 1,
+		"first_name": "ahmed",
+		"role": "user",
+        "account_number": 123456789,
+        "current_balance": 500.0,
+        "List": // List of history transactions
+            [
+                {
+                    "to_account_number": 987654321,
+                    "transaction_amount": 100.0,
+					"transaction_type": "+", // "+" for deposit
+                    "created_at": "2021-01-01"
+                },
+                {
+                    "to_account_number": 987612321,
+                    "transaction_amount": 130.0,
+					"transaction_type": "Withdrawal", // "-" for withdrawal
+                    "created_at": "2021-01-03"
+                }
+            ]
+        }
+}
+
+```
+
+### As admin
+
+```json
+{
+    "Request": 11,
+    "Data": {
+		"status": 1,
+		"first_name": "ahmed",
+		"role": "admin",
+        "List": // List of database users
+          [
+           {
+                "account_number": 123456789, // NULL if admin
+                "first_name": "Admin",
+                "last_name": "User",
+                "email": "email@mail.com",
+                "role": "user",
+                "balance": 500.0
+            },
+            {
+                "account_number": NULL, // NULL if admin
+                "first_name": "User",
+                "last_name": "User",
+                "email": "admin@mail.com",
+                "role": "admin",
+                "balance": 500.0
+            }
+           ]
+      }
+}
+
+```
+
+# 12. Update email
+## Send Request:
+
+```json
+
+{
+
+    "Request": 12,
+    "Data":
+        {
+        "email": "user@example.com",
+        "password": "pass",
+        "new_email": "newmail@example.com"
+        }
+}
+
+```
+
+## Receive Response:
+
+### on Success:
+
+```json
+
+{
+    "Response": 12,
+    "Data": {
+        "status": 1,
+        "message": "Email updated successfully"
+    }
+}
+
+```
+
+### on Failure:
+
+```json
+
+{
+    "Response": 12,
+    "Data": {
+        "status": 0,
+        "message": "Email already exists"
+    }
+}
+
+```
+
+or
+
+```json
+
+{
+    "Response": 12,
+    "Data": {
+        "status": 0,
+        "message": "Invalid password"
+    }
+}
+
+```
+
+
+# 12. Update Password
+## Send Request:
+
+```json
+
+{
+
+    "Request": 13,
+    "Data":
+        {
+        "email": "user@example.com",
+        "password": "pass",
+        "new_password": "newPass"
+        }
+}
+
+```
+
+## Receive Response:
+
+### on Success:
+
+```json
+
+{
+    "Response": 12,
+    "Data": {
+        "status": 1,
+        "message": "Password updated successfully"
+    }
+}
+
+```
+
+### on Failure:
+
+```json
+
+{
+    "Response": 12,
+    "Data": {
+        "status": 0,
+        "message": "Invalid password"
+    }
 }
 
 ```
