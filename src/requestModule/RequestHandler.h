@@ -992,29 +992,29 @@ public:
 
 			// Check if the user is an admin
 			DB::DbResult result = dbManager->select("role")->table("users")->where("email =", email)->exec();
+			QJsonObject	 obj = result.data(0);
+			QString		 sneder_role = obj.value("role").toString();
 
 			if (result.isEmpty())
 			{
 				return CreateErrorResponse(response, data, "you are not registered user!");
 			}
 
-			QJsonObject obj = result.data(0);
-
-			if (obj.value("role").toString() != "admin")
+			if (sneder_role != "admin")
 			{
 				return CreateErrorResponse(response, data, "Unauthorized, Cannot update user");
 			}
 
 			// Check if the account number is valid
 			result = dbManager->select("*")->table("accounts")->where("account_number =", account_number)->exec();
+			// Get the user id from the account number
+			int user_id = result.data(0).value("user_id").toInt();
 
 			if (result.isEmpty())
 			{
 				return CreateErrorResponse(response, data, "Account number does not exist");
 			}
 
-			// Get the user id from the account number
-			int user_id = result.data(0).value("user_id").toInt();
 
 			// check that new email is not associated with another account or user unless it is the current user
 			result = dbManager->select("*")->table("users")->where("email =", new_email)->exec();
@@ -1035,6 +1035,21 @@ public:
 			qDebug() << "new_role: " << new_role;
 			qDebug() << "new_first_name: " << new_first_name;
 			qDebug() << "new_last_name: " << new_last_name;
+
+			// check for the role of the user
+			result = dbManager->select("role")->table("users")->where("id =", user_id)->exec();
+			QString current_role = result.data(0).value("role").toString();
+
+			if (current_role == "user" && new_role == "admin")
+			{
+				// delete the account associated bank account
+				bool success = dbManager->where("account_number = ", account_number)->del("accounts");
+
+				if (!success)
+				{
+					return CreateErrorResponse(response, data, "Failed to delete account");
+				}
+			}
 
 			// Update the user details
 			bool success = dbManager->where("id = ", user_id)
