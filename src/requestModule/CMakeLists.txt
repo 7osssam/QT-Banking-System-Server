@@ -17,6 +17,15 @@ file(GLOB LIB_SOURCES
   "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
 
+  # Collect files of the Requests folder without having to explicitly list each header and source file
+file(GLOB LIB_HEADERS
+  "${CMAKE_CURRENT_SOURCE_DIR}/Requests/*.h"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Requests/*.hpp")
+
+file(GLOB LIB_SOURCES
+  "${CMAKE_CURRENT_SOURCE_DIR}/Requests/*.cpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Requests/*.cc")
+
 # Create named folders for the sources within the project
 source_group("header" FILES ${LIB_HEADERS})
 source_group("src" FILES ${LIB_SOURCES})
@@ -26,10 +35,10 @@ add_library(${LIBNAME} STATIC ${LIB_HEADERS} ${LIB_SOURCES}) # for dynamic libra
 
 target_include_directories(${LIBNAME} PUBLIC
 						   ${CMAKE_CURRENT_SOURCE_DIR}
+						   ${CMAKE_CURRENT_SOURCE_DIR}/Requests
 						   ${CMAKE_SOURCE_DIR}/src/dbModule/
-
 						   )
-############# etc.... add any other include directories here 
+############# etc.... add any other include directories here
 
 target_link_libraries(${LIBNAME} PRIVATE ${QT_LIBRARIES} dbModule) # add any other libraries here
 ############# etc.... add any other libraries here
@@ -47,8 +56,8 @@ install(TARGETS ${LIBNAME}
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
         RUNTIME DESTINATION bin )
-		
-# Export the target so other modules can use it 
+
+# Export the target so other modules can use it
 # export(TARGETS ${LIBNAME} FILE ${LIBNAME}Targets.cmake)
 
 message(STATUS "[${ROOT}/${LIBNAME}] Added library target: ${LIBNAME}")
