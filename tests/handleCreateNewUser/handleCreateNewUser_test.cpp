@@ -10,7 +10,7 @@ TEST_F(handleCreateNewUserTest, onSuccess)
 			"Request": 8,
 			"Data": {
 				"email": "admin@example.com",
-				"newUser": [
+				"newUser":
 					{
 						"first_name": "New",
 						"last_name": "User",
@@ -19,7 +19,6 @@ TEST_F(handleCreateNewUserTest, onSuccess)
 						"role": "user",
 						"initial_balance": 500.0
 					}
-				]
 			}
 		}
 	)";
@@ -72,7 +71,7 @@ TEST_F(handleCreateNewUserTest, onUserAlreadyExists)
 			"Request": 8,
 			"Data": {
 				"email": "admin@example.com",
-				"newUser": [
+				"newUser":
 					{
 						"first_name": "New",
 						"last_name": "User",
@@ -81,7 +80,6 @@ TEST_F(handleCreateNewUserTest, onUserAlreadyExists)
 						"role": "user",
 						"initial_balance": 500.0
 					}
-				]
 			}
 		}
 	)";
@@ -115,7 +113,7 @@ TEST_F(handleCreateNewUserTest, onUserNotAdmin)
 			"Request": 8,
 			"Data": {
 				"email": "user1@example.com",
-				"newUser": [
+				"newUser":
 					{
 						"first_name": "New",
 						"last_name": "User",
@@ -124,7 +122,6 @@ TEST_F(handleCreateNewUserTest, onUserNotAdmin)
 						"role": "user",
 						"initial_balance": 500.0
 					}
-				]
 			}
 		}
 	)";
@@ -158,7 +155,7 @@ TEST_F(handleCreateNewUserTest, onMissingrequiredfields)
 			"Request": 8,
 			"Data": {
 				"email": "admin@example.com",
-				"newUser": [
+				"newUser":
 					{
 						"first_name": "New",
 						"email": "newUser@mail.com",
@@ -166,7 +163,6 @@ TEST_F(handleCreateNewUserTest, onMissingrequiredfields)
 						"role": "user",
 						"initial_balance": 500.0
 					}
-				]
 			}
 		}
 	)";
@@ -200,7 +196,7 @@ TEST_F(handleCreateNewUserTest, onInvalidrole)
 			"Request": 8,
 			"Data": {
 				"email": "admin@example.com",
-				"newUser": [
+				"newUser":
 					{
 						"first_name": "New",
 						"last_name": "User",
@@ -209,7 +205,6 @@ TEST_F(handleCreateNewUserTest, onInvalidrole)
 						"role": "NotUser",
 						"initial_balance": 500.0
 					}
-				]
 			}
 		}
 	)";
@@ -243,7 +238,7 @@ TEST_F(handleCreateNewUserTest, onAdmineCanthaveAccountFail)
 			"Request": 8,
 			"Data": {
 				"email": "admin@example.com",
-				"newUser": [
+				"newUser":
 					{
 						"first_name": "New",
 						"last_name": "User",
@@ -252,7 +247,6 @@ TEST_F(handleCreateNewUserTest, onAdmineCanthaveAccountFail)
 						"role": "admin",
 						"initial_balance": 500.0
 					}
-				]
 			}
 		}
 	)";
@@ -286,7 +280,7 @@ TEST_F(handleCreateNewUserTest, onAdmineCanthaveAccountSuccess)
 			"Request": 8,
 			"Data": {
 				"email": "admin@example.com",
-				"newUser": [
+				"newUser":
 					{
 						"first_name": "New",
 						"last_name": "User",
@@ -295,7 +289,6 @@ TEST_F(handleCreateNewUserTest, onAdmineCanthaveAccountSuccess)
 						"role": "admin",
 						"initial_balance": 0.0
 					}
-				]
 			}
 		}
 	)";
