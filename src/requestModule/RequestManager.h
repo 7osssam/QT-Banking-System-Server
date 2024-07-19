@@ -6,13 +6,50 @@
 #include <QByteArray>
 #include <QJsonParseError>
 #include <QDebug>
-#include "RequestHandler.h"
+//#include "RequestHandler.h"
+
+#include <QMap>
+#include "Requests/Request.h"
+#include "Requests/LoginRequest.h"
+#include "Requests/GetAccountNumberRequest.h"
+#include "Requests/GetBalanceRequest.h"
+#include "Requests/GetTransactionsHistoryRequest.h"
+#include "Requests/MakeTransactionRequest.h"
+#include "Requests/GetDatabaseRequest.h"
+#include "Requests/CreateNewUserRequest.h"
+#include "Requests/DeleteUserRequest.h"
+#include "Requests/UpdateUserRequest.h"
+#include "Requests/UserInitRequest.h"
+#include "Requests/UpdateEmailRequest.h"
+#include "Requests/UpdatePasswordRequest.h"
 
 class RequestManager
 {
 private:
-	QMutex*		   Mutex_;
-	RequestHandler requestHandler_;
+	QMutex*				Mutex_;
+	QMap<int, Request*> requests_;
+
+	QJsonObject handleJsonParseError(const QJsonParseError& parseError)
+	{
+		QJsonObject response;
+		QJsonObject data;
+
+		response.insert("Response", -1);
+
+		data.insert("status", int(false));
+		data.insert("message", "JSON Parse Error: " + parseError.errorString());
+
+		response.insert("Data", data);
+
+		// Convert response to JSON
+		QJsonDocument responseDoc(response);
+		QByteArray	  responseData = responseDoc.toJson();
+
+		// Send response
+		qDebug().noquote() << "<-- JSON Parse Error::Response :\n" << responseDoc.toJson(QJsonDocument::Indented);
+
+		return response;
+	}
 
 public:
 	enum AvailableRequests
@@ -34,9 +71,20 @@ public:
 		JsonParseError = -1
 	};
 
-	RequestManager(QMutex* Mutex)
+	RequestManager(QMutex* Mutex) : Mutex_(Mutex)
 	{
-		this->Mutex_ = Mutex;
+		requests_[Login] = new LoginRequest();
+		requests_[GetAccountnumber] = new GetAccountNumberRequest();
+		requests_[GetBalance] = new GetBalanceRequest();
+		requests_[GetTransactionsHistory] = new GetTransactionsHistoryRequest();
+		requests_[GetDatabase] = new GetDatabaseRequest();
+		requests_[MakeTransaction] = new MakeTransactionRequest();
+		requests_[CreateNewUser] = new CreateNewUserRequest();
+		requests_[DeleteUser] = new DeleteUserRequest();
+		requests_[UpdateUser] = new UpdateUserRequest();
+		requests_[UserInit] = new UserInitRequest();
+		requests_[UpdateEmail] = new UpdateEmailRequest();
+		requests_[UpdatePassword] = new UpdatePasswordRequest();
 	}
 
 	QByteArray makeRequest(QByteArray data)
@@ -51,93 +99,30 @@ public:
 
 		QJsonObject jsonObjRequest = jsonDoc.object();
 
-		if (parseError.error == QJsonParseError::NoError)
+		do
 		{
-			requestNumber = jsonObjRequest.value("Request").toInt();
-		}
-		else
-		{
-			requestNumber = -1;
-			qCritical() << "JSON Parse Error: " << parseError.errorString();
-		}
+			if (parseError.error == QJsonParseError::NoError)
+			{
+				requestNumber = jsonObjRequest.value("Request").toInt();
+			}
+			else
+			{
+				qCritical() << "JSON Parse Error: " << parseError.errorString();
+				jsonObjResponse = handleJsonParseError(parseError);
+				break;
+			}
 
-		switch (requestNumber)
-		{
-			case Login:
+			if (requests_.contains(requestNumber))
 			{
-				jsonObjResponse = requestHandler_.handleLogin(jsonObjRequest, *Mutex_);
+				//Request* request = requests_[requestNumber];
+				jsonObjResponse = requests_[requestNumber]->execute(jsonObjRequest, *Mutex_);
 			}
-			break;
-			case GetAccountnumber:
+			else
 			{
-				jsonObjResponse = requestHandler_.handleGetAccountNumber(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case GetBalance:
-			{
-				jsonObjResponse = requestHandler_.handleGetBalance(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case GetTransactionsHistory:
-			{
-				jsonObjResponse = requestHandler_.handleGetTransactionsHistory(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case MakeTransaction:
-			{
-				jsonObjResponse = requestHandler_.handleMakeTransaction(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case TransferAmount:
-			{
-				// jsonObjResponse = requestHandler_.handleTransferAmount(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case GetDatabase:
-			{
-				jsonObjResponse = requestHandler_.handleGetDatabase(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case CreateNewUser:
-			{
-				jsonObjResponse = requestHandler_.handleCreateNewUser(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case DeleteUser:
-			{
-				jsonObjResponse = requestHandler_.handleDeleteUser(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case UpdateUser:
-			{
-				jsonObjResponse = requestHandler_.handleUpdateUser(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case UserInit:
-			{
-				jsonObjResponse = requestHandler_.handleUserInit(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case UpdateEmail:
-			{
-				jsonObjResponse = requestHandler_.handleUpdateEmail(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case UpdatePassword:
-			{
-				jsonObjResponse = requestHandler_.handleUpdatePassword(jsonObjRequest, *Mutex_);
-			}
-			break;
-			case JsonParseError:
-			{
-				jsonObjResponse = requestHandler_.handleJsonParseError(parseError);
-			}
-			default:
-			{
+				qCritical() << "Request not found";
 				qCritical() << "Invalid request: " << requestNumber;
 			}
-			break;
-		}
+		} while (false);
 
 		QJsonDocument responseDoc(jsonObjResponse);
 		QByteArray	  responseByteArr = responseDoc.toJson();
