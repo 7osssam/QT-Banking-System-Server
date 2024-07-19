@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handlecreatenewuser_6',['handleCreateNewUser',['../classRequestHandler.html#a1dbea3a6e108f0351ed974c52279c920',1,'RequestHandler']]]
+  ['execute_8',['execute',['../classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec',1,'CreateNewUserRequest']]]
 ];

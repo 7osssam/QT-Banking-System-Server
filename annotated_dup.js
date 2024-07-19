@@ -6,7 +6,19 @@ var annotated_dup =
       [ "DbResult", "classDB_1_1DbResult.html", "classDB_1_1DbResult" ]
     ] ],
     [ "Client", "classClient.html", "classClient" ],
-    [ "RequestHandler", "classRequestHandler.html", "classRequestHandler" ],
+    [ "CreateNewUserRequest", "classCreateNewUserRequest.html", "classCreateNewUserRequest" ],
+    [ "DeleteUserRequest", "classDeleteUserRequest.html", "classDeleteUserRequest" ],
+    [ "GetAccountNumberRequest", "classGetAccountNumberRequest.html", "classGetAccountNumberRequest" ],
+    [ "GetBalanceRequest", "classGetBalanceRequest.html", "classGetBalanceRequest" ],
+    [ "GetDatabaseRequest", "classGetDatabaseRequest.html", "classGetDatabaseRequest" ],
+    [ "GetTransactionsHistoryRequest", "classGetTransactionsHistoryRequest.html", "classGetTransactionsHistoryRequest" ],
+    [ "LoginRequest", "classLoginRequest.html", "classLoginRequest" ],
+    [ "MakeTransactionRequest", "classMakeTransactionRequest.html", "classMakeTransactionRequest" ],
+    [ "Request", "classRequest.html", "classRequest" ],
     [ "RequestManager", "classRequestManager.html", "classRequestManager" ],
-    [ "Server", "classServer.html", "classServer" ]
+    [ "Server", "classServer.html", "classServer" ],
+    [ "UpdateEmailRequest", "classUpdateEmailRequest.html", "classUpdateEmailRequest" ],
+    [ "UpdatePasswordRequest", "classUpdatePasswordRequest.html", "classUpdatePasswordRequest" ],
+    [ "UpdateUserRequest", "classUpdateUserRequest.html", "classUpdateUserRequest" ],
+    [ "UserInitRequest", "classUserInitRequest.html", "classUserInitRequest" ]
 ];

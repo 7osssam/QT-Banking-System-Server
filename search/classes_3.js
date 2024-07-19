@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['server_16',['Server',['../classServer.html',1,'']]]
+  ['loginrequest_32',['LoginRequest',['../classLoginRequest.html',1,'']]]
 ];

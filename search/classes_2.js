@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['requesthandler_14',['RequestHandler',['../classRequestHandler.html',1,'']]],
-  ['requestmanager_15',['RequestManager',['../classRequestManager.html',1,'']]]
+  ['getaccountnumberrequest_28',['GetAccountNumberRequest',['../classGetAccountNumberRequest.html',1,'']]],
+  ['getbalancerequest_29',['GetBalanceRequest',['../classGetBalanceRequest.html',1,'']]],
+  ['getdatabaserequest_30',['GetDatabaseRequest',['../classGetDatabaseRequest.html',1,'']]],
+  ['gettransactionshistoryrequest_31',['GetTransactionsHistoryRequest',['../classGetTransactionsHistoryRequest.html',1,'']]]
 ];

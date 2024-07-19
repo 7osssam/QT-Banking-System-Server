@@ -12,6 +12,19 @@ var hierarchy =
     [ "QTcpServer", null, [
       [ "Server", "classServer.html", null ]
     ] ],
-    [ "RequestHandler", "classRequestHandler.html", null ],
+    [ "Request", "classRequest.html", [
+      [ "CreateNewUserRequest", "classCreateNewUserRequest.html", null ],
+      [ "DeleteUserRequest", "classDeleteUserRequest.html", null ],
+      [ "GetAccountNumberRequest", "classGetAccountNumberRequest.html", null ],
+      [ "GetBalanceRequest", "classGetBalanceRequest.html", null ],
+      [ "GetDatabaseRequest", "classGetDatabaseRequest.html", null ],
+      [ "GetTransactionsHistoryRequest", "classGetTransactionsHistoryRequest.html", null ],
+      [ "LoginRequest", "classLoginRequest.html", null ],
+      [ "MakeTransactionRequest", "classMakeTransactionRequest.html", null ],
+      [ "UpdateEmailRequest", "classUpdateEmailRequest.html", null ],
+      [ "UpdatePasswordRequest", "classUpdatePasswordRequest.html", null ],
+      [ "UpdateUserRequest", "classUpdateUserRequest.html", null ],
+      [ "UserInitRequest", "classUserInitRequest.html", null ]
+    ] ],
     [ "RequestManager", "classRequestManager.html", null ]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['client_10',['Client',['../classClient.html',1,'']]]
+  ['client_22',['Client',['../classClient.html',1,'']]],
+  ['createnewuserrequest_23',['CreateNewUserRequest',['../classCreateNewUserRequest.html',1,'']]]
 ];

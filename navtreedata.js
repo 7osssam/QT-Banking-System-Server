@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "BankingSystem_Server", "index.html", [
     [ "C++ Project Template with CMake", "index.html", null ],
-    [ "1. Login Request", "md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_src_requestModule_Requests.html", null ],
+    [ "1. Login Request", "md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_src_requestModule_Requests_Requests.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -44,7 +44,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"RequestHandler_8h_source.html"
+"CreateNewUserRequest_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
