@@ -8,7 +8,7 @@ TEST_F(handleDeleteUserTest, onSuccess)
 			"Request": 9,
 			"Data": {
 				"email": "admin@example.com",
-				"account_number": "111"
+				"account_number": 111
 				}
 		}
 	)";
@@ -51,7 +51,7 @@ TEST_F(handleDeleteUserTest, onInvalidAccountNumber)
 			"Request": 9,
 			"Data": {
 				"email": "admin@example.com",
-				"account_number": "999"
+				"account_number": 999
 				}
 		}
 	)";
@@ -85,7 +85,7 @@ TEST_F(handleDeleteUserTest, onUserTryingToDeleteAnotherUser)
 			"Request": 9,
 			"Data": {
 				"email": "user1@example.com",
-				"account_number": "222"
+				"account_number": 222
 				}
 		}
 	)";
