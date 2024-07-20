@@ -165,10 +165,10 @@ public:
      */
 	~RequestManager()
 	{
-		//for (auto request: requests_)
-		//{
-		//	delete request;
-		//}
+		for (auto request: requests_)
+		{
+			delete request;
+		}
 	}
 };
 
