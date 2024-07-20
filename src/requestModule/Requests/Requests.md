@@ -1,6 +1,10 @@
-# 1. Login Request
+# Requests Documentation for Bank System
+This document describes the requests that can be sent to the server and the responses that can be received from the server.
 
-## Send Request:
+
+## 1. Login Request
+
+### Send Request:
 
 ```json
 
@@ -22,9 +26,9 @@
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### On Success:
+#### On Success:
 
 ```json
 
@@ -48,7 +52,7 @@
 
 ```
 
-### On Failure:
+#### On Failure:
 
 ```json
 
@@ -68,7 +72,7 @@
 
 ```
 
-#### Or
+ Or
 
 ```json
 
@@ -88,9 +92,9 @@
 
 ```
 
-# 2. Get Account Number (for Logged-in user)
+## 2. Get Account Number (for Logged-in user)
 
-## Send Request:
+### Send Request:
 
 ```json
 
@@ -108,9 +112,9 @@
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### On Success:
+#### On Success:
 
 ```json
 
@@ -128,7 +132,7 @@
 
 ```
 
-### On Failure:
+#### On Failure:
 
 ```json
 
@@ -160,9 +164,10 @@ or
 }
 
 ```
-# 3. Get Balance
 
-## Send Request:
+## 3. Get Balance
+
+### Send Request:
 
 ```json
 
@@ -180,9 +185,9 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### On Success:
+#### On Success:
 
 ```json
 
@@ -201,7 +206,7 @@ or
 
 ```
 
-### On Failure: (will not Usually happen)
+#### On Failure: (will not Usually happen)
 
 ```json
 
@@ -223,11 +228,11 @@ or
 
 
 
-# 4. Get Transactions History
+## 4. Get Transactions History
 
-## Send Request:
+### Send Request:
 
-## As User:
+### As User:
 ```json
 
 {
@@ -241,7 +246,7 @@ or
 
 ```
 
-## As Admin:
+### As Admin:
 ```json
 
 {
@@ -256,9 +261,9 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-## As User:
+### As User:
 
 ```json
 
@@ -289,7 +294,7 @@ or
 
 ```
 
-## As Admin:
+### As Admin:
 
 ```json
 
@@ -327,11 +332,11 @@ or
 ```
 
 
-# 5. Make Transaction
+## 5. Make Transaction
 
-## Send Request:
+### Send Request:
 
-### Using email:
+#### Using email:
 ```json
 
 {
@@ -349,7 +354,7 @@ or
 }
 
 ```
-### Using account number:
+#### Using account number:
 
 ```json
 
@@ -365,9 +370,9 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### On Success:
+#### On Success:
 
 ```json
 
@@ -387,7 +392,7 @@ or
 
 ```
 
-### On Failure:
+#### On Failure:
 
 ```json
 
@@ -407,9 +412,9 @@ or
 
 ```
 
-# 6. Transfer Amount
+## 6. Transfer Amount
 
-## Send Request:
+### Send Request:
 
 ```json
 
@@ -431,9 +436,9 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### On Success:
+#### On Success:
 
 ```json
 
@@ -453,7 +458,7 @@ or
 
 ```
 
-### On Failure:
+#### On Failure:
 
 ```json
 
@@ -493,9 +498,9 @@ or
 
 ```
 
-# 7. Get Database (for admin)
+## 7. Get Database (for admin)
 
-## Send Request:
+### Send Request:
 
 ```json
 
@@ -513,8 +518,8 @@ or
 
 ```
 
-## Receive Response:
-### On Success:
+### Receive Response:
+#### On Success:
 ```json
 
 {
@@ -566,7 +571,7 @@ or
 
 ```
 
-### On Failure:
+#### On Failure:
 
 ```json
 
@@ -602,9 +607,9 @@ or
 
 
 
-# 8. Create New User (for admin)
+## 8. Create New User (for admin)
 
-## Send Request:
+### Send Request:
 
 ```json
 
@@ -642,9 +647,9 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### On Success:
+#### On Success:
 
 ```json
 
@@ -684,7 +689,7 @@ or
 
 ```
 
-### On Failure:
+#### On Failure:
 
 ```json
 
@@ -786,9 +791,9 @@ or
 
 
 
-# 9. Delete User (for admin)
+## 9. Delete User (for admin)
 
-## Send Request:
+### Send Request:
 
 ```json
 
@@ -808,9 +813,9 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### On Success:
+#### On Success:
 
 ```json
 
@@ -830,7 +835,7 @@ or
 
 ```
 
-### On Failure:
+#### On Failure:
 
 ```json
 
@@ -868,9 +873,9 @@ or
 
 ```
 
-# 10. Update User (for admin)
+## 10. Update User (for admin)
 
-## Send Request:
+### Send Request:
 
 ```json
 
@@ -902,9 +907,9 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### On Success:
+#### On Success:
 
 ```json
 
@@ -924,7 +929,7 @@ or
 
 ```
 
-### On Failure:
+#### On Failure:
 
 ```json
 
@@ -986,7 +991,7 @@ or
 
 
 # Special Requests
-# 11. Init Rquest
+## 11. Init Rquest
 ```json
 
 {
@@ -1001,11 +1006,11 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### on Success:
+#### on Success:
 
-### As user
+##### As User
 
 ```json
 {
@@ -1036,7 +1041,7 @@ or
 
 ```
 
-### As admin
+##### As Admin
 
 ```json
 {
@@ -1069,8 +1074,8 @@ or
 
 ```
 
-# 12. Update email
-## Send Request:
+## 12. Update email
+### Send Request:
 
 ```json
 
@@ -1087,9 +1092,9 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### on Success:
+#### on Success:
 
 ```json
 
@@ -1103,7 +1108,7 @@ or
 
 ```
 
-### on Failure:
+#### on Failure:
 
 ```json
 
@@ -1132,8 +1137,8 @@ or
 ```
 
 
-# 12. Update Password
-## Send Request:
+## 12. Update Password
+### Send Request:
 
 ```json
 
@@ -1150,9 +1155,9 @@ or
 
 ```
 
-## Receive Response:
+### Receive Response:
 
-### on Success:
+#### on Success:
 
 ```json
 
@@ -1166,7 +1171,7 @@ or
 
 ```
 
-### on Failure:
+#### on Failure:
 
 ```json
 
