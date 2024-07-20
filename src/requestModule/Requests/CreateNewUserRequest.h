@@ -4,17 +4,42 @@
 #include "Request.h"
 #include "db.h"
 
+/**
+ * @brief The CreateNewUserRequest class handles the creation of new users.
+ *
+ * This class processes requests to create new users, ensuring that the request
+ * originates from an admin and that all required fields are provided. It also
+ * handles database operations for adding the new user and their account if applicable.
+ */
 class CreateNewUserRequest : public Request
 {
 private:
-	DB::DatabaseManager* dbManager = nullptr;
+    DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
+
+    /**
+     * @brief Constructor for the CreateNewUserRequest class.
+     *
+     * Initializes the DatabaseManager instance for handling database operations.
+     */
 	CreateNewUserRequest() : dbManager(DB::DatabaseManager::createInstance())
 	{
 		// log to database log table
 	}
 
+	/**
+     * @brief Executes the request to create a new user.
+     *
+     * This method processes the JSON request to create a new user. It validates
+     * the input data, checks the database connection, and ensures that the request
+     * is made by an admin. If all validations pass, it creates a new user and their
+     * account in the database.
+     *
+     * @param jsonObj A QJsonObject containing the request data.
+     * @param m A QMutex reference for thread-safe operations.
+     * @return A QJsonObject containing the response data.
+     */
 	QJsonObject execute(const QJsonObject& jsonObj, QMutex& m) override
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -100,9 +125,11 @@ public:
 				return CreateErrorResponse(response, data, "you are not registered user!");
 			}
 
-			QJsonObject obj = result.data(0);
+			//QJsonObject obj = result.first();
+			QJsonObject obj = result.first();
 
-			if (obj.value("role").toString() != "admin")
+			//if (obj.value("role").toString() != "admin")
+			if (result.first().value("role").toString() != "admin")
 			{
 				return CreateErrorResponse(response, data,
 										   "Unauthorized, Cannot create new user. User is not an admin");
@@ -159,7 +186,7 @@ public:
 
 			// Get the user id from the last insert operation
 			result = dbManager->select("id")->table("users")->where("email =", new_email)->exec();
-			QVariant lastId = result.data(0).value("id");
+			QVariant lastId = result.first().value("id");
 			//! or using QVariant lastId = dbManager->lastInsertedId();
 
 			// Create the account for the new user and randomly generate an account number

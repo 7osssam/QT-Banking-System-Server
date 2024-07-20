@@ -4,17 +4,41 @@
 #include "Request.h"
 #include "db.h"
 
+/**
+ * @brief The DeleteUserRequest class handles the deletion of users.
+ *
+ * This class processes requests to delete users, ensuring that the request
+ * originates from an admin and that the account number provided is valid.
+ * It performs database operations to remove the user and their associated account.
+ */
 class DeleteUserRequest : public Request
 {
 private:
-	DB::DatabaseManager* dbManager = nullptr;
+	DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
+	/**
+     * @brief Constructor for the DeleteUserRequest class.
+     *
+     * Initializes the DatabaseManager instance for handling database operations.
+     */
 	DeleteUserRequest() : dbManager(DB::DatabaseManager::createInstance())
 	{
-		// log to database log table
+		// Log to database log table (if needed)
 	}
 
+	/**
+     * @brief Executes the request to delete a user.
+     *
+     * This method processes the JSON request to delete a user. It validates
+     * the input data, checks the database connection, and ensures that the request
+     * is made by an admin. If all validations pass, it deletes the user and their
+     * account from the database.
+     *
+     * @param jsonObj The JSON object containing the request data.
+     * @param m The mutex to lock during the execution.
+     * @return A JSON object containing the response data.
+     */
 	QJsonObject execute(const QJsonObject& jsonObj, QMutex& m) override
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -61,7 +85,7 @@ public:
 				return CreateErrorResponse(response, data, "you are not registered user!");
 			}
 
-			QJsonObject obj = result.data(0);
+			QJsonObject obj = result.first();
 
 			if (obj.value("role").toString() != "admin")
 			{
@@ -77,7 +101,7 @@ public:
 			}
 
 			// Get the user id from the account number
-			int user_id = result.data(0).value("user_id").toInt();
+			int user_id = result.first().value("user_id").toInt();
 
 			bool success = dbManager->where("account_number = ", account_number)->del("accounts");
 

@@ -4,17 +4,38 @@
 #include "Request.h"
 #include "db.h"
 
+/**
+ * @brief The UpdatePasswordRequest class handles password update requests for users.
+ *
+ * This class processes password update requests, validates user credentials,
+ * and updates the password in the database.
+ */
 class UpdatePasswordRequest : public Request
 {
 private:
-	DB::DatabaseManager* dbManager = nullptr;
+    DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
-	UpdatePasswordRequest() : dbManager(DB::DatabaseManager::createInstance())
-	{
-		// log to database log table
-	}
+    /**
+     * @brief Constructor for the UpdatePasswordRequest class.
+     *
+     * Initializes the DatabaseManager instance for handling database operations.
+     */
+    UpdatePasswordRequest() : dbManager(DB::DatabaseManager::createInstance())
+    {
+        // Log to database log table (if needed)
+    }
 
+    /**
+     * @brief Executes the password update request.
+     *
+     * This method processes the JSON request to update the user's password.
+     * It validates user credentials and updates the password in the database.
+     *
+     * @param jsonObj The JSON object containing the request data.
+     * @param m The mutex to lock during the execution.
+     * @return A JSON object containing the response data.
+     */
 	QJsonObject execute(const QJsonObject& jsonObj, QMutex& m) override
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -62,7 +83,7 @@ public:
 
 			// Validate user credentials
 			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
-			int			 user_id = result.data(0).value("id").toInt();
+			int			 user_id = result.first().value("id").toInt();
 
 			if (result.isEmpty())
 			{
@@ -70,7 +91,7 @@ public:
 			}
 
 			result = dbManager->select("password")->table("users")->where("id =", user_id)->exec();
-			if (result.data(0).value("password").toString() != password)
+			if (result.first().value("password").toString() != password)
 			{
 				return CreateErrorResponse(response, data, "Invalid password");
 			}

@@ -4,17 +4,37 @@
 #include "Request.h"
 #include "db.h"
 
+/**
+ * @brief The MakeTransactionRequest class handles transaction requests between accounts.
+ *
+ * This class processes transaction requests, validates account details, and updates account balances.
+ */
 class MakeTransactionRequest : public Request
 {
 private:
-	DB::DatabaseManager* dbManager = nullptr;
+	DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
+	/**
+     * @brief Constructor for the MakeTransactionRequest class.
+     *
+     * Initializes the DatabaseManager instance for handling database operations.
+     */
 	MakeTransactionRequest() : dbManager(DB::DatabaseManager::createInstance())
 	{
-		// log to database log table
+		// Log to database log table (if needed)
 	}
 
+	/**
+     * @brief Executes the transaction request.
+     *
+     * This method processes the JSON request to transfer funds between accounts.
+     * It checks the database for account validity and balance, updates the balances, and logs the transaction.
+     *
+     * @param jsonObj The JSON object containing the request data.
+     * @param m The mutex to lock during the execution.
+     * @return A JSON object containing the response data.
+     */
 	QJsonObject execute(const QJsonObject& jsonObj, QMutex& m) override
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -77,7 +97,7 @@ public:
 					return CreateErrorResponse(response, data, "This email is not associated with any account");
 				}
 
-				to_account_number = result.data(0).value("account_number").toInt();
+				to_account_number = result.first().value("account_number").toInt();
 			}
 
 			DB::DbResult fromAccountResult =
@@ -96,14 +116,14 @@ public:
 				return CreateErrorResponse(response, data, "Invalid to account number");
 			}
 
-			double fromAccountBalance = fromAccountResult.data(0).value("balance").toDouble();
+			double fromAccountBalance = fromAccountResult.first().value("balance").toDouble();
 
 			if (fromAccountBalance < amount)
 			{
 				return CreateErrorResponse(response, data, "Insufficient balance");
 			}
 
-			double toAccountBalance = toAccountResult.data(0).value("balance").toDouble();
+			double toAccountBalance = toAccountResult.first().value("balance").toDouble();
 
 			// Update balances
 			fromAccountBalance -= amount;

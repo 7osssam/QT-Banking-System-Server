@@ -5,18 +5,37 @@
 #include "Request.h"
 #include "db.h"
 
+/**
+ * @brief The LoginRequest class handles user login requests.
+ *
+ * This class processes login requests, validates user credentials, and returns the login status.
+ */
 class LoginRequest : public Request
 {
 private:
-	//RequestHandler* handler_;
-	DB::DatabaseManager* dbManager = nullptr;
+    DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
-	LoginRequest() : dbManager(DB::DatabaseManager::createInstance())
-	{
-		// log to database log table
-	}
+    /**
+     * @brief Constructor for the LoginRequest class.
+     *
+     * Initializes the DatabaseManager instance for handling database operations.
+     */
+    LoginRequest() : dbManager(DB::DatabaseManager::createInstance())
+    {
+        // Log to database log table (if needed)
+    }
 
+    /**
+     * @brief Executes the login request.
+     *
+     * This method processes the JSON request to validate user credentials.
+     * It checks the database for the provided email and password, and returns the login status.
+     *
+     * @param jsonObj The JSON object containing the request data.
+     * @param m The mutex to lock during the execution.
+     * @return A JSON object containing the response data.
+     */
 	QJsonObject execute(const QJsonObject& jsonObj, QMutex& m) override
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -57,8 +76,8 @@ public:
 			}
 
 			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
-			int			 user_id = result.data(0).value("id").toInt();
-			QJsonObject	 obj = result.data(0);
+			int			 user_id = result.first().value("id").toInt();
+			QJsonObject	 obj = result.first();
 
 			if (result.isEmpty())
 			{
@@ -66,7 +85,7 @@ public:
 			}
 
 			result = dbManager->select("password")->table("users")->where("id =", user_id)->exec();
-			if (result.data(0).value("password").toString() != password)
+			if (result.first().value("password").toString() != password)
 			{
 				return CreateErrorResponse(response, data, "Invalid password");
 			}

@@ -4,17 +4,39 @@
 #include "Request.h"
 #include "db.h"
 
+/**
+ * @brief The GetBalanceRequest class handles the retrieval of account balances.
+ *
+ * This class processes requests to retrieve the balance associated with an account number.
+ * It performs database operations to fetch the balance and returns the result.
+ */
 class GetBalanceRequest : public Request
 {
 private:
-	DB::DatabaseManager* dbManager = nullptr;
+	DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
+	/**
+     * @brief Constructor for the GetBalanceRequest class.
+     *
+     * Initializes the DatabaseManager instance for handling database operations.
+     */
 	GetBalanceRequest() : dbManager(DB::DatabaseManager::createInstance())
 	{
-		// log to database log table
+		// Log to database log table (if needed)
 	}
 
+	/**
+     * @brief Executes the request to get the account balance.
+     *
+     * This method processes the JSON request to retrieve the balance associated with
+     * an account number. It validates the input data, checks the database connection,
+     * and fetches the balance from the database.
+     *
+     * @param jsonObj The JSON object containing the request data.
+     * @param m The mutex to lock during the execution.
+     * @return A JSON object containing the response data.
+     */
 	QJsonObject execute(const QJsonObject& jsonObj, QMutex& m) override
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -56,7 +78,7 @@ public:
 				return CreateErrorResponse(response, data, "Account not found");
 			}
 
-			QJsonObject obj = result.data(0);
+			QJsonObject obj = result.first();
 
 			data.insert("status", int(true));
 			data.insert("message", "Balance fetched successfully");

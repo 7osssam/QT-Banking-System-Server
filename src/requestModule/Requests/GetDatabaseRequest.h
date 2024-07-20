@@ -4,17 +4,39 @@
 #include "Request.h"
 #include "db.h"
 
+/**
+ * @brief The GetDatabaseRequest class handles the retrieval of the entire database.
+ *
+ * This class processes requests to retrieve all users and their associated accounts
+ * from the database. It performs database operations and returns the result.
+ */
 class GetDatabaseRequest : public Request
 {
 private:
-	DB::DatabaseManager* dbManager = nullptr;
+    DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
-	GetDatabaseRequest() : dbManager(DB::DatabaseManager::createInstance())
-	{
-		// log to database log table
-	}
+    /**
+     * @brief Constructor for the GetDatabaseRequest class.
+     *
+     * Initializes the DatabaseManager instance for handling database operations.
+     */
+    GetDatabaseRequest() : dbManager(DB::DatabaseManager::createInstance())
+    {
+        // Log to database log table (if needed)
+    }
 
+    /**
+     * @brief Executes the request to get the entire database.
+     *
+     * This method processes the JSON request to retrieve all users and their
+     * associated accounts. It validates the input data, checks the database connection,
+     * and fetches the data from the database.
+     *
+     * @param jsonObj The JSON object containing the request data.
+     * @param m The mutex to lock during the execution.
+     * @return A JSON object containing the response data.
+     */
 	QJsonObject execute(const QJsonObject& jsonObj, QMutex& m) override
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -56,7 +78,7 @@ public:
 				return CreateErrorResponse(response, data, "you are not registered user!");
 			}
 
-			QJsonObject obj = result.data(0);
+			QJsonObject obj = result.first();
 
 			if (obj.value("role").toString() != "admin")
 			{

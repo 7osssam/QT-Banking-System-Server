@@ -4,17 +4,40 @@
 #include "Request.h"
 #include "db.h"
 
+/**
+ * @brief The UpdateUserRequest class handles user update requests.
+ *
+ * This class processes requests to update user details, including first name,
+ * last name, email, and role. It ensures that the requester has the necessary
+ * permissions and that the updated email is not already associated with another user.
+ */
 class UpdateUserRequest : public Request
 {
 private:
-	DB::DatabaseManager* dbManager = nullptr;
+	DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
+	/**
+     * @brief Constructor for the UpdateUserRequest class.
+     *
+     * Initializes the DatabaseManager instance for handling database operations.
+     */
 	UpdateUserRequest() : dbManager(DB::DatabaseManager::createInstance())
 	{
-		// log to database log table
+		// Log to database log table (if needed)
 	}
 
+	/**
+     * @brief Executes the user update request.
+     *
+     * This method processes the JSON request to update user details. It validates
+     * the requester's role, checks if the email is already associated with another
+     * user, and updates the user information in the database.
+     *
+     * @param jsonObj The JSON object containing the request data.
+     * @param m The mutex to lock during the execution.
+     * @return A JSON object containing the response data.
+     */
 	QJsonObject execute(const QJsonObject& jsonObj, QMutex& m) override
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -80,7 +103,7 @@ public:
 
 			// Check if the user is an admin
 			DB::DbResult result = dbManager->select("role")->table("users")->where("email =", email)->exec();
-			QJsonObject	 obj = result.data(0);
+			QJsonObject	 obj = result.first();
 			QString		 sneder_role = obj.value("role").toString();
 
 			if (result.isEmpty())
@@ -96,7 +119,7 @@ public:
 			// Check if the account number is valid
 			result = dbManager->select("*")->table("accounts")->where("account_number =", account_number)->exec();
 			// Get the user id from the account number
-			int user_id = result.data(0).value("user_id").toInt();
+			int user_id = result.first().value("user_id").toInt();
 
 			if (result.isEmpty())
 			{
@@ -106,12 +129,12 @@ public:
 			// check that new email is not associated with another account or user unless it is the current user
 			result = dbManager->select("*")->table("users")->where("email =", new_email)->exec();
 
-			int new_user_id = result.data(0).value("id").toInt();
+			int new_user_id = result.first().value("id").toInt();
 
 			qDebug() << "user_id: " << user_id;
 			qDebug() << "new_user_id: " << new_user_id;
 
-			if (!result.isEmpty() && result.data(0).value("id").toInt() != user_id)
+			if (!result.isEmpty() && result.first().value("id").toInt() != user_id)
 			{
 				return CreateErrorResponse(response, data, "Email is associated with another account");
 			}
@@ -125,7 +148,7 @@ public:
 
 			// check for the role of the user
 			result = dbManager->select("role")->table("users")->where("id =", user_id)->exec();
-			QString current_role = result.data(0).value("role").toString();
+			QString current_role = result.first().value("role").toString();
 
 			if (current_role == "user" && new_role == "admin")
 			{

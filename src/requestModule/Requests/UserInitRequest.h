@@ -4,17 +4,40 @@
 #include "Request.h"
 #include "db.h"
 
+/**
+ * @brief The UserInitRequest class handles user initialization requests for User Widget and Admin Widget
+ *
+ * This class processes requests to initialize user information based on their
+ * credentials. It retrieves user details and account information if applicable,
+ * and prepares a response with the user's role and associated data.
+ */
 class UserInitRequest : public Request
 {
 private:
-	DB::DatabaseManager* dbManager = nullptr;
+    DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
-	UserInitRequest() : dbManager(DB::DatabaseManager::createInstance())
-	{
-		// log to database log table
-	}
+    /**
+     * @brief Constructor for the UserInitRequest class.
+     *
+     * Initializes the DatabaseManager instance for handling database operations.
+     */
+    UserInitRequest() : dbManager(DB::DatabaseManager::createInstance())
+    {
+        // Log to database log table (if needed)
+    }
 
+    /**
+     * @brief Executes the user initialization request.
+     *
+     * This method processes the JSON request to initialize user information by validating
+     * the user's credentials and retrieving their details from the database. If the user
+     * is a regular user, it also retrieves their account number and current balance.
+     *
+     * @param jsonObj The JSON object containing the request data.
+     * @param m The mutex to lock during the execution.
+     * @return A JSON object containing the response data.
+     */
 	QJsonObject execute(const QJsonObject& jsonObj, QMutex& m) override
 	{
 		QMutexLocker locker(&m); // Lock the mutex for the duration of this function
@@ -56,8 +79,8 @@ public:
 
 			// Validate user credentials
 			DB::DbResult result = dbManager->select("*")->table("users")->where("email =", email)->exec();
-			int			 user_id = result.data(0).value("id").toInt();
-			QJsonObject	 userObj = result.data(0);
+			int			 user_id = result.first().value("id").toInt();
+			QJsonObject	 userObj = result.first();
 
 			if (result.isEmpty())
 			{
@@ -65,7 +88,7 @@ public:
 			}
 
 			result = dbManager->select("password")->table("users")->where("id =", user_id)->exec();
-			if (result.data(0).value("password").toString() != password)
+			if (result.first().value("password").toString() != password)
 			{
 				return CreateErrorResponse(response, data, "Invalid password");
 			}
@@ -85,7 +108,7 @@ public:
 												 ->where("user_id =", userObj.value("id").toInt())
 												 ->exec();
 
-				QJsonObject accountObj = accountResult.data(0);
+				QJsonObject accountObj = accountResult.first();
 
 				int	   accountNumber = accountObj.value("account_number").toInt();
 				double currentBalance = accountObj.value("balance").toDouble();
