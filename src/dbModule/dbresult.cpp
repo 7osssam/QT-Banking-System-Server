@@ -1,7 +1,7 @@
 #include "dbresult.h"
 
-#include <QJsonDocument> // Include the necessary header file
-#include <QJsonArray>	 // Include the necessary header file
+#include <QJsonDocument>
+#include <QJsonArray>
 
 using namespace DB;
 
