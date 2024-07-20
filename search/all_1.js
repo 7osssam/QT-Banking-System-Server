@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['availablerequests_1',['AvailableRequests',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310',1,'RequestManager']]]
+  ['c_2b_2b_20project_20template_20with_20cmake_1',['C++ Project Template with CMake',['../index.html',1,'']]],
+  ['createdbconnectionerror_2',['CreateDBConnectionError',['../classRequest.html#ad457f5030e3f983ffdbc7439989eebcb',1,'Request']]],
+  ['createerrorresponse_3',['CreateErrorResponse',['../classRequest.html#a6f5f7c7d240664a2c29dcd54bd9974d6',1,'Request']]],
+  ['createnewuser_4',['CreateNewUser',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a0b2388382a273df5b82ddb6abff8d675',1,'RequestManager']]],
+  ['createnewuserrequest_5',['CreateNewUserRequest',['../classCreateNewUserRequest.html',1,'CreateNewUserRequest'],['../classCreateNewUserRequest.html#ab42553b16908191ee77fc67b3703fce5',1,'CreateNewUserRequest::CreateNewUserRequest()']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['incomingconnection_23',['incomingConnection',['../classServer.html#aa41c63566371fbfe1baf20c1c345096f',1,'Server']]],
-  ['isdbconnectionvalid_24',['isDBConnectionValid',['../classRequest.html#ae580c02633722f323ad8a738e4952ea1',1,'Request']]],
-  ['isempty_25',['isEmpty',['../classDB_1_1DbResult.html#aa69aec34a8771cd30ea590b9e66d68f9',1,'DB::DbResult']]]
+  ['jsonparseerror_25',['JsonParseError',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b',1,'RequestManager']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['1_2e_20login_20request_0',['1. Login Request',['../md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_src_requestModule_Requests_Requests.html',1,'']]]
+  ['availablerequests_0',['AvailableRequests',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310',1,'RequestManager']]]
 ];

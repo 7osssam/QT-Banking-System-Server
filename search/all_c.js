@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['readyread_33',['readyRead',['../classServerHandler.html#a759cbb09760e8ca60cefe596bef59c1e',1,'ServerHandler']]],
-  ['request_34',['Request',['../classRequest.html',1,'']]],
-  ['request_2eh_35',['Request.h',['../Request_8h.html',1,'']]],
-  ['requestmanager_36',['RequestManager',['../classRequestManager.html',1,'RequestManager'],['../classRequestManager.html#adf7bfbf17876e300f0f02aaae671535a',1,'RequestManager::RequestManager()']]],
-  ['run_37',['run',['../classServerHandler.html#a61359b9bb16c92ca9bca3353487db090',1,'ServerHandler']]]
+  ['server_38',['Server',['../classServer.html',1,'Server'],['../classServer.html#aaf98d5194faee831c6340cc736b9b879',1,'Server::Server()']]],
+  ['serverhandler_39',['ServerHandler',['../classServerHandler.html',1,'ServerHandler'],['../classServerHandler.html#a03e33b6790a3742dd4dc176971164cef',1,'ServerHandler::ServerHandler()']]],
+  ['size_40',['size',['../classDB_1_1DbResult.html#a22c99c1160b466e76ff325fc6cb2639e',1,'DB::DbResult']]],
+  ['start_41',['start',['../classServer.html#aae87a306c2ee55cdb1022411da3abcbe',1,'Server']]]
 ];

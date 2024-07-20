@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>BankingSystem_Server: 1. Login Request</title>
+<title>BankingSystem_Server: Requests Documentation for Bank System</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -115,13 +115,12 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title"><ol type="1">
-<li>Login <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> </li>
-</ol>
-</div>  </div>
+<div class="title">Requests Documentation for Bank System </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>Send <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a>:</h1>
+<div class="textblock"><p>This document describes the requests that can be sent to the server and the responses that can be received from the server.</p>
+<h1>1. Login <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a></h1>
+<h2>Send <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a>:</h2>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Request&quot;: 1,</div>
@@ -137,8 +136,8 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">}</div>
-</div><!-- fragment --><h1>Receive Response:</h1>
-<h2>On Success:</h2>
+</div><!-- fragment --><h2>Receive Response:</h2>
+<h3>On Success:</h3>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Response&quot;: 1,</div>
@@ -156,7 +155,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">}</div>
-</div><!-- fragment --><h2>On Failure:</h2>
+</div><!-- fragment --><h3>On Failure:</h3>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Response&quot;: 1,</div>
@@ -170,7 +169,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">}</div>
-</div><!-- fragment --><h3>Or</h3>
+</div><!-- fragment --><p>Or</p>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Response&quot;: 1,</div>
@@ -231,7 +230,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        }</div>
 <div class="line"> </div>
 <div class="line">}</div>
-</div><!-- fragment --> <h1>3. Get Balance</h1>
+</div><!-- fragment --><h1>3. Get Balance</h1>
 <h2>Send <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a>:</h2>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
@@ -820,7 +819,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line"> </div>
 <div class="line">}</div>
 </div><!-- fragment --><h1>Special Requests</h1>
-<h1>11. Init Rquest</h1>
+<h2>11. Init Rquest</h2>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Request&quot;: 11,</div>
@@ -830,9 +829,9 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        &quot;password&quot;: &quot;pass&quot;</div>
 <div class="line">        }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2>Receive Response:</h2>
-<h3>on Success:</h3>
-<h3>As user</h3>
+</div><!-- fragment --><h3>Receive Response:</h3>
+<h4>on Success:</h4>
+<h5>As User</h5>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;Request&quot;: 11,</div>
 <div class="line">    &quot;Data&quot;: {</div>
@@ -858,7 +857,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">            ]</div>
 <div class="line">        }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3>As admin</h3>
+</div><!-- fragment --><h5>As Admin</h5>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;Request&quot;: 11,</div>
 <div class="line">    &quot;Data&quot;: {</div>
@@ -886,8 +885,8 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">           ]</div>
 <div class="line">      }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1>12. Update email</h1>
-<h2>Send <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a>:</h2>
+</div><!-- fragment --><h2>12. Update email</h2>
+<h3>Send <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a>:</h3>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Request&quot;: 12,</div>
@@ -898,8 +897,8 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        &quot;new_email&quot;: &quot;newmail@example.com&quot;</div>
 <div class="line">        }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2>Receive Response:</h2>
-<h3>on Success:</h3>
+</div><!-- fragment --><h3>Receive Response:</h3>
+<h4>on Success:</h4>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;Response&quot;: 12,</div>
 <div class="line">    &quot;Data&quot;: {</div>
@@ -907,7 +906,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        &quot;message&quot;: &quot;Email updated successfully&quot;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3>on Failure:</h3>
+</div><!-- fragment --><h4>on Failure:</h4>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;Response&quot;: 12,</div>
 <div class="line">    &quot;Data&quot;: {</div>
@@ -923,8 +922,8 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        &quot;message&quot;: &quot;Invalid password&quot;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1>12. Update Password</h1>
-<h2>Send <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a>:</h2>
+</div><!-- fragment --><h2>12. Update Password</h2>
+<h3>Send <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a>:</h3>
 <div class="fragment"><div class="line">{</div>
 <div class="line"> </div>
 <div class="line">    &quot;Request&quot;: 13,</div>
@@ -935,8 +934,8 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        &quot;new_password&quot;: &quot;newPass&quot;</div>
 <div class="line">        }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2>Receive Response:</h2>
-<h3>on Success:</h3>
+</div><!-- fragment --><h3>Receive Response:</h3>
+<h4>on Success:</h4>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;Response&quot;: 12,</div>
 <div class="line">    &quot;Data&quot;: {</div>
@@ -944,7 +943,7 @@ $(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System
 <div class="line">        &quot;message&quot;: &quot;Password updated successfully&quot;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3>on Failure:</h3>
+</div><!-- fragment --><h4>on Failure:</h4>
 <div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;Response&quot;: 12,</div>
 <div class="line">    &quot;Data&quot;: {</div>
