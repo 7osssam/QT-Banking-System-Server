@@ -2,11 +2,6 @@
 #include <QDebug>
 #include <QJsonObject>
 
-#include "dbresult.h"
-
-#include <QFile>
-#include <QTextStream>
-
 #include "server.h"
 #include "db.h"
 
@@ -28,9 +23,18 @@ int main(int argc, char* argv[])
 		qInfo() << "Database instance created";
 	}
 
-	// !
 	QString error;
 	DB::DatabaseManager::checkConnection(error);
+
+	if (!error.isEmpty())
+	{
+		qCritical() << error;
+	}
+	else
+	{
+		qInfo() << "Database connection established";
+	}
+
 	Server server;
 	server.start(2222);
 
