@@ -31,7 +31,7 @@ TEST_F(handleUpdateEmailTest, onSuccessfulUpdateEmail)
 
 	EXPECT_THAT(result.size(), Eq(1));
 
-	int userId_1 = result.data(0).value("id").toInt();
+	int userId_1 = result.first().value("id").toInt();
 
 	QByteArray actualResponse = handler_->makeRequest(requestData);
 
@@ -48,7 +48,7 @@ TEST_F(handleUpdateEmailTest, onSuccessfulUpdateEmail)
 	result = dbManager_->select("id")->table("users")->where("email =", "New@mail.com")->exec();
 	EXPECT_THAT(result.size(), Eq(1));
 
-	int userId_2 = result.data(0).value("id").toInt();
+	int userId_2 = result.first().value("id").toInt();
 
 	EXPECT_EQ(userId_1, userId_2); // Ensure the user id remains the same
 }

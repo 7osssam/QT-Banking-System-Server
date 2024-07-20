@@ -48,7 +48,7 @@ TEST_F(handleUpdateUserTest, onSuccessfulUpdate)
 
 	ASSERT_FALSE(userResult.isEmpty());
 
-	QJsonObject userObj = userResult.data(0); // Use the correct index
+	QJsonObject userObj = userResult.first(); // Use the correct index
 
 	EXPECT_THAT(userObj.value("first_name").toString().toStdString(), Eq("NewFirstName"));
 	EXPECT_THAT(userObj.value("last_name").toString().toStdString(), Eq("NawLastName"));
@@ -307,7 +307,7 @@ TEST_F(handleUpdateUserTest, onUpdateUserToAdminDeleteAccount)
 
 	ASSERT_FALSE(userResult.isEmpty());
 
-	QJsonObject userObj = userResult.data(0); // Use the correct index
+	QJsonObject userObj = userResult.first(); // Use the correct index
 
 	EXPECT_THAT(userObj.value("first_name").toString().toStdString(), Eq("NewFirstName"));
 	EXPECT_THAT(userObj.value("last_name").toString().toStdString(), Eq("NewLastName"));

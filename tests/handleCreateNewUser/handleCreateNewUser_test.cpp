@@ -48,7 +48,7 @@ TEST_F(handleCreateNewUserTest, onSuccess)
 	DB::DbResult userResult = dbManager_->select("*")->table("users")->where("email =", "newUser@mail.com")->exec();
 
 	ASSERT_FALSE(userResult.isEmpty());
-	QJsonObject userObj = userResult.data(0); // Use the correct index
+	QJsonObject userObj = userResult.first(); // Use the correct index
 
 	EXPECT_THAT(userObj.value("first_name").toString().toStdString(), Eq("New"));
 	EXPECT_THAT(userObj.value("last_name").toString().toStdString(), Eq("User"));
@@ -60,7 +60,7 @@ TEST_F(handleCreateNewUserTest, onSuccess)
 		dbManager_->select("*")->table("accounts")->where("user_id =", userObj.value("id").toInt())->exec();
 
 	ASSERT_FALSE(accountResult.isEmpty());
-	QJsonObject accountObj = accountResult.data(0);
+	QJsonObject accountObj = accountResult.first();
 	EXPECT_THAT(accountObj.value("balance").toDouble(), DoubleEq(500.0));
 }
 

@@ -240,7 +240,7 @@ TEST_F(handleMakeTransactionTest, onMultipleTransactions)
 									 ->table("Transactions")
 									 ->exec();
 
-	QJsonObject obj = historyResult.data(0);
+	QJsonObject obj = historyResult.first();
 	EXPECT_THAT(obj.value("amount").toDouble(), DoubleEq(200.0));
 	EXPECT_THAT(obj.value("from_account_number").toInt(), Eq(111));
 	EXPECT_THAT(obj.value("to_account_number").toInt(), Eq(222));
@@ -254,12 +254,12 @@ TEST_F(handleMakeTransactionTest, onMultipleTransactions)
 	DB::DbResult accountResult =
 		dbManager_->select("balance")->table("Accounts")->where("account_number =", 111)->exec();
 
-	obj = accountResult.data(0);
+	obj = accountResult.first();
 	EXPECT_THAT(obj.value("balance").toDouble(), DoubleEq(850.0));
 
 	accountResult = dbManager_->select("balance")->table("Accounts")->where("account_number =", 222)->exec();
 
-	obj = accountResult.data(0);
+	obj = accountResult.first();
 	EXPECT_THAT(obj.value("balance").toDouble(), DoubleEq(5150.0));
 }
 
