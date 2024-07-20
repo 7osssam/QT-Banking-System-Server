@@ -1,4 +1,4 @@
 <map id="UserInitRequest" name="UserInitRequest">
-<area shape="rect" id="node1" title=" " alt="" coords="37,189,187,281"/>
-<area shape="rect" id="node2" href="$classRequest.html" title=" " alt="" coords="5,5,219,141"/>
+<area shape="rect" id="node1" title="The UserInitRequest class handles user initialization requests for User Widget and Admin Widget." alt="" coords="37,189,187,281"/>
+<area shape="rect" id="node2" href="$classRequest.html" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="5,5,219,141"/>
 </map>

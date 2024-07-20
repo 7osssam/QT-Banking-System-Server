@@ -1,0 +1,9 @@
+<map id="LoginRequest::execute" name="LoginRequest::execute">
+<area shape="rect" id="node1" title="Executes the login request." alt="" coords="5,122,175,149"/>
+<area shape="rect" id="node2" href="$classRequest.html#ad457f5030e3f983ffdbc7439989eebcb" title="Creates a JSON response indicating a database connection error." alt="" coords="223,5,442,47"/>
+<area shape="rect" id="node3" href="$classRequest.html#a6f5f7c7d240664a2c29dcd54bd9974d6" title="Creates a generic error JSON response." alt="" coords="223,71,443,98"/>
+<area shape="rect" id="node4" href="$classDB_1_1DbResult.html#a0c6b0bd92c8bd5fa6d2d2f18607c30ff" title="Retrieves the first item in the result set." alt="" coords="262,122,403,149"/>
+<area shape="rect" id="node6" href="$classRequest.html#ae580c02633722f323ad8a738e4952ea1" title="Checks if the database connection is valid." alt="" coords="223,173,442,199"/>
+<area shape="rect" id="node7" href="$classDB_1_1DbResult.html#aa69aec34a8771cd30ea590b9e66d68f9" title="Checks if the result set is empty." alt="" coords="248,223,417,250"/>
+<area shape="rect" id="node5" href="$classDB_1_1DbResult.html#a1bd962425afaf480ea713184af2bf7c3" title="Gets all the data in the result set." alt="" coords="491,122,636,149"/>
+</map>

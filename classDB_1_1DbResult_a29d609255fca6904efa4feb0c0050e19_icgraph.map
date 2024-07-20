@@ -1,0 +1,5 @@
+<map id="DB::DbResult::data" name="DB::DbResult::data">
+<area shape="rect" id="node1" title="Retrieves data at a specific position in the result set." alt="" coords="280,46,425,73"/>
+<area shape="rect" id="node2" href="$classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613" title="Executes the request to get the entire database." alt="" coords="39,5,199,47"/>
+<area shape="rect" id="node3" href="$classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34" title="Executes the request to get the transaction history." alt="" coords="5,71,232,112"/>
+</map>

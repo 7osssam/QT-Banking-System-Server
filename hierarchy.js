@@ -4,10 +4,10 @@ var hierarchy =
     [ "DB::DatabaseManager", "classDB_1_1DatabaseManager.html", null ],
     [ "DB::DbResult", "classDB_1_1DbResult.html", null ],
     [ "QObject", null, [
-      [ "Client", "classClient.html", null ]
+      [ "ServerHandler", "classServerHandler.html", null ]
     ] ],
     [ "QRunnable", null, [
-      [ "Client", "classClient.html", null ]
+      [ "ServerHandler", "classServerHandler.html", null ]
     ] ],
     [ "QTcpServer", null, [
       [ "Server", "classServer.html", null ]

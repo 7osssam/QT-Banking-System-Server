@@ -1,0 +1,4 @@
+<map id="DB::DbResult::DbResult" name="DB::DbResult::DbResult">
+<area shape="rect" id="node1" title="Constructs a DbResult from a list of QVariant data." alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" href="$classDB_1_1DbResult.html#a1bd962425afaf480ea713184af2bf7c3" title="Gets all the data in the result set." alt="" coords="228,5,373,32"/>
+</map>

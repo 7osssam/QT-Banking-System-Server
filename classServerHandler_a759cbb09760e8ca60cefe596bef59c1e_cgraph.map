@@ -1,0 +1,4 @@
+<map id="ServerHandler::readyRead" name="ServerHandler::readyRead">
+<area shape="rect" id="node1" title="Slot to handle readyRead signal from QTcpSocket." alt="" coords="5,5,199,32"/>
+<area shape="rect" id="node2" href="$classRequestManager.html#ae4c8344d4bd079620effa090b30f8234" title="Processes an incoming request and generates an appropriate response." alt="" coords="247,5,476,32"/>
+</map>

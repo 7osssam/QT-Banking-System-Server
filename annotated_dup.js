@@ -5,7 +5,6 @@ var annotated_dup =
       [ "DatabaseManager", "classDB_1_1DatabaseManager.html", "classDB_1_1DatabaseManager" ],
       [ "DbResult", "classDB_1_1DbResult.html", "classDB_1_1DbResult" ]
     ] ],
-    [ "Client", "classClient.html", "classClient" ],
     [ "CreateNewUserRequest", "classCreateNewUserRequest.html", "classCreateNewUserRequest" ],
     [ "DeleteUserRequest", "classDeleteUserRequest.html", "classDeleteUserRequest" ],
     [ "GetAccountNumberRequest", "classGetAccountNumberRequest.html", "classGetAccountNumberRequest" ],
@@ -17,6 +16,7 @@ var annotated_dup =
     [ "Request", "classRequest.html", "classRequest" ],
     [ "RequestManager", "classRequestManager.html", "classRequestManager" ],
     [ "Server", "classServer.html", "classServer" ],
+    [ "ServerHandler", "classServerHandler.html", "classServerHandler" ],
     [ "UpdateEmailRequest", "classUpdateEmailRequest.html", "classUpdateEmailRequest" ],
     [ "UpdatePasswordRequest", "classUpdatePasswordRequest.html", "classUpdatePasswordRequest" ],
     [ "UpdateUserRequest", "classUpdateUserRequest.html", "classUpdateUserRequest" ],

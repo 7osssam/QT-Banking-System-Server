@@ -122,48 +122,220 @@ $(document).ready(function(){initNavTree('classRequestManager.html',''); initRes
 <div class="title">RequestManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a> class handles incoming requests and dispatches them to the appropriate request handler.  
+ <a href="classRequestManager.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="RequestManager_8h_source.html">RequestManager.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for RequestManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRequestManager__coll__graph.png" border="0" usemap="#aRequestManager_coll__map" alt="Collaboration graph"/></div>
 <map name="aRequestManager_coll__map" id="aRequestManager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,173,112"/>
+<area shape="rect" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han..." alt="" coords="5,5,173,112"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:af9c93ecb9b028e390635d0e155d10310"><td class="memItemLeft" align="right" valign="top"><a id="af9c93ecb9b028e390635d0e155d10310"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>AvailableRequests</b> { <br />
-&#160;&#160;<b>Login</b> = 1
-, <b>GetAccountnumber</b>
-, <b>GetBalance</b>
-, <b>GetTransactionsHistory</b>
+<tr class="memitem:af9c93ecb9b028e390635d0e155d10310"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310">AvailableRequests</a> { <br />
+&#160;&#160;<a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a517c61a4e946ec7f92a01e8622c97632">Login</a> = 1
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a1ce33251979ab4a049ebc6f80a7b1ca7">GetAccountnumber</a>
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a41aa3cfd8482a75d229a86203a7a7001">GetBalance</a>
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310af4f4491b688d2274389535e68917d549">GetTransactionsHistory</a>
 , <br />
-&#160;&#160;<b>MakeTransaction</b>
-, <b>TransferAmount</b>
-, <b>GetDatabase</b>
-, <b>CreateNewUser</b>
+&#160;&#160;<a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a073436de6bc4635f6f1d6a739d15e115">MakeTransaction</a>
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a58fc4431f7c77a667ed7d524efdb2155">TransferAmount</a>
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a9aa35c99906b91e1b0b65522368682a1">GetDatabase</a>
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a0b2388382a273df5b82ddb6abff8d675">CreateNewUser</a>
 , <br />
-&#160;&#160;<b>DeleteUser</b>
-, <b>UpdateUser</b>
-, <b>UserInit</b>
-, <b>UpdateEmail</b>
+&#160;&#160;<a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138">DeleteUser</a>
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310abe9610f90871c52199552ba9a7eee628">UpdateUser</a>
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a3d57ea768887ade2528b49470afeee2e">UserInit</a>
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310ac8974e51516860572533ff425c9162ba">UpdateEmail</a>
 , <br />
-&#160;&#160;<b>UpdatePassword</b>
-, <b>JsonParseError</b> = -1
+&#160;&#160;<a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a55a93a95e948c8d526ab395d9b56b7bc">UpdatePassword</a>
+, <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b">JsonParseError</a> = -1
 <br />
  }</td></tr>
+<tr class="memdesc:af9c93ecb9b028e390635d0e155d10310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the different types of requests handled by the <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a>.  <a href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310">More...</a><br /></td></tr>
 <tr class="separator:af9c93ecb9b028e390635d0e155d10310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adf7bfbf17876e300f0f02aaae671535a"><td class="memItemLeft" align="right" valign="top"><a id="adf7bfbf17876e300f0f02aaae671535a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RequestManager</b> (QMutex *Mutex)</td></tr>
+<tr class="memitem:adf7bfbf17876e300f0f02aaae671535a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequestManager.html#adf7bfbf17876e300f0f02aaae671535a">RequestManager</a> (QMutex *Mutex)</td></tr>
+<tr class="memdesc:adf7bfbf17876e300f0f02aaae671535a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a> with the specified mutex for thread safety.  <a href="classRequestManager.html#adf7bfbf17876e300f0f02aaae671535a">More...</a><br /></td></tr>
 <tr class="separator:adf7bfbf17876e300f0f02aaae671535a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4c8344d4bd079620effa090b30f8234"><td class="memItemLeft" align="right" valign="top"><a id="ae4c8344d4bd079620effa090b30f8234"></a>
-QByteArray&#160;</td><td class="memItemRight" valign="bottom"><b>makeRequest</b> (QByteArray data)</td></tr>
+<tr class="memitem:ae4c8344d4bd079620effa090b30f8234"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequestManager.html#ae4c8344d4bd079620effa090b30f8234">makeRequest</a> (QByteArray data)</td></tr>
+<tr class="memdesc:ae4c8344d4bd079620effa090b30f8234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an incoming request and generates an appropriate response.  <a href="classRequestManager.html#ae4c8344d4bd079620effa090b30f8234">More...</a><br /></td></tr>
 <tr class="separator:ae4c8344d4bd079620effa090b30f8234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a237db6121feaf809885dd140ee6da952"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequestManager.html#a237db6121feaf809885dd140ee6da952">~RequestManager</a> ()</td></tr>
+<tr class="memdesc:a237db6121feaf809885dd140ee6da952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a>.  <a href="classRequestManager.html#a237db6121feaf809885dd140ee6da952">More...</a><br /></td></tr>
+<tr class="separator:a237db6121feaf809885dd140ee6da952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a> class handles incoming requests and dispatches them to the appropriate request handler. </p>
+<p>The <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a> class is responsible for managing and processing different types of requests. It maintains a map of request handlers for various request types, processes incoming request data, and generates appropriate responses. The class also includes error handling for JSON parsing issues. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="af9c93ecb9b028e390635d0e155d10310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c93ecb9b028e390635d0e155d10310">&#9670;&nbsp;</a></span>AvailableRequests</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classRequestManager.html#af9c93ecb9b028e390635d0e155d10310">RequestManager::AvailableRequests</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum representing the different types of requests handled by the <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a>. </p>
+<p>This enum defines various request types and special requests that the <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a> can handle. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a517c61a4e946ec7f92a01e8622c97632"></a>Login&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> for user login. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a1ce33251979ab4a049ebc6f80a7b1ca7"></a>GetAccountnumber&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> to retrieve account number. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a41aa3cfd8482a75d229a86203a7a7001"></a>GetBalance&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> to get account balance. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310af4f4491b688d2274389535e68917d549"></a>GetTransactionsHistory&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> to retrieve transaction history. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a073436de6bc4635f6f1d6a739d15e115"></a>MakeTransaction&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> to make a transaction. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a58fc4431f7c77a667ed7d524efdb2155"></a>TransferAmount&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> to transfer amount (not used currently). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a9aa35c99906b91e1b0b65522368682a1"></a>GetDatabase&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> to get database information. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a0b2388382a273df5b82ddb6abff8d675"></a>CreateNewUser&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> to create a new user. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138"></a>DeleteUser&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> to delete a user. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310abe9610f90871c52199552ba9a7eee628"></a>UpdateUser&#160;</td><td class="fielddoc"><p><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> to update user information. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a3d57ea768887ade2528b49470afeee2e"></a>UserInit&#160;</td><td class="fielddoc"><p>Special request for user initialization. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310ac8974e51516860572533ff425c9162ba"></a>UpdateEmail&#160;</td><td class="fielddoc"><p>Special request to update user email. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a55a93a95e948c8d526ab395d9b56b7bc"></a>UpdatePassword&#160;</td><td class="fielddoc"><p>Special request to update user password. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b"></a>JsonParseError&#160;</td><td class="fielddoc"><p>Special error code for JSON parsing errors. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="adf7bfbf17876e300f0f02aaae671535a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf7bfbf17876e300f0f02aaae671535a">&#9670;&nbsp;</a></span>RequestManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RequestManager::RequestManager </td>
+          <td>(</td>
+          <td class="paramtype">QMutex *&#160;</td>
+          <td class="paramname"><em>Mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a> with the specified mutex for thread safety. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Mutex</td><td>A pointer to a QMutex used to ensure thread-safe operations. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a237db6121feaf809885dd140ee6da952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a237db6121feaf809885dd140ee6da952">&#9670;&nbsp;</a></span>~RequestManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RequestManager::~RequestManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor for the <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a>. </p>
+<p>Cleans up any resources allocated by the <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae4c8344d4bd079620effa090b30f8234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c8344d4bd079620effa090b30f8234">&#9670;&nbsp;</a></span>makeRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray RequestManager::makeRequest </td>
+          <td>(</td>
+          <td class="paramtype">QByteArray&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes an incoming request and generates an appropriate response. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>A QByteArray containing the request data in JSON format. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A QByteArray containing the response data in JSON format.</dd></dl>
+<p>This method parses the incoming JSON data, determines the type of request, and delegates the processing to the corresponding request handler. It also handles JSON parsing errors and generates error responses if needed. </p>
+
+<p class="reference">Referenced by <a class="el" href="classServerHandler.html#a759cbb09760e8ca60cefe596bef59c1e">ServerHandler::readyRead()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classRequestManager_ae4c8344d4bd079620effa090b30f8234_icgraph.png" border="0" usemap="#aclassRequestManager_ae4c8344d4bd079620effa090b30f8234_icgraph" alt=""/></div>
+<map name="aclassRequestManager_ae4c8344d4bd079620effa090b30f8234_icgraph" id="aclassRequestManager_ae4c8344d4bd079620effa090b30f8234_icgraph">
+<area shape="rect" title="Processes an incoming request and generates an appropriate response." alt="" coords="439,5,668,32"/>
+<area shape="rect" href="classServerHandler.html#a759cbb09760e8ca60cefe596bef59c1e" title="Slot to handle readyRead signal from QTcpSocket." alt="" coords="197,5,391,32"/>
+<area shape="rect" href="classServerHandler.html#a61359b9bb16c92ca9bca3353487db090" title="Implements QRunnable&#39;s run method to handle the client connection." alt="" coords="5,5,149,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="RequestManager_8h_source.html">RequestManager.h</a></li>
 </ul>

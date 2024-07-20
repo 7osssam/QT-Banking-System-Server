@@ -122,24 +122,29 @@ $(document).ready(function(){initNavTree('classRequest.html',''); initResizable(
 <div class="title">Request Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> class is an abstract base class for handling different types of requests.  
+ <a href="classRequest.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Request_8h_source.html">Request.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Request:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRequest__inherit__graph.png" border="0" usemap="#aRequest_inherit__map" alt="Inheritance graph"/></div>
 <map name="aRequest_inherit__map" id="aRequest_inherit__map">
-<area shape="rect" title=" " alt="" coords="1216,5,1429,141"/>
-<area shape="rect" href="classCreateNewUserRequest.html" title=" " alt="" coords="5,189,208,281"/>
-<area shape="rect" href="classDeleteUserRequest.html" title=" " alt="" coords="232,189,405,281"/>
-<area shape="rect" href="classGetAccountNumberRequest.html" title=" " alt="" coords="429,189,656,281"/>
-<area shape="rect" href="classGetBalanceRequest.html" title=" " alt="" coords="681,189,855,281"/>
-<area shape="rect" href="classGetDatabaseRequest.html" title=" " alt="" coords="879,189,1065,281"/>
-<area shape="rect" href="classGetTransactionsHistoryRequest.html" title=" " alt="" coords="1089,189,1340,281"/>
-<area shape="rect" href="classLoginRequest.html" title=" " alt="" coords="1365,189,1499,281"/>
-<area shape="rect" href="classMakeTransactionRequest.html" title=" " alt="" coords="1523,189,1733,281"/>
-<area shape="rect" href="classUpdateEmailRequest.html" title=" " alt="" coords="1757,189,1941,281"/>
-<area shape="rect" href="classUpdatePasswordRequest.html" title=" " alt="" coords="1965,189,2173,281"/>
-<area shape="rect" href="classUpdateUserRequest.html" title=" " alt="" coords="2198,189,2375,281"/>
-<area shape="rect" href="classUserInitRequest.html" title=" " alt="" coords="2399,189,2550,281"/>
+<area shape="rect" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="1216,5,1429,141"/>
+<area shape="rect" href="classCreateNewUserRequest.html" title="The CreateNewUserRequest class handles the creation of new users." alt="" coords="5,189,208,281"/>
+<area shape="rect" href="classDeleteUserRequest.html" title="The DeleteUserRequest class handles the deletion of users." alt="" coords="232,189,405,281"/>
+<area shape="rect" href="classGetAccountNumberRequest.html" title="The GetAccountNumberRequest class handles the retrieval of account numbers." alt="" coords="429,189,656,281"/>
+<area shape="rect" href="classGetBalanceRequest.html" title="The GetBalanceRequest class handles the retrieval of account balances." alt="" coords="681,189,855,281"/>
+<area shape="rect" href="classGetDatabaseRequest.html" title="The GetDatabaseRequest class handles the retrieval of the entire database." alt="" coords="879,189,1065,281"/>
+<area shape="rect" href="classGetTransactionsHistoryRequest.html" title="The GetTransactionsHistoryRequest class handles the retrieval of transaction history." alt="" coords="1089,189,1340,281"/>
+<area shape="rect" href="classLoginRequest.html" title="The LoginRequest class handles user login requests." alt="" coords="1365,189,1499,281"/>
+<area shape="rect" href="classMakeTransactionRequest.html" title="The MakeTransactionRequest class handles transaction requests between accounts." alt="" coords="1523,189,1733,281"/>
+<area shape="rect" href="classUpdateEmailRequest.html" title="The UpdateEmailRequest class handles email update requests for users." alt="" coords="1757,189,1941,281"/>
+<area shape="rect" href="classUpdatePasswordRequest.html" title="The UpdatePasswordRequest class handles password update requests for users." alt="" coords="1965,189,2173,281"/>
+<area shape="rect" href="classUpdateUserRequest.html" title="The UpdateUserRequest class handles user update requests." alt="" coords="2198,189,2375,281"/>
+<area shape="rect" href="classUserInitRequest.html" title="The UserInitRequest class handles user initialization requests for User Widget and Admin Widget." alt="" coords="2399,189,2550,281"/>
 </map>
 </div>
 <div class="dynheader">
@@ -147,28 +152,316 @@ Collaboration diagram for Request:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRequest__coll__graph.png" border="0" usemap="#aRequest_coll__map" alt="Collaboration graph"/></div>
 <map name="aRequest_coll__map" id="aRequest_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,219,141"/>
+<area shape="rect" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="5,5,219,141"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a634ac3a98caa9e90d03487556bbecfed"><td class="memItemLeft" align="right" valign="top"><a id="a634ac3a98caa9e90d03487556bbecfed"></a>
-virtual QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> (const QJsonObject &amp;jsonObj, QMutex &amp;m)=0</td></tr>
+<tr class="memitem:a45cc5d15eb7b9c9e97bd7328c9a90d3f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequest.html#a45cc5d15eb7b9c9e97bd7328c9a90d3f">~Request</a> ()</td></tr>
+<tr class="memdesc:a45cc5d15eb7b9c9e97bd7328c9a90d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for the <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> class.  <a href="classRequest.html#a45cc5d15eb7b9c9e97bd7328c9a90d3f">More...</a><br /></td></tr>
+<tr class="separator:a45cc5d15eb7b9c9e97bd7328c9a90d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634ac3a98caa9e90d03487556bbecfed"><td class="memItemLeft" align="right" valign="top">virtual QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequest.html#a634ac3a98caa9e90d03487556bbecfed">execute</a> (const QJsonObject &amp;jsonObj, QMutex &amp;m)=0</td></tr>
+<tr class="memdesc:a634ac3a98caa9e90d03487556bbecfed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual method to execute a request.  <a href="classRequest.html#a634ac3a98caa9e90d03487556bbecfed">More...</a><br /></td></tr>
 <tr class="separator:a634ac3a98caa9e90d03487556bbecfed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ae580c02633722f323ad8a738e4952ea1"><td class="memItemLeft" align="right" valign="top"><a id="ae580c02633722f323ad8a738e4952ea1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDBConnectionValid</b> (<a class="el" href="classDB_1_1DatabaseManager.html">DB::DatabaseManager</a> *dbManager)</td></tr>
+<tr class="memitem:ae580c02633722f323ad8a738e4952ea1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequest.html#ae580c02633722f323ad8a738e4952ea1">isDBConnectionValid</a> (<a class="el" href="classDB_1_1DatabaseManager.html">DB::DatabaseManager</a> *dbManager)</td></tr>
+<tr class="memdesc:ae580c02633722f323ad8a738e4952ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the database connection is valid.  <a href="classRequest.html#ae580c02633722f323ad8a738e4952ea1">More...</a><br /></td></tr>
 <tr class="separator:ae580c02633722f323ad8a738e4952ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad457f5030e3f983ffdbc7439989eebcb"><td class="memItemLeft" align="right" valign="top"><a id="ad457f5030e3f983ffdbc7439989eebcb"></a>
-QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><b>CreateDBConnectionError</b> (QJsonObject &amp;response, QJsonObject &amp;dataObj)</td></tr>
+<tr class="memitem:ad457f5030e3f983ffdbc7439989eebcb"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequest.html#ad457f5030e3f983ffdbc7439989eebcb">CreateDBConnectionError</a> (QJsonObject &amp;response, QJsonObject &amp;dataObj)</td></tr>
+<tr class="memdesc:ad457f5030e3f983ffdbc7439989eebcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a JSON response indicating a database connection error.  <a href="classRequest.html#ad457f5030e3f983ffdbc7439989eebcb">More...</a><br /></td></tr>
 <tr class="separator:ad457f5030e3f983ffdbc7439989eebcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f5f7c7d240664a2c29dcd54bd9974d6"><td class="memItemLeft" align="right" valign="top"><a id="a6f5f7c7d240664a2c29dcd54bd9974d6"></a>
-QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><b>CreateErrorResponse</b> (QJsonObject &amp;response, QJsonObject &amp;dataObj, QString message)</td></tr>
+<tr class="memitem:a6f5f7c7d240664a2c29dcd54bd9974d6"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequest.html#a6f5f7c7d240664a2c29dcd54bd9974d6">CreateErrorResponse</a> (QJsonObject &amp;response, QJsonObject &amp;dataObj, QString message)</td></tr>
+<tr class="memdesc:a6f5f7c7d240664a2c29dcd54bd9974d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a generic error JSON response.  <a href="classRequest.html#a6f5f7c7d240664a2c29dcd54bd9974d6">More...</a><br /></td></tr>
 <tr class="separator:a6f5f7c7d240664a2c29dcd54bd9974d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> class is an abstract base class for handling different types of requests. </p>
+<p>This class provides the common interface and utility functions for processing various requests. It includes methods for checking database connectivity and creating error responses. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a45cc5d15eb7b9c9e97bd7328c9a90d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45cc5d15eb7b9c9e97bd7328c9a90d3f">&#9670;&nbsp;</a></span>~Request()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Request::~Request </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Virtual destructor for the <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> class. </p>
+<p>Ensures proper cleanup of derived classes. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad457f5030e3f983ffdbc7439989eebcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad457f5030e3f983ffdbc7439989eebcb">&#9670;&nbsp;</a></span>CreateDBConnectionError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonObject Request::CreateDBConnectionError </td>
+          <td>(</td>
+          <td class="paramtype">QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>response</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>dataObj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a JSON response indicating a database connection error. </p>
+<p>This method constructs a JSON response object with a status of false and a message indicating an internal server error related to database connectivity.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>A reference to the QJsonObject that will be populated with the error response. </td></tr>
+    <tr><td class="paramname">dataObj</td><td>A reference to the QJsonObject that contains additional data about the error. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The updated QJsonObject containing the error response. </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec">CreateNewUserRequest::execute()</a>, <a class="el" href="classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882">DeleteUserRequest::execute()</a>, <a class="el" href="classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c">GetAccountNumberRequest::execute()</a>, <a class="el" href="classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9">GetBalanceRequest::execute()</a>, <a class="el" href="classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613">GetDatabaseRequest::execute()</a>, <a class="el" href="classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34">GetTransactionsHistoryRequest::execute()</a>, <a class="el" href="classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c">LoginRequest::execute()</a>, <a class="el" href="classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802">MakeTransactionRequest::execute()</a>, <a class="el" href="classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0">UpdateEmailRequest::execute()</a>, <a class="el" href="classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057">UpdatePasswordRequest::execute()</a>, <a class="el" href="classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643">UpdateUserRequest::execute()</a>, and <a class="el" href="classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455">UserInitRequest::execute()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classRequest_ad457f5030e3f983ffdbc7439989eebcb_icgraph.png" border="0" usemap="#aclassRequest_ad457f5030e3f983ffdbc7439989eebcb_icgraph" alt=""/></div>
+<map name="aclassRequest_ad457f5030e3f983ffdbc7439989eebcb_icgraph" id="aclassRequest_ad457f5030e3f983ffdbc7439989eebcb_icgraph">
+<area shape="rect" title="Creates a JSON response indicating a database connection error." alt="" coords="280,361,499,403"/>
+<area shape="rect" href="classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec" title="Executes the request to create a new user." alt="" coords="30,5,207,47"/>
+<area shape="rect" href="classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882" title="Executes the request to delete a user." alt="" coords="41,71,197,112"/>
+<area shape="rect" href="classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c" title="Executes the request to get the account number." alt="" coords="17,136,220,177"/>
+<area shape="rect" href="classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9" title="Executes the request to get the account balance." alt="" coords="39,201,198,243"/>
+<area shape="rect" href="classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613" title="Executes the request to get the entire database." alt="" coords="39,267,199,308"/>
+<area shape="rect" href="classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34" title="Executes the request to get the transaction history." alt="" coords="5,332,232,373"/>
+<area shape="rect" href="classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c" title="Executes the login request." alt="" coords="34,398,203,425"/>
+<area shape="rect" href="classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802" title="Executes the transaction request." alt="" coords="27,449,211,491"/>
+<area shape="rect" href="classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0" title="Executes the email update request." alt="" coords="39,515,198,556"/>
+<area shape="rect" href="classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057" title="Executes the password update request." alt="" coords="27,580,210,621"/>
+<area shape="rect" href="classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643" title="Executes the user update request." alt="" coords="39,645,199,687"/>
+<area shape="rect" href="classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455" title="Executes the user initialization request." alt="" coords="26,711,211,738"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6f5f7c7d240664a2c29dcd54bd9974d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f5f7c7d240664a2c29dcd54bd9974d6">&#9670;&nbsp;</a></span>CreateErrorResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonObject Request::CreateErrorResponse </td>
+          <td>(</td>
+          <td class="paramtype">QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>response</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>dataObj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a generic error JSON response. </p>
+<p>This method constructs a JSON response object with a status of false and a custom error message.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>A reference to the QJsonObject that will be populated with the error response. </td></tr>
+    <tr><td class="paramname">dataObj</td><td>A reference to the QJsonObject that contains additional data about the error. </td></tr>
+    <tr><td class="paramname">message</td><td>A QString containing the error message to include in the response. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The updated QJsonObject containing the error response. </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec">CreateNewUserRequest::execute()</a>, <a class="el" href="classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882">DeleteUserRequest::execute()</a>, <a class="el" href="classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c">GetAccountNumberRequest::execute()</a>, <a class="el" href="classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9">GetBalanceRequest::execute()</a>, <a class="el" href="classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613">GetDatabaseRequest::execute()</a>, <a class="el" href="classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34">GetTransactionsHistoryRequest::execute()</a>, <a class="el" href="classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c">LoginRequest::execute()</a>, <a class="el" href="classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802">MakeTransactionRequest::execute()</a>, <a class="el" href="classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0">UpdateEmailRequest::execute()</a>, <a class="el" href="classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057">UpdatePasswordRequest::execute()</a>, <a class="el" href="classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643">UpdateUserRequest::execute()</a>, and <a class="el" href="classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455">UserInitRequest::execute()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6_icgraph.png" border="0" usemap="#aclassRequest_a6f5f7c7d240664a2c29dcd54bd9974d6_icgraph" alt=""/></div>
+<map name="aclassRequest_a6f5f7c7d240664a2c29dcd54bd9974d6_icgraph" id="aclassRequest_a6f5f7c7d240664a2c29dcd54bd9974d6_icgraph">
+<area shape="rect" title="Creates a generic error JSON response." alt="" coords="280,369,500,395"/>
+<area shape="rect" href="classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec" title="Executes the request to create a new user." alt="" coords="30,5,207,47"/>
+<area shape="rect" href="classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882" title="Executes the request to delete a user." alt="" coords="41,71,197,112"/>
+<area shape="rect" href="classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c" title="Executes the request to get the account number." alt="" coords="17,136,220,177"/>
+<area shape="rect" href="classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9" title="Executes the request to get the account balance." alt="" coords="39,201,198,243"/>
+<area shape="rect" href="classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613" title="Executes the request to get the entire database." alt="" coords="39,267,199,308"/>
+<area shape="rect" href="classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34" title="Executes the request to get the transaction history." alt="" coords="5,332,232,373"/>
+<area shape="rect" href="classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c" title="Executes the login request." alt="" coords="34,398,203,425"/>
+<area shape="rect" href="classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802" title="Executes the transaction request." alt="" coords="27,449,211,491"/>
+<area shape="rect" href="classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0" title="Executes the email update request." alt="" coords="39,515,198,556"/>
+<area shape="rect" href="classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057" title="Executes the password update request." alt="" coords="27,580,210,621"/>
+<area shape="rect" href="classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643" title="Executes the user update request." alt="" coords="39,645,199,687"/>
+<area shape="rect" href="classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455" title="Executes the user initialization request." alt="" coords="26,711,211,738"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a634ac3a98caa9e90d03487556bbecfed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634ac3a98caa9e90d03487556bbecfed">&#9670;&nbsp;</a></span>execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QJsonObject Request::execute </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>jsonObj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMutex &amp;&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pure virtual method to execute a request. </p>
+<p>This method must be implemented by derived classes to handle specific types of requests.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">jsonObj</td><td>A QJsonObject containing the request data. </td></tr>
+    <tr><td class="paramname">m</td><td>A QMutex reference for thread-safe operations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A QJsonObject containing the response data. </dd></dl>
+
+<p>Implemented in <a class="el" href="classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455">UserInitRequest</a>, <a class="el" href="classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643">UpdateUserRequest</a>, <a class="el" href="classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057">UpdatePasswordRequest</a>, <a class="el" href="classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0">UpdateEmailRequest</a>, <a class="el" href="classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802">MakeTransactionRequest</a>, <a class="el" href="classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c">LoginRequest</a>, <a class="el" href="classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34">GetTransactionsHistoryRequest</a>, <a class="el" href="classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613">GetDatabaseRequest</a>, <a class="el" href="classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9">GetBalanceRequest</a>, <a class="el" href="classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c">GetAccountNumberRequest</a>, <a class="el" href="classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882">DeleteUserRequest</a>, and <a class="el" href="classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec">CreateNewUserRequest</a>.</p>
+
+</div>
+</div>
+<a id="ae580c02633722f323ad8a738e4952ea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae580c02633722f323ad8a738e4952ea1">&#9670;&nbsp;</a></span>isDBConnectionValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Request::isDBConnectionValid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDB_1_1DatabaseManager.html">DB::DatabaseManager</a> *&#160;</td>
+          <td class="paramname"><em>dbManager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the database connection is valid. </p>
+<p>This method verifies that the database connection manager is not null and that the database is properly connected. Logs error messages if the connection fails.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dbManager</td><td>A pointer to the <a class="el" href="classDB_1_1DatabaseManager.html">DB::DatabaseManager</a> instance used for checking the connection. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the database connection is valid, false otherwise. </dd></dl>
+
+<p class="reference">Referenced by <a class="el" href="classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec">CreateNewUserRequest::execute()</a>, <a class="el" href="classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882">DeleteUserRequest::execute()</a>, <a class="el" href="classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c">GetAccountNumberRequest::execute()</a>, <a class="el" href="classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9">GetBalanceRequest::execute()</a>, <a class="el" href="classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613">GetDatabaseRequest::execute()</a>, <a class="el" href="classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34">GetTransactionsHistoryRequest::execute()</a>, <a class="el" href="classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c">LoginRequest::execute()</a>, <a class="el" href="classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802">MakeTransactionRequest::execute()</a>, <a class="el" href="classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0">UpdateEmailRequest::execute()</a>, <a class="el" href="classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057">UpdatePasswordRequest::execute()</a>, <a class="el" href="classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643">UpdateUserRequest::execute()</a>, and <a class="el" href="classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455">UserInitRequest::execute()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classRequest_ae580c02633722f323ad8a738e4952ea1_icgraph.png" border="0" usemap="#aclassRequest_ae580c02633722f323ad8a738e4952ea1_icgraph" alt=""/></div>
+<map name="aclassRequest_ae580c02633722f323ad8a738e4952ea1_icgraph" id="aclassRequest_ae580c02633722f323ad8a738e4952ea1_icgraph">
+<area shape="rect" title="Checks if the database connection is valid." alt="" coords="280,369,499,395"/>
+<area shape="rect" href="classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec" title="Executes the request to create a new user." alt="" coords="30,5,207,47"/>
+<area shape="rect" href="classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882" title="Executes the request to delete a user." alt="" coords="41,71,197,112"/>
+<area shape="rect" href="classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c" title="Executes the request to get the account number." alt="" coords="17,136,220,177"/>
+<area shape="rect" href="classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9" title="Executes the request to get the account balance." alt="" coords="39,201,198,243"/>
+<area shape="rect" href="classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613" title="Executes the request to get the entire database." alt="" coords="39,267,199,308"/>
+<area shape="rect" href="classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34" title="Executes the request to get the transaction history." alt="" coords="5,332,232,373"/>
+<area shape="rect" href="classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c" title="Executes the login request." alt="" coords="34,398,203,425"/>
+<area shape="rect" href="classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802" title="Executes the transaction request." alt="" coords="27,449,211,491"/>
+<area shape="rect" href="classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0" title="Executes the email update request." alt="" coords="39,515,198,556"/>
+<area shape="rect" href="classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057" title="Executes the password update request." alt="" coords="27,580,210,621"/>
+<area shape="rect" href="classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643" title="Executes the user update request." alt="" coords="39,645,199,687"/>
+<area shape="rect" href="classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455" title="Executes the user initialization request." alt="" coords="26,711,211,738"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="Request_8h_source.html">Request.h</a></li>
 </ul>

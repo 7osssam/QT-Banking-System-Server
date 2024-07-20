@@ -1,0 +1,16 @@
+<map id="DB::DbResult::isEmpty" name="DB::DbResult::isEmpty">
+<area shape="rect" id="node1" title="Checks if the result set is empty." alt="" coords="531,370,700,396"/>
+<area shape="rect" id="node2" href="$classDB_1_1DbResult.html#a29d609255fca6904efa4feb0c0050e19" title="Retrieves data at a specific position in the result set." alt="" coords="309,64,454,91"/>
+<area shape="rect" id="node3" href="$classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613" title="Executes the request to get the entire database." alt="" coords="39,16,199,57"/>
+<area shape="rect" id="node4" href="$classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34" title="Executes the request to get the transaction history." alt="" coords="5,90,232,132"/>
+<area shape="rect" id="node5" href="$classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec" title="Executes the request to create a new user." alt="" coords="293,166,470,208"/>
+<area shape="rect" id="node6" href="$classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882" title="Executes the request to delete a user." alt="" coords="303,232,459,273"/>
+<area shape="rect" id="node7" href="$classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c" title="Executes the request to get the account number." alt="" coords="280,297,483,338"/>
+<area shape="rect" id="node8" href="$classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9" title="Executes the request to get the account balance." alt="" coords="302,362,461,404"/>
+<area shape="rect" id="node9" href="$classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c" title="Executes the login request." alt="" coords="297,428,466,455"/>
+<area shape="rect" id="node10" href="$classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802" title="Executes the transaction request." alt="" coords="289,480,473,521"/>
+<area shape="rect" id="node11" href="$classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0" title="Executes the email update request." alt="" coords="302,545,461,586"/>
+<area shape="rect" id="node12" href="$classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057" title="Executes the password update request." alt="" coords="290,610,473,652"/>
+<area shape="rect" id="node13" href="$classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643" title="Executes the user update request." alt="" coords="301,676,461,717"/>
+<area shape="rect" id="node14" href="$classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455" title="Executes the user initialization request." alt="" coords="289,742,474,768"/>
+</map>

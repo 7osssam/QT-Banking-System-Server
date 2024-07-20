@@ -1,4 +1,4 @@
 <map id="MakeTransactionRequest" name="MakeTransactionRequest">
-<area shape="rect" id="node1" title=" " alt="" coords="7,189,217,281"/>
-<area shape="rect" id="node2" href="$classRequest.html" title=" " alt="" coords="5,5,219,141"/>
+<area shape="rect" id="node1" title="The MakeTransactionRequest class handles transaction requests between accounts." alt="" coords="7,189,217,281"/>
+<area shape="rect" id="node2" href="$classRequest.html" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="5,5,219,141"/>
 </map>

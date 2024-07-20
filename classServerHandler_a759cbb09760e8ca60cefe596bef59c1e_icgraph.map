@@ -1,0 +1,4 @@
+<map id="ServerHandler::readyRead" name="ServerHandler::readyRead">
+<area shape="rect" id="node1" title="Slot to handle readyRead signal from QTcpSocket." alt="" coords="197,5,391,32"/>
+<area shape="rect" id="node2" href="$classServerHandler.html#a61359b9bb16c92ca9bca3353487db090" title="Implements QRunnable&#39;s run method to handle the client connection." alt="" coords="5,5,149,32"/>
+</map>

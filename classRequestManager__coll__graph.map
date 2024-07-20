@@ -1,3 +1,3 @@
 <map id="RequestManager" name="RequestManager">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,173,112"/>
+<area shape="rect" id="node1" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han..." alt="" coords="5,5,173,112"/>
 </map>

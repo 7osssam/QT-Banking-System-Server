@@ -1,4 +1,4 @@
 <map id="LoginRequest" name="LoginRequest">
-<area shape="rect" id="node1" title=" " alt="" coords="45,189,179,281"/>
-<area shape="rect" id="node2" href="$classRequest.html" title=" " alt="" coords="5,5,219,141"/>
+<area shape="rect" id="node1" title="The LoginRequest class handles user login requests." alt="" coords="45,189,179,281"/>
+<area shape="rect" id="node2" href="$classRequest.html" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="5,5,219,141"/>
 </map>
