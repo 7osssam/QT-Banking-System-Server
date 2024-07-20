@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jsonparseerror_25',['JsonParseError',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b',1,'RequestManager']]]
+  ['host_37',['host',['../structDB_1_1DatabaseConfig.html#a79743409f41bf43682bb88647f7dfb8d',1,'DB::DatabaseConfig']]]
 ];

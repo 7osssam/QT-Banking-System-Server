@@ -1,0 +1,4 @@
+<map id="DB::DatabaseManager::lastQuery" name="DB::DatabaseManager::lastQuery">
+<area shape="rect" id="node1" title="Gets the last executed query." alt="" coords="221,5,389,47"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#aadcbfe8aafff355cb67d2131887da3c5" title="Executes a SQL command." alt="" coords="5,5,173,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="DB::DatabaseManager::insert" name="DB::DatabaseManager::insert">
+<area shape="rect" id="node1" title="Inserts data into a specified table." alt="" coords="5,39,173,80"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#a58d1a2ff38fcf44e8a300f5f8282936b" title="Resets the query settings." alt="" coords="221,5,389,47"/>
+<area shape="rect" id="node3" href="$classDB_1_1DatabaseManager.html#a09690342e7a7ad71165b3b38aea8e6c0" title="Sets the table for the query." alt="" coords="221,71,389,112"/>
+</map>

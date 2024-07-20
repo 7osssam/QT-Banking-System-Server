@@ -1,11 +1,21 @@
 <map id="GetDatabaseRequest::execute" name="GetDatabaseRequest::execute">
-<area shape="rect" id="node1" title="Executes the request to get the entire database." alt="" coords="5,165,165,207"/>
+<area shape="rect" id="node1" title="Executes the request to get the entire database." alt="" coords="5,304,165,345"/>
 <area shape="rect" id="node2" href="$classRequest.html#ad457f5030e3f983ffdbc7439989eebcb" title="Creates a JSON response indicating a database connection error." alt="" coords="214,5,433,47"/>
 <area shape="rect" id="node3" href="$classRequest.html#a6f5f7c7d240664a2c29dcd54bd9974d6" title="Creates a generic error JSON response." alt="" coords="213,71,433,98"/>
 <area shape="rect" id="node4" href="$classDB_1_1DbResult.html#a29d609255fca6904efa4feb0c0050e19" title="Retrieves data at a specific position in the result set." alt="" coords="251,173,396,199"/>
-<area shape="rect" id="node5" href="$classDB_1_1DbResult.html#aa69aec34a8771cd30ea590b9e66d68f9" title="Checks if the result set is empty." alt="" coords="481,135,651,162"/>
-<area shape="rect" id="node6" href="$classDB_1_1DbResult.html#a22c99c1160b466e76ff325fc6cb2639e" title="Gets the number of items in the result set." alt="" coords="495,198,637,225"/>
-<area shape="rect" id="node7" href="$classDB_1_1DbResult.html#a0c6b0bd92c8bd5fa6d2d2f18607c30ff" title="Retrieves the first item in the result set." alt="" coords="253,274,394,301"/>
-<area shape="rect" id="node9" href="$classRequest.html#ae580c02633722f323ad8a738e4952ea1" title="Checks if the database connection is valid." alt="" coords="214,325,433,351"/>
-<area shape="rect" id="node8" href="$classDB_1_1DbResult.html#a1bd962425afaf480ea713184af2bf7c3" title="Gets all the data in the result set." alt="" coords="493,274,639,301"/>
+<area shape="rect" id="node5" href="$classDB_1_1DbResult.html#aa69aec34a8771cd30ea590b9e66d68f9" title="Checks if the result set is empty." alt="" coords="481,107,651,134"/>
+<area shape="rect" id="node6" href="$classDB_1_1DbResult.html#a22c99c1160b466e76ff325fc6cb2639e" title="Gets the number of items in the result set." alt="" coords="495,158,637,185"/>
+<area shape="rect" id="node7" href="$classDB_1_1DatabaseManager.html#a92000f766524ccf276d209617de6bfca" title="Executes the built query." alt="" coords="239,275,407,316"/>
+<area shape="rect" id="node9" href="$classDB_1_1DatabaseManager.html#aa9c79b640a095bb76790c2dffe85c9a0" title="Selects columns for the query." alt="" coords="699,272,867,313"/>
+<area shape="rect" id="node11" href="$classDB_1_1DbResult.html#a0c6b0bd92c8bd5fa6d2d2f18607c30ff" title="Retrieves the first item in the result set." alt="" coords="253,391,394,418"/>
+<area shape="rect" id="node13" href="$classRequest.html#ae580c02633722f323ad8a738e4952ea1" title="Checks if the database connection is valid." alt="" coords="214,442,433,469"/>
+<area shape="rect" id="node17" href="$classDB_1_1DatabaseManager.html#afb63c834e96b32f2605882eda73a8d6d" title="Adds a JOIN clause to the query." alt="" coords="239,493,407,535"/>
+<area shape="rect" id="node18" href="$classDB_1_1DatabaseManager.html#a09690342e7a7ad71165b3b38aea8e6c0" title="Sets the table for the query." alt="" coords="239,559,407,600"/>
+<area shape="rect" id="node19" href="$classDB_1_1DatabaseManager.html#a5e0d0977ce554284a71c4a520340ae07" title="Adds a WHERE clause to the query." alt="" coords="239,624,407,665"/>
+<area shape="rect" id="node8" href="$classDB_1_1DatabaseManager.html#abfbee5e0fdaf35b4bb998932203aea4d" title="Gets the SQL SELECT query." alt="" coords="482,209,650,251"/>
+<area shape="rect" id="node10" href="$classDB_1_1DatabaseManager.html#a58d1a2ff38fcf44e8a300f5f8282936b" title="Resets the query settings." alt="" coords="482,275,650,316"/>
+<area shape="rect" id="node12" href="$classDB_1_1DbResult.html#a1bd962425afaf480ea713184af2bf7c3" title="Gets all the data in the result set." alt="" coords="493,391,639,418"/>
+<area shape="rect" id="node14" href="$classDB_1_1DatabaseManager.html#a01d24339865f4b3199e81b5224ae22bc" title="Checks the database connection." alt="" coords="482,443,650,484"/>
+<area shape="rect" id="node15" href="$classDB_1_1DatabaseManager.html#ad56bd7bc9d99adadd8afdc5fb19ac67a" title="Creates an instance of DatabaseManager." alt="" coords="699,443,867,484"/>
+<area shape="rect" id="node16" href="$classDB_1_1DatabaseManager.html#a0d786883976ea0f32e3566415138478d" title="Gets the last error occurred." alt="" coords="915,443,1083,484"/>
 </map>

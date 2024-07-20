@@ -1,0 +1,9 @@
+<map id="DB::DatabaseManager::update" name="DB::DatabaseManager::update">
+<area shape="rect" id="node1" title="Updates data in a specified table." alt="" coords="457,129,625,171"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#a807179e8d94fccdf5b5f24ac111054a3" title="Deletes data from a specified table." alt="" coords="213,27,409,54"/>
+<area shape="rect" id="node4" href="$classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643" title="Executes the user update request." alt="" coords="5,71,165,112"/>
+<area shape="rect" id="node5" href="$classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802" title="Executes the transaction request." alt="" coords="219,129,403,171"/>
+<area shape="rect" id="node6" href="$classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0" title="Executes the email update request." alt="" coords="232,195,391,236"/>
+<area shape="rect" id="node7" href="$classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057" title="Executes the password update request." alt="" coords="220,260,403,301"/>
+<area shape="rect" id="node3" href="$classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882" title="Executes the request to delete a user." alt="" coords="7,5,163,47"/>
+</map>

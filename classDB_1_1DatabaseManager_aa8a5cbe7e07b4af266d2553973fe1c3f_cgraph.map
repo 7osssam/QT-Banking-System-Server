@@ -1,0 +1,4 @@
+<map id="DB::DatabaseManager::setDbSetting" name="DB::DatabaseManager::setDbSetting">
+<area shape="rect" id="node1" title="Sets the database settings." alt="" coords="5,5,173,47"/>
+<area shape="rect" id="node2" href="$structDB_1_1DatabaseConfig.html#a2a2d3a9c985cf49d0e20e10db6a4fd11" title="Sets the database configuration parameters." alt="" coords="221,13,401,39"/>
+</map>

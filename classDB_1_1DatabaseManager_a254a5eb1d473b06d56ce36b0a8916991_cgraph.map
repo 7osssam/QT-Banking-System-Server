@@ -1,0 +1,6 @@
+<map id="DB::DatabaseManager::count" name="DB::DatabaseManager::count">
+<area shape="rect" id="node1" title="Gets the count of records matching the query criteria." alt="" coords="5,39,173,80"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#aec55b6bc46286fb3b5c87974a7c802e8" title="Clones the current DatabaseManager instance." alt="" coords="221,5,389,47"/>
+<area shape="rect" id="node3" href="$classDB_1_1DatabaseManager.html#abfbee5e0fdaf35b4bb998932203aea4d" title="Gets the SQL SELECT query." alt="" coords="221,71,389,112"/>
+<area shape="rect" id="node4" href="$classDB_1_1DatabaseManager.html#aa9c79b640a095bb76790c2dffe85c9a0" title="Selects columns for the query." alt="" coords="437,71,605,112"/>
+</map>

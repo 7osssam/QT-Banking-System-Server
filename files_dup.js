@@ -1,7 +1,10 @@
 var files_dup =
 [
     [ "CreateNewUserRequest.h", "CreateNewUserRequest_8h_source.html", null ],
-    [ "db.h", "db_8h_source.html", null ],
+    [ "db.h", "db_8h.html", [
+      [ "DatabaseConfig", "structDB_1_1DatabaseConfig.html", "structDB_1_1DatabaseConfig" ],
+      [ "DatabaseManager", "classDB_1_1DatabaseManager.html", "classDB_1_1DatabaseManager" ]
+    ] ],
     [ "dbresult.h", "dbresult_8h_source.html", null ],
     [ "DeleteUserRequest.h", "DeleteUserRequest_8h_source.html", null ],
     [ "GetAccountNumberRequest.h", "GetAccountNumberRequest_8h_source.html", null ],

@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['updateemail_44',['UpdateEmail',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310ac8974e51516860572533ff425c9162ba',1,'RequestManager']]],
-  ['updateemailrequest_45',['UpdateEmailRequest',['../classUpdateEmailRequest.html',1,'UpdateEmailRequest'],['../classUpdateEmailRequest.html#af3c59857442832df4fd43eaf258d9154',1,'UpdateEmailRequest::UpdateEmailRequest()']]],
-  ['updatepassword_46',['UpdatePassword',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a55a93a95e948c8d526ab395d9b56b7bc',1,'RequestManager']]],
-  ['updatepasswordrequest_47',['UpdatePasswordRequest',['../classUpdatePasswordRequest.html',1,'UpdatePasswordRequest'],['../classUpdatePasswordRequest.html#acf05d230499be0411931c787a8fce0a8',1,'UpdatePasswordRequest::UpdatePasswordRequest()']]],
-  ['updateuser_48',['UpdateUser',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310abe9610f90871c52199552ba9a7eee628',1,'RequestManager']]],
-  ['updateuserrequest_49',['UpdateUserRequest',['../classUpdateUserRequest.html',1,'UpdateUserRequest'],['../classUpdateUserRequest.html#a6d31dd9ab2e993a6c54eb0ecc3254406',1,'UpdateUserRequest::UpdateUserRequest()']]],
-  ['userinit_50',['UserInit',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a3d57ea768887ade2528b49470afeee2e',1,'RequestManager']]],
-  ['userinitrequest_51',['UserInitRequest',['../classUserInitRequest.html',1,'UserInitRequest'],['../classUserInitRequest.html#aed681e8587db3960d4ec096138cb27a8',1,'UserInitRequest::UserInitRequest()']]]
+  ['readyread_60',['readyRead',['../classServerHandler.html#a759cbb09760e8ca60cefe596bef59c1e',1,'ServerHandler']]],
+  ['request_61',['Request',['../classRequest.html',1,'']]],
+  ['request_2eh_62',['Request.h',['../Request_8h.html',1,'']]],
+  ['requestmanager_63',['RequestManager',['../classRequestManager.html',1,'RequestManager'],['../classRequestManager.html#adf7bfbf17876e300f0f02aaae671535a',1,'RequestManager::RequestManager()']]],
+  ['requests_20documentation_20for_20bank_20system_64',['Requests Documentation for Bank System',['../md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_src_requestModule_Requests_Requests.html',1,'']]],
+  ['reset_65',['reset',['../classDB_1_1DatabaseManager.html#a58d1a2ff38fcf44e8a300f5f8282936b',1,'DB::DatabaseManager']]],
+  ['rollback_66',['rollback',['../classDB_1_1DatabaseManager.html#ad3a76a2b3324dcf515e07e9610cb8b69',1,'DB::DatabaseManager']]],
+  ['run_67',['run',['../classServerHandler.html#a61359b9bb16c92ca9bca3353487db090',1,'ServerHandler']]]
 ];

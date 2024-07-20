@@ -1,0 +1,4 @@
+<map id="DB::DatabaseManager::whereOr" name="DB::DatabaseManager::whereOr">
+<area shape="rect" id="node1" title="Adds an OR condition to the WHERE clause." alt="" coords="280,5,448,47"/>
+<area shape="rect" id="node2" href="$classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34" title="Executes the request to get the transaction history." alt="" coords="5,5,232,47"/>
+</map>

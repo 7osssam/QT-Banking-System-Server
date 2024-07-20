@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['makerequest_28',['makeRequest',['../classRequestManager.html#ae4c8344d4bd079620effa090b30f8234',1,'RequestManager']]],
-  ['maketransaction_29',['MakeTransaction',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a073436de6bc4635f6f1d6a739d15e115',1,'RequestManager']]],
-  ['maketransactionrequest_30',['MakeTransactionRequest',['../classMakeTransactionRequest.html',1,'MakeTransactionRequest'],['../classMakeTransactionRequest.html#ae2d9838089b569f0ac334f450e038d1d',1,'MakeTransactionRequest::MakeTransactionRequest()']]]
+  ['join_43',['join',['../classDB_1_1DatabaseManager.html#afb63c834e96b32f2605882eda73a8d6d',1,'DB::DatabaseManager']]],
+  ['jsonparseerror_44',['JsonParseError',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b',1,'RequestManager']]]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['_7erequest_107',['~Request',['../classRequest.html#a45cc5d15eb7b9c9e97bd7328c9a90d3f',1,'Request']]],
-  ['_7erequestmanager_108',['~RequestManager',['../classRequestManager.html#a237db6121feaf809885dd140ee6da952',1,'RequestManager']]],
-  ['_7eserver_109',['~Server',['../classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6',1,'Server']]],
-  ['_7eserverhandler_110',['~ServerHandler',['../classServerHandler.html#a38748a26a3142d81018863876b06164e',1,'ServerHandler']]]
+  ['table_174',['table',['../classDB_1_1DatabaseManager.html#a09690342e7a7ad71165b3b38aea8e6c0',1,'DB::DatabaseManager']]],
+  ['tojsonstring_175',['toJsonString',['../classDB_1_1DbResult.html#ade90f923071d8f646dc0919e88d1e7cd',1,'DB::DbResult']]],
+  ['truncatetable_176',['truncateTable',['../classDB_1_1DatabaseManager.html#a4af6f6c13dd73b474eaeaa08339273ad',1,'DB::DatabaseManager']]]
 ];

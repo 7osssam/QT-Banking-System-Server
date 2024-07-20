@@ -1,0 +1,4 @@
+<map id="DB::DatabaseManager::createInstance" name="DB::DatabaseManager::createInstance">
+<area shape="rect" id="node1" title="Creates an instance of DatabaseManager." alt="" coords="5,5,173,47"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#a0d786883976ea0f32e3566415138478d" title="Gets the last error occurred." alt="" coords="221,5,389,47"/>
+</map>

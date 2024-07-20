@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['data_79',['data',['../classDB_1_1DbResult.html#a29d609255fca6904efa4feb0c0050e19',1,'DB::DbResult::data(int pos) const'],['../classDB_1_1DbResult.html#a1bd962425afaf480ea713184af2bf7c3',1,'DB::DbResult::data() const']]],
-  ['dbresult_80',['DbResult',['../classDB_1_1DbResult.html#a2990ab2f7eb48e24a3646d5695dd38fa',1,'DB::DbResult::DbResult()'],['../classDB_1_1DbResult.html#aaa1ecd40a8c6a179b73a73f79f31a21f',1,'DB::DbResult::DbResult(const QList&lt; QVariant &gt; &amp;data)']]],
-  ['deleteuserrequest_81',['DeleteUserRequest',['../classDeleteUserRequest.html#a1a44c17c0e3904253c781cdae70b845c',1,'DeleteUserRequest']]]
+  ['checkconnection_119',['checkConnection',['../classDB_1_1DatabaseManager.html#a01d24339865f4b3199e81b5224ae22bc',1,'DB::DatabaseManager']]],
+  ['clearselect_120',['clearSelect',['../classDB_1_1DatabaseManager.html#a5baa61139ed6989363c531f1d4c0130f',1,'DB::DatabaseManager']]],
+  ['clone_121',['clone',['../classDB_1_1DatabaseManager.html#aec55b6bc46286fb3b5c87974a7c802e8',1,'DB::DatabaseManager']]],
+  ['commit_122',['commit',['../classDB_1_1DatabaseManager.html#a411a9628da2b9dba97ed5f5ca2aba8eb',1,'DB::DatabaseManager']]],
+  ['count_123',['count',['../classDB_1_1DatabaseManager.html#a254a5eb1d473b06d56ce36b0a8916991',1,'DB::DatabaseManager']]],
+  ['createdbconnectionerror_124',['CreateDBConnectionError',['../classRequest.html#ad457f5030e3f983ffdbc7439989eebcb',1,'Request']]],
+  ['createerrorresponse_125',['CreateErrorResponse',['../classRequest.html#a6f5f7c7d240664a2c29dcd54bd9974d6',1,'Request']]],
+  ['createinstance_126',['createInstance',['../classDB_1_1DatabaseManager.html#ad56bd7bc9d99adadd8afdc5fb19ac67a',1,'DB::DatabaseManager']]],
+  ['createnewuserrequest_127',['CreateNewUserRequest',['../classCreateNewUserRequest.html#ab42553b16908191ee77fc67b3703fce5',1,'CreateNewUserRequest']]]
 ];

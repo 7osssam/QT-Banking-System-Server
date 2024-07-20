@@ -1,0 +1,6 @@
+<map id="DB::DatabaseManager::exec" name="DB::DatabaseManager::exec">
+<area shape="rect" id="node1" title="Executes the built query." alt="" coords="5,39,173,80"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#abfbee5e0fdaf35b4bb998932203aea4d" title="Gets the SQL SELECT query." alt="" coords="221,5,389,47"/>
+<area shape="rect" id="node4" href="$classDB_1_1DatabaseManager.html#a58d1a2ff38fcf44e8a300f5f8282936b" title="Resets the query settings." alt="" coords="221,71,389,112"/>
+<area shape="rect" id="node3" href="$classDB_1_1DatabaseManager.html#aa9c79b640a095bb76790c2dffe85c9a0" title="Selects columns for the query." alt="" coords="437,5,605,47"/>
+</map>

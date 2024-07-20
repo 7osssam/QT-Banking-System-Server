@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('Request_8h_source.html',''); initResiz
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QJsonDocument&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QJsonArray&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QMutexLocker&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;db.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="db_8h.html">db.h</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classRequest.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRequest.html">Request</a></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('Request_8h_source.html',''); initResiz
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        QString dbError;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (!DB::DatabaseManager::checkConnection(dbError))</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classDB_1_1DatabaseManager.html#a01d24339865f4b3199e81b5224ae22bc">DB::DatabaseManager::checkConnection</a>(dbError))</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            qDebug() &lt;&lt; <span class="stringliteral">&quot;Failed to connect to db&quot;</span> &lt;&lt; dbError;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -191,13 +191,15 @@ $(document).ready(function(){initNavTree('Request_8h_source.html',''); initResiz
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// REQUEST_H</span></div>
-<div class="ttc" id="aclassDB_1_1DatabaseManager_html"><div class="ttname"><a href="classDB_1_1DatabaseManager.html">DB::DatabaseManager</a></div><div class="ttdef"><b>Definition:</b> db.h:43</div></div>
+<div class="ttc" id="aclassDB_1_1DatabaseManager_html"><div class="ttname"><a href="classDB_1_1DatabaseManager.html">DB::DatabaseManager</a></div><div class="ttdoc">Manages database connections and SQL operations.</div><div class="ttdef"><b>Definition:</b> db.h:79</div></div>
+<div class="ttc" id="aclassDB_1_1DatabaseManager_html_a01d24339865f4b3199e81b5224ae22bc"><div class="ttname"><a href="classDB_1_1DatabaseManager.html#a01d24339865f4b3199e81b5224ae22bc">DB::DatabaseManager::checkConnection</a></div><div class="ttdeci">static bool checkConnection(QString &amp;error)</div><div class="ttdoc">Checks the database connection.</div><div class="ttdef"><b>Definition:</b> db.cpp:81</div></div>
 <div class="ttc" id="aclassRequest_html"><div class="ttname"><a href="classRequest.html">Request</a></div><div class="ttdoc">The Request class is an abstract base class for handling different types of requests.</div><div class="ttdef"><b>Definition:</b> Request.h:25</div></div>
 <div class="ttc" id="aclassRequest_html_a45cc5d15eb7b9c9e97bd7328c9a90d3f"><div class="ttname"><a href="classRequest.html#a45cc5d15eb7b9c9e97bd7328c9a90d3f">Request::~Request</a></div><div class="ttdeci">virtual ~Request()</div><div class="ttdoc">Virtual destructor for the Request class.</div><div class="ttdef"><b>Definition:</b> Request.h:112</div></div>
 <div class="ttc" id="aclassRequest_html_a634ac3a98caa9e90d03487556bbecfed"><div class="ttname"><a href="classRequest.html#a634ac3a98caa9e90d03487556bbecfed">Request::execute</a></div><div class="ttdeci">virtual QJsonObject execute(const QJsonObject &amp;jsonObj, QMutex &amp;m)=0</div><div class="ttdoc">Pure virtual method to execute a request.</div></div>
 <div class="ttc" id="aclassRequest_html_a6f5f7c7d240664a2c29dcd54bd9974d6"><div class="ttname"><a href="classRequest.html#a6f5f7c7d240664a2c29dcd54bd9974d6">Request::CreateErrorResponse</a></div><div class="ttdeci">QJsonObject CreateErrorResponse(QJsonObject &amp;response, QJsonObject &amp;dataObj, QString message)</div><div class="ttdoc">Creates a generic error JSON response.</div><div class="ttdef"><b>Definition:</b> Request.h:90</div></div>
 <div class="ttc" id="aclassRequest_html_ad457f5030e3f983ffdbc7439989eebcb"><div class="ttname"><a href="classRequest.html#ad457f5030e3f983ffdbc7439989eebcb">Request::CreateDBConnectionError</a></div><div class="ttdeci">QJsonObject CreateDBConnectionError(QJsonObject &amp;response, QJsonObject &amp;dataObj)</div><div class="ttdoc">Creates a JSON response indicating a database connection error.</div><div class="ttdef"><b>Definition:</b> Request.h:65</div></div>
 <div class="ttc" id="aclassRequest_html_ae580c02633722f323ad8a738e4952ea1"><div class="ttname"><a href="classRequest.html#ae580c02633722f323ad8a738e4952ea1">Request::isDBConnectionValid</a></div><div class="ttdeci">bool isDBConnectionValid(DB::DatabaseManager *dbManager)</div><div class="ttdoc">Checks if the database connection is valid.</div><div class="ttdef"><b>Definition:</b> Request.h:36</div></div>
+<div class="ttc" id="adb_8h_html"><div class="ttname"><a href="db_8h.html">db.h</a></div><div class="ttdoc">Database management classes for handling database connections and operations.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,0 +1,7 @@
+<map id="DB::DatabaseManager::join" name="DB::DatabaseManager::join">
+<area shape="rect" id="node1" title="Adds a JOIN clause to the query." alt="" coords="280,104,448,145"/>
+<area shape="rect" id="node2" href="$classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c" title="Executes the request to get the account number." alt="" coords="17,5,220,47"/>
+<area shape="rect" id="node3" href="$classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613" title="Executes the request to get the entire database." alt="" coords="39,71,199,112"/>
+<area shape="rect" id="node4" href="$classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34" title="Executes the request to get the transaction history." alt="" coords="5,136,232,177"/>
+<area shape="rect" id="node5" href="$classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802" title="Executes the transaction request." alt="" coords="27,201,211,243"/>
+</map>
