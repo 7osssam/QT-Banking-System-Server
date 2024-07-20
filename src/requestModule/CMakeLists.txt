@@ -35,7 +35,7 @@ add_library(${LIBNAME} STATIC ${LIB_HEADERS} ${LIB_SOURCES}) # for dynamic libra
 
 target_include_directories(${LIBNAME} PUBLIC
 						   ${CMAKE_CURRENT_SOURCE_DIR}
-						   ${CMAKE_CURRENT_SOURCE_DIR}/Requests
+						   ${CMAKE_CURRENT_SOURCE_DIR}/Requests/
 						   ${CMAKE_SOURCE_DIR}/src/dbModule/
 						   )
 ############# etc.... add any other include directories here
