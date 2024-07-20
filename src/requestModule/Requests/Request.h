@@ -33,7 +33,24 @@ protected:
      * @param dbManager A pointer to the DB::DatabaseManager instance used for checking the connection.
      * @return True if the database connection is valid, false otherwise.
      */
-	bool isDBConnectionValid(DB::DatabaseManager* dbManager);
+	bool isDBConnectionValid(DB::DatabaseManager* dbManager)
+	{
+		if (dbManager == nullptr)
+		{
+			qDebug() << "Failed to create instance";
+			return false;
+		}
+
+		QString dbError;
+
+		if (!DB::DatabaseManager::checkConnection(dbError))
+		{
+			qDebug() << "Failed to connect to db" << dbError;
+			return false;
+		}
+
+		return true;
+	}
 
 	/**
      * @brief Creates a JSON response indicating a database connection error.
@@ -45,7 +62,20 @@ protected:
      * @param dataObj A reference to the QJsonObject that contains additional data about the error.
      * @return The updated QJsonObject containing the error response.
      */
-	QJsonObject CreateDBConnectionError(QJsonObject& response, QJsonObject& dataObj);
+	QJsonObject CreateDBConnectionError(QJsonObject& response, QJsonObject& dataObj)
+	{
+		dataObj.insert("status", int(false));
+		dataObj.insert("message", "Internal server error");
+
+		response.insert("Data", dataObj);
+
+		QJsonDocument responseDoc(response);
+		QByteArray	  responseData = responseDoc.toJson();
+
+		qDebug().noquote() << "<-- DB Connection Error :\n" << responseDoc.toJson(QJsonDocument::Indented);
+
+		return response;
+	}
 
 	/**
      * @brief Creates a generic error JSON response.
@@ -57,7 +87,21 @@ protected:
      * @param message A QString containing the error message to include in the response.
      * @return The updated QJsonObject containing the error response.
      */
-	QJsonObject CreateErrorResponse(QJsonObject& response, QJsonObject& dataObj, QString message);
+	QJsonObject CreateErrorResponse(QJsonObject& response, QJsonObject& dataObj, QString message)
+	{
+		dataObj.insert("status", int(false));
+		dataObj.insert("message", message);
+
+		response.insert("Data", dataObj);
+
+		// Convert response to JSON
+		QJsonDocument responseDoc(response);
+		QByteArray	  responseData = responseDoc.toJson();
+
+		qDebug().noquote() << "<-- Error Response :\n" << responseDoc.toJson(QJsonDocument::Indented);
+
+		return response;
+	}
 
 public:
 	/**
