@@ -14,6 +14,7 @@
 #include <QMutex>
 #include "RequestManager.h"
 #include <QTcpServer>
+#include <QTcpSocket>
 
 /**
  * @brief The ServerHandler class handles incoming client connections in a separate thread.
