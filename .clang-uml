@@ -2,8 +2,8 @@ add_compile_flags:
   - --target=x86_64-w64-mingw32
   - -fparse-all-comments
   - -Wno-unknown-warning-option
-  - -DUSE_THREADS_POSIX 
-remove_compile_flags:  
+  - -DUSE_THREADS_POSIX
+remove_compile_flags:
   - -Wunused-command-line-argument
 # Change to directory where compile_commands.json is
 compilation_database_dir: .
@@ -14,8 +14,10 @@ diagrams:
     type: class
     title: This Diagram shows the relationship between all system components
     glob:
-      - src/Bank/*.cpp
-      - src/BankAccount/*.cpp
+      - src/dbModule/*.cpp
+      - src/requestModule/*.cpp
+      - src/requestModule/Requests/*.cpp
+      - src/serverModule/*.cpp
       - app/*.cpp
     include:
       paths:
@@ -29,7 +31,6 @@ diagrams:
       namespaces:
         - std
         - tests  # Exclude Google Test namespace
-        - nlohmann  # Exclude nlohmann namespace
     generate_packages: true
     package_type: directory
     generate_links:
@@ -38,8 +39,10 @@ diagrams:
   include_diagram:
     type: include
     glob:
-      - src/Bank/*.cpp
-      - src/BankAccount/*.cpp
+      - src/dbModule/*.cpp
+      - src/requestModule/*.cpp
+      - src/requestModule/Requests/*.cpp
+      - src/serverModule/*.cpp
       - app/*.cpp
     include:
       paths:
@@ -51,14 +54,15 @@ diagrams:
       namespaces:
         - std
         - tests  # Exclude Google Test namespace
-        - nlohmann  # Exclude nlohmann namespace
       paths:
         - lib/
   sequence_diagram:
     type: sequence
     glob:
-      - src/Bank/*.cpp
-      - src/BankAccount/*.cpp
+      - src/dbModule/*.cpp
+      - src/requestModule/*.cpp
+      - src/requestModule/Requests/*.cpp
+      - src/serverModule/*.cpp
       - app/*.cpp
     include:
       paths:
@@ -66,13 +70,19 @@ diagrams:
         - inc/
         - lib/
         - tests/
+    generate_metadata: true
+    combine_free_functions_into_file_participants: true
+    inline_lambda_messages: true
+    generate_condition_statements: true
+    generate_method_arguments: full
+    generate_return_types: true
+    generate_message_comments: true
+    message_comment_width: 35
     exclude:
       namespaces:
         - std
         - tests  # Exclude Google Test namespace
-        - nlohmann  # Exclude nlohmann namespace
       paths:
         - lib/
     start_from:
-      #- function: "main()"
-      - function: "Bank::displayAllAccounts() const"
+      - function: "LoginRequest::execute(const QJsonObject &,QMutex &)"
