@@ -1,0 +1,207 @@
+@startuml
+actor User
+actor Client
+
+participant "Server" as S
+participant "ServerHandler" as SH
+participant "RequestManager" as RM
+participant "QTcpSocket" as Socket
+participant "QCryptographicHash" as Hash
+participant "QEventLoop" as Loop
+participant "QJsonDocument" as JsonDoc
+participant "QJsonParseError" as JsonError
+participant "Request" as Req
+participant "QThreadPool" as TP
+participant "QMutex" as M
+participant "DB::DatabaseManager" as DB
+participant "QSqlQuery" as Query
+participant "QSqlRecord" as Record
+participant "DbResult" as Result
+
+== Server Initialization ==
+User -> S: new Server()
+activate S
+S -> TP: new QThreadPool()
+activate TP
+TP -> S: return
+S -> M: new QMutex()
+activate M
+M -> S: return
+S -> User: Server created
+
+== ServerHandler Initialization ==
+User -> SH: new ServerHandler()
+activate SH
+SH -> RM: new RequestManager()
+activate RM
+RM -> SH: return
+SH -> User: ServerHandler created
+
+== ServerHandler Process readyRead Event ==
+Client -> Socket: send data
+Socket -> SH: readyRead()
+activate SH
+SH -> Socket: readAll()
+SH -> Hash: compute hash(requestData)
+Hash -> SH: return computedHash
+
+alt Hash verification failed
+    SH -> SH: log "Hash verification failed"
+else Hash verification succeeded
+    SH -> SH: log "Hash verification succeeded"
+    SH -> RM: makeRequest(requestData)
+    activate RM
+    RM -> SH: return response
+    SH -> Socket: write(response)
+    SH -> Socket: waitForBytesWritten()
+    deactivate RM
+end
+deactivate SH
+
+== ServerHandler Run Method ==
+User -> SH: run()
+activate SH
+SH -> Socket: new QTcpSocket()
+activate Socket
+alt setSocketDescriptor failed
+    SH -> SH: log "Failed to set socket descriptor"
+    SH -> Socket: delete QTcpSocket
+    deactivate Socket
+else setSocketDescriptor succeeded
+    SH -> Loop: new QEventLoop()
+    activate Loop
+    SH -> Socket: connect(disconnected, Loop.quit)
+    SH -> Socket: connect(readyRead, ServerHandler.readyRead)
+    SH -> Loop: exec()
+    deactivate Loop
+end
+deactivate SH
+
+== RequestManager Process Requests ==
+SH -> RM: makeRequest(data)
+activate RM
+RM -> JsonDoc: fromJson(data)
+alt JSON parse error
+    RM -> SH: handleJsonParseError(parseError)
+else JSON parse succeeded
+    JsonDoc -> RM: return jsonObjRequest
+    RM -> RM: parse request number
+    alt request not found
+        RM -> SH: log "Request not found"
+    else request found
+        RM -> Req: execute(jsonObjRequest, Mutex)
+        activate Req
+        Req -> RM: return response
+        RM -> SH: return responseByteArr
+        deactivate Req
+    end
+end
+deactivate RM
+
+== Server Process Incoming Connection ==
+Client -> S: new connection
+activate S
+S -> SH: new ServerHandler()
+activate SH
+SH -> S: setAutoDelete(true)
+S -> TP: start(SH)
+deactivate SH
+deactivate S
+
+== Request Process Request ==
+SH -> RM: makeRequest(data)
+activate RM
+RM -> JsonDoc: fromJson(data)
+alt JSON parse error
+    RM -> SH: handleJsonParseError(parseError)
+else JSON parse succeeded
+    JsonDoc -> RM: return jsonObjRequest
+    RM -> RM: parse request number
+    alt request not found
+        RM -> SH: log "Request not found"
+    else request found
+        RM -> Req: execute(jsonObjRequest, Mutex)
+        activate Req
+        Req -> RM: return response
+        RM -> SH: return responseByteArr
+        deactivate Req
+    end
+end
+deactivate RM
+
+== DatabaseManager Initialization and Query ==
+User -> DM: setDbSetting(host, port, username, password, dbname)
+activate DM
+DM -> Config: set(host, port, username, password, dbname)
+Config -> DM: return
+DM -> User: DB settings configured
+deactivate DM
+
+User -> DM: createInstance(checkDBName, newConnection, &err)
+activate DM
+alt dbConfig not set
+    DM -> User: log "Database configuration not set"
+    DM -> User: return nullptr
+    deactivate DM
+else dbConfig set
+    DM -> DM: new DatabaseManager()
+    activate DM
+    DM -> DB: getDatabase()
+    activate DB
+    alt DB is open
+        DM -> DB: close()
+    end
+    DM -> DB: setHostName(host)
+    DM -> DB: setPort(port)
+    DM -> DB: open()
+    DB -> Query: CREATE DATABASE IF NOT EXISTS dbname
+    deactivate DB
+    DM -> DB: setDatabaseName(dbname)
+    DM -> DB: setUserName(username)
+    DM -> DB: setPassword(password)
+    DM -> DB: open()
+    alt open successful
+        DM -> DM: return true
+    else open failed
+        DM -> User: log "Error opening database connection"
+        DM -> User: return nullptr
+    end
+    deactivate DM
+end
+
+User -> DM: checkConnection(&error)
+activate DM
+DM -> DM: createInstance(true, false, &err)
+alt createInstance failed
+    DM -> User: log err
+    DM -> User: return false
+else createInstance successful
+    DM -> User: return true
+end
+deactivate DM
+
+Client -> DM: select("*").table("users").where("email =", email).exec()
+activate DM
+DM -> Query: getDatabase()
+activate Query
+alt database is not open
+    Query -> DM: log "Database not open"
+    return
+else database is open
+    Query -> DM: prepare and execute query
+    alt query execution failed
+        Query -> DM: log error
+        DM -> Client: return DbResult(empty)
+        deactivate DM
+    else query execution succeeded
+        Query -> Record: record()
+        activate Record
+        Record -> DM: while query.next()
+        DM -> Result: create DbResult from query result
+        deactivate Record
+        DM -> Client: return DbResult(result)
+        deactivate DM
+    end
+end
+deactivate Query
+@enduml

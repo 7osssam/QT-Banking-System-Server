@@ -1,42 +1,308 @@
 @startuml
 title This Diagram shows the relationship between all system components
 package [src] as C_0009392701334512935369 {
-package [BankAccount] as C_0001617240256891923844 {
-class "BankAccount" as C_0009984192897324832466
-class C_0009984192897324832466 [[classBankAccount.html{BankAccount}]] {
-+BankAccount(int accountNumber, const std::string & accountHolder, const std::string & accountType, double accountBalance) : void [[[{BankAccount}]]]
+package [dbModule] as C_0006877198409089665649 {
+class "DbResult" as C_0006960484039840119316
+class C_0006960484039840119316 [[classDB_1_1DbResult.html{DbResult}]] {
++DbResult() : void [[[{DbResult}]]]
++DbResult(const QList<QVariant> & data) : void [[[{DbResult}]]]
 ..
-+deposit(double amount) : void [[[{deposit}]]]
-+displayAccountInfo() const : void [[[{displayAccountInfo}]]]
-+getAccountBalance() const : double [[[{getAccountBalance}]]]
-+getAccountHolder() const : const std::string & [[[{getAccountHolder}]]]
-+getAccountNumber() const : int [[[{getAccountNumber}]]]
-+getAccountType() const : const std::string & [[[{getAccountType}]]]
-+withdraw(double amount) : bool [[[{withdraw}]]]
++data(int pos) const : QJsonObject [[[{data}]]]
++data() const : QJsonArray [[[{data}]]]
++first() const : QJsonObject [[[{first}]]]
++isEmpty() const : bool [[[{isEmpty}]]]
++size() const : int [[[{size}]]]
++toJsonString() const : QString [[[{toJsonString}]]]
 __
--accountBalance : double [[[{accountBalance}]]]
--accountHolder : std::string [[[{accountHolder}]]]
--accountNumber : int [[[{accountNumber}]]]
--accountType : std::string [[[{accountType}]]]
+-Data_ : QJsonArray [[[{Data_}]]]
 }
-}
-package [Bank] as C_0002394840416120061501 {
-class "Bank" as C_0013925658533498293399
-class C_0013925658533498293399 [[classBank.html{Bank}]] {
-+Bank() : void [[[{Bank}]]]
-+Bank(Bank && obj) : void [[[{Bank}]]]
+class "DatabaseConfig" as C_0010433389512216933408
+class C_0010433389512216933408 [[structDB_1_1DatabaseConfig.html{DatabaseConfig}]] {
++DatabaseConfig() : void [[[{DatabaseConfig}]]]
++DatabaseConfig(const QString & host, int port, const QString & username, const QString & password, const QString & dbname) : void [[[{DatabaseConfig}]]]
 ..
-+SortAccounts() : void [[[{SortAccounts}]]]
-+addAccount(const BankAccount & account) : void [[[{addAccount}]]]
-+displayAllAccounts() const : void [[[{displayAllAccounts}]]]
-+getAccounts() const : std::vector<BankAccount> [[[{getAccounts}]]]
-+getTotalBalance() const : double [[[{getTotalBalance}]]]
++set(const QString & host, int port, const QString & username, const QString & password, const QString & dbname) : void [[[{set}]]]
 __
--accounts : std::vector<BankAccount> [[[{accounts}]]]
++dbName : QString [[[{dbName}]]]
++host : QString [[[{host}]]]
++password : QString [[[{password}]]]
++port : int [[[{port}]]]
++username : QString [[[{username}]]]
+}
+class "DatabaseManager" as C_0013573387592128700325
+class C_0013573387592128700325 [[classDB_1_1DatabaseManager.html{DatabaseManager}]] {
+-DatabaseManager() : void [[[{DatabaseManager}]]]
++~DatabaseManager() : void [[[{~DatabaseManager}]]]
+..
++beginTransaction() : bool [[[{beginTransaction}]]]
+{static} +checkConnection(QString & error) : bool [[[{checkConnection}]]]
++clearSelect() : DatabaseManager * [[[{clearSelect}]]]
++clone() : DatabaseManager * [[[{clone}]]]
++commit() : bool [[[{commit}]]]
++count() : int [[[{count}]]]
+{static} +createInstance(bool checkDBName = false, bool newConnection = false, QString * err = nullptr) : DatabaseManager * [[[{createInstance}]]]
+-dataToString(const QVariantMap & map) : QString [[[{dataToString}]]]
++del(const QString & table) : bool [[[{del}]]]
++exec() : DbResult [[[{exec}]]]
++exec(const QString & sqlcommand) : bool [[[{exec}]]]
++execResult(const QString & sql) : DbResult [[[{execResult}]]]
++get(const QString & tableName) : DbResult [[[{get}]]]
+{static} -getDatabase() : QSqlDatabase [[[{getDatabase}]]]
++getSelectQuery(const QString & select = QString()) : QString [[[{getSelectQuery}]]]
++group(const QString & group) : DatabaseManager * [[[{group}]]]
+-init(const QString & host, int port, const QString & username, const QString & password, const QString & dbname, bool checkDBName = false, bool newConnection = false) : bool [[[{init}]]]
++insert(const QString & table, const QVariantMap & data) : bool [[[{insert}]]]
++isSupportTransaction() : bool [[[{isSupportTransaction}]]]
++join(const QString & value) : DatabaseManager * [[[{join}]]]
++lastError() : QSqlError [[[{lastError}]]]
++lastInsertedId() : QVariant [[[{lastInsertedId}]]]
++lastQuery() : QString [[[{lastQuery}]]]
++like(const QString & value, const QString & val) : DatabaseManager * [[[{like}]]]
++likeNative(const QString & value, const QString & val) : DatabaseManager * [[[{likeNative}]]]
++likePost(const QString & value, const QString & val) : DatabaseManager * [[[{likePost}]]]
++limit(int limit) : DatabaseManager * [[[{limit}]]]
+-postQuery(QSqlQuery * query) : void [[[{postQuery}]]]
++reset() : DatabaseManager * [[[{reset}]]]
++rollback() : bool [[[{rollback}]]]
++select(const QString & value) : DatabaseManager * [[[{select}]]]
+{static} +setDbSetting(const QString & host, int port, const QString & username, const QString & password, const QString & dbname) : bool [[[{setDbSetting}]]]
++sort(const QString & sort) : DatabaseManager * [[[{sort}]]]
++start(int start) : DatabaseManager * [[[{start}]]]
++table(const QString & value) : DatabaseManager * [[[{table}]]]
++truncateTable(const QString & table) : bool [[[{truncateTable}]]]
++update(const QString & table, const QVariantMap & data) : bool [[[{update}]]]
++where(const QString & value, const QVariant & val = QVariant()) : DatabaseManager * [[[{where}]]]
++whereOr(const QString & value) : DatabaseManager * [[[{whereOr}]]]
+__
+-Childs_ : QList<DatabaseManager *> [[[{Childs_}]]]
+{static} -Created_ : QStringList [[[{Created_}]]]
+-Group_ : QString [[[{Group_}]]]
+-InsertedId_ : QVariant [[[{InsertedId_}]]]
+-Join_ : QString [[[{Join_}]]]
+-LastError_ : QSqlError [[[{LastError_}]]]
+-LastQuery_ : QString [[[{LastQuery_}]]]
+-Limit_ : QString [[[{Limit_}]]]
+-Parent_ : DatabaseManager * [[[{Parent_}]]]
+-Select_ : QString [[[{Select_}]]]
+{static} -SoftDelete_ : QStringList [[[{SoftDelete_}]]]
+-Sort_ : QString [[[{Sort_}]]]
+-Start_ : QString [[[{Start_}]]]
+-Table_ : QString [[[{Table_}]]]
+{static} -Update_ : QStringList [[[{Update_}]]]
+-Where_ : QString [[[{Where_}]]]
+-isSupportTransaction_ : bool [[[{isSupportTransaction_}]]]
+}
+}
+package [requestModule] as C_0007249139127462911352 {
+package [Requests] as C_0001482322031337363986 {
+abstract "Request" as C_0004354387044733077778
+abstract C_0004354387044733077778 [[classRequest.html{Request}]] {
++~Request() : void [[[{~Request}]]]
+..
+#CreateDBConnectionError(QJsonObject & response, QJsonObject & dataObj) : QJsonObject [[[{CreateDBConnectionError}]]]
+#CreateErrorResponse(QJsonObject & response, QJsonObject & dataObj, QString message) : QJsonObject [[[{CreateErrorResponse}]]]
+{abstract} +execute(const QJsonObject & jsonObj, QMutex & m) = 0 : QJsonObject [[[{execute}]]]
+#isDBConnectionValid(DB::DatabaseManager * dbManager) : bool [[[{isDBConnectionValid}]]]
+__
+}
+class "LoginRequest" as C_0001633855435523401023
+class C_0001633855435523401023 [[classLoginRequest.html{LoginRequest}]] {
++LoginRequest() : void [[[{LoginRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+note left of C_0001633855435523401023::execute
+A comment I have access to.
+end note
+class "GetAccountNumberRequest" as C_0012710989722481167264
+class C_0012710989722481167264 [[classGetAccountNumberRequest.html{GetAccountNumberRequest}]] {
++GetAccountNumberRequest() : void [[[{GetAccountNumberRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "GetBalanceRequest" as C_0011752401552383491906
+class C_0011752401552383491906 [[classGetBalanceRequest.html{GetBalanceRequest}]] {
++GetBalanceRequest() : void [[[{GetBalanceRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "GetTransactionsHistoryRequest" as C_0010218503219500069835
+class C_0010218503219500069835 [[classGetTransactionsHistoryRequest.html{GetTransactionsHistoryRequest}]] {
++GetTransactionsHistoryRequest() : void [[[{GetTransactionsHistoryRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "MakeTransactionRequest" as C_0013100223563862354982
+class C_0013100223563862354982 [[classMakeTransactionRequest.html{MakeTransactionRequest}]] {
++MakeTransactionRequest() : void [[[{MakeTransactionRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "GetDatabaseRequest" as C_0002013764729148086543
+class C_0002013764729148086543 [[classGetDatabaseRequest.html{GetDatabaseRequest}]] {
++GetDatabaseRequest() : void [[[{GetDatabaseRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "CreateNewUserRequest" as C_0007232843274662702843
+class C_0007232843274662702843 [[classCreateNewUserRequest.html{CreateNewUserRequest}]] {
++CreateNewUserRequest() : void [[[{CreateNewUserRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "DeleteUserRequest" as C_0002664988866812332938
+class C_0002664988866812332938 [[classDeleteUserRequest.html{DeleteUserRequest}]] {
++DeleteUserRequest() : void [[[{DeleteUserRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "UpdateUserRequest" as C_0007645390992448267112
+class C_0007645390992448267112 [[classUpdateUserRequest.html{UpdateUserRequest}]] {
++UpdateUserRequest() : void [[[{UpdateUserRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "UserInitRequest" as C_0015500654025726302953
+class C_0015500654025726302953 [[classUserInitRequest.html{UserInitRequest}]] {
++UserInitRequest() : void [[[{UserInitRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "UpdateEmailRequest" as C_0002660278549059451925
+class C_0002660278549059451925 [[classUpdateEmailRequest.html{UpdateEmailRequest}]] {
++UpdateEmailRequest() : void [[[{UpdateEmailRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+class "UpdatePasswordRequest" as C_0013647470015345896002
+class C_0013647470015345896002 [[classUpdatePasswordRequest.html{UpdatePasswordRequest}]] {
++UpdatePasswordRequest() : void [[[{UpdatePasswordRequest}]]]
+..
++execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject [[[{execute}]]]
+__
+-dbManager : DB::DatabaseManager * [[[{dbManager}]]]
+}
+}
+class "RequestManager" as C_0017581648629732253705
+class C_0017581648629732253705 [[classRequestManager.html{RequestManager}]] {
++RequestManager(QMutex * Mutex) : void [[[{RequestManager}]]]
++~RequestManager() : void [[[{~RequestManager}]]]
+..
+-handleJsonParseError(const QJsonParseError & parseError) : QJsonObject [[[{handleJsonParseError}]]]
++makeRequest(QByteArray data) : QByteArray [[[{makeRequest}]]]
+__
+-Mutex_ : QMutex * [[[{Mutex_}]]]
+-requests_ : QMap<int,Request *> [[[{requests_}]]]
+}
+enum "RequestManager##AvailableRequests" as C_0014397068199454785176
+enum C_0014397068199454785176 [[enumRequestManager##AvailableRequests.html{RequestManager##AvailableRequests}]] {
+Login
+GetAccountnumber
+GetBalance
+GetTransactionsHistory
+MakeTransaction
+TransferAmount
+GetDatabase
+CreateNewUser
+DeleteUser
+UpdateUser
+UserInit
+UpdateEmail
+UpdatePassword
+JsonParseError
+}
+}
+package [serverModule] as C_0000376844742298738572 {
+class "ServerHandler" as C_0001512818839078814394
+class C_0001512818839078814394 [[classServerHandler.html{ServerHandler}]] {
++ServerHandler(QMutex * m, qintptr handle = 0, QObject * parent = nullptr) : void [[[{ServerHandler}]]]
++~ServerHandler() : void [[[{~ServerHandler}]]]
+..
++metaObject() const : const QMetaObject * [[[{metaObject}]]]
++qt_metacall(QMetaObject::Call, int, void **) : int [[[{qt_metacall}]]]
++qt_metacast(const char *) : void * [[[{qt_metacast}]]]
+{static} -qt_static_metacall(QObject *, QMetaObject::Call, int, void **) : void [[[{qt_static_metacall}]]]
++readyRead() : void [[[{readyRead}]]]
++run() : void [[[{run}]]]
+{static} +tr(const char * s, const char * c = nullptr, int n = -1) : QString [[[{tr}]]]
+__
+-Mutex_ : QMutex * [[[{Mutex_}]]]
+-clientSocket_ : QTcpSocket * [[[{clientSocket_}]]]
+-handle_ : qintptr [[[{handle_}]]]
+-requestManager : RequestManager * [[[{requestManager}]]]
+{static} +staticMetaObject : const QMetaObject [[[{staticMetaObject}]]]
+}
+class "Server" as C_0006556302699635904946
+class C_0006556302699635904946 [[classServer.html{Server}]] {
++Server(QObject * parent = nullptr) : void [[[{Server}]]]
++~Server() : void [[[{~Server}]]]
+..
+#incomingConnection(qintptr handle) : void [[[{incomingConnection}]]]
++metaObject() const : const QMetaObject * [[[{metaObject}]]]
++qt_metacall(QMetaObject::Call, int, void **) : int [[[{qt_metacall}]]]
++qt_metacast(const char *) : void * [[[{qt_metacast}]]]
+{static} -qt_static_metacall(QObject *, QMetaObject::Call, int, void **) : void [[[{qt_static_metacall}]]]
++quit() : void [[[{quit}]]]
++start(qint16 port = 2222) : void [[[{start}]]]
+{static} +tr(const char * s, const char * c = nullptr, int n = -1) : QString [[[{tr}]]]
+__
+-Mutex_ : QMutex * [[[{Mutex_}]]]
+{static} +staticMetaObject : const QMetaObject [[[{staticMetaObject}]]]
+-threadPool : QThreadPool * [[[{threadPool}]]]
 }
 }
 }
-C_0013925658533498293399 o-- C_0009984192897324832466 : -accounts
+C_0013573387592128700325 ..> C_0006960484039840119316
+C_0013573387592128700325 --> C_0013573387592128700325 : -Parent_
+C_0004354387044733077778 ..> C_0013573387592128700325
+C_0001633855435523401023 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0001633855435523401023
+C_0012710989722481167264 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0012710989722481167264
+C_0011752401552383491906 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0011752401552383491906
+C_0010218503219500069835 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0010218503219500069835
+C_0013100223563862354982 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0013100223563862354982
+C_0002013764729148086543 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0002013764729148086543
+C_0007232843274662702843 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0007232843274662702843
+C_0002664988866812332938 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0002664988866812332938
+C_0007645390992448267112 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0007645390992448267112
+C_0015500654025726302953 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0015500654025726302953
+C_0002660278549059451925 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0002660278549059451925
+C_0013647470015345896002 --> C_0013573387592128700325 : -dbManager
+C_0004354387044733077778 <|-- C_0013647470015345896002
+C_0014397068199454785176 --+ C_0017581648629732253705
+C_0001512818839078814394 --> C_0017581648629732253705 : -requestManager
 
 'Generated with clang-uml, version 0.5.3
 'LLVM version clang version 18.1.1 (https://github.com/llvm/llvm-project.git dba2a75e9c7ef81fe84774ba5eee5e67e01d801a)

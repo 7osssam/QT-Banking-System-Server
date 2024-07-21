@@ -2,35 +2,281 @@
 title: This Diagram shows the relationship between all system components
 ---
 classDiagram
-    class C_0009984192897324832466["BankAccount"]
-    class C_0009984192897324832466 {
-        +BankAccount(int accountNumber, const std::string & accountHolder, const std::string & accountType, double accountBalance) : void
-        +deposit(double amount) : void
-        +displayAccountInfo() : [const] void
-        +getAccountBalance() : [const] double
-        +getAccountHolder() : [const] const std::string &
-        +getAccountNumber() : [const] int
-        +getAccountType() : [const] const std::string &
-        +withdraw(double amount) : bool
-        -accountBalance : double
-        -accountHolder : std::string
-        -accountNumber : int
-        -accountType : std::string
+    class C_0006960484039840119316["DB::DbResult"]
+    class C_0006960484039840119316 {
+        +DbResult() : void
+        +DbResult(const QList<QVariant> & data) : void
+        +data(int pos) : [const] QJsonObject
+        +data() : [const] QJsonArray
+        +first() : [const] QJsonObject
+        +isEmpty() : [const] bool
+        +size() : [const] int
+        +toJsonString() : [const] QString
+        -Data_ : QJsonArray
     }
-    click C_0009984192897324832466 href "classBankAccount.html" "BankAccount"
-    class C_0013925658533498293399["Bank"]
-    class C_0013925658533498293399 {
-        +Bank() : void
-        +Bank(Bank && obj) : void
-        +SortAccounts() : void
-        +addAccount(const BankAccount & account) : void
-        +displayAllAccounts() : [const] void
-        +getAccounts() : [const] std::vector&lt;BankAccount&gt;
-        +getTotalBalance() : [const] double
-        -accounts : std::vector&lt;BankAccount&gt;
+    click C_0006960484039840119316 href "classDB_1_1DbResult.html" "DbResult"
+    class C_0010433389512216933408["DB::DatabaseConfig"]
+    class C_0010433389512216933408 {
+        +DatabaseConfig() : void
+        +DatabaseConfig(const QString & host, int port, const QString & username, const QString & password, const QString & dbname) : void
+        +set(const QString & host, int port, const QString & username, const QString & password, const QString & dbname) : void
+        +dbName : QString
+        +host : QString
+        +password : QString
+        +port : int
+        +username : QString
     }
-    click C_0013925658533498293399 href "classBank.html" "Bank"
-    C_0013925658533498293399 o-- C_0009984192897324832466 : -accounts
+    click C_0010433389512216933408 href "structDB_1_1DatabaseConfig.html" "DatabaseConfig"
+    class C_0013573387592128700325["DB::DatabaseManager"]
+    class C_0013573387592128700325 {
+        -DatabaseManager() : void
+        +~DatabaseManager() : void
+        +beginTransaction() : bool
+        +checkConnection(QString & error) : bool$
+        +clearSelect() : DatabaseManager *
+        +clone() : DatabaseManager *
+        +commit() : bool
+        +count() : int
+        +createInstance(bool checkDBName = false, bool newConnection = false, QString * err = nullptr) : DatabaseManager *$
+        -dataToString(const QVariantMap & map) : QString
+        +del(const QString & table) : bool
+        +exec() : DbResult
+        +exec(const QString & sqlcommand) : bool
+        +execResult(const QString & sql) : DbResult
+        +get(const QString & tableName) : DbResult
+        -getDatabase() : QSqlDatabase$
+        +getSelectQuery(const QString & select = QString()) : QString
+        +group(const QString & group) : DatabaseManager *
+        -init(const QString & host, int port, const QString & username, const QString & password, const QString & dbname, bool checkDBName = false, bool newConnection = false) : bool
+        +insert(const QString & table, const QVariantMap & data) : bool
+        +isSupportTransaction() : bool
+        +join(const QString & value) : DatabaseManager *
+        +lastError() : QSqlError
+        +lastInsertedId() : QVariant
+        +lastQuery() : QString
+        +like(const QString & value, const QString & val) : DatabaseManager *
+        +likeNative(const QString & value, const QString & val) : DatabaseManager *
+        +likePost(const QString & value, const QString & val) : DatabaseManager *
+        +limit(int limit) : DatabaseManager *
+        -postQuery(QSqlQuery * query) : void
+        +reset() : DatabaseManager *
+        +rollback() : bool
+        +select(const QString & value) : DatabaseManager *
+        +setDbSetting(const QString & host, int port, const QString & username, const QString & password, const QString & dbname) : bool$
+        +sort(const QString & sort) : DatabaseManager *
+        +start(int start) : DatabaseManager *
+        +table(const QString & value) : DatabaseManager *
+        +truncateTable(const QString & table) : bool
+        +update(const QString & table, const QVariantMap & data) : bool
+        +where(const QString & value, const QVariant & val = QVariant()) : DatabaseManager *
+        +whereOr(const QString & value) : DatabaseManager *
+        -Childs_ : QList&lt;DatabaseManager *&gt;
+        -Created_ : QStringList
+        -Group_ : QString
+        -InsertedId_ : QVariant
+        -Join_ : QString
+        -LastError_ : QSqlError
+        -LastQuery_ : QString
+        -Limit_ : QString
+        -Parent_ : DatabaseManager *
+        -Select_ : QString
+        -SoftDelete_ : QStringList
+        -Sort_ : QString
+        -Start_ : QString
+        -Table_ : QString
+        -Update_ : QStringList
+        -Where_ : QString
+        -isSupportTransaction_ : bool
+    }
+    click C_0013573387592128700325 href "classDB_1_1DatabaseManager.html" "DatabaseManager"
+    class C_0004354387044733077778["Request"]
+    class C_0004354387044733077778 {
+        <<abstract>>
+        +~Request() : void
+        #CreateDBConnectionError(QJsonObject & response, QJsonObject & dataObj) : QJsonObject
+        #CreateErrorResponse(QJsonObject & response, QJsonObject & dataObj, QString message) : QJsonObject
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject*
+        #isDBConnectionValid(DB::DatabaseManager * dbManager) : bool
+    }
+    click C_0004354387044733077778 href "classRequest.html" "Request"
+    class C_0001633855435523401023["LoginRequest"]
+    class C_0001633855435523401023 {
+        +LoginRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0001633855435523401023 href "classLoginRequest.html" "LoginRequest"
+    note for C_0001633855435523401023 "A comment I have access to."
+    class C_0012710989722481167264["GetAccountNumberRequest"]
+    class C_0012710989722481167264 {
+        +GetAccountNumberRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0012710989722481167264 href "classGetAccountNumberRequest.html" "GetAccountNumberRequest"
+    class C_0011752401552383491906["GetBalanceRequest"]
+    class C_0011752401552383491906 {
+        +GetBalanceRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0011752401552383491906 href "classGetBalanceRequest.html" "GetBalanceRequest"
+    class C_0010218503219500069835["GetTransactionsHistoryRequest"]
+    class C_0010218503219500069835 {
+        +GetTransactionsHistoryRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0010218503219500069835 href "classGetTransactionsHistoryRequest.html" "GetTransactionsHistoryRequest"
+    class C_0013100223563862354982["MakeTransactionRequest"]
+    class C_0013100223563862354982 {
+        +MakeTransactionRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0013100223563862354982 href "classMakeTransactionRequest.html" "MakeTransactionRequest"
+    class C_0002013764729148086543["GetDatabaseRequest"]
+    class C_0002013764729148086543 {
+        +GetDatabaseRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0002013764729148086543 href "classGetDatabaseRequest.html" "GetDatabaseRequest"
+    class C_0007232843274662702843["CreateNewUserRequest"]
+    class C_0007232843274662702843 {
+        +CreateNewUserRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0007232843274662702843 href "classCreateNewUserRequest.html" "CreateNewUserRequest"
+    class C_0002664988866812332938["DeleteUserRequest"]
+    class C_0002664988866812332938 {
+        +DeleteUserRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0002664988866812332938 href "classDeleteUserRequest.html" "DeleteUserRequest"
+    class C_0007645390992448267112["UpdateUserRequest"]
+    class C_0007645390992448267112 {
+        +UpdateUserRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0007645390992448267112 href "classUpdateUserRequest.html" "UpdateUserRequest"
+    class C_0015500654025726302953["UserInitRequest"]
+    class C_0015500654025726302953 {
+        +UserInitRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0015500654025726302953 href "classUserInitRequest.html" "UserInitRequest"
+    class C_0002660278549059451925["UpdateEmailRequest"]
+    class C_0002660278549059451925 {
+        +UpdateEmailRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0002660278549059451925 href "classUpdateEmailRequest.html" "UpdateEmailRequest"
+    class C_0013647470015345896002["UpdatePasswordRequest"]
+    class C_0013647470015345896002 {
+        +UpdatePasswordRequest() : void
+        +execute(const QJsonObject & jsonObj, QMutex & m) : QJsonObject
+        -dbManager : DB::DatabaseManager *
+    }
+    click C_0013647470015345896002 href "classUpdatePasswordRequest.html" "UpdatePasswordRequest"
+    class C_0017581648629732253705["RequestManager"]
+    class C_0017581648629732253705 {
+        +RequestManager(QMutex * Mutex) : void
+        +~RequestManager() : void
+        -handleJsonParseError(const QJsonParseError & parseError) : QJsonObject
+        +makeRequest(QByteArray data) : QByteArray
+        -Mutex_ : QMutex *
+        -requests_ : QMap&lt;int,Request *&gt;
+    }
+    click C_0017581648629732253705 href "classRequestManager.html" "RequestManager"
+    class C_0014397068199454785176["RequestManager::AvailableRequests"]
+    class C_0014397068199454785176 {
+        <<enumeration>>
+        Login
+        GetAccountnumber
+        GetBalance
+        GetTransactionsHistory
+        MakeTransaction
+        TransferAmount
+        GetDatabase
+        CreateNewUser
+        DeleteUser
+        UpdateUser
+        UserInit
+        UpdateEmail
+        UpdatePassword
+        JsonParseError
+    }
+    click C_0014397068199454785176 href "enumRequestManager##AvailableRequests.html" "RequestManager##AvailableRequests"
+    class C_0001512818839078814394["ServerHandler"]
+    class C_0001512818839078814394 {
+        +ServerHandler(QMutex * m, qintptr handle = 0, QObject * parent = nullptr) : void
+        +~ServerHandler() : void
+        +metaObject() : [const] const QMetaObject *
+        +qt_metacall(QMetaObject::Call, int, void **) : int
+        +qt_metacast(const char *) : void *
+        -qt_static_metacall(QObject *, QMetaObject::Call, int, void **) : void$
+        +readyRead() : void
+        +run() : void
+        +tr(const char * s, const char * c = nullptr, int n = -1) : QString$
+        -Mutex_ : QMutex *
+        -clientSocket_ : QTcpSocket *
+        -handle_ : qintptr
+        -requestManager : RequestManager *
+        +staticMetaObject : const QMetaObject
+    }
+    click C_0001512818839078814394 href "classServerHandler.html" "ServerHandler"
+    class C_0006556302699635904946["Server"]
+    class C_0006556302699635904946 {
+        +Server(QObject * parent = nullptr) : void
+        +~Server() : void
+        #incomingConnection(qintptr handle) : void
+        +metaObject() : [const] const QMetaObject *
+        +qt_metacall(QMetaObject::Call, int, void **) : int
+        +qt_metacast(const char *) : void *
+        -qt_static_metacall(QObject *, QMetaObject::Call, int, void **) : void$
+        +quit() : void
+        +start(qint16 port = 2222) : void
+        +tr(const char * s, const char * c = nullptr, int n = -1) : QString$
+        -Mutex_ : QMutex *
+        +staticMetaObject : const QMetaObject
+        -threadPool : QThreadPool *
+    }
+    click C_0006556302699635904946 href "classServer.html" "Server"
+    C_0013573387592128700325 ..> C_0006960484039840119316 : 
+    C_0013573387592128700325 --> C_0013573387592128700325 : -Parent_
+    C_0004354387044733077778 ..> C_0013573387592128700325 : 
+    C_0001633855435523401023 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0001633855435523401023
+    C_0012710989722481167264 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0012710989722481167264
+    C_0011752401552383491906 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0011752401552383491906
+    C_0010218503219500069835 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0010218503219500069835
+    C_0013100223563862354982 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0013100223563862354982
+    C_0002013764729148086543 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0002013764729148086543
+    C_0007232843274662702843 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0007232843274662702843
+    C_0002664988866812332938 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0002664988866812332938
+    C_0007645390992448267112 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0007645390992448267112
+    C_0015500654025726302953 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0015500654025726302953
+    C_0002660278549059451925 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0002660278549059451925
+    C_0013647470015345896002 --> C_0013573387592128700325 : -dbManager
+    C_0004354387044733077778 <|-- C_0013647470015345896002
+    C_0017581648629732253705 ()-- C_0014397068199454785176 : 
+    C_0001512818839078814394 --> C_0017581648629732253705 : -requestManager
 
 %% Generated with clang-uml, version 0.5.3
 %% LLVM version clang version 18.1.1 (https://github.com/llvm/llvm-project.git dba2a75e9c7ef81fe84774ba5eee5e67e01d801a)
