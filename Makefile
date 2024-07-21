@@ -77,10 +77,10 @@ ifeq ($(OS), Windows_NT)
 	@echo "Convert .puml files to svg images"
 	plantuml -tsvg -nometadata -o plantuml docs/diagrams/*.puml
 	@echo "Convert .mmd files to svg images"
-	py util/generate_mermaid.py docs/diagrams/*.mmd
+	py utils/generate_mermaid.py docs/diagrams/*.mmd
 	@echo "Format generated SVG files..."
-	py util/format_svg.py docs/diagrams/plantuml/*.svg
-	py util/format_svg.py docs/diagrams/mermaid/*.svg
+	py utils/format_svg.py docs/diagrams/plantuml/*.svg
+	py utils/format_svg.py docs/diagrams/mermaid/*.svg
 else
 	@echo "installing dependencies..."
 	sudo apt-get install -y plantuml npm python3 python3-pip python3-yaml
@@ -98,8 +98,8 @@ else
 	@echo "Convert .puml files to svg images"
 	plantuml -tsvg -nometadata -o plantuml docs/diagrams/*.puml
 	@echo "Convert .mmd files to svg images"
-	py util/generate_mermaid.py docs/diagrams/*.mmd
+	py utils/generate_mermaid.py docs/diagrams/*.mmd
 	@echo "Format generated SVG files..."
-	py util/format_svg.py docs/diagrams/plantuml/*.svg
-	py util/format_svg.py docs/diagrams/mermaid/*.svg
+	py utils/format_svg.py docs/diagrams/plantuml/*.svg
+	py utils/format_svg.py docs/diagrams/mermaid/*.svg
 endif
