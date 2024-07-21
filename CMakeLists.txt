@@ -64,7 +64,7 @@ set(CMAKE_COLOR_DIAGNOSTICS ON)
 #==============================================================================
 # Project Options
 #==============================================================================
-option(ENABLE_TESTS "Enable All Tests" ON)
+option(ENABLE_TESTS "Enable All Tests" OFF)
 option(ENABLE_COVERAGE "Enable Coverage" ON) # TODO: Adding code coverage Support for this template
 
 option(ENABLE_WARNINGS "Enable to add warnings to a target." OFF)
@@ -89,7 +89,6 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 include(AddGitSubmodule)
 include(Docs)
 
-
 #==============================================================================
 # QT Configuration
 #==============================================================================
@@ -99,21 +98,6 @@ foreach(library IN LISTS MODULES)
     find_package(${library} REQUIRED)
 endforeach()
 
-## Link libraries
-#foreach(library IN LISTS MODULES)
-#    target_link_libraries(${PROJECT_NAME} PRIVATE ${library})
-#    if(${PROJECT_NAME}_BUILD_EXECUTABLE)
-#        target_link_libraries(${PROJECT_NAME}_LIB PRIVATE ${library})
-#    endif()
-#endforeach()
-
-## Link Qt libraries
-#foreach(library IN LISTS QT_COMPONENTS)
-#    target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::${library})
-#    if(${PROJECT_NAME}_BUILD_EXECUTABLE)
-#        target_link_libraries(${PROJECT_NAME}_LIB PRIVATE Qt6::${library})
-#    endif()
-#endforeach()
 
 
 # Find the appropriate Qt version
@@ -126,8 +110,6 @@ foreach(component ${QT_COMPONENTS})
     list(APPEND QT_LIBRARIES Qt${QT_VERSION_MAJOR}::${component})
 endforeach()
 
-# Optionally, you can now link the Qt libraries to your target
-# target_link_libraries(your_target ${QT_LIBRARIES})
 
 
 set(CMAKE_AUTOUIC ON)
@@ -148,6 +130,7 @@ if(ENABLE_SANITIZE_ADDR
 endif()
 
 
+add_git_submodule(lib/LogByThread https://github.com/7osssam/LogByThread)
 
 # Add subdirectories
 add_subdirectory(src) # user Modules
