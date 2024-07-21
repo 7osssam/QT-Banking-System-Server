@@ -23,13 +23,13 @@ add_executable(${APPNAME} ${APP_HEADERS} ${APP_SOURCES}) # for dynamic library u
 target_include_directories(${APPNAME} PUBLIC
 						   ${CMAKE_CURRENT_SOURCE_DIR}
 						   ${CMAKE_SOURCE_DIR}/src/dbModule/
-						   ${CMAKE_SOURCE_DIR}/src/requestModule/
 						   ${CMAKE_SOURCE_DIR}/src/serverModule/
+						   ${CMAKE_SOURCE_DIR}/lib/LogByThread/include/
 						   )
 ############# etc....
 
 # Add any dependencies or compile options specific to lock6g
-target_link_libraries(${APPNAME} PRIVATE ${QT_LIBRARIES} dbModule requestModule serverModule)
+target_link_libraries(${APPNAME} PRIVATE ${QT_LIBRARIES} LogByThread dbModule serverModule)
 ############# etc....
 
 # Set the compile warnings options if enabled
