@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>BankingSystem_Server: C++ Project Template with CMake</title>
+<title>BankingSystem_Server: QT Banking System (Server side)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -115,107 +115,10 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">C++ Project Template with CMake </div>  </div>
+<div class="title">QT Banking System (<a class="el" href="classServer.html" title="The Server class extends QTcpServer to handle incoming network connections.">Server</a> side) </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_README"></a> <a href="https://github.com/7osssam/CPP_Project_Template/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/7osssam/CPP_Project_Template/actions/workflows/pages/pages-build-deployment/badge.svg" alt="pages-build-deployment" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/7osssam/CPP_Project_Template/actions/workflows/documentation.yml"><img src="https://github.com/7osssam/CPP_Project_Template/actions/workflows/documentation.yml/badge.svg" alt="Documentation" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/7osssam/CPP_Project_Template/actions/workflows/Ubuntu.yml"><img src="https://github.com/7osssam/CPP_Project_Template/actions/workflows/Ubuntu.yml/badge.svg" alt="Ubuntu CI Test" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&amp;logo=c%2B%2B&amp;logoColor=white" alt="C++" style="pointer-events: none;" class="inline"/> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="pointer-events: none;" class="inline"/></a> </p><h1>Overview</h1>
-<p>This project template provides a robust foundation for C++ projects using CMake as the build system. It includes CI/CD integration, documentation setup with Doxygen, unit testing using Google Test, and modularized CMakeLists.txt for easy project management.</p>
-<h2>Features</h2>
-<ul>
-<li><b>CI/CD Integration:</b> GitHub Actions workflows for Ubuntu CI (testing) and Documentation (GitHub Pages).</li>
-<li><b>Documentation:</b> Doxygen setup with customizable Doxyfile.in for generating API documentation.</li>
-<li><b>Unit Testing:</b> Google Test framework for writing and running unit tests.</li>
-<li><b>Modular CMakeLists:</b> Abstracted CMakeLists.txt files for each module (app, user modules, test suite).</li>
-<li><b>CMake Modules:</b> Includes modules for adding git submodules, enabling sanitizers, adding warning flags, etc.</li>
-</ul>
-<h1>Folder Structure</h1>
-<div class="fragment"><div class="line">├───.github</div>
-<div class="line">│   └───workflows</div>
-<div class="line">│       ├───documentation.yml   // GitHub Actions for Documentation (GitHub Pages)</div>
-<div class="line">│       └───Ubuntu.yml           // GitHub Actions for Ubuntu CI for Testing</div>
-<div class="line">├───app</div>
-<div class="line">│   ├───CMakeLists.txt           // CMakeLists for main app module</div>
-<div class="line">│   └───main.cpp</div>
-<div class="line">├───build                        // Default build directory</div>
-<div class="line">├───cmake</div>
-<div class="line">│   ├───AddGitSubmodule.cmake    // CMake module to add git submodules</div>
-<div class="line">│   ├───Docs.cmake               // CMake module to generate documentation</div>
-<div class="line">│   ├───Sanitizer.cmake          // CMake module to add sanitizer flags</div>
-<div class="line">│   └───Warnings.cmake           // CMake module to add warning flags</div>
-<div class="line">├───docs</div>
-<div class="line">│   ├───diagrams</div>
-<div class="line">│   │   ├───mermaid</div>
-<div class="line">│   │   └───plantuml</div>
-<div class="line">│   └───doxygen</div>
-<div class="line">│       └───Doxyfile.in          // Doxygen configuration file</div>
-<div class="line">├───lib</div>
-<div class="line">│   └───json                     // Sample lib submodule (can be replaced)</div>
-<div class="line">├───src</div>
-<div class="line">│   └───Module</div>
-<div class="line">│       └───CMakeLists.txt       // CMakeLists for user module</div>
-<div class="line">├───tests</div>
-<div class="line">│   ├───Test_suite               // Test Suite</div>
-<div class="line">│   │   └───CMakeLists.txt       // CMakeLists for test suite</div>
-<div class="line">│   ├───lib</div>
-<div class="line">│   │   └───googletest</div>
-<div class="line">│   └───test_suite</div>
-<div class="line">├───CMakeLists.txt           // Root CMakeLists.txt for project configuration</div>
-<div class="line">├─.clang-uml                 // Clang UML configuration file</div>
-<div class="line">├─.clang-format              // Clang format configuration file</div>
-<div class="line">└─.clang-tidy                // Clang tidy configuration file</div>
-</div><!-- fragment --><h1>Getting Started</h1>
-<ol type="1">
-<li><b>Clone the Repository:</b> <div class="fragment"><div class="line">https://github.com/7osssam/CPP_Project_Template</div>
-<div class="line">cd CPP_Project_Template</div>
-</div><!-- fragment --></li>
-<li><p class="startli"><b>Install Dependencies:</b> </p><div class="fragment"><div class="line">make dependency</div>
-</div><!-- fragment --><p class="startli">This command installs necessary dependencies including compilers, CMake, LLVM, Ninja, Doxygen, Graphviz, and other tools based on your operating system.</p>
-</li>
-<li><p class="startli"><b>Prepare the Build Environment:</b> </p><div class="fragment"><div class="line">make clean-cache-reconfigure</div>
-</div><!-- fragment --><p class="startli">Cleans the cache and reconfigures the build environment using CMake, setting up for a Debug build with Ninja Generator (recommended).</p>
-</li>
-<li><p class="startli"><b>Build the Project:</b> </p><div class="fragment"><div class="line">make build</div>
-</div><!-- fragment --><p class="startli">Configures and builds the project in Debug mode using CMake and Ninja.</p>
-</li>
-<li><p class="startli"><b>Run the Project:</b> </p><div class="fragment"><div class="line">make run</div>
-</div><!-- fragment --><p class="startli">Executes the compiled project executable. This command automatically detects the OS to run the correct executable file.</p>
-</li>
-<li><p class="startli"><b>Generate Documentation:</b> </p><div class="fragment"><div class="line">make doc</div>
-</div><!-- fragment --><p class="startli">Generates HTML and PDF documentation using Doxygen from the configured Doxyfile.in.</p>
-</li>
-<li><p class="startli"><b>Run Unit Tests:</b> </p><div class="fragment"><div class="line">make test</div>
-</div><!-- fragment --><p class="startli">Executes unit tests using Google Test framework (You can add your own testing framework, as long as it is supported by CMake).</p>
-</li>
-<li><b>Generate Diagrams (Optional):</b></li>
-</ol>
-<div class="fragment"><div class="line">make diagrams</div>
-</div><!-- fragment --><ul>
-<li>Using <a href="https://clang-uml.github.io">Clang UML</a> to generate UML diagrams from C++ code (Check <code>.clang-uml</code> file for configuration).</li>
-</ul>
-<p>Generates diagrams (PlantUML and Mermaid) from diagrams stored in <code>docs/diagrams</code>.</p>
-<h1>TODO</h1>
-<ul>
-<li>[ ] Add support for Windows CI/CD.</li>
-<li>[ ] Add support for macOS CI/CD.</li>
-<li>[ ] Add support for Code Coverage.</li>
-<li>[ ] Add support for Static Code Analysis (linting).</li>
-</ul>
-<h1>Contributing</h1>
-<p>Contributions are welcome! Please follow these steps to contribute:</p>
-<ol type="1">
-<li>Fork the repository.</li>
-<li>Create a new branch (<code>git checkout -b feature/feature-name</code>).</li>
-<li>Commit your changes (<code>git commit -am [Feature message]</code>).</li>
-<li>Push to the branch (<code>git push origin feature/feature-name</code>).</li>
-<li>Create a new Pull <a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a>.</li>
-</ol>
-<blockquote class="doxtable">
-<p>[!NOTE] <br  />
- The Banking System project files in this template are for demonstration purposes only. You can replace them with your own project files and modules. </p>
-</blockquote>
-<h1>License</h1>
-<p>Feel free to use this project template for your own projects.</p>
-<p>This project is licensed under the [MIT License](LICENSE). </p>
+<div class="textblock"><p><a class="anchor" id="md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_README"></a></p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
