@@ -14,8 +14,13 @@ int main(int argc, char* argv[])
 
 	Logger::instance()->startLogging();
 
+	// Production
 	DB::DatabaseManager::setDbSetting("aws-0-us-east-1.pooler.supabase.com", 6543, "postgres.ajfrcwmgtitxbvcnhzwn",
 									  "z7HQs^*#HnmqQ3m2", "postgres");
+
+	// Testing
+	//DB::DatabaseManager::setDbSetting("aws-0-us-east-1.pooler.supabase.com", 6543, "postgres.yflugnxlcmfwjczwzspw",
+	//								  "dpd2q2*5BULBCz$J", "postgres");
 
 	DB::DatabaseManager* db = DB::DatabaseManager::createInstance();
 
