@@ -123,14 +123,14 @@ $(document).ready(function(){initNavTree('CreateNewUserRequest_8h_source.html','
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Request_8h.html">Request.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="db_8h.html">db.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classCreateNewUserRequest.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCreateNewUserRequest.html">CreateNewUserRequest</a> : <span class="keyword">public</span> <a class="code" href="classRequest.html">Request</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classDB_1_1DatabaseManager.html">DB::DatabaseManager</a>* dbManager = <span class="keyword">nullptr</span>; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QRandomGenerator&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classCreateNewUserRequest.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCreateNewUserRequest.html">CreateNewUserRequest</a> : <span class="keyword">public</span> <a class="code" href="classRequest.html">Request</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classDB_1_1DatabaseManager.html">DB::DatabaseManager</a>* dbManager = <span class="keyword">nullptr</span>; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classCreateNewUserRequest.html#ab42553b16908191ee77fc67b3703fce5">   26</a></span>&#160;    <a class="code" href="classCreateNewUserRequest.html#ab42553b16908191ee77fc67b3703fce5">CreateNewUserRequest</a>() : dbManager(DB::DatabaseManager::createInstance())</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// log to database log table</span></div>
@@ -284,39 +284,47 @@ $(document).ready(function(){initNavTree('CreateNewUserRequest_8h_source.html','
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            result = dbManager-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#aa9c79b640a095bb76790c2dffe85c9a0">select</a>(<span class="stringliteral">&quot;id&quot;</span>)-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#a09690342e7a7ad71165b3b38aea8e6c0">table</a>(<span class="stringliteral">&quot;users&quot;</span>)-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#a5e0d0977ce554284a71c4a520340ae07">where</a>(<span class="stringliteral">&quot;email =&quot;</span>, new_email)-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#a92000f766524ccf276d209617de6bfca">exec</a>();</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            QVariant lastId = result.<a class="code" href="classDB_1_1DbResult.html#a0c6b0bd92c8bd5fa6d2d2f18607c30ff">first</a>().value(<span class="stringliteral">&quot;id&quot;</span>);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="comment">// Create the account for the new user and randomly generate an account number</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordtype">int</span> account_number = rand() % 1000000 + 100000;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            success = dbManager-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#aecf836346d0d92afaa480f1215d23071">insert</a>(</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="stringliteral">&quot;accounts&quot;</span>,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                {{<span class="stringliteral">&quot;account_number&quot;</span>, account_number}, {<span class="stringliteral">&quot;user_id&quot;</span>, lastId.toInt()}, {<span class="stringliteral">&quot;balance&quot;</span>, initial_balance}});</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">if</span> (!success)</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classRequest.html#a6f5f7c7d240664a2c29dcd54bd9974d6">CreateErrorResponse</a>(response, data, <span class="stringliteral">&quot;Failed to create account for the new user&quot;</span>);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            data.insert(<span class="stringliteral">&quot;status&quot;</span>, <span class="keywordtype">int</span>(<span class="keyword">true</span>));</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            data.insert(<span class="stringliteral">&quot;message&quot;</span>, <span class="stringliteral">&quot;New user created successfully&quot;</span>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="comment">// Create the account for the new user and randomly generate an account number of 6 digits</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="comment">// make sure the account number is unique</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordtype">int</span> account_number = 0;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="comment">// not the best way to generate unique account number but it&#39;s ok for now</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                account_number = QRandomGenerator::global()-&gt;bounded(100000, 999999);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                result = dbManager-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#aa9c79b640a095bb76790c2dffe85c9a0">select</a>(<span class="stringliteral">&quot;*&quot;</span>)-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#a09690342e7a7ad71165b3b38aea8e6c0">table</a>(<span class="stringliteral">&quot;accounts&quot;</span>)-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#a5e0d0977ce554284a71c4a520340ae07">where</a>(<span class="stringliteral">&quot;account_number =&quot;</span>, account_number)-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#a92000f766524ccf276d209617de6bfca">exec</a>();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            } <span class="keywordflow">while</span> (!result.<a class="code" href="classDB_1_1DbResult.html#aa69aec34a8771cd30ea590b9e66d68f9">isEmpty</a>());</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            success = dbManager-&gt;<a class="code" href="classDB_1_1DatabaseManager.html#aecf836346d0d92afaa480f1215d23071">insert</a>(</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="stringliteral">&quot;accounts&quot;</span>,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                {{<span class="stringliteral">&quot;account_number&quot;</span>, account_number}, {<span class="stringliteral">&quot;user_id&quot;</span>, lastId.toInt()}, {<span class="stringliteral">&quot;balance&quot;</span>, initial_balance}});</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            response.insert(<span class="stringliteral">&quot;Data&quot;</span>, data);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        } <span class="keywordflow">while</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment">// Convert response to JSON</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        QJsonDocument responseDoc(response);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        QByteArray    responseData = responseDoc.toJson();</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">if</span> (!success)</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="classRequest.html#a6f5f7c7d240664a2c29dcd54bd9974d6">CreateErrorResponse</a>(response, data, <span class="stringliteral">&quot;Failed to create account for the new user&quot;</span>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            data.insert(<span class="stringliteral">&quot;status&quot;</span>, <span class="keywordtype">int</span>(<span class="keyword">true</span>));</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            data.insert(<span class="stringliteral">&quot;message&quot;</span>, <span class="stringliteral">&quot;New user created successfully&quot;</span>);</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="comment">// Send response</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        qDebug().noquote() &lt;&lt; <span class="stringliteral">&quot;&lt;-- CreateNewUser::Response :\n&quot;</span> &lt;&lt; responseDoc.toJson(QJsonDocument::Indented);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">return</span> response;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;};</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CREATENEWUSERREQUEST_H</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            response.insert(<span class="stringliteral">&quot;Data&quot;</span>, data);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        } <span class="keywordflow">while</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="comment">// Convert response to JSON</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        QJsonDocument responseDoc(response);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        QByteArray    responseData = responseDoc.toJson();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">// Send response</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        qDebug().noquote() &lt;&lt; <span class="stringliteral">&quot;&lt;-- CreateNewUser::Response :\n&quot;</span> &lt;&lt; responseDoc.toJson(QJsonDocument::Indented);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span> response;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;};</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CREATENEWUSERREQUEST_H</span></div>
 <div class="ttc" id="aRequest_8h_html"><div class="ttname"><a href="Request_8h.html">Request.h</a></div><div class="ttdoc">This file contains the declaration of the Request class, which is an abstract base class for handling...</div></div>
-<div class="ttc" id="aclassCreateNewUserRequest_html"><div class="ttname"><a href="classCreateNewUserRequest.html">CreateNewUserRequest</a></div><div class="ttdoc">The CreateNewUserRequest class handles the creation of new users.</div><div class="ttdef"><b>Definition:</b> CreateNewUserRequest.h:15</div></div>
+<div class="ttc" id="aclassCreateNewUserRequest_html"><div class="ttname"><a href="classCreateNewUserRequest.html">CreateNewUserRequest</a></div><div class="ttdoc">The CreateNewUserRequest class handles the creation of new users.</div><div class="ttdef"><b>Definition:</b> CreateNewUserRequest.h:16</div></div>
 <div class="ttc" id="aclassCreateNewUserRequest_html_a7c470ece3a6719a1675b8bcb2059b1ec"><div class="ttname"><a href="classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec">CreateNewUserRequest::execute</a></div><div class="ttdeci">QJsonObject execute(const QJsonObject &amp;jsonObj, QMutex &amp;m) override</div><div class="ttdoc">Executes the request to create a new user.</div><div class="ttdef"><b>Definition:</b> CreateNewUserRequest.h:43</div></div>
 <div class="ttc" id="aclassCreateNewUserRequest_html_ab42553b16908191ee77fc67b3703fce5"><div class="ttname"><a href="classCreateNewUserRequest.html#ab42553b16908191ee77fc67b3703fce5">CreateNewUserRequest::CreateNewUserRequest</a></div><div class="ttdeci">CreateNewUserRequest()</div><div class="ttdoc">Constructor for the CreateNewUserRequest class.</div><div class="ttdef"><b>Definition:</b> CreateNewUserRequest.h:26</div></div>
 <div class="ttc" id="aclassDB_1_1DatabaseManager_html"><div class="ttname"><a href="classDB_1_1DatabaseManager.html">DB::DatabaseManager</a></div><div class="ttdoc">Manages database connections and SQL operations.</div><div class="ttdef"><b>Definition:</b> db.h:79</div></div>
