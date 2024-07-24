@@ -3,6 +3,7 @@
 
 #include "Request.h"
 #include "db.h"
+#include <QRandomGenerator>
 
 /**
  * @brief The CreateNewUserRequest class handles the creation of new users.
@@ -14,11 +15,10 @@
 class CreateNewUserRequest : public Request
 {
 private:
-    DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
+	DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
-
-    /**
+	/**
      * @brief Constructor for the CreateNewUserRequest class.
      *
      * Initializes the DatabaseManager instance for handling database operations.
@@ -189,8 +189,16 @@ public:
 			QVariant lastId = result.first().value("id");
 			//! or using QVariant lastId = dbManager->lastInsertedId();
 
-			// Create the account for the new user and randomly generate an account number
-			int account_number = rand() % 1000000 + 100000;
+			// Create the account for the new user and randomly generate an account number of 6 digits
+			// make sure the account number is unique
+			int account_number = 0;
+
+			// not the best way to generate unique account number but it's ok for now
+			do
+			{
+				account_number = QRandomGenerator::global()->bounded(100000, 999999);
+				result = dbManager->select("*")->table("accounts")->where("account_number =", account_number)->exec();
+			} while (!result.isEmpty());
 
 			success = dbManager->insert(
 				"accounts",
