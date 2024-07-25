@@ -58,6 +58,19 @@ deactivate Locker
 @enduml
 ```
 
+<!-- image of Diagram from url -->
+<!-- ![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/williehao/nginx-certbot/main/nginx-certbot.iuml) -->
+
+![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/williehao/nginx-certbot/main/nginx-certbot.iuml)
+
+![LoginRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/sequence%20diagrams/Requests/LoginRequest.puml)
+
+![LoginRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/system_class_diagram.puml)
+
+
+<!-- D:\XDUMP\BankingSystem\QT-Banking-System-Server\docs\diagrams\system_class_diagram.puml -->
+
+
 ## Sequence diagram : `CreateNewUserRequest ` processes create new user request
 
 ```plantuml
@@ -131,6 +144,8 @@ end
 deactivate Locker
 @enduml
 ```
+
+![CreateNewUserRequest](https://www.plantuml.com/plantuml/png/hLPBQni_4B_lfvZ_7lxOuAPtGqk8tKjfKXf8x_9gd2YH9NSavT5FtvtLu2fYOxl12y4IyvZVGn8v3r5HJ1lRg2vwWfk0r6mLHTEPhN8HsWMXYdY5Jnownby9Gsn11LXStSZsTS6Fhy6xxwjxx7AURAkaonJnUOWFgx7eDzyz80qvlAo1BI_cywMAQgK2NYgdRYLtUJ6Ijxh6a6m6b9TDmuJWm-U2o1pm6RiKSNAVGSzWCsLbpAEAM3B-k-GE6TuSIjoJ_ujIoQZAH1cU6gbFXSI8j8ggaL0DZp0cSaLUespi6KFddSD-c7TWtAEoHZS0KDJMdKnONYnsHJ-vOg9NekFqG74-4sM3BqIU9eHXwrt0sG1kh0jhlgCXwJZaQHpJ6Mt0YjzRx7gV8Q3jioOjUOljz2ogbSL9otA5VljqXzHlSQECXK_j38RLz8nDdsIqWe5dyhx_uTRvn1IuUIkegmh9tMSSWsloD2kUEnzXxPFBl8uHVn3yMWIiX9z1--8JACAXCU6j2H49zJ3ilpPJ_HTptZQ88snIvd4iX-uEkmSmwq4BC06KtXYN2qKNZZ3yCdGQRMwSIl7Ea_cDUWOBvNXADrI2mwU1oPc8z1wXzekr4so4kdpZhqG--2N8WL2kB8JRc12CkuMrGQk3X4yctgLqfxxA46eP8tAzNxB3iXNIAMjbBcm90xhNEQDlWvovjIV0PnCYas0HwyhzLxxwwkjVVeUV0a62hiEChgbRiA55PkdcwQu3jrUMKEaN6IDkdi3H8rrz_OfeZu6lFgEHnCFs6XUGukvkZ5RjCqki7pShfAx343wkbR69zhEisn-yrvrt8LBg8iYO_MfAtV4MeDFD-5xMyij_6kj_MSxHwRInVm00)
 
 ## Sequence diagram : `DeleteUserRequest` processes delete user request
 
