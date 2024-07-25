@@ -53,9 +53,9 @@
 ### Sequence diagram : `DatabaseManager` initialization and connection check
 
 <!-- image of Diagram from plantuml server -->
-![DatabaseManager_init](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/sequence-diagrams/DatabaseManager_init.puml)
+![DatabaseManager_init](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/sequence-diagrams/DatabaseManager_init.puml&fmt=png)
 
 ## Sequence diagram : `DatabaseManager` processes queries (Example: select query) and returns results
 
 <!-- image of Diagram from plantuml server -->
-![DatabaseManager_query](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/sequence-diagrams/DatabaseManager_query.puml)
+![DatabaseManager_query](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/sequence-diagrams/DatabaseManager_query.puml&fmt=png)
