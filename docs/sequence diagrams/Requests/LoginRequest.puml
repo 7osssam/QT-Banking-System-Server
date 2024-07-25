@@ -1,0 +1,52 @@
+@startuml Login Request Sequence Diagram
+actor User
+participant "LoginRequest" as LR
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> LR: execute(jsonObj, m)
+activate LR
+LR -> Locker: QMutexLocker(&m)
+activate Locker
+LR -> JsonObj: extract email and password
+JsonObj -> LR: return email and password
+
+alt DB connection invalid
+    LR -> LR: isDBConnectionValid(dbManager)
+    LR -> LR: CreateDBConnectionError(response, dataObj)
+    LR -> User: return response
+    deactivate LR
+else DB connection valid
+    LR -> DB: select("*").table("users").where("email =", email).exec()
+    activate DB
+    DB -> Result: return result
+    deactivate DB
+    Result -> LR: return first result (user data)
+
+    alt user not found
+        LR -> LR: CreateErrorResponse(response, data, "email not found")
+        LR -> User: return response
+        deactivate LR
+    else user found
+        LR -> DB: select("password").table("users").where("id =", user_id).exec()
+        activate DB
+        DB -> Result: return result
+        deactivate DB
+        Result -> LR: return first result (password)
+
+        alt password invalid
+            LR -> LR: CreateErrorResponse(response, data, "Invalid password")
+            LR -> User: return response
+            deactivate LR
+        else password valid
+            LR -> JsonObj: construct success response
+            JsonObj -> User: return response
+            deactivate JsonObj
+        end
+    end
+end
+deactivate Locker
+@enduml

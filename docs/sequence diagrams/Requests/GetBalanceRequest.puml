@@ -1,0 +1,39 @@
+@startuml Get Database Request Sequence Diagram
+actor User
+participant "GetBalanceRequest" as GBRequest
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> GBRequest: execute(jsonObj, m)
+activate GBRequest
+GBRequest -> Locker: QMutexLocker(&m)
+activate Locker
+GBRequest -> JsonObj: extract account number
+JsonObj -> GBRequest: return account number
+
+alt DB connection invalid
+    GBRequest -> GBRequest: isDBConnectionValid(dbManager)
+    GBRequest -> GBRequest: CreateDBConnectionError(response, data)
+    GBRequest -> User: return response
+    deactivate GBRequest
+else DB connection valid
+    GBRequest -> DB: select("balance").table("Accounts").where("account_number =", accountNumber).exec()
+    activate DB
+    DB -> Result: return result
+    deactivate DB
+    Result -> GBRequest: return account balance
+
+    alt account not found
+        GBRequest -> GBRequest: CreateErrorResponse(response, data, "Account not found")
+        GBRequest -> User: return response
+        deactivate GBRequest
+    else account found
+        GBRequest -> JsonObj: construct success response
+        JsonObj -> User: return response
+    end
+end
+deactivate Locker
+@enduml

@@ -1,0 +1,65 @@
+@startuml Get Database Request Sequence Diagram
+actor User
+participant "GetDatabaseRequest" as GDBRequest
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> GDBRequest: execute(jsonObj, m)
+activate GDBRequest
+GDBRequest -> Locker: QMutexLocker(&m)
+activate Locker
+GDBRequest -> JsonObj: extract admin email
+JsonObj -> GDBRequest: return admin email
+
+alt DB connection invalid
+    GDBRequest -> GDBRequest: isDBConnectionValid(dbManager)
+    GDBRequest -> GDBRequest: CreateDBConnectionError(response, data)
+    GDBRequest -> User: return response
+    deactivate GDBRequest
+else DB connection valid
+    GDBRequest -> DB: select("role").table("Users").where("email =", admin_email).exec()
+    activate DB
+    DB -> Result: return result
+    deactivate DB
+    Result -> GDBRequest: return user role
+
+    alt user not found
+        GDBRequest -> GDBRequest: CreateErrorResponse(response, data, "you are not registered user!")
+        GDBRequest -> User: return response
+        deactivate GDBRequest
+    else user found
+        GDBRequest -> GDBRequest: check admin role
+
+        alt not admin
+            GDBRequest -> GDBRequest: CreateErrorResponse(response, data, "Unauthorized, Cannot get database.")
+            GDBRequest -> User: return response
+            deactivate GDBRequest
+        else admin
+            GDBRequest -> DB: select("*").table("Users").exec()
+            activate DB
+            DB -> Result: return all users
+            deactivate DB
+            Result -> GDBRequest: return user data
+
+            alt no users found
+                GDBRequest -> GDBRequest: CreateErrorResponse(response, data, "No data found")
+                GDBRequest -> User: return response
+                deactivate GDBRequest
+            else users found
+                GDBRequest -> DB: select("A.account_number, A.balance, U.email").table("Accounts A").join("JOIN Users U ON A.user_id = U.id").exec()
+                activate DB
+                DB -> Result: return account data
+                deactivate DB
+                Result -> GDBRequest: return account information
+
+                GDBRequest -> JsonObj: construct success response
+                JsonObj -> User: return response
+            end
+        end
+    end
+end
+deactivate Locker
+@enduml

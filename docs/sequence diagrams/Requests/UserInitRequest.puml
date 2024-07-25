@@ -1,0 +1,57 @@
+@startuml User Init Request Sequence Diagram
+actor User
+participant "UserInitRequest" as UIRequest
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> UIRequest: execute(jsonObj, m)
+activate UIRequest
+UIRequest -> Locker: QMutexLocker(&m)
+activate Locker
+UIRequest -> JsonObj: extract email, password
+JsonObj -> UIRequest: return user data
+
+alt DB connection invalid
+    UIRequest -> UIRequest: isDBConnectionValid(dbManager)
+    UIRequest -> UIRequest: CreateDBConnectionError(response, data)
+    UIRequest -> User: return response
+    deactivate UIRequest
+else DB connection valid
+    UIRequest -> DB: select("*").table("users").where("email =", email).exec()
+    activate DB
+    DB -> Result: return user data
+    deactivate DB
+
+    alt user not found
+        UIRequest -> UIRequest: CreateErrorResponse(response, data, "email not found")
+        UIRequest -> User: return response
+        deactivate UIRequest
+    else user found
+        UIRequest -> DB: select("password").table("users").where("id =", user_id).exec()
+        activate DB
+        DB -> Result: return password
+        deactivate DB
+
+        alt password invalid
+            UIRequest -> UIRequest: CreateErrorResponse(response, data, "Invalid password")
+            UIRequest -> User: return response
+            deactivate UIRequest
+        else password valid
+            UIRequest -> data: insert role, first_name, email
+            alt role is user
+                UIRequest -> DB: select("account_number, balance").table("accounts").where("user_id =", user_id).exec()
+                activate DB
+                DB -> Result: return account data
+                deactivate DB
+                UIRequest -> data: insert account_number, current_balance
+            end
+			UIRequest -> JsonObj: construct success response
+			JsonObj -> User: return response
+        end
+    end
+end
+deactivate Locker
+@enduml

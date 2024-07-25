@@ -1,0 +1,69 @@
+
+@startuml Create New User Request Sequence Diagram
+actor User
+participant "CreateNewUserRequest" as CNURequest
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> CNURequest: execute(jsonObj, m)
+activate CNURequest
+CNURequest -> Locker: QMutexLocker(&m)
+activate Locker
+CNURequest -> JsonObj: extract user data
+JsonObj -> CNURequest: return user data
+
+alt DB connection invalid
+    CNURequest -> CNURequest: isDBConnectionValid(dbManager)
+    CNURequest -> CNURequest: CreateDBConnectionError(response, data)
+    CNURequest -> User: return response
+    deactivate CNURequest
+else DB connection valid
+    CNURequest -> DB: select("role").table("users").where("email =", email).exec()
+    activate DB
+    DB -> Result: return result
+    deactivate DB
+    Result -> CNURequest: return user role
+
+    alt user not found
+        CNURequest -> CNURequest: CreateErrorResponse(response, data, "you are not registered user!")
+        CNURequest -> User: return response
+        deactivate CNURequest
+    else user found
+        CNURequest -> CNURequest: check if role is admin
+        alt role not admin
+            CNURequest -> CNURequest: CreateErrorResponse(response, data, "Unauthorized, Cannot create new user.")
+            CNURequest -> User: return response
+            deactivate CNURequest
+        else role is admin
+            CNURequest -> JsonObj: validate new user data
+            alt missing fields
+                CNURequest -> CNURequest: CreateErrorResponse(response, data, "Missing required fields")
+                CNURequest -> User: return response
+                deactivate CNURequest
+            else all fields present
+                CNURequest -> DB: check for existing user
+                DB -> Result: return result
+                deactivate DB
+                Result -> CNURequest: return user existence check
+
+                alt user exists
+                    CNURequest -> CNURequest: CreateErrorResponse(response, data, "User already exists")
+                    CNURequest -> User: return response
+                    deactivate CNURequest
+                else user does not exist
+                    CNURequest -> DB: insert new user
+                    activate DB
+                    DB -> CNURequest: return success/failure
+                    deactivate DB
+                    CNURequest -> JsonObj: construct success response
+                    JsonObj -> User: return response
+                end
+            end
+        end
+    end
+end
+deactivate Locker
+@enduml

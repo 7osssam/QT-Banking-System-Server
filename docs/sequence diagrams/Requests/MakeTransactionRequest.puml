@@ -1,0 +1,82 @@
+@startuml Make Transaction Request Sequence Diagram
+actor User
+participant "MakeTransactionRequest" as MTRRequest
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> MTRRequest: execute(jsonObj, m)
+activate MTRRequest
+MTRRequest -> Locker: QMutexLocker(&m)
+activate Locker
+MTRRequest -> JsonObj: extract transaction details
+JsonObj -> MTRRequest: return transaction details
+
+alt DB connection invalid
+    MTRRequest -> MTRRequest: isDBConnectionValid(dbManager)
+    MTRRequest -> MTRRequest: CreateDBConnectionError(response, data)
+    MTRRequest -> User: return response
+    deactivate MTRRequest
+else DB connection valid
+    alt to_email provided
+        MTRRequest -> DB: select("account_number").table("Users U").join("JOIN Accounts A ON U.id = A.user_id").where("U.email =", to_email).exec()
+        activate DB
+        DB -> Result: return account number
+        deactivate DB
+
+        alt account not found
+            MTRRequest -> MTRRequest: CreateErrorResponse(response, data, "This email is not associated with any account")
+            MTRRequest -> User: return response
+            deactivate MTRRequest
+        else account found
+            MTRRequest -> MTRRequest: use to_account_number
+        end
+    end
+
+    MTRRequest -> DB: select("balance").table("Accounts").where("account_number =", from_account_number).exec()
+    activate DB
+    DB -> Result: return from account balance
+    deactivate DB
+
+    alt from account not found
+        MTRRequest -> MTRRequest: CreateErrorResponse(response, data, "You don't have an account")
+        MTRRequest -> User: return response
+        deactivate MTRRequest
+    else from account found
+        MTRRequest -> DB: select("balance").table("Accounts").where("account_number =", to_account_number).exec()
+        activate DB
+        DB -> Result: return to account balance
+        deactivate DB
+
+        alt to account not found
+            MTRRequest -> MTRRequest: CreateErrorResponse(response, data, "Invalid to account number")
+            MTRRequest -> User: return response
+            deactivate MTRRequest
+        else to account found
+            MTRRequest -> MTRRequest: check balance
+            alt insufficient balance
+                MTRRequest -> MTRRequest: CreateErrorResponse(response, data, "Insufficient balance")
+                MTRRequest -> User: return response
+                deactivate MTRRequest
+            else sufficient balance
+                MTRRequest -> DB: insert("Transactions", {{"account_number", from_account_number}, {"from_account_number", from_account_number}, {"to_account_number", to_account_number}, {"amount", amount}})
+                activate DB
+                DB -> Result: return success
+                deactivate DB
+
+                alt transaction logging failed
+                    MTRRequest -> MTRRequest: CreateErrorResponse(response, data, "Failed to log transaction")
+                    MTRRequest -> User: return response
+                    deactivate MTRRequest
+                else transaction logged
+					MTRRequest -> JsonObj: construct success response
+					JsonObj -> User: return response
+                end
+            end
+        end
+    end
+end
+deactivate Locker
+@enduml

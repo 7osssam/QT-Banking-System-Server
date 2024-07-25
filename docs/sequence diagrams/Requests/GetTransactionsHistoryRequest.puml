@@ -1,0 +1,82 @@
+@startuml Get Transactions History Request Sequence Diagram
+actor User
+participant "GetTransactionsHistoryRequest" as GTHRequest
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> GTHRequest: execute(jsonObj, m)
+activate GTHRequest
+GTHRequest -> Locker: QMutexLocker(&m)
+activate Locker
+GTHRequest -> JsonObj: extract sender email
+JsonObj -> GTHRequest: return sender email
+
+alt DB connection invalid
+    GTHRequest -> GTHRequest: isDBConnectionValid(dbManager)
+    GTHRequest -> GTHRequest: CreateDBConnectionError(response, data)
+    GTHRequest -> User: return response
+    deactivate GTHRequest
+else DB connection valid
+    GTHRequest -> DB: select("role").table("Users").where("email =", sender_email).exec()
+    activate DB
+    DB -> Result: return result
+    deactivate DB
+    Result -> GTHRequest: return user role
+
+    alt user not found
+        GTHRequest -> GTHRequest: CreateErrorResponse(response, data, "you are not registered user!")
+        GTHRequest -> User: return response
+        deactivate GTHRequest
+    else user found
+        GTHRequest -> GTHRequest: check user role
+
+        alt user role
+            GTHRequest -> DB: select("A.account_number").table("Users U").join("JOIN Accounts A ON U.id = A.user_id").where("U.email =", sender_email).exec()
+            activate DB
+            DB -> Result: return account number
+            deactivate DB
+            Result -> GTHRequest: return account information
+
+            alt no account found
+                GTHRequest -> GTHRequest: CreateErrorResponse(response, data, "No account found")
+                GTHRequest -> User: return response
+                deactivate GTHRequest
+            else account found
+                GTHRequest -> DB: select("*").table("Transactions").where("from_account_number =", accountNumber).whereOr("to_account_number =" + QString::number(accountNumber)).exec()
+                activate DB
+                DB -> Result: return transaction data
+                deactivate DB
+                Result -> GTHRequest: return transaction information
+
+                alt no transactions found
+                    GTHRequest -> GTHRequest: CreateErrorResponse(response, data, "No transactions found")
+                    GTHRequest -> User: return response
+                    deactivate GTHRequest
+                else transactions found
+                    GTHRequest -> JsonObj: construct success response
+                    JsonObj -> User: return response
+                end
+            end
+        else admin role
+            GTHRequest -> DB: select("*").table("Transactions").exec()
+            activate DB
+            DB -> Result: return all transaction data
+            deactivate DB
+            Result -> GTHRequest: return transaction information
+
+            alt no transactions found
+                GTHRequest -> GTHRequest: CreateErrorResponse(response, data, "No transactions found")
+                GTHRequest -> User: return response
+                deactivate GTHRequest
+            else transactions found
+                GTHRequest -> JsonObj: construct success response
+                JsonObj -> User: return response
+            end
+        end
+    end
+end
+deactivate Locker
+@enduml

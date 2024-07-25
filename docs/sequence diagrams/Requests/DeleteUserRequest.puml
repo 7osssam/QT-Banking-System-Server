@@ -1,0 +1,81 @@
+@startuml Delete User Request Sequence Diagram
+actor User
+participant "DeleteUserRequest" as DURequest
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> DURequest: execute(jsonObj, m)
+activate DURequest
+DURequest -> Locker: QMutexLocker(&m)
+activate Locker
+DURequest -> JsonObj: extract admin email and account number
+JsonObj -> DURequest: return admin email and account number
+
+alt DB connection invalid
+    DURequest -> DURequest: isDBConnectionValid(dbManager)
+    DURequest -> DURequest: CreateDBConnectionError(response, data)
+    DURequest -> User: return response
+    deactivate DURequest
+else DB connection valid
+    DURequest -> DB: select("*").table("users").where("email =", admin_email).exec()
+    activate DB
+    DB -> Result: return result
+    deactivate DB
+    Result -> DURequest: return user role
+
+    alt user not found
+        DURequest -> DURequest: CreateErrorResponse(response, data, "you are not registered user!")
+        DURequest -> User: return response
+        deactivate DURequest
+    else user found
+        DURequest -> DURequest: check if role is admin
+        alt role not admin
+            DURequest -> DURequest: CreateErrorResponse(response, data, "Unauthorized, Cannot delete user.")
+            DURequest -> User: return response
+            deactivate DURequest
+        else role is admin
+            DURequest -> DB: select("*").table("accounts").where("account_number =", account_number).exec()
+            activate DB
+            DB -> Result: return result
+            deactivate DB
+            Result -> DURequest: return account existence check
+
+            alt account not found
+                DURequest -> DURequest: CreateErrorResponse(response, data, "Account number does not exist")
+                DURequest -> User: return response
+                deactivate DURequest
+            else account found
+                DURequest -> DURequest: get user_id from account
+                DURequest -> DB: delete account
+                activate DB
+                DB -> DURequest: return success/failure
+                deactivate DB
+
+                alt account deletion failed
+                    DURequest -> DURequest: CreateErrorResponse(response, data, "Failed to delete account")
+                    DURequest -> User: return response
+                    deactivate DURequest
+                else account deleted
+                    DURequest -> DB: delete user
+                    activate DB
+                    DB -> DURequest: return success/failure
+                    deactivate DB
+
+                    alt user deletion failed
+                        DURequest -> DURequest: CreateErrorResponse(response, data, "Failed to delete user")
+                        DURequest -> User: return response
+                        deactivate DURequest
+                    else user deleted
+                        DURequest -> JsonObj: construct success response
+                        JsonObj -> User: return response
+                    end
+                end
+            end
+        end
+    end
+end
+deactivate Locker
+@enduml

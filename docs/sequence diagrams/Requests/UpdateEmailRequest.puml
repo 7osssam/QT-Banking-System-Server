@@ -1,0 +1,71 @@
+@startuml Update Email Request Sequence Diagram
+actor User
+participant "UpdateEmailRequest" as UERRequest
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> UERRequest: execute(jsonObj, m)
+activate UERRequest
+UERRequest -> Locker: QMutexLocker(&m)
+activate Locker
+UERRequest -> JsonObj: extract email, password, new_email
+JsonObj -> UERRequest: return credentials
+
+alt DB connection invalid
+    UERRequest -> UERRequest: isDBConnectionValid(dbManager)
+    UERRequest -> UERRequest: CreateDBConnectionError(response, data)
+    UERRequest -> User: return response
+    deactivate UERRequest
+else DB connection valid
+    UERRequest -> DB: select("*").table("users").where("email =", email).exec()
+    activate DB
+    DB -> Result: return user data
+    deactivate DB
+
+    alt user not found
+        UERRequest -> UERRequest: CreateErrorResponse(response, data, "email not found")
+        UERRequest -> User: return response
+        deactivate UERRequest
+    else user found
+        UERRequest -> DB: select("password").table("users").where("id =", user_id).exec()
+        activate DB
+        DB -> Result: return password
+        deactivate DB
+
+        alt password invalid
+            UERRequest -> UERRequest: CreateErrorResponse(response, data, "Invalid password")
+            UERRequest -> User: return response
+            deactivate UERRequest
+        else password valid
+            UERRequest -> DB: select("*").table("users").where("email =", new_email).exec()
+            activate DB
+            DB -> Result: return existing email check
+            deactivate DB
+
+            alt email already exists
+                UERRequest -> UERRequest: CreateErrorResponse(response, data, "Email already exists")
+                UERRequest -> User: return response
+                deactivate UERRequest
+            else email available
+                UERRequest -> DB: update("users", {{"email", new_email}}).where("email =", email)
+                activate DB
+                DB -> Result: return success
+                deactivate DB
+
+                alt update failed
+                    UERRequest -> UERRequest: CreateErrorResponse(response, data, "Failed to update email")
+                    UERRequest -> User: return response
+                    deactivate UERRequest
+                else update successful
+					UERRequest -> JsonObj: construct success response
+					JsonObj -> User: return response
+                end
+            end
+        end
+    end
+end
+deactivate Locker
+@enduml

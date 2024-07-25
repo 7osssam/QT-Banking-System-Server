@@ -1,0 +1,78 @@
+@startuml Update User Request Sequence Diagram
+actor User
+participant "UpdateUserRequest" as UURRequest
+participant "QJsonObject" as JsonObj
+participant "QMutex" as Mutex
+participant "QMutexLocker" as Locker
+participant "DB::DatabaseManager" as DB
+participant "DB::DbResult" as Result
+
+User -> UURRequest: execute(jsonObj, m)
+activate UURRequest
+UURRequest -> Locker: QMutexLocker(&m)
+activate Locker
+UURRequest -> JsonObj: extract email, account_number, newData
+JsonObj -> UURRequest: return user data
+
+alt DB connection invalid
+    UURRequest -> UURRequest: isDBConnectionValid(dbManager)
+    UURRequest -> UURRequest: CreateDBConnectionError(response, data)
+    UURRequest -> User: return response
+    deactivate UURRequest
+else DB connection valid
+    UURRequest -> DB: select("role").table("users").where("email =", email).exec()
+    activate DB
+    DB -> Result: return user role
+    deactivate DB
+
+    alt user not found
+        UURRequest -> UURRequest: CreateErrorResponse(response, data, "you are not registered user!")
+        UURRequest -> User: return response
+        deactivate UURRequest
+    else user found
+        UURRequest -> UURRequest: Check if user is admin
+        alt not admin
+            UURRequest -> UURRequest: CreateErrorResponse(response, data, "Unauthorized, Cannot update user")
+            UURRequest -> User: return response
+            deactivate UURRequest
+        else admin
+            UURRequest -> DB: select("*").table("accounts").where("account_number =", account_number).exec()
+            activate DB
+            DB -> Result: return account data
+            deactivate DB
+
+            alt account not found
+                UURRequest -> UURRequest: CreateErrorResponse(response, data, "Account number does not exist")
+                UURRequest -> User: return response
+                deactivate UURRequest
+            else account found
+                UURRequest -> DB: select("*").table("users").where("email =", new_email).exec()
+                activate DB
+                DB -> Result: return user data
+                deactivate DB
+
+                alt email in use
+                    UURRequest -> UURRequest: CreateErrorResponse(response, data, "Email is associated with another account")
+                    UURRequest -> User: return response
+                    deactivate UURRequest
+                else email available
+                    UURRequest -> DB: update("users", {new_first_name, new_last_name, new_email, new_role}).where("id =", user_id)
+                    activate DB
+                    DB -> Result: return success
+                    deactivate DB
+
+                    alt update failed
+                        UURRequest -> UURRequest: CreateErrorResponse(response, data, "Failed to update user")
+                        UURRequest -> User: return response
+                        deactivate UURRequest
+                    else update successful
+						UURRequest -> JsonObj: construct success response
+						JsonObj -> User: return response
+                    end
+                end
+            end
+        end
+    end
+end
+deactivate Locker
+@enduml
