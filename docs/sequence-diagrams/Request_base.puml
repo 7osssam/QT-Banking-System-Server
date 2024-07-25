@@ -1,0 +1,31 @@
+@startuml Request base class handles database connection and error response
+participant "Request" as R
+participant "DB::DatabaseManager" as DB
+participant "QJsonObject" as JsonObj
+participant "QJsonDocument" as JsonDoc
+
+R -> DB: checkConnection()
+alt DB connection is null
+    R -> R: log "Failed to create instance"
+    return false
+else DB connection failed
+    R -> DB: checkConnection()
+    return false with dbError
+else DB connection successful
+    return true
+end
+
+R -> JsonObj: CreateDBConnectionError(response, dataObj)
+activate JsonObj
+JsonObj -> JsonDoc: construct JSON response
+JsonDoc -> JsonObj: return response
+JsonObj -> R: return response
+deactivate JsonObj
+
+R -> JsonObj: CreateErrorResponse(response, dataObj, message)
+activate JsonObj
+JsonObj -> JsonDoc: construct JSON response
+JsonDoc -> JsonObj: return response
+JsonObj -> R: return response
+deactivate JsonObj
+@enduml

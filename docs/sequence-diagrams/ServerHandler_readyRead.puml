@@ -1,0 +1,27 @@
+@startuml ServerHandler ReadyRead Sequence Diagram
+actor Client
+participant "QTcpSocket" as Socket
+participant "ServerHandler" as SH
+participant "QCryptographicHash" as Hash
+participant "RequestManager" as RM
+
+Client -> Socket: send data
+Socket -> SH: readyRead()
+activate SH
+SH -> Socket: readAll()
+SH -> Hash: compute hash(requestData)
+Hash -> SH: return computedHash
+
+alt Hash verification failed
+    SH -> SH: log "Hash verification failed"
+else Hash verification succeeded
+    SH -> SH: log "Hash verification succeeded"
+    SH -> RM: makeRequest(requestData)
+    activate RM
+    RM -> SH: return response
+    SH -> Socket: write(response)
+    SH -> Socket: waitForBytesWritten()
+    deactivate RM
+end
+deactivate SH
+@enduml

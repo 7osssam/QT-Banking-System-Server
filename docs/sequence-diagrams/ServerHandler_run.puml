@@ -1,0 +1,24 @@
+@startuml ServerHandler Run Sequence Diagram
+actor User
+participant "QTcpSocket" as Socket
+participant "ServerHandler" as SH
+participant "QEventLoop" as Loop
+
+User -> SH: run()
+activate SH
+SH -> Socket: new QTcpSocket()
+activate Socket
+alt setSocketDescriptor failed
+    SH -> SH: log "Failed to set socket descriptor"
+    SH -> Socket: delete QTcpSocket
+    deactivate Socket
+else setSocketDescriptor succeeded
+    SH -> Loop: new QEventLoop()
+    activate Loop
+    SH -> Socket: connect(disconnected, Loop.quit)
+    SH -> Socket: connect(readyRead, ServerHandler.readyRead)
+    SH -> Loop: exec()
+    deactivate Loop
+end
+deactivate SH
+@enduml

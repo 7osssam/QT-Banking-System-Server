@@ -1,0 +1,24 @@
+@startuml Server Init Sequence Diagram
+actor User
+participant "Server" as S
+participant "QThreadPool" as TP
+participant "QMutex" as M
+
+User -> S: new Server()
+activate S
+S -> TP: new QThreadPool()
+activate TP
+TP -> S: return
+S -> M: new QMutex()
+activate M
+M -> S: return
+S -> User: Server created
+
+User -> S: delete Server()
+activate S
+S -> TP: clear()
+S -> TP: deleteLater()
+deactivate TP
+S -> User: Server destroyed
+deactivate S
+@enduml

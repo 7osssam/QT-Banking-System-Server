@@ -1,0 +1,19 @@
+@startuml ServerHandler initialization and destruction Sequence Diagram
+actor User
+participant "ServerHandler" as SH
+participant "RequestManager" as RM
+
+User -> SH: new ServerHandler()
+activate SH
+SH -> RM: new RequestManager()
+activate RM
+RM -> SH: return
+SH -> User: ServerHandler created
+
+User -> SH: delete ServerHandler()
+activate SH
+SH -> RM: delete RequestManager()
+deactivate RM
+SH -> User: ServerHandler destroyed
+deactivate SH
+@enduml

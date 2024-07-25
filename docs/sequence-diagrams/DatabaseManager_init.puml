@@ -1,0 +1,57 @@
+@startuml DatabaseManager Init Sequence Diagram
+actor Admin
+participant "DatabaseManager" as DM
+participant "dbConfig" as Config
+participant "QSqlDatabase" as DB
+participant "QSqlQuery" as Query
+
+Admin -> DM: setDbSetting(host, port, username, password, dbname)
+activate DM
+DM -> Config: set(host, port, username, password, dbname)
+Config -> DM: return
+DM -> Admin: DB settings configured
+deactivate DM
+
+Admin -> DM: createInstance(checkDBName, newConnection, &err)
+activate DM
+alt dbConfig not set
+    DM -> Admin: log "Database configuration not set"
+    DM -> Admin: return nullptr
+    deactivate DM
+else dbConfig set
+    DM -> DM: new DatabaseManager()
+    activate DM
+    DM -> DB: getDatabase()
+    activate DB
+    alt DB is open
+        DM -> DB: close()
+    end
+    DM -> DB: setHostName(host)
+    DM -> DB: setPort(port)
+    DM -> DB: open()
+    DB -> Query: CREATE DATABASE IF NOT EXISTS dbname
+    deactivate DB
+    DM -> DB: setDatabaseName(dbname)
+    DM -> DB: setUserName(username)
+    DM -> DB: setPassword(password)
+    DM -> DB: open()
+    alt open successful
+        DM -> DM: return true
+    else open failed
+        DM -> Admin: log "Error opening database connection"
+        DM -> Admin: return nullptr
+    end
+    deactivate DM
+end
+
+Admin -> DM: checkConnection(&error)
+activate DM
+DM -> DM: createInstance(true, false, &err)
+alt createInstance failed
+    DM -> Admin: log err
+    DM -> Admin: return false
+else createInstance successful
+    DM -> Admin: return true
+end
+deactivate DM
+@enduml

@@ -1,0 +1,19 @@
+@startuml Server starts and stops Sequence Diagram
+actor Admin
+participant "Server" as S
+
+Admin -> S: start(port)
+activate S
+alt listen failed
+    S -> S: log "Failed to start server"
+else listen succeeded
+    S -> S: log "Server started on port"
+end
+deactivate S
+
+Admin -> S: quit()
+activate S
+S -> S: close()
+S -> Admin: Server Stopped
+deactivate S
+@enduml

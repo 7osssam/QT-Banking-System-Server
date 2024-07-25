@@ -1,0 +1,27 @@
+@startuml Request Manager Requests Sequence Diagram
+actor "ServerHandler" as SH
+participant "RequestManager" as RM
+participant "QJsonDocument" as JsonDoc
+participant "QJsonParseError" as JsonError
+participant "Request" as Request
+
+SH -> RM: makeRequest(data)
+activate RM
+RM -> JsonDoc: fromJson(data)
+alt JSON parse error
+    RM -> SH: handleJsonParseError(parseError)
+else JSON parse succeeded
+    JsonDoc -> RM: return jsonObjRequest
+    RM -> RM: parse request number
+    alt request not found
+        RM -> SH: log "Request not found"
+    else request found
+        RM -> Request: execute(jsonObjRequest, Mutex)
+        activate Request
+        Request -> RM: return response
+        RM -> SH: return responseByteArr
+        deactivate Request
+    end
+end
+deactivate RM
+@enduml

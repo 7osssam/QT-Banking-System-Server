@@ -1,0 +1,15 @@
+@startuml Server IncomingConnection Sequence Diagram
+actor Client
+participant "Server" as S
+participant "ServerHandler" as SH
+participant "QThreadPool" as TP
+
+Client -> S: new connection
+activate S
+S -> SH: new ServerHandler()
+activate SH
+SH -> S: setAutoDelete(true)
+S -> TP: start(SH)
+deactivate SH
+deactivate S
+@enduml

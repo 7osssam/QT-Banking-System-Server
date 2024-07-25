@@ -1,0 +1,32 @@
+@startuml DatabaseManager Query Sequence Diagram
+actor Client
+participant "DatabaseManager" as DM
+participant "QSqlQuery" as Query
+participant "QSqlRecord" as Record
+participant "DbResult" as Result
+
+Client -> DM: select("*").table("users").where("email =", email).exec()
+activate DM
+DM -> Query: getDatabase()
+activate Query
+alt database is not open
+    Query -> DM: log "Database not open"
+    return
+else database is open
+    Query -> DM: prepare and execute query
+    alt query execution failed
+        Query -> DM: log error
+        DM -> Client: return DbResult(empty)
+        deactivate DM
+    else query execution succeeded
+        Query -> Record: record()
+        activate Record
+        Record -> DM: while query.next()
+        DM -> Result: create DbResult from query result
+        deactivate Record
+        DM -> Client: return DbResult(result)
+        deactivate DM
+    end
+end
+deactivate Query
+@enduml
