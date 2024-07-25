@@ -1,4 +1,4 @@
-@startuml Server starts and stops Sequence Diagram
+@startuml
 actor Admin
 participant "Server" as S
 
