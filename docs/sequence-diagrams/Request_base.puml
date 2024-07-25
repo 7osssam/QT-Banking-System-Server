@@ -1,4 +1,4 @@
-@startuml Request base class handles database connection and error response
+@startuml
 participant "Request" as R
 participant "DB::DatabaseManager" as DB
 participant "QJsonObject" as JsonObj
@@ -12,7 +12,7 @@ else DB connection failed
     R -> DB: checkConnection()
     return false with dbError
 else DB connection successful
-    return true
+    R -> R: return true
 end
 
 R -> JsonObj: CreateDBConnectionError(response, dataObj)
