@@ -1,4 +1,4 @@
-@startuml Server IncomingConnection Sequence Diagram
+@startuml
 actor Client
 participant "Server" as S
 participant "ServerHandler" as SH

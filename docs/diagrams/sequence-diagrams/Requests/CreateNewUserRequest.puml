@@ -1,5 +1,4 @@
-
-@startuml Create New User Request Sequence Diagram
+@startuml
 actor User
 participant "CreateNewUserRequest" as CNURequest
 participant "QJsonObject" as JsonObj

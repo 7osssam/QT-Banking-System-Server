@@ -1,4 +1,4 @@
-@startuml Get Database Request Sequence Diagram
+@startuml
 actor User
 participant "GetDatabaseRequest" as GDBRequest
 participant "QJsonObject" as JsonObj

@@ -1,4 +1,4 @@
-@startuml ServerHandler Run Sequence Diagram
+@startuml
 actor User
 participant "QTcpSocket" as Socket
 participant "ServerHandler" as SH

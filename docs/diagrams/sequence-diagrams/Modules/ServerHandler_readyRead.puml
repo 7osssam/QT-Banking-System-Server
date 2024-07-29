@@ -1,4 +1,4 @@
-@startuml ServerHandler ReadyRead Sequence Diagram
+@startuml
 actor Client
 participant "QTcpSocket" as Socket
 participant "ServerHandler" as SH

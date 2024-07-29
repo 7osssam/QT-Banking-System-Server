@@ -1,4 +1,4 @@
-@startuml ServerHandler initialization and destruction Sequence Diagram
+@startuml
 actor User
 participant "ServerHandler" as SH
 participant "RequestManager" as RM

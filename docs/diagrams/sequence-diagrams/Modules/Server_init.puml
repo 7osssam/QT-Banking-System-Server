@@ -1,4 +1,4 @@
-@startuml Server Init Sequence Diagram
+@startuml
 actor User
 participant "Server" as S
 participant "QThreadPool" as TP

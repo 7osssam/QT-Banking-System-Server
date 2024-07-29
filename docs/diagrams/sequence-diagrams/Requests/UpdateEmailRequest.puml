@@ -1,4 +1,4 @@
-@startuml Update Email Request Sequence Diagram
+@startuml
 actor User
 participant "UpdateEmailRequest" as UERRequest
 participant "QJsonObject" as JsonObj

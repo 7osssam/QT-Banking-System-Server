@@ -1,4 +1,4 @@
-@startuml User Init Request Sequence Diagram
+@startuml
 actor User
 participant "UserInitRequest" as UIRequest
 participant "QJsonObject" as JsonObj

@@ -1,4 +1,4 @@
-@startuml DatabaseManager Query Sequence Diagram
+@startuml
 actor Client
 participant "DatabaseManager" as DM
 participant "QSqlQuery" as Query

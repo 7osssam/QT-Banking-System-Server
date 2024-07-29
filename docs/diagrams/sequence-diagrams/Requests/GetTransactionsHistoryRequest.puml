@@ -1,4 +1,4 @@
-@startuml Get Transactions History Request Sequence Diagram
+@startuml
 actor User
 participant "GetTransactionsHistoryRequest" as GTHRequest
 participant "QJsonObject" as JsonObj

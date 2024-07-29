@@ -1,4 +1,4 @@
-@startuml Request Manager Requests Sequence Diagram
+@startuml
 actor "ServerHandler" as SH
 participant "RequestManager" as RM
 participant "QJsonDocument" as JsonDoc

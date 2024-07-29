@@ -1,4 +1,4 @@
-@startuml Login Request Sequence Diagram
+@startuml
 actor User
 participant "LoginRequest" as LR
 participant "QJsonObject" as JsonObj

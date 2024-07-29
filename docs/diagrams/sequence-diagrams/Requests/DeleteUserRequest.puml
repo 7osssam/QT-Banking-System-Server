@@ -1,4 +1,4 @@
-@startuml Delete User Request Sequence Diagram
+@startuml
 actor User
 participant "DeleteUserRequest" as DURequest
 participant "QJsonObject" as JsonObj
