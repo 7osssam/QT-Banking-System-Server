@@ -1,4 +1,10 @@
-// LoginRequest.h
+/**
+ * @file LoginRequest.h
+ *
+ * @brief This file contains the declaration of the LoginRequest class, which handles user login requests.
+ * @image html LoginRequest.svg
+ */
+
 #ifndef LOGINREQUEST_H
 #define LOGINREQUEST_H
 
@@ -13,20 +19,20 @@
 class LoginRequest : public Request
 {
 private:
-    DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
+	DB::DatabaseManager* dbManager = nullptr; ///< Pointer to the DatabaseManager instance.
 
 public:
-    /**
+	/**
      * @brief Constructor for the LoginRequest class.
      *
      * Initializes the DatabaseManager instance for handling database operations.
      */
-    LoginRequest() : dbManager(DB::DatabaseManager::createInstance())
-    {
-        // Log to database log table (if needed)
-    }
+	LoginRequest() : dbManager(DB::DatabaseManager::createInstance())
+	{
+		// Log to database log table (if needed)
+	}
 
-    /**
+	/**
      * @brief Executes the login request.
      *
      * This method processes the JSON request to validate user credentials.

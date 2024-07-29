@@ -1,3 +1,10 @@
+/**
+ * @file UpdateUserRequest.h
+ *
+ * @brief This file contains the declaration of the UpdateUserRequest class, which handles user update requests.
+ * @image html UpdateUserRequest.svg
+ */
+
 #ifndef UPDATEUSERREQUEST_H
 #define UPDATEUSERREQUEST_H
 

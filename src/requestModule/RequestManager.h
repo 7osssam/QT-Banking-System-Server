@@ -1,3 +1,10 @@
+/**
+ * @file RequestManager.h
+ *
+ * @brief This file contains the declaration of the RequestManager class, which handles incoming requests and dispatches them to the appropriate request handler.
+ * @image html RequestManager_requests.svg
+ */
+
 #ifndef REQUESTMANAGER_H
 #define REQUESTMANAGER_H
 

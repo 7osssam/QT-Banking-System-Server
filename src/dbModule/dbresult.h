@@ -1,3 +1,10 @@
+/**
+ * @file dbresult.h
+ * @brief This file contains the declaration of the DbResult class, which represents a result set returned from a database query.
+ * @details This class encapsulates the data returned from a database operation and provides methods to access and manipulate the result.
+ * @image html DatabaseManager_query.svg
+ */
+
 #ifndef DBRESULT_H
 #define DBRESULT_H
 

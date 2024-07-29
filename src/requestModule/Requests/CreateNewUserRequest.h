@@ -1,3 +1,10 @@
+/**
+ * @file CreateNewUserRequest.h
+ *
+ * @brief This file contains the declaration of the CreateNewUserRequest class, which handles requests to create new users.
+ * @image html CreateNewUserRequest.svg
+ */
+
 #ifndef CREATENEWUSERREQUEST_H
 #define CREATENEWUSERREQUEST_H
 

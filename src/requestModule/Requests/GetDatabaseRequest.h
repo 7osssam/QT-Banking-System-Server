@@ -1,3 +1,10 @@
+/**
+ * @file GetDatabaseRequest.h
+ *
+ * @brief This file contains the declaration of the GetDatabaseRequest class, which handles requests to retrieve the entire database.
+ * @image html GetDatabaseRequest.svg
+ */
+
 #ifndef GETDATABASEREQUEST_H
 #define GETDATABASEREQUEST_H
 

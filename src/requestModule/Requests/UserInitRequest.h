@@ -1,3 +1,10 @@
+/**
+ * @file UserInitRequest.h
+ *
+ * @brief This file contains the declaration of the UserInitRequest class, which handles user initialization requests for User Widget and Admin Widget.
+ * @image html UserInitRequest.svg
+ */
+
 #ifndef USERINITREQUEST_H
 #define USERINITREQUEST_H
 

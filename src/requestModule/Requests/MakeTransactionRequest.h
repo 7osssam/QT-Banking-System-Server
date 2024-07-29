@@ -1,3 +1,10 @@
+/**
+ * @file MakeTransactionRequest.h
+ *
+ * @brief This file contains the declaration of the MakeTransactionRequest class, which handles requests to make transactions between accounts.
+ * @image html MakeTransactionRequest.svg
+ */
+
 #ifndef MAKETRANSACTIONREQUEST_H
 #define MAKETRANSACTIONREQUEST_H
 

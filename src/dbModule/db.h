@@ -2,6 +2,7 @@
  * @file db.h
  * @brief Database management classes for handling database connections and operations.
  * @details This file contains the declarations for the DatabaseConfig structure and DatabaseManager class, which are used for configuring database connections and executing various SQL operations.
+ * @image html DatabaseManager_init.svg
  */
 
 #ifndef DB_H

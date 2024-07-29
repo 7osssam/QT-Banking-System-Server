@@ -1,3 +1,10 @@
+/**
+ * @file UpdatePasswordRequest.h
+ *
+ * @brief This file contains the declaration of the UpdatePasswordRequest class, which handles requests to update user passwords.
+ * @image html UpdatePasswordRequest.svg
+ */
+
 #ifndef UPDATEPASSWORDREQUEST_H
 #define UPDATEPASSWORDREQUEST_H
 

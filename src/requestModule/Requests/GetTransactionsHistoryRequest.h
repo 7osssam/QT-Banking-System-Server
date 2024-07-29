@@ -1,3 +1,10 @@
+/**
+ * @file GetTransactionsHistoryRequest.h
+ *
+ * @brief This file contains the declaration of the GetTransactionsHistoryRequest class, which handles requests to retrieve transaction history.
+ * @image html GetTransactionsHistoryRequest.svg
+ */
+
 #ifndef GETTRANSACTIONSHISTORYREQUEST_H
 #define GETTRANSACTIONSHISTORYREQUEST_H
 

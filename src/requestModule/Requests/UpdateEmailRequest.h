@@ -1,3 +1,10 @@
+/**
+ * @file UpdateEmailRequest.h
+ *
+ * @brief This file contains the declaration of the UpdateEmailRequest class, which handles email update requests for users.
+ * @image html UpdateEmailRequest.svg
+ */
+
 #ifndef UPDATEEMAILREQUEST_H
 #define UPDATEEMAILREQUEST_H
 

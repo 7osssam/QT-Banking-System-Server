@@ -2,7 +2,7 @@
  * @file Request.h
  *
  * @brief This file contains the declaration of the Request class, which is an abstract base class for handling different types of requests.
- *
+ * @image html Request_base.svg
  */
 
 #ifndef REQUEST_H

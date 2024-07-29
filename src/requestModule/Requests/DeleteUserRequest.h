@@ -1,3 +1,10 @@
+/**
+ * @file DeleteUserRequest.h
+ *
+ * @brief The DeleteUserRequest class handles the deletion of users.
+ * @image html DeleteUserRequest.svg
+ */
+
 #ifndef DELETEUSERREQUEST_H
 #define DELETEUSERREQUEST_H
 

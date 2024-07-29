@@ -1,3 +1,10 @@
+/**
+ * @file GetBalanceRequest.h
+ *
+ * @brief This file contains the declaration of the GetBalanceRequest class, which handles requests to retrieve account balances.
+ * @image html GetAccountNumberRequest.svg
+ */
+
 #ifndef GETBALANCEREQUEST_H
 #define GETBALANCEREQUEST_H
 

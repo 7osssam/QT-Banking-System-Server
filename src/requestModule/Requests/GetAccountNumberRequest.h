@@ -1,3 +1,10 @@
+/**
+ * @file GetAccountNumberRequest.h
+ *
+ * @brief This file contains the declaration of the GetAccountNumberRequest class, which handles requests to retrieve account numbers.
+ * @image html GetAccountNumberRequest.svg
+ */
+
 #ifndef GETACCOUNTNUMBERREQUEST_H
 #define GETACCOUNTNUMBERREQUEST_H
 
