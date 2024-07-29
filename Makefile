@@ -67,39 +67,47 @@ test:
 	@echo "Running tests..."
 	@cd $(BUILD_DIR) && cmake .. -DENABLE_TESTS=ON && cmake --build . && ctest --output-on-failure
 
-diagrams: build
+# Define variables
+PLANTUML_DIRS = docs/diagrams/plantuml docs/diagrams/plantuml/sequence-diagrams docs/diagrams/plantuml/sequence-diagrams/Modules docs/diagrams/plantuml/sequence-diagrams/Requests
+MERMAID_DIRS = docs/diagrams/mermaid docs/diagrams/mermaid/sequence-diagrams docs/diagrams/mermaid/sequence-diagrams/Modules docs/diagrams/mermaid/sequence-diagrams/Requests
+SVG_DIRS = docs/diagrams/plantuml docs/diagrams/mermaid docs/diagrams/plantuml/sequence-diagrams/Modules docs/diagrams/plantuml/sequence-diagrams/Requests
 
+# Target to generate diagrams
+diagrams: build
 ifeq ($(OS), Windows_NT)
-	@echo "Generating diagrams..."
-	mkdir -p docs/diagrams/plantuml
-	mkdir -p docs/diagrams/mermaid
+	@echo "Generating diagrams for Windows..."
+	mkdir -p $(PLANTUML_DIRS) $(MERMAID_DIRS)
 	clang-uml -g plantuml -g json -g mermaid -p
-	@echo "Convert .puml files to svg images"
+	@echo "Converting .puml files to SVG and PNG..."
 	plantuml -tsvg -nometadata -o plantuml docs/diagrams/*.puml
-	@echo "Convert .mmd files to svg images"
-	py utils/generate_mermaid.py docs/diagrams/*.mmd
-	@echo "Format generated SVG files..."
-	py utils/format_svg.py docs/diagrams/plantuml/*.svg
-	py utils/format_svg.py docs/diagrams/mermaid/*.svg
+	plantuml -tpng -nometadata -o plantuml docs/diagrams/*.puml
+	plantuml -tsvg -nometadata -o ../../plantuml/sequence-diagrams/Modules docs/diagrams/sequence-diagrams/Modules/*.puml
+	plantuml -tpng -nometadata -o ../../plantuml/sequence-diagrams/Modules docs/diagrams/sequence-diagrams/Modules/*.puml
+	plantuml -tsvg -nometadata -o ../plantuml/sequence-diagrams/Requests docs/diagrams/sequence-diagrams/Requests/*.puml
+	plantuml -tpng -nometadata -o ../plantuml/sequence-diagrams/Requests docs/diagrams/sequence-diagrams/Requests/*.puml
+	@echo "Converting .mmd files to SVG..."
+	py utils/generate_mermaid.py "docs/diagrams/*.mmd"
+	@echo "Formatting generated SVG files..."
+	py utils/format_svg.py $(wildcard docs/diagrams/plantuml/*.svg) $(wildcard docs/diagrams/mermaid/*.svg) $(wildcard docs/diagrams/plantuml/sequence-diagrams/Modules/*.svg) $(wildcard docs/diagrams/plantuml/sequence-diagrams/Requests/*.svg)
+	@echo "Done!"
+
 else
-	@echo "installing dependencies..."
+	@echo "Installing dependencies for Unix-like systems..."
 	sudo apt-get install -y plantuml npm python3 python3-pip python3-yaml
 	npm install -g mermaid.cli
-	pip install pyyaml
-	@echo "installing clang-uml..."
-
+	pip install pyyaml cairosvg
+	@echo "Installing clang-uml..."
 	sudo add-apt-repository ppa:bkryza/clang-uml
 	sudo apt update
 	sudo apt install clang-uml
 	@echo "Generating diagrams..."
-	mkdir -p docs/diagrams/plantuml
-	mkdir -p docs/diagrams/mermaid
-	clang-uml -g plantuml -g json -g mermaid -p
-	@echo "Convert .puml files to svg images"
-	plantuml -tsvg -nometadata -o plantuml docs/diagrams/*.puml
-	@echo "Convert .mmd files to svg images"
-	py utils/generate_mermaid.py docs/diagrams/*.mmd
-	@echo "Format generated SVG files..."
-	py utils/format_svg.py docs/diagrams/plantuml/*.svg
-	py utils/format_svg.py docs/diagrams/mermaid/*.svg
+	@mkdir -p $(PLANTUML_DIRS) $(MERMAID_DIRS)
+	@clang-uml -g plantuml -g json -g mermaid -p
+	@echo "Converting .puml files to SVG..."
+	@plantuml -tsvg -nometadata -o plantuml docs/diagrams/*.puml
+	@echo "Converting .mmd files to SVG..."
+	@py utils/generate_mermaid.py "docs/diagrams/*.mmd"
+	@echo "Formatting generated SVG files..."
+	@py utils/format_svg.py $(wildcard docs/diagrams/plantuml/*.svg) $(wildcard docs/diagrams/mermaid/*.svg)
+	@echo "Done!"
 endif
