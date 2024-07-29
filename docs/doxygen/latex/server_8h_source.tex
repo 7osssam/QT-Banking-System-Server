@@ -1,48 +1,49 @@
 \hypertarget{server_8h_source}{}\doxysection{server.\+h}
 \label{server_8h_source}\index{server.h@{server.h}}
-
+\mbox{\hyperlink{server_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERVER\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERVER\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QDebug>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QAbstractSocket>}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QDate>}}
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QTime>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QList>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QThreadPool>}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QThread>}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QMutex>}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}serverhandler.h"{}}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServer}{Server}}\ :\ \textcolor{keyword}{public}\ QTcpServer}
-\DoxyCodeLine{00026\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classServer}{Server}}(QObject*\ parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{\string~Server}}();}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ signals:}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ No\ signals\ defined\ for\ this\ class}}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_aae87a306c2ee55cdb1022411da3abcbe}{start}}(qint16\ port\ =\ 2222);}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ SERVER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ SERVER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QAbstractSocket>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QDate>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QTime>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QThreadPool>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serverhandler_8h}{serverhandler.h}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServer}{Server}}\ :\ \textcolor{keyword}{public}\ QTcpServer}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classServer}{Server}}(QObject*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{\string~Server}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ signals:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ No\ signals\ defined\ for\ this\ class}}
 \DoxyCodeLine{00056\ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_a1a81f6a80746cae03fc549a11c70fb35}{quit}}();}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_aa41c63566371fbfe1baf20c1c345096f}{incomingConnection}}(qintptr\ handle)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00071\ \ \ \ \ QThreadPool*\ threadPool;\ }
-\DoxyCodeLine{00072\ \ \ \ \ QMutex*\ \ \ \ \ \ Mutex\_;\ \ \ \ \ }
-\DoxyCodeLine{00073\ \};}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ SERVER\_H}}
+\DoxyCodeLine{00057\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_aae87a306c2ee55cdb1022411da3abcbe}{start}}(qint16\ port\ =\ 2222);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_a1a81f6a80746cae03fc549a11c70fb35}{quit}}();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServer_aa41c63566371fbfe1baf20c1c345096f}{incomingConnection}}(qintptr\ handle)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ QThreadPool*\ threadPool;\ }
+\DoxyCodeLine{00082\ \ \ \ \ QMutex*\ \ \ \ \ \ Mutex\_;\ \ \ \ \ }
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ SERVER\_H}}
 
 \end{DoxyCode}

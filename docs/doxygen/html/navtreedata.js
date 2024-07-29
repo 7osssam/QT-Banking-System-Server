@@ -47,7 +47,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"CreateNewUserRequest_8h_source.html"
+"CreateNewUserRequest_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

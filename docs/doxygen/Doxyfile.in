@@ -1079,7 +1079,9 @@ EXAMPLE_RECURSIVE      = NO
 # \image command).
 
 IMAGE_PATH             = @CMAKE_SOURCE_DIR_CONVERTED@/docs/diagrams/mermaid \
-						 @CMAKE_SOURCE_DIR_CONVERTED@/docs/diagrams/plantuml
+						 @CMAKE_SOURCE_DIR_CONVERTED@/docs/diagrams/plantuml \
+						 @CMAKE_SOURCE_DIR_CONVERTED@/docs/diagrams/plantuml/sequence-diagrams/Modules \
+						 @CMAKE_SOURCE_DIR_CONVERTED@/docs/diagrams/plantuml/sequence-diagrams/Requests
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program

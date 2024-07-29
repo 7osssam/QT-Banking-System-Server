@@ -1,0 +1,5 @@
+<map id="RequestManager.h" name="RequestManager.h">
+<area shape="rect" id="node1" title="This file contains the declaration of the RequestManager class, which handles incoming requests and d..." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$serverhandler_8h.html" title="This file contains the declaration of the ServerHandler class, which handles incoming client connecti..." alt="" coords="16,80,125,107"/>
+<area shape="rect" id="node3" href="$server_8h.html" title="This file contains the declaration of the Server class, which extends QTcpServer to handle incoming n..." alt="" coords="37,155,104,181"/>
+</map>

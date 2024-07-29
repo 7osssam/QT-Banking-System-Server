@@ -1,0 +1,6 @@
+<map id="CreateNewUserRequest.h" name="CreateNewUserRequest.h">
+<area shape="rect" id="node1" title="This file contains the declaration of the CreateNewUserRequest class, which handles requests to creat..." alt="" coords="5,5,176,32"/>
+<area shape="rect" id="node2" href="$RequestManager_8h.html" title="This file contains the declaration of the RequestManager class, which handles incoming requests and d..." alt="" coords="25,80,156,107"/>
+<area shape="rect" id="node3" href="$serverhandler_8h.html" title="This file contains the declaration of the ServerHandler class, which handles incoming client connecti..." alt="" coords="36,155,145,181"/>
+<area shape="rect" id="node4" href="$server_8h.html" title="This file contains the declaration of the Server class, which extends QTcpServer to handle incoming n..." alt="" coords="57,229,124,256"/>
+</map>

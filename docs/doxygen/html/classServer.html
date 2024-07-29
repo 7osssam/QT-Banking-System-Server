@@ -211,7 +211,10 @@ Protected Member Functions</h2></td></tr>
 <p>Initializes the thread pool and mutex, and sets the maximum thread count for handling incoming connections.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>The parent QObject. </td></tr>
+    <tr><td class="paramname">parent</td><td>The parent QObject. <div class="image">
+<object type="image/svg+xml" data="Server_init.svg" style="pointer-events: none;"></object>
+</div>
+ </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,7 +269,10 @@ Protected Member Functions</h2></td></tr>
 <p>Handles incoming connections by creating and starting a <a class="el" href="classServerHandler.html" title="The ServerHandler class handles incoming client connections in a separate thread.">ServerHandler</a> instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">handle</td><td>The socket descriptor for the incoming connection. </td></tr>
+    <tr><td class="paramname">handle</td><td>The socket descriptor for the incoming connection. <div class="image">
+<object type="image/svg+xml" data="Server_incomingConnection.svg" style="pointer-events: none;"></object>
+</div>
+ </td></tr>
   </table>
   </dd>
 </dl>
@@ -300,7 +306,10 @@ Protected Member Functions</h2></td></tr>
 <p>Starts the server and listens for incoming connections on the specified port. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">port</td><td>The port number to listen on (default is 2222). </td></tr>
+    <tr><td class="paramname">port</td><td>The port number to listen on (default is 2222). <div class="image">
+<object type="image/svg+xml" data="Server_start_stop.svg" style="pointer-events: none;"></object>
+</div>
+ </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,41 +1,42 @@
 \hypertarget{dbresult_8h_source}{}\doxysection{dbresult.\+h}
 \label{dbresult_8h_source}\index{dbresult.h@{dbresult.h}}
-
+\mbox{\hyperlink{dbresult_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DBRESULT\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DBRESULT\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }DB}
-\DoxyCodeLine{00008\ \{}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDB_1_1DbResult}{DbResult}}}
-\DoxyCodeLine{00017\ \{}
-\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classDB_1_1DbResult_a2990ab2f7eb48e24a3646d5695dd38fa}{DbResult}}();}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classDB_1_1DbResult_a2990ab2f7eb48e24a3646d5695dd38fa}{DbResult}}(\textcolor{keyword}{const}\ QList<QVariant>\&\ \mbox{\hyperlink{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3}{data}});}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9}{isEmpty}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ DBRESULT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ DBRESULT\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }DB}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDB_1_1DbResult}{DbResult}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classDB_1_1DbResult_a2990ab2f7eb48e24a3646d5695dd38fa}{DbResult}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classDB_1_1DbResult_a2990ab2f7eb48e24a3646d5695dd38fa}{DbResult}}(\textcolor{keyword}{const}\ QList<QVariant>\&\ \mbox{\hyperlink{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3}{data}});}
 \DoxyCodeLine{00040\ }
-\DoxyCodeLine{00046\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}{first}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9}{isEmpty}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDB_1_1DbResult_a22c99c1160b466e76ff325fc6cb2639e}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}{first}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00062\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3}{data}}(\textcolor{keywordtype}{int}\ pos)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00069\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3}{data}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDB_1_1DbResult_a22c99c1160b466e76ff325fc6cb2639e}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00069\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3}{data}}(\textcolor{keywordtype}{int}\ pos)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00070\ }
-\DoxyCodeLine{00076\ \ \ \ \ QString\ \mbox{\hyperlink{classDB_1_1DbResult_ade90f923071d8f646dc0919e88d1e7cd}{toJsonString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ QJsonArray\ \mbox{\hyperlink{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3}{data}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00079\ \ \ \ \ QJsonArray\ Data\_;\ }
-\DoxyCodeLine{00080\ \};}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \}\ \textcolor{comment}{//\ namespace\ DB}}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DBRESULT\_H}}
+\DoxyCodeLine{00083\ \ \ \ \ QString\ \mbox{\hyperlink{classDB_1_1DbResult_ade90f923071d8f646dc0919e88d1e7cd}{toJsonString}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00086\ \ \ \ \ QJsonArray\ Data\_;\ }
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \}\ \textcolor{comment}{//\ namespace\ DB}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DBRESULT\_H}}
 
 \end{DoxyCode}

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="592px" preserveAspectRatio="none" style="width:711px;height:592px;background:#FFFFFF;" version="1.1" viewBox="0 0 711 592" width="711px" zoomAndPan="magnify">
+  <defs>
+    <style type="text/css">a:hover { text-decoration: underline; }</style>
+  </defs>
+  <g>
+    <rect fill="#FFFFFF" height="355.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="257" y="145.3125"/>
+    <rect fill="#FFFFFF" height="91.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="627.5" y="394.6094"/>
+    <rect fill="none" height="242.2969" style="stroke:#000000;stroke-width:1.5;" width="653" x="51" y="251.3672"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="26" x2="26" y1="82.6094" y2="510.6641"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="107" x2="107" y1="82.6094" y2="510.6641"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="261.5" x2="261.5" y1="82.6094" y2="510.6641"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="488" x2="488" y1="82.6094" y2="510.6641"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="632" x2="632" y1="82.6094" y2="510.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="5" y="79.5332">Client</text>
+    <ellipse cx="26" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M26,21.5 L26,48.5 M13,29.5 L39,29.5 M26,48.5 L13,63.5 M26,48.5 L39,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="5" y="524.1973">Client</text>
+    <ellipse cx="26" cy="535.7734" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M26,543.7734 L26,570.7734 M13,551.7734 L39,551.7734 M26,570.7734 L13,585.7734 M26,570.7734 L39,585.7734 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="61" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="68" y="71.5332">QTcpSocket</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="61" y="509.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="68" y="531.1973">QTcpSocket</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="209.5" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="216.5" y="71.5332">ServerHandler</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="209.5" y="509.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="216.5" y="531.1973">ServerHandler</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="415" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="422" y="71.5332">QCryptographicHash</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="415" y="509.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="422" y="531.1973">QCryptographicHash</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="571" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="578" y="71.5332">RequestManager</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="571" y="509.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="578" y="531.1973">RequestManager</text>
+    <rect fill="#FFFFFF" height="355.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="257" y="145.3125"/>
+    <rect fill="#FFFFFF" height="91.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="627.5" y="394.6094"/>
+    <polygon fill="#181818" points="95,110.9609,105,114.9609,95,118.9609,99,114.9609" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="26" x2="101" y1="114.9609" y2="114.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="33" y="110.1045">send data</text>
+    <polygon fill="#181818" points="245,141.3125,255,145.3125,245,149.3125,249,145.3125" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="107" x2="251" y1="145.3125" y2="145.3125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="114" y="140.4561">readyRead()</text>
+    <polygon fill="#181818" points="118,171.6641,108,175.6641,118,179.6641,114,175.6641" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="112" x2="256" y1="175.6641" y2="175.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="48" x="124" y="170.8076">readAll()</text>
+    <polygon fill="#181818" points="476,202.0156,486,206.0156,476,210.0156,480,206.0156" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="267" x2="482" y1="206.0156" y2="206.0156"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="274" y="201.1592">compute hash(requestData)</text>
+    <polygon fill="#181818" points="278,232.3672,268,236.3672,278,240.3672,274,236.3672" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="272" x2="487" y1="236.3672" y2="236.3672"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="124" x="284" y="231.5107">return computedHash</text>
+    <path d="M51,251.3672 L112,251.3672 L112,259.7188 L102,269.7188 L51,269.7188 L51,251.3672 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="242.2969" style="stroke:#000000;stroke-width:1.5;" width="653" x="51" y="251.3672"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="66" y="265.8623">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="132" x="127" y="264.7861">[Hash verification failed]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="267" x2="309" y1="292.0703" y2="292.0703"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="309" x2="309" y1="292.0703" y2="305.0703"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="268" x2="309" y1="305.0703" y2="305.0703"/>
+    <polygon fill="#181818" points="278,301.0703,268,305.0703,278,309.0703,274,305.0703" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159" x="274" y="287.2139">log "Hash verification failed"</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="51" x2="704" y1="314.0703" y2="314.0703"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="163" x="56" y="325.4893">[Hash verification succeeded]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="267" x2="309" y1="351.2578" y2="351.2578"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="309" x2="309" y1="351.2578" y2="364.2578"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="268" x2="309" y1="364.2578" y2="364.2578"/>
+    <polygon fill="#181818" points="278,360.2578,268,364.2578,278,368.2578,274,364.2578" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="192" x="274" y="346.4014">log "Hash verification succeeded"</text>
+    <polygon fill="#181818" points="615.5,390.6094,625.5,394.6094,615.5,398.6094,619.5,394.6094" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="267" x2="621.5" y1="394.6094" y2="394.6094"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="158" x="274" y="389.7529">makeRequest(requestData)</text>
+    <polygon fill="#181818" points="278,420.9609,268,424.9609,278,428.9609,274,424.9609" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="272" x2="626.5" y1="424.9609" y2="424.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="284" y="420.1045">return response</text>
+    <polygon fill="#181818" points="118,451.3125,108,455.3125,118,459.3125,114,455.3125" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="112" x2="256" y1="455.3125" y2="455.3125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="124" y="450.4561">write(response)</text>
+    <polygon fill="#181818" points="118,481.6641,108,485.6641,118,489.6641,114,485.6641" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="112" x2="256" y1="485.6641" y2="485.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126" x="124" y="480.8076">waitForBytesWritten()</text>
+  </g>
+</svg>

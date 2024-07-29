@@ -1,6 +1,6 @@
 <map id="db.h" name="db.h">
 <area shape="rect" id="node1" title="Database management classes for handling database connections and operations." alt="" coords="423,5,469,32"/>
-<area shape="rect" id="node2" href="$dbresult_8h_source.html" title=" " alt="" coords="70,80,148,107"/>
+<area shape="rect" id="node2" href="$dbresult_8h.html" title="This file contains the declaration of the DbResult class, which represents a result set returned from..." alt="" coords="70,80,148,107"/>
 <area shape="rect" id="node5" title=" " alt="" coords="172,80,277,107"/>
 <area shape="rect" id="node6" title=" " alt="" coords="302,80,380,107"/>
 <area shape="rect" id="node7" title=" " alt="" coords="403,80,489,107"/>

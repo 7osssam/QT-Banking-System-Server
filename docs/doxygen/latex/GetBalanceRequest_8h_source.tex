@@ -1,85 +1,86 @@
 \hypertarget{GetBalanceRequest_8h_source}{}\doxysection{Get\+Balance\+Request.\+h}
 \label{GetBalanceRequest_8h_source}\index{GetBalanceRequest.h@{GetBalanceRequest.h}}
-
+\mbox{\hyperlink{GetBalanceRequest_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GETBALANCEREQUEST\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GETBALANCEREQUEST\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Request_8h}{Request.h}}"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{db_8h}{db.h}}"{}}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGetBalanceRequest}{GetBalanceRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRequest}{Request}}}
-\DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classDB_1_1DatabaseManager}{DB::DatabaseManager}}*\ dbManager\ =\ \textcolor{keyword}{nullptr};\ }
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classGetBalanceRequest_a47de7b6b548cf93c8d395b2f8ea29bee}{GetBalanceRequest}}()\ :\ dbManager(DB::DatabaseManager::createInstance())}
-\DoxyCodeLine{00025\ \ \ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Log\ to\ database\ log\ table\ (if\ needed)}}
-\DoxyCodeLine{00027\ \ \ \ \ \}}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00040\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{execute}}(\textcolor{keyword}{const}\ QJsonObject\&\ jsonObj,\ QMutex\&\ m)\textcolor{keyword}{\ override}}
-\DoxyCodeLine{00041\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ QMutexLocker\ locker(\&m);\ \textcolor{comment}{//\ Lock\ the\ mutex\ for\ the\ duration\ of\ this\ function}}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ accountNumber;}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ QJsonObject\ response;}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ QJsonObject\ data;}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Response"{}},\ 3);}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ GETBALANCEREQUEST\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ GETBALANCEREQUEST\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Request_8h}{Request.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{db_8h}{db.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGetBalanceRequest}{GetBalanceRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRequest}{Request}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classDB_1_1DatabaseManager}{DB::DatabaseManager}}*\ dbManager\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classGetBalanceRequest_a47de7b6b548cf93c8d395b2f8ea29bee}{GetBalanceRequest}}()\ :\ dbManager(DB::DatabaseManager::createInstance())}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Log\ to\ database\ log\ table\ (if\ needed)}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00047\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{execute}}(\textcolor{keyword}{const}\ QJsonObject\&\ jsonObj,\ QMutex\&\ m)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ QMutexLocker\ locker(\&m);\ \textcolor{comment}{//\ Lock\ the\ mutex\ for\ the\ duration\ of\ this\ function}}
 \DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Extract\ the\ data\ array}}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (jsonObj.contains(\textcolor{stringliteral}{"{}Data"{}}))}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ QJsonObject\ dataObj\ =\ jsonObj[\textcolor{stringliteral}{"{}Data"{}}].toObject();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ accountNumber;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ QJsonObject\ response;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ QJsonObject\ data;}
 \DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dataObj.contains(\textcolor{stringliteral}{"{}account\_number"{}}))}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accountNumber\ =\ dataObj.value(\textcolor{stringliteral}{"{}account\_number"{}}).toInt();}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ qCritical()\ <<\ \textcolor{stringliteral}{"{}Data\ not\ found"{}};}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classRequest_ae580c02633722f323ad8a738e4952ea1}{isDBConnectionValid}}(dbManager))}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRequest_ad457f5030e3f983ffdbc7439989eebcb}{CreateDBConnectionError}}(response,\ data);}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Response"{}},\ 3);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Extract\ the\ data\ array}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (jsonObj.contains(\textcolor{stringliteral}{"{}Data"{}}))}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ QJsonObject\ dataObj\ =\ jsonObj[\textcolor{stringliteral}{"{}Data"{}}].toObject();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dataObj.contains(\textcolor{stringliteral}{"{}account\_number"{}}))}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accountNumber\ =\ dataObj.value(\textcolor{stringliteral}{"{}account\_number"{}}).toInt();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ qCritical()\ <<\ \textcolor{stringliteral}{"{}Data\ not\ found"{}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDB_1_1DbResult}{DB::DbResult}}\ result\ =}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dbManager-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0}{select}}(\textcolor{stringliteral}{"{}balance"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}}(\textcolor{stringliteral}{"{}Accounts"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07}{where}}(\textcolor{stringliteral}{"{}account\_number\ ="{}},\ accountNumber)-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}{exec}}();}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.\mbox{\hyperlink{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9}{isEmpty}}())}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{CreateErrorResponse}}(response,\ data,\ \textcolor{stringliteral}{"{}Account\ not\ found"{}});}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ QJsonObject\ obj\ =\ result.\mbox{\hyperlink{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}{first}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classRequest_ae580c02633722f323ad8a738e4952ea1}{isDBConnectionValid}}(dbManager))}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRequest_ad457f5030e3f983ffdbc7439989eebcb}{CreateDBConnectionError}}(response,\ data);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDB_1_1DbResult}{DB::DbResult}}\ result\ =}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dbManager-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0}{select}}(\textcolor{stringliteral}{"{}balance"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}}(\textcolor{stringliteral}{"{}Accounts"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07}{where}}(\textcolor{stringliteral}{"{}account\_number\ ="{}},\ accountNumber)-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}{exec}}();}
 \DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}status"{}},\ \textcolor{keywordtype}{int}(\textcolor{keyword}{true}));}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}message"{}},\ \textcolor{stringliteral}{"{}Balance\ fetched\ successfully"{}});}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}balance"{}},\ obj.value(\textcolor{stringliteral}{"{}balance"{}}).toDouble());}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Data"{}},\ data);}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.\mbox{\hyperlink{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9}{isEmpty}}())}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{CreateErrorResponse}}(response,\ data,\ \textcolor{stringliteral}{"{}Account\ not\ found"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ QJsonObject\ obj\ =\ result.\mbox{\hyperlink{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}{first}}();}
 \DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ response\ to\ JSON}}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ QJsonDocument\ responseDoc(response);}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ QByteArray\ \ \ \ responseData\ =\ responseDoc.toJson();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}status"{}},\ \textcolor{keywordtype}{int}(\textcolor{keyword}{true}));}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}message"{}},\ \textcolor{stringliteral}{"{}Balance\ fetched\ successfully"{}});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}balance"{}},\ obj.value(\textcolor{stringliteral}{"{}balance"{}}).toDouble());}
 \DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Send\ response}}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ qDebug().noquote()\ <<\ \textcolor{stringliteral}{"{}<-\/-\/\ GetBalance::Response\ :\(\backslash\)n"{}}\ <<\ responseDoc.toJson(QJsonDocument::Indented);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Data"{}},\ data);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{false});}
 \DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ response;}
-\DoxyCodeLine{00098\ \ \ \ \ \}}
-\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ response\ to\ JSON}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ QJsonDocument\ responseDoc(response);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ QByteArray\ \ \ \ responseData\ =\ responseDoc.toJson();}
 \DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GETBALANCEREQUEST\_H}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Send\ response}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ qDebug().noquote()\ <<\ \textcolor{stringliteral}{"{}<-\/-\/\ GetBalance::Response\ :\(\backslash\)n"{}}\ <<\ responseDoc.toJson(QJsonDocument::Indented);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ response;}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GETBALANCEREQUEST\_H}}
 
 \end{DoxyCode}

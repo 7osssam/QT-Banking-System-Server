@@ -64,7 +64,7 @@ Initializes the \mbox{\hyperlink{classServerHandler}{Server\+Handler}} with a mu
 \hline
 {\em handle} & The socket descriptor for the incoming connection. \\
 \hline
-{\em parent} & The parent QObject. \\
+{\em parent} & The parent QObject.  \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classServerHandler_a38748a26a3142d81018863876b06164e}\label{classServerHandler_a38748a26a3142d81018863876b06164e}} 
@@ -90,7 +90,7 @@ Cleans up resources by deleting the client socket and \mbox{\hyperlink{classRequ
 
 Slot to handle ready\+Read signal from QTcp\+Socket. 
 
-Reads data from the client socket, verifies its integrity using a cryptographic hash, and processes the request using \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. Sends the response back to the client. 
+Reads data from the client socket, verifies its integrity using a cryptographic hash, and processes the request using \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. Sends the response back to the client.  
 
 Referenced by \mbox{\hyperlink{classServerHandler_a61359b9bb16c92ca9bca3353487db090}{run()}}.
 
@@ -118,7 +118,7 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Implements QRunnable\textquotesingle{}s run method to handle the client connection. 
 
-Sets up the client socket, connects signals for reading data and disconnection, and starts the event loop to process client requests. Here is the call graph for this function\+:\nopagebreak
+Sets up the client socket, connects signals for reading data and disconnection, and starts the event loop to process client requests.  Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -129,5 +129,5 @@ Sets up the client socket, connects signals for reading data and disconnection, 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-serverhandler.\+h\item 
+\mbox{\hyperlink{serverhandler_8h}{serverhandler.\+h}}\item 
 serverhandler.\+cpp\end{DoxyCompactItemize}

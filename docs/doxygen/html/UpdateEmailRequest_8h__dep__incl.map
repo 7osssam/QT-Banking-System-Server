@@ -1,0 +1,6 @@
+<map id="UpdateEmailRequest.h" name="UpdateEmailRequest.h">
+<area shape="rect" id="node1" title="This file contains the declaration of the UpdateEmailRequest class, which handles email update reques..." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node2" href="$RequestManager_8h.html" title="This file contains the declaration of the RequestManager class, which handles incoming requests and d..." alt="" coords="17,80,148,107"/>
+<area shape="rect" id="node3" href="$serverhandler_8h.html" title="This file contains the declaration of the ServerHandler class, which handles incoming client connecti..." alt="" coords="28,155,137,181"/>
+<area shape="rect" id="node4" href="$server_8h.html" title="This file contains the declaration of the Server class, which extends QTcpServer to handle incoming n..." alt="" coords="49,229,116,256"/>
+</map>
