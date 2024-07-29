@@ -1,58 +1,44 @@
 # Sequence Diagrams for Requests
 
-
 ## Sequence diagram : `LoginRequest` processes login request
 
-<!-- image of Diagram from plantuml server -->
-![LoginRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/LoginRequest.puml)
-
+![LoginRequest](../plantuml/sequence-diagrams/Requests/LoginRequest.svg)
 
 ## Sequence diagram : `CreateNewUserRequest ` processes create new user request
 
-<!-- image of Diagram from plantuml server -->
-![CreateNewUserRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/CreateNewUserRequest.puml)
+![CreateNewUserRequest](../plantuml/sequence-diagrams/Requests/CreateNewUserRequest.svg)
 
 ## Sequence diagram : `DeleteUserRequest` processes delete user request
 
-<!-- image of Diagram from plantuml server -->
-![DeleteUserRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/DeleteUserRequest.puml)
+![DeleteUserRequest](../plantuml/sequence-diagrams/Requests/DeleteUserRequest.svg)
 
 ## Sequence diagram : `GetBalanceRequest` processes get balance request
 
-<!-- image of Diagram from plantuml server -->
-![GetBalanceRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/GetBalanceRequest.puml)
+![GetBalanceRequest](../plantuml/sequence-diagrams/Requests/GetBalanceRequest.svg)
 
 ## Sequence diagram : `GetDatabaseRequest` processes get database request
 
-<!-- image of Diagram from plantuml server -->
-![GetDatabaseRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/GetDatabaseRequest.puml)
+![GetDatabaseRequest](../plantuml/sequence-diagrams/Requests/GetDatabaseRequest.svg)
 
 ## Sequence diagram : `GetTransactionsHistoryRequest` processes get transactions history request
 
-<!-- image of Diagram from plantuml server -->
-![GetTransactionsHistoryRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/GetTransactionsHistoryRequest.puml)
+![GetTransactionsHistoryRequest](../plantuml/sequence-diagrams/Requests/GetTransactionsHistoryRequest.svg)
 
 ## Sequence diagram : `MakeTransactionRequest` processes make transaction request
 
-<!-- image of Diagram from plantuml server -->
-![MakeTransactionRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/MakeTransactionRequest.puml)
+![MakeTransactionRequest](../plantuml/sequence-diagrams/Requests/MakeTransactionRequest.svg)
 
 ## Sequence diagram : `UpdateEmailRequest` processes update email request
 
-<!-- image of Diagram from plantuml server -->
-![UpdateEmailRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/UpdateEmailRequest.puml)
+![UpdateEmailRequest](../plantuml/sequence-diagrams/Requests/UpdateEmailRequest.svg)
 
 ## Sequence diagram : `UpdatePasswordRequest` processes update password request
 
-<!-- image of Diagram from plantuml server -->
-![UpdatePasswordRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/UpdatePasswordRequest.puml)
-
+![UpdatePasswordRequest](../plantuml/sequence-diagrams/Requests/UpdatePasswordRequest.svg)
 ## Sequence diagram : `UpdateUserRequest` processes update user request
 
-<!-- image of Diagram from plantuml server -->
-![UpdateUserRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/UpdateUserRequest.puml)
+![UpdateUserRequest](../plantuml/sequence-diagrams/Requests/UpdateUserRequest.svg)
 
 ## Sequence diagram : `UserInitRequest` processes user init request
 
-<!-- image of Diagram from plantuml server -->
-![UserInitRequest](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Requests/UserInitRequest.puml)
+![UserInitRequest](../plantuml/sequence-diagrams/Requests/UserInitRequest.svg)

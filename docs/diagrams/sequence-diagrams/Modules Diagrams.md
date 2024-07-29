@@ -3,59 +3,48 @@
 ## ServerHandler Diagrams:
 ### Sequence diagram : ServerHandler initialization and destruction
 
-<!-- image of Diagram from plantuml server -->
-![ServerHandler](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/ServerHandler_init.puml)
+![ServerHandler](../plantuml/sequence-diagrams/Modules/ServerHandler_init.svg)
 
 ### Sequence diagram : `ServerHandler` processes `readyRead` event
 
-<!-- image of Diagram from plantuml server -->
-![ServerHandler_readyRead](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/ServerHandler_readyRead.puml)
+![ServerHandler_readyRead](../plantuml/sequence-diagrams/Modules/ServerHandler_readyRead.svg)
 
 ### Sequence diagram : `ServerHandler` runs the `run` method
 
-<!-- image of Diagram from plantuml server -->
-![ServerHandler_run](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/ServerHandler_run.puml)
+![ServerHandler_run](../plantuml/sequence-diagrams/Modules/ServerHandler_run.svg)
 
 ## RequestManager Diagrams:
 ### Sequence diagram : `RequestManager` processes requests
 
-<!-- image of Diagram from plantuml server -->
-![RequestManager](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/RequestManager_requests.puml)
+![RequestManager](../plantuml/sequence-diagrams/Modules/RequestManager_requests.svg)
 
 ## Server Diagrams:
 ### Sequence diagram : Initialization and destruction of `Server`
 
-<!-- image of Diagram from plantuml server -->
-![Server](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/Server_init.puml)
+![Server](../plantuml/sequence-diagrams/Modules/Server_init.svg)
 
 ### Sequence diagram : `Server` starts and stops
 
-<!-- image of Diagram from plantuml server -->
-![Server_start_stop](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/Server_start_stop.puml)
+![Server_start_stop](../plantuml/sequence-diagrams/Modules/Server_start_stop.svg)
 
 ### Sequence diagram : `Server` processes `incomingConnection`
 
-<!-- image of Diagram from plantuml server -->
-![Server_incomingConnection](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/Server_incomingConnection.puml)
+![Server_incomingConnection](../plantuml/sequence-diagrams/Modules/Server_incomingConnection.svg)
 
 ## Request Diagrams:
 ### Sequence diagram : `Request` processes a request
 
-<!-- image of Diagram from plantuml server -->
-![Request](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/Request.puml)
+![Request](../plantuml/sequence-diagrams/Modules/Request.svg)
 
 ### Sequence diagram : `Request` base class handles database connection and error response
 
-<!-- image of Diagram from plantuml server -->
-![Request_base](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/Request_base.puml)
+![Request_base](../plantuml/sequence-diagrams/Modules/Request_base.svg)
 
 ## DatabaseManager Diagrams:
 ### Sequence diagram : `DatabaseManager` initialization and connection check
 
-<!-- image of Diagram from plantuml server -->
-![DatabaseManager_init](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/DatabaseManager_init.puml&fmt=png)
+![DatabaseManager_init](../plantuml/sequence-diagrams/Modules/DatabaseManager_init.svg)
 
 ## Sequence diagram : `DatabaseManager` processes queries (Example: select query) and returns results
 
-<!-- image of Diagram from plantuml server -->
-![DatabaseManager_query](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/7osssam/QT-Banking-System-Server/master/docs/diagrams/sequence-diagrams/Modules/DatabaseManager_query.puml&fmt=png)
+![DatabaseManager_query](../plantuml/sequence-diagrams/Modules/DatabaseManager_query.svg)
