@@ -1,4 +1,4 @@
-@startuml State Diagram for Server Application
+@startuml
 
 state "Initialize Server" as Init
 state "Setup Logging" as SetupLogging
