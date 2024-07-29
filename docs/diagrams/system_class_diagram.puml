@@ -113,9 +113,6 @@ class C_0001633855435523401023 [[classLoginRequest.html{LoginRequest}]] {
 __
 -dbManager : DB::DatabaseManager * [[[{dbManager}]]]
 }
-note left of C_0001633855435523401023::execute
-A comment I have access to.
-end note
 class "GetAccountNumberRequest" as C_0012710989722481167264
 class C_0012710989722481167264 [[classGetAccountNumberRequest.html{GetAccountNumberRequest}]] {
 +GetAccountNumberRequest() : void [[[{GetAccountNumberRequest}]]]

@@ -1,1 +1,450 @@
-{"diagram_type":"include","elements":[{"display_name":"src","elements":[{"display_name":"src/serverModule","elements":[{"display_name":"src/serverModule/server.h","file_kind":"header","id":"4930444100045331493","is_system":false,"name":"server.h","type":"file"},{"display_name":"src/serverModule/serverhandler.h","file_kind":"header","id":"14776125144863485891","is_system":false,"name":"serverhandler.h","type":"file"},{"display_name":"src/serverModule/server.cpp","file_kind":"implementation","id":"14526408463163538724","name":"server.cpp","type":"file"},{"display_name":"src/serverModule/serverhandler.cpp","file_kind":"implementation","id":"2802959985742540062","name":"serverhandler.cpp","type":"file"}],"id":"376844742298738572","name":"serverModule","type":"folder"},{"display_name":"src/requestModule","elements":[{"display_name":"src/requestModule/RequestManager.h","file_kind":"header","id":"4662975987075955962","is_system":false,"name":"RequestManager.h","type":"file"},{"display_name":"src/requestModule/Requests","elements":[{"display_name":"src/requestModule/Requests/Request.h","file_kind":"header","id":"683983954371703321","is_system":false,"name":"Request.h","type":"file"},{"display_name":"src/requestModule/Requests/LoginRequest.h","file_kind":"header","id":"9705104522813573766","is_system":false,"name":"LoginRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/GetAccountNumberRequest.h","file_kind":"header","id":"2027120791438508115","is_system":false,"name":"GetAccountNumberRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/GetBalanceRequest.h","file_kind":"header","id":"10044431027817489945","is_system":false,"name":"GetBalanceRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/GetTransactionsHistoryRequest.h","file_kind":"header","id":"6672437125610379356","is_system":false,"name":"GetTransactionsHistoryRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/MakeTransactionRequest.h","file_kind":"header","id":"8063967914262038647","is_system":false,"name":"MakeTransactionRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/GetDatabaseRequest.h","file_kind":"header","id":"9014951225837961074","is_system":false,"name":"GetDatabaseRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/CreateNewUserRequest.h","file_kind":"header","id":"12389142519446737106","is_system":false,"name":"CreateNewUserRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/DeleteUserRequest.h","file_kind":"header","id":"17998885070914382401","is_system":false,"name":"DeleteUserRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/UpdateUserRequest.h","file_kind":"header","id":"11687987665606014223","is_system":false,"name":"UpdateUserRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/UserInitRequest.h","file_kind":"header","id":"11066283835893554674","is_system":false,"name":"UserInitRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/UpdateEmailRequest.h","file_kind":"header","id":"415219272604096448","is_system":false,"name":"UpdateEmailRequest.h","type":"file"},{"display_name":"src/requestModule/Requests/UpdatePasswordRequest.h","file_kind":"header","id":"15919083400246773521","is_system":false,"name":"UpdatePasswordRequest.h","type":"file"}],"id":"1482322031337363986","name":"Requests","type":"folder"}],"id":"7249139127462911352","name":"requestModule","type":"folder"},{"display_name":"src/dbModule","elements":[{"display_name":"src/dbModule/db.h","file_kind":"header","id":"5021643397729925023","is_system":false,"name":"db.h","type":"file"},{"display_name":"src/dbModule/dbresult.h","file_kind":"header","id":"12871275894220828006","is_system":false,"name":"dbresult.h","type":"file"},{"display_name":"src/dbModule/dbresult.cpp","file_kind":"implementation","id":"16013798473120276547","name":"dbresult.cpp","type":"file"},{"display_name":"src/dbModule/db.cpp","file_kind":"implementation","id":"10016149012892003898","name":"db.cpp","type":"file"}],"id":"6877198409089665649","name":"dbModule","type":"folder"}],"id":"9392701334512935369","name":"src","type":"folder"}],"metadata":{"clang_uml_version":"0.5.3","llvm_version":"clang version 18.1.1 (https://github.com/llvm/llvm-project.git dba2a75e9c7ef81fe84774ba5eee5e67e01d801a)","schema_version":2},"name":"include_diagram","relationships":[{"destination":"14776125144863485891","source":"4930444100045331493","type":"association"},{"destination":"4662975987075955962","source":"14776125144863485891","type":"association"},{"destination":"4930444100045331493","source":"14526408463163538724","type":"association"},{"destination":"14776125144863485891","source":"2802959985742540062","type":"association"},{"destination":"683983954371703321","source":"4662975987075955962","type":"association"},{"destination":"9705104522813573766","source":"4662975987075955962","type":"association"},{"destination":"2027120791438508115","source":"4662975987075955962","type":"association"},{"destination":"10044431027817489945","source":"4662975987075955962","type":"association"},{"destination":"6672437125610379356","source":"4662975987075955962","type":"association"},{"destination":"8063967914262038647","source":"4662975987075955962","type":"association"},{"destination":"9014951225837961074","source":"4662975987075955962","type":"association"},{"destination":"12389142519446737106","source":"4662975987075955962","type":"association"},{"destination":"17998885070914382401","source":"4662975987075955962","type":"association"},{"destination":"11687987665606014223","source":"4662975987075955962","type":"association"},{"destination":"11066283835893554674","source":"4662975987075955962","type":"association"},{"destination":"415219272604096448","source":"4662975987075955962","type":"association"},{"destination":"15919083400246773521","source":"4662975987075955962","type":"association"},{"destination":"5021643397729925023","source":"683983954371703321","type":"association"},{"destination":"683983954371703321","source":"9705104522813573766","type":"association"},{"destination":"5021643397729925023","source":"9705104522813573766","type":"association"},{"destination":"683983954371703321","source":"2027120791438508115","type":"association"},{"destination":"5021643397729925023","source":"2027120791438508115","type":"association"},{"destination":"683983954371703321","source":"10044431027817489945","type":"association"},{"destination":"5021643397729925023","source":"10044431027817489945","type":"association"},{"destination":"683983954371703321","source":"6672437125610379356","type":"association"},{"destination":"5021643397729925023","source":"6672437125610379356","type":"association"},{"destination":"683983954371703321","source":"8063967914262038647","type":"association"},{"destination":"5021643397729925023","source":"8063967914262038647","type":"association"},{"destination":"683983954371703321","source":"9014951225837961074","type":"association"},{"destination":"5021643397729925023","source":"9014951225837961074","type":"association"},{"destination":"683983954371703321","source":"12389142519446737106","type":"association"},{"destination":"5021643397729925023","source":"12389142519446737106","type":"association"},{"destination":"683983954371703321","source":"17998885070914382401","type":"association"},{"destination":"5021643397729925023","source":"17998885070914382401","type":"association"},{"destination":"683983954371703321","source":"11687987665606014223","type":"association"},{"destination":"5021643397729925023","source":"11687987665606014223","type":"association"},{"destination":"683983954371703321","source":"11066283835893554674","type":"association"},{"destination":"5021643397729925023","source":"11066283835893554674","type":"association"},{"destination":"683983954371703321","source":"415219272604096448","type":"association"},{"destination":"5021643397729925023","source":"415219272604096448","type":"association"},{"destination":"683983954371703321","source":"15919083400246773521","type":"association"},{"destination":"5021643397729925023","source":"15919083400246773521","type":"association"},{"destination":"12871275894220828006","source":"5021643397729925023","type":"association"},{"destination":"12871275894220828006","source":"16013798473120276547","type":"association"},{"destination":"5021643397729925023","source":"10016149012892003898","type":"association"}]}
+{
+	"diagram_type": "include",
+	"elements": [
+		{
+			"display_name": "src",
+			"elements": [
+				{
+					"display_name": "src/serverModule",
+					"elements": [
+						{
+							"display_name": "src/serverModule/serverhandler.cpp",
+							"file_kind": "implementation",
+							"id": "2802959985742540062",
+							"name": "serverhandler.cpp",
+							"type": "file"
+						},
+						{
+							"display_name": "src/serverModule/serverhandler.h",
+							"file_kind": "header",
+							"id": "14776125144863485891",
+							"is_system": false,
+							"name": "serverhandler.h",
+							"type": "file"
+						},
+						{
+							"display_name": "src/serverModule/server.h",
+							"file_kind": "header",
+							"id": "4930444100045331493",
+							"is_system": false,
+							"name": "server.h",
+							"type": "file"
+						},
+						{
+							"display_name": "src/serverModule/server.cpp",
+							"file_kind": "implementation",
+							"id": "14526408463163538724",
+							"name": "server.cpp",
+							"type": "file"
+						}
+					],
+					"id": "376844742298738572",
+					"name": "serverModule",
+					"type": "folder"
+				},
+				{
+					"display_name": "src/requestModule",
+					"elements": [
+						{
+							"display_name": "src/requestModule/RequestManager.h",
+							"file_kind": "header",
+							"id": "4662975987075955962",
+							"is_system": false,
+							"name": "RequestManager.h",
+							"type": "file"
+						},
+						{
+							"display_name": "src/requestModule/Requests",
+							"elements": [
+								{
+									"display_name": "src/requestModule/Requests/Request.h",
+									"file_kind": "header",
+									"id": "683983954371703321",
+									"is_system": false,
+									"name": "Request.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/LoginRequest.h",
+									"file_kind": "header",
+									"id": "9705104522813573766",
+									"is_system": false,
+									"name": "LoginRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/GetAccountNumberRequest.h",
+									"file_kind": "header",
+									"id": "2027120791438508115",
+									"is_system": false,
+									"name": "GetAccountNumberRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/GetBalanceRequest.h",
+									"file_kind": "header",
+									"id": "10044431027817489945",
+									"is_system": false,
+									"name": "GetBalanceRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/GetTransactionsHistoryRequest.h",
+									"file_kind": "header",
+									"id": "6672437125610379356",
+									"is_system": false,
+									"name": "GetTransactionsHistoryRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/MakeTransactionRequest.h",
+									"file_kind": "header",
+									"id": "8063967914262038647",
+									"is_system": false,
+									"name": "MakeTransactionRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/GetDatabaseRequest.h",
+									"file_kind": "header",
+									"id": "9014951225837961074",
+									"is_system": false,
+									"name": "GetDatabaseRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/CreateNewUserRequest.h",
+									"file_kind": "header",
+									"id": "12389142519446737106",
+									"is_system": false,
+									"name": "CreateNewUserRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/DeleteUserRequest.h",
+									"file_kind": "header",
+									"id": "17998885070914382401",
+									"is_system": false,
+									"name": "DeleteUserRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/UpdateUserRequest.h",
+									"file_kind": "header",
+									"id": "11687987665606014223",
+									"is_system": false,
+									"name": "UpdateUserRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/UserInitRequest.h",
+									"file_kind": "header",
+									"id": "11066283835893554674",
+									"is_system": false,
+									"name": "UserInitRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/UpdateEmailRequest.h",
+									"file_kind": "header",
+									"id": "415219272604096448",
+									"is_system": false,
+									"name": "UpdateEmailRequest.h",
+									"type": "file"
+								},
+								{
+									"display_name": "src/requestModule/Requests/UpdatePasswordRequest.h",
+									"file_kind": "header",
+									"id": "15919083400246773521",
+									"is_system": false,
+									"name": "UpdatePasswordRequest.h",
+									"type": "file"
+								}
+							],
+							"id": "1482322031337363986",
+							"name": "Requests",
+							"type": "folder"
+						}
+					],
+					"id": "7249139127462911352",
+					"name": "requestModule",
+					"type": "folder"
+				},
+				{
+					"display_name": "src/dbModule",
+					"elements": [
+						{
+							"display_name": "src/dbModule/db.h",
+							"file_kind": "header",
+							"id": "5021643397729925023",
+							"is_system": false,
+							"name": "db.h",
+							"type": "file"
+						},
+						{
+							"display_name": "src/dbModule/dbresult.h",
+							"file_kind": "header",
+							"id": "12871275894220828006",
+							"is_system": false,
+							"name": "dbresult.h",
+							"type": "file"
+						},
+						{
+							"display_name": "src/dbModule/dbresult.cpp",
+							"file_kind": "implementation",
+							"id": "16013798473120276547",
+							"name": "dbresult.cpp",
+							"type": "file"
+						},
+						{
+							"display_name": "src/dbModule/db.cpp",
+							"file_kind": "implementation",
+							"id": "10016149012892003898",
+							"name": "db.cpp",
+							"type": "file"
+						}
+					],
+					"id": "6877198409089665649",
+					"name": "dbModule",
+					"type": "folder"
+				}
+			],
+			"id": "9392701334512935369",
+			"name": "src",
+			"type": "folder"
+		}
+	],
+	"metadata": {
+		"clang_uml_version": "0.5.3",
+		"llvm_version": "clang version 18.1.1 (https://github.com/llvm/llvm-project.git dba2a75e9c7ef81fe84774ba5eee5e67e01d801a)",
+		"schema_version": 2
+	},
+	"name": "include_diagram",
+	"relationships": [
+		{
+			"destination": "14776125144863485891",
+			"source": "2802959985742540062",
+			"type": "association"
+		},
+		{
+			"destination": "4662975987075955962",
+			"source": "14776125144863485891",
+			"type": "association"
+		},
+		{
+			"destination": "14776125144863485891",
+			"source": "4930444100045331493",
+			"type": "association"
+		},
+		{
+			"destination": "4930444100045331493",
+			"source": "14526408463163538724",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "9705104522813573766",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "2027120791438508115",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "10044431027817489945",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "6672437125610379356",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "8063967914262038647",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "9014951225837961074",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "12389142519446737106",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "17998885070914382401",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "11687987665606014223",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "11066283835893554674",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "415219272604096448",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "15919083400246773521",
+			"source": "4662975987075955962",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "683983954371703321",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "9705104522813573766",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "9705104522813573766",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "2027120791438508115",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "2027120791438508115",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "10044431027817489945",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "10044431027817489945",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "6672437125610379356",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "6672437125610379356",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "8063967914262038647",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "8063967914262038647",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "9014951225837961074",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "9014951225837961074",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "12389142519446737106",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "12389142519446737106",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "17998885070914382401",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "17998885070914382401",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "11687987665606014223",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "11687987665606014223",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "11066283835893554674",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "11066283835893554674",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "415219272604096448",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "415219272604096448",
+			"type": "association"
+		},
+		{
+			"destination": "683983954371703321",
+			"source": "15919083400246773521",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "15919083400246773521",
+			"type": "association"
+		},
+		{
+			"destination": "12871275894220828006",
+			"source": "5021643397729925023",
+			"type": "association"
+		},
+		{
+			"destination": "12871275894220828006",
+			"source": "16013798473120276547",
+			"type": "association"
+		},
+		{
+			"destination": "5021643397729925023",
+			"source": "10016149012892003898",
+			"type": "association"
+		}
+	]
+}

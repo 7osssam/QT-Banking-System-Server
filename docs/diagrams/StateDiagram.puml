@@ -1,0 +1,35 @@
+@startuml State Diagram for Server Application
+
+state "Initialize Server" as Init
+state "Setup Logging" as SetupLogging
+state "Database Connection" as DBConn
+state "Server Listening" as Listen
+state "Handle Connection" as HandleConn
+state "Process Request" as ProcessReq
+state "Send Response" as SendResp
+state "Stop Server" as StopServer
+state "Log Error" as LogError
+state "Validate Request" as ValidateReq
+state "Handle Request Failure" as HandleReqFail
+
+[*] --> Init : Start
+Init --> SetupLogging : Initialize Logger
+SetupLogging --> DBConn : Setup Database
+DBConn --> DBConn : Check Connection
+DBConn --> Listen : Connection Successful
+DBConn --> LogError : Connection Failed
+Listen --> HandleConn : Accept Client
+HandleConn --> ProcessReq : Read Data
+ProcessReq --> ValidateReq : Validate Data
+ValidateReq --> ProcessReq : Data Valid
+ValidateReq --> HandleReqFail : Data Invalid
+ProcessReq --> ProcessReq : Process Request
+ProcessReq --> SendResp : Prepare Response
+SendResp --> Listen : Send Response
+SendResp --> LogError : Response Failed
+HandleReqFail --> LogError : Log Request Failure
+ProcessReq --> LogError : Processing Failed
+Listen --> StopServer : Shutdown
+StopServer --> [*] : End
+
+@enduml
