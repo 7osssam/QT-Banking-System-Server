@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>BankApp: Real-time Vamp plugin SDK for C++20</title>
+<title>BankingSystem_Server: QT Banking System (Server side)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -56,10 +56,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">BankApp
+   <div id="projectname">BankingSystem_Server
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">Bank Application</div>
+   <div id="projectbrief">This is a qt project for a banking system (Server side)</div>
   </td>
  </tr>
  </tbody>
@@ -122,155 +122,11 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Real-time Vamp plugin SDK for C++20 </div></div>
+  <div class="headertitle"><div class="title">QT Banking System (<a class="el" href="classServer.html" title="The Server class extends QTcpServer to handle incoming network connections.">Server</a> side) </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_D__XDUMP_CPP_Project_Template_README"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/actions/workflows/ci.yml"><img src="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/actions/workflows/ci.yml/badge.svg" alt="CI" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/actions/workflows/doc.yml"><img src="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/actions/workflows/doc.yml/badge.svg" alt="Doc" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/7osssam/testing/actions/workflows/documentation.yml"><img src="https://github.com/7osssam/testing/actions/workflows/documentation.yml/badge.svg" alt="Documentation" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/actions/workflows/python.yml"><img src="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/actions/workflows/python.yml/badge.svg" alt="Python" style="pointer-events: none;" class="inline"/></a> <a href="https://coveralls.io/github/lukasberbuer/rt-vamp-plugin-sdk"><img src="https://coveralls.io/repos/github/lukasberbuer/rt-vamp-plugin-sdk/badge.svg" alt="Coverage" style="pointer-events: none;" class="inline"/></a> <a href="https://pypi.org/project/rtvamp"><img src="https://img.shields.io/pypi/v/rtvamp" alt="PyPI" class="inline"/></a> <a href="https://pypi.org/project/rtvamp"><img src="https://img.shields.io/pypi/pyversions/rtvamp" alt="PyPI - Python Version" class="inline"/></a></p>
-<p>Vamp is an C/C++ plugin API for audio analysis / feature extraction plugins: <a href="https://www.vamp-plugins.org">https://www.vamp-plugins.org</a></p>
-<p>This SDK for plugins and hosts targets performance-critical applications by:</p>
-<ul>
-<li>reducing memory allocations, <b>no memory allocation</b> during processing</li>
-<li>simplifying and restricting the plugin API</li>
-<li><code>constexpr</code> evaluation for compile time errors instead of runtime errors</li>
-</ul>
-<p>The SDK aims to be <b>well tested</b>, <b>cross-platform</b> and use <b>modern C++</b>. The plugin SDK is available as a <a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/releases/latest/download/pluginsdk.hpp">single-header library</a> (download as asset from <a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/releases/latest">latest release</a> page).</p>
-<p>Compiler support: <code>GCC &gt;= 10</code>, <code>Clang &gt;= 11</code>, <code>MSVC &gt;= 19.30</code></p>
-<blockquote class="doxtable">
-<p>&zwj;<b>Note</b>: Python bindings for the hostsdk are available via <a href="https://pypi.org/project/rtvamp">PyPI</a>. Please check out the <a href="https://lukasberbuer.github.io/rt-vamp-plugin-sdk/python">documentation</a>. </p>
-</blockquote>
-<h1>Links</h1>
-<ul>
-<li><a href="https://lukasberbuer.github.io/rt-vamp-plugin-sdk">API documentation</a></li>
-<li><a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/tree/master/examples">Examples</a></li>
-<li>Vamp ecosystem:<ul>
-<li><a href="https://www.vamp-plugins.org/download.html">Great collection of plugins</a></li>
-<li><a href="https://www.sonicvisualiser.org/">Sonic Visualiser</a>: Open-source software to visualize, analyze and annotate audio</li>
-<li><a href="https://vamp-plugins.org/sonic-annotator/">Sonic Annotator</a>: Batch tool for feature extraction</li>
-<li><a href="https://wiki.audacityteam.org/wiki/Vamp_Plug-ins">Audacity supports Vamp plugins</a></li>
-</ul>
-</li>
-</ul>
-<h1>Performance</h1>
-<p>Following benchmarks compare the performance/overhead of the plugin SDKs based on a simple <a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/tree/master/benchmarks/sdks/RMS.hpp">RMS plugin</a>. The performance is measured as throughput (number of processed samples per second).</p>
-<p><b>Results with an i7-9850H CPU (12 cores):</b></p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Throughput vs. block size   </th><th class="markdownTableHeadNone">Multithreading    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><img src="benchmarks/sdks/results/benchmark_sdks_i7.png" alt="" class="inline"/>   </td><td class="markdownTableBodyNone"><img src="benchmarks/sdks/results/benchmark_sdks_i7_multithreading.png" alt="" class="inline"/>   </td></tr>
-</table>
-<p><b>Results with an ARMv7 CPU</b>: <a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/tree/master/benchmarks/sdks/results/benchmark_sdks_armv7.png">Throughput vs block size</a>, <a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/tree/master/benchmarks/sdks/results/benchmark_sdks_armv7_multithreading.png">Multithreading</a></p>
-<h1>Why another SDK?</h1>
-<p>The <a href="https://github.com/c4dm/vamp-plugin-sdk">official SDK</a> offers a convenient <a href="https://code.soundsoftware.ac.uk/projects/vamp-plugin-sdk/embedded/classVamp_1_1Plugin.html">C++ plugin interface</a>. But there are some drawbacks for real-time processing:</p>
-<ul>
-<li><p class="startli">Huge amount of memory allocations due to the use of C++ containers like vectors and lists <b>passed by value</b>.</p>
-<p class="startli">Let's have a look at the <code>process</code> method of the <code>Vamp::Plugin</code> class which does the main work:</p>
-<p class="startli"><code>FeatureSet process(const float *const *inputBuffers, RealTime timestamp)</code></p>
-<p class="startli"><code>FeatureSet</code> is returned by value and is a <code>std::map&lt;int, FeatureList&gt;</code>. <code>FeatureList</code> is a <code>std::vector&lt;Feature&gt;</code> and <code>Feature</code> is <code>struct</code> containing the actual feature values as a <code>std::vector&lt;float&gt;</code>. So in total, those are three nested containers, which are all heap allocated.</p>
-</li>
-<li><p class="startli">The C++ API is a wrapper of the C API:</p>
-<p class="startli">On the plugin side, the <code>PluginAdapter</code> class converts the C++ containers to C level (<a href="https://github.com/c4dm/vamp-plugin-sdk/blob/master/src/vamp-sdk/PluginAdapter.cpp#L828-L921">code</a>). Therefore the C++ containers are temporary objects and will be deallocated shortly after creation.</p>
-<p class="startli">On the host side, the <code>PluginHostAdapter</code> converts again from the C to the C++ representation (<a href="https://github.com/c4dm/vamp-plugin-sdk/blob/master/src/vamp-hostsdk/PluginHostAdapter.cpp#L413-L464">code</a>).</p>
-</li>
-</ul>
-<h2>Solution approach</h2>
-<p>The <code>rt-vamp-plugin-sdk</code> aims to to keep the overhead minimal but still provide an easy and safe to use API:</p>
-<ol type="1">
-<li>Static plugin informations are provided as <code>static constexpr</code> variables to generate the C plugin descriptor at compile time.</li>
-<li>The computed features are returned by reference (as a <code>std::span</code>) to prevent heap allocations during processing.</li>
-<li>The input buffer is provided either as a <code>TimeDomainBuffer</code> (<code>std::span&lt;const float&gt;</code>) or a <code>FrequencyDomainBuffer</code> (<code>std::span&lt;const std::complex&lt;float&gt;&gt;</code>). The process method takes a <code>std::variant&lt;TimeDomainBuffer, FrequencyDomainBuffer&gt;</code>. A wrong input buffer type will result in an exception. The sized spans enable easy iteration over the input buffer data.</li>
-</ol>
-<h2>Plugin restrictions</h2>
-<p>Following features of the Vamp API <code>Vamp::Plugin</code> are restricted within the <code>rt-vamp-plugin-sdk</code>:</p>
-<ul>
-<li><code>OutputDescriptor::hasFixedBinCount == true</code> for every output. The number of values is constant for each feature during processing. This has the advantage, that memory for the feature vector can be preallocated.</li>
-<li><p class="startli"><code>OutputDescriptor::SampleType == OneSamplePerStep</code> for every output. The plugin will generate one feature set for each input block.</p>
-<p class="startli">Following parameters are therefore negitable:</p><ul>
-<li><code>OutputDescriptor::sampleRate</code></li>
-<li><code>OutputDescriptor::hasDuration</code></li>
-<li><code>Feature::hasTimestamp</code> &amp; <code>Feature::timestamp</code></li>
-<li><code>Feature::hasDuration</code> &amp; <code>Feature::duration</code></li>
-</ul>
-</li>
-<li>Only one input channel allowed: <code>getMinChannelCount() == 1</code></li>
-</ul>
-<h1>Minimal example</h1>
-<p>More examples can be found here: <a href="https://github.com/lukasberbuer/rt-vamp-plugin-sdk/tree/master/examples">https://github.com/lukasberbuer/rt-vamp-plugin-sdk/tree/master/examples</a>.</p>
-<h2>Plugin</h2>
-<div class="fragment"><div class="line"><span class="keyword">class </span>ZeroCrossing : <span class="keyword">public</span> rtvamp::pluginsdk::Plugin&lt;1 <span class="comment">/* one output */</span>&gt; {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">using </span>Plugin::Plugin;  <span class="comment">// inherit constructor</span></div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">static</span> <span class="keyword">constexpr</span> Meta meta{</div>
-<div class="line">        .identifier    = <span class="stringliteral">&quot;zerocrossing&quot;</span>,</div>
-<div class="line">        .name          = <span class="stringliteral">&quot;Zero crossings&quot;</span>,</div>
-<div class="line">        .description   = <span class="stringliteral">&quot;Detect and count zero crossings&quot;</span>,</div>
-<div class="line">        .maker         = <span class="stringliteral">&quot;LB&quot;</span>,</div>
-<div class="line">        .copyright     = <span class="stringliteral">&quot;MIT&quot;</span>,</div>
-<div class="line">        .pluginVersion = 1,</div>
-<div class="line">        .inputDomain   = InputDomain::Time,</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    OutputList getOutputDescriptors()<span class="keyword"> const override </span>{</div>
-<div class="line">        <span class="keywordflow">return</span> {</div>
-<div class="line">            OutputDescriptor{</div>
-<div class="line">                .identifier  = <span class="stringliteral">&quot;counts&quot;</span>,</div>
-<div class="line">                .name        = <span class="stringliteral">&quot;Zero crossing counts&quot;</span>,</div>
-<div class="line">                .description = <span class="stringliteral">&quot;The number of zero crossing points per processing block&quot;</span>,</div>
-<div class="line">                .unit        = <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line">                .binCount    = 1,</div>
-<div class="line">            },</div>
-<div class="line">        };</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordtype">bool</span> initialise(uint32_t stepSize, uint32_t blockSize)<span class="keyword"> override </span>{</div>
-<div class="line">        initialiseFeatureSet();  <span class="comment">// automatically resizes feature set to number of outputs and bins</span></div>
-<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{</div>
-<div class="line">        previousSample_ = 0.0f;</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="keyword">const</span> FeatureSet&amp; process(InputBuffer buffer, uint64_t nsec)<span class="keyword"> override </span>{</div>
-<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span> signal = std::get&lt;TimeDomainBuffer&gt;(buffer);</div>
-<div class="line"> </div>
-<div class="line">        <span class="keywordtype">size_t</span> crossings   = 0;</div>
-<div class="line">        <span class="keywordtype">bool</span>   wasPositive = (previousSample_ &gt;= 0.0f);</div>
-<div class="line"> </div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; sample : signal) {</div>
-<div class="line">            <span class="keyword">const</span> <span class="keywordtype">bool</span> isPositive = (sample &gt;= 0.0f);</div>
-<div class="line">            crossings += int(isPositive != wasPositive);</div>
-<div class="line">            wasPositive = isPositive;</div>
-<div class="line">        }</div>
-<div class="line"> </div>
-<div class="line">        previousSample_ = signal.back();</div>
-<div class="line"> </div>
-<div class="line">        <span class="keyword">auto</span>&amp; result = getFeatureSet();</div>
-<div class="line">        result[0][0] = crossings;  <span class="comment">// first and only output, first and only bin</span></div>
-<div class="line">        <span class="keywordflow">return</span> result;             <span class="comment">// return span/view of the results</span></div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">float</span> previousSample_ = 0.0f;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line">RTVAMP_ENTRY_POINT(ZeroCrossing)</div>
-</div><!-- fragment --><h2>Host</h2>
-<div class="fragment"><div class="line"><span class="comment">// list all plugins keys (library:plugin)</span></div>
-<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; key : rtvamp::hostsdk::listPlugins()) {</div>
-<div class="line">    std::cout &lt;&lt; key.get() &lt;&lt; std::endl;</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> plugin = rtvamp::hostsdk::loadPlugin(<span class="stringliteral">&quot;minimal-plugin:zerocrossing&quot;</span>, 48000 <span class="comment">/* samplerate */</span>);</div>
-<div class="line">plugin-&gt;initialise(4096 <span class="comment">/* step size */</span>, 4096 <span class="comment">/* block size */</span>);</div>
-<div class="line"> </div>
-<div class="line">std::vector&lt;float&gt; buffer(4096);</div>
-<div class="line"><span class="comment">// fill buffer with data from audio file, sound card, ...</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> features = plugin-&gt;process(buffer, 0 <span class="comment">/* timestamp nanoseconds */</span>);</div>
-<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Zero crossings: &quot;</span> &lt;&lt; features[0][0] &lt;&lt; std::endl;</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
+<div class="textblock"><p><a class="anchor" id="md_D__XDUMP_BankingSystem_QT_Banking_System_Server_README"></a></p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

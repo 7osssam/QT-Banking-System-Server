@@ -1,0 +1,3 @@
+<map id="DB::DatabaseManager::limit" name="DB::DatabaseManager::limit">
+<area shape="rect" id="node1" title="Adds a LIMIT clause to the query." alt="" coords="5,29,158,72"/>
+</map>

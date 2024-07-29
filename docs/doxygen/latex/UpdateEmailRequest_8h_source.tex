@@ -1,0 +1,120 @@
+\hypertarget{UpdateEmailRequest_8h_source}{}\doxysection{Update\+Email\+Request.\+h}
+\label{UpdateEmailRequest_8h_source}\index{UpdateEmailRequest.h@{UpdateEmailRequest.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UPDATEEMAILREQUEST\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UPDATEEMAILREQUEST\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Request_8h}{Request.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{db_8h}{db.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUpdateEmailRequest}{UpdateEmailRequest}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRequest}{Request}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classDB_1_1DatabaseManager}{DB::DatabaseManager}}*\ dbManager\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classUpdateEmailRequest_af3c59857442832df4fd43eaf258d9154}{UpdateEmailRequest}}()\ :\ dbManager(DB::DatabaseManager::createInstance())}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Log\ to\ database\ log\ table\ (if\ needed)}}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00039\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{execute}}(\textcolor{keyword}{const}\ QJsonObject\&\ jsonObj,\ QMutex\&\ m)\textcolor{keyword}{\ override}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ QMutexLocker\ locker(\&m);\ \textcolor{comment}{//\ Lock\ the\ mutex\ for\ the\ duration\ of\ this\ function}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ QString\ email;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ QString\ password;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ QString\ new\_email;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ QJsonObject\ response;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ QJsonObject\ data;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Response"{}},\ 12);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Extract\ the\ data\ array}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (jsonObj.contains(\textcolor{stringliteral}{"{}Data"{}}))}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ QJsonObject\ dataObj\ =\ jsonObj[\textcolor{stringliteral}{"{}Data"{}}].toObject();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dataObj.contains(\textcolor{stringliteral}{"{}email"{}}))}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ email\ =\ dataObj.value(\textcolor{stringliteral}{"{}email"{}}).toString();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dataObj.contains(\textcolor{stringliteral}{"{}password"{}}))}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ password\ =\ dataObj.value(\textcolor{stringliteral}{"{}password"{}}).toString();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dataObj.contains(\textcolor{stringliteral}{"{}new\_email"{}}))}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ new\_email\ =\ dataObj.value(\textcolor{stringliteral}{"{}new\_email"{}}).toString();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ qCritical()\ <<\ \textcolor{stringliteral}{"{}Data\ not\ found"{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classRequest_ae580c02633722f323ad8a738e4952ea1}{isDBConnectionValid}}(dbManager))}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRequest_ad457f5030e3f983ffdbc7439989eebcb}{CreateDBConnectionError}}(response,\ data);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validate\ user\ credentials}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDB_1_1DbResult}{DB::DbResult}}\ result\ =\ dbManager-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0}{select}}(\textcolor{stringliteral}{"{}*"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}}(\textcolor{stringliteral}{"{}users"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07}{where}}(\textcolor{stringliteral}{"{}email\ ="{}},\ email)-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}{exec}}();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ user\_id\ =\ result.\mbox{\hyperlink{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}{first}}().value(\textcolor{stringliteral}{"{}id"{}}).toInt();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.\mbox{\hyperlink{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9}{isEmpty}}())}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{CreateErrorResponse}}(response,\ data,\ \textcolor{stringliteral}{"{}email\ not\ found"{}});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ change\ the\ password\ of\ that\ specific\ user}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ dbManager-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0}{select}}(\textcolor{stringliteral}{"{}password"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}}(\textcolor{stringliteral}{"{}users"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07}{where}}(\textcolor{stringliteral}{"{}id\ ="{}},\ user\_id)-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}{exec}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.\mbox{\hyperlink{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}{first}}().value(\textcolor{stringliteral}{"{}password"{}}).toString()\ !=\ password)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{CreateErrorResponse}}(response,\ data,\ \textcolor{stringliteral}{"{}Invalid\ password"{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ new\ email\ is\ already\ associated\ with\ another\ account}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ dbManager-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0}{select}}(\textcolor{stringliteral}{"{}*"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}}(\textcolor{stringliteral}{"{}users"{}})-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07}{where}}(\textcolor{stringliteral}{"{}email\ ="{}},\ new\_email)-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}{exec}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!result.\mbox{\hyperlink{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9}{isEmpty}}())}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{CreateErrorResponse}}(response,\ data,\ \textcolor{stringliteral}{"{}Email\ already\ exists"{}});}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ email}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ success\ =\ dbManager-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07}{where}}(\textcolor{stringliteral}{"{}email\ =\ "{}},\ email)-\/>\mbox{\hyperlink{classDB_1_1DatabaseManager_a01cc9f5bbaa3f4c69acf3edf05fb1924}{update}}(\textcolor{stringliteral}{"{}users"{}},\ \{\{\textcolor{stringliteral}{"{}email"{}},\ new\_email\}\});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!success)}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{CreateErrorResponse}}(response,\ data,\ \textcolor{stringliteral}{"{}Failed\ to\ update\ email"{}});}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}status"{}},\ \textcolor{keywordtype}{int}(\textcolor{keyword}{true}));}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}message"{}},\ \textcolor{stringliteral}{"{}Email\ updated\ successfully"{}});}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Data"{}},\ data);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ response\ to\ JSON}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ QJsonDocument\ responseDoc(response);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ QByteArray\ \ \ \ responseData\ =\ responseDoc.toJson();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Send\ response}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ qDebug().noquote()\ <<\ \textcolor{stringliteral}{"{}<-\/-\/\ UpdateEmail::Response\ :\(\backslash\)n"{}}\ <<\ responseDoc.toJson(QJsonDocument::Indented);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ response;}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UPDATEEMAILREQUEST\_H}}
+
+\end{DoxyCode}

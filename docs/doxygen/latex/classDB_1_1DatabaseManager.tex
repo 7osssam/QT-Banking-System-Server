@@ -1,0 +1,1046 @@
+\hypertarget{classDB_1_1DatabaseManager}{}\doxysection{DB\+::Database\+Manager Class Reference}
+\label{classDB_1_1DatabaseManager}\index{DB::DatabaseManager@{DB::DatabaseManager}}
+
+
+Manages database connections and SQL operations.  
+
+
+
+
+{\ttfamily \#include $<$db.\+h$>$}
+
+
+
+Collaboration diagram for DB\+::Database\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classDB_1_1DatabaseManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_ae9b3a5da1e04fbb00faf8a034da1d063}\label{classDB_1_1DatabaseManager_ae9b3a5da1e04fbb00faf8a034da1d063}} 
+{\bfseries $\sim$\+Database\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_a58d1a2ff38fcf44e8a300f5f8282936b}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the query settings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0}{select}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Selects columns for the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Sets the table for the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07}{where}} (const QString \&value, const QVariant \&val=QVariant())
+\begin{DoxyCompactList}\small\item\em Adds a WHERE clause to the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_a9310a1cd773075de1406ac8c44d2666b}{like}} (const QString \&value, const QString \&val)
+\begin{DoxyCompactList}\small\item\em Adds a LIKE clause to the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_ae2955b490673aa9873f60b14656459d3}{like\+Post}} (const QString \&value, const QString \&val)
+\begin{DoxyCompactList}\small\item\em Adds a LIKE clause with a postfix wildcard to the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_abf76eb3f769903a423ce770b36674e2f}{like\+Native}} (const QString \&value, const QString \&val)
+\begin{DoxyCompactList}\small\item\em Adds a native LIKE clause to the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_a13b20cf8950ab0abb2457e7a78dba983}{where\+Or}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Adds an OR condition to the WHERE clause. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_afb63c834e96b32f2605882eda73a8d6d}{join}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Adds a JOIN clause to the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_a50701f4e45a73502ac02948cebd6c66f}{limit}} (int limit)
+\begin{DoxyCompactList}\small\item\em Adds a LIMIT clause to the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_ad3f3d025d0ff6f90b26732e4ee3759aa}{start}} (int start)
+\begin{DoxyCompactList}\small\item\em Adds an OFFSET clause to the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_a8cc4779256fe0151f13af004efd602b4}{sort}} (const QString \&sort)
+\begin{DoxyCompactList}\small\item\em Adds an ORDER BY clause to the query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_ac8135a536cef557c8dd964f4058716cf}{group}} (const QString \&group)
+\begin{DoxyCompactList}\small\item\em Adds a GROUP BY clause to the query. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDB_1_1DatabaseManager_abfbee5e0fdaf35b4bb998932203aea4d}{get\+Select\+Query}} (const QString \&\mbox{\hyperlink{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0}{select}}=QString())
+\begin{DoxyCompactList}\small\item\em Gets the SQL SELECT query. \end{DoxyCompactList}\item 
+QSql\+Error \mbox{\hyperlink{classDB_1_1DatabaseManager_a0d786883976ea0f32e3566415138478d}{last\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Gets the last error occurred. \end{DoxyCompactList}\item 
+QVariant \mbox{\hyperlink{classDB_1_1DatabaseManager_ad65a74b2688e3e15818baa4979c9d7bd}{last\+Inserted\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets the ID of the last inserted record. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDB_1_1DatabaseManager_a8b135d7a6cfd7381d36d0f4a242bced4}{last\+Query}} ()
+\begin{DoxyCompactList}\small\item\em Gets the last executed query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} \mbox{\hyperlink{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}{exec}} ()
+\begin{DoxyCompactList}\small\item\em Executes the built query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} \mbox{\hyperlink{classDB_1_1DatabaseManager_accc3976ea82ddbe22c86448958d2821c}{exec\+Result}} (const QString \&sql)
+\begin{DoxyCompactList}\small\item\em Executes a SQL query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} \mbox{\hyperlink{classDB_1_1DatabaseManager_acf52a653442a49e831b08ed5e47ae7d2}{get}} (const QString \&table\+Name)
+\begin{DoxyCompactList}\small\item\em Executes a SELECT query on a specified table. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DatabaseManager_aadcbfe8aafff355cb67d2131887da3c5}{exec}} (const QString \&sqlcommand)
+\begin{DoxyCompactList}\small\item\em Executes a SQL command. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DatabaseManager_aecf836346d0d92afaa480f1215d23071}{insert}} (const QString \&\mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}}, const QVariant\+Map \&data)
+\begin{DoxyCompactList}\small\item\em Inserts data into a specified table. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DatabaseManager_a01cc9f5bbaa3f4c69acf3edf05fb1924}{update}} (const QString \&\mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}}, const QVariant\+Map \&data)
+\begin{DoxyCompactList}\small\item\em Updates data in a specified table. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DatabaseManager_a807179e8d94fccdf5b5f24ac111054a3}{del}} (const QString \&\mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}})
+\begin{DoxyCompactList}\small\item\em Deletes data from a specified table. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDB_1_1DatabaseManager_a254a5eb1d473b06d56ce36b0a8916991}{count}} ()
+\begin{DoxyCompactList}\small\item\em Gets the count of records matching the query criteria. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_aec55b6bc46286fb3b5c87974a7c802e8}{clone}} ()
+\begin{DoxyCompactList}\small\item\em Clones the current \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DatabaseManager_ae5b710336cd7ac882bfd30d2b4935b8b}{begin\+Transaction}} ()
+\begin{DoxyCompactList}\small\item\em Begins a transaction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DatabaseManager_a411a9628da2b9dba97ed5f5ca2aba8eb}{commit}} ()
+\begin{DoxyCompactList}\small\item\em Commits a transaction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DatabaseManager_ad3a76a2b3324dcf515e07e9610cb8b69}{rollback}} ()
+\begin{DoxyCompactList}\small\item\em Rolls back a transaction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DatabaseManager_a00ed38d78c8bc5372bd986cc2a599813}{is\+Support\+Transaction}} ()
+\begin{DoxyCompactList}\small\item\em Checks if transactions are supported. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_afb2b63b112c85565354b015eb9d52446}{clear\+Select}} ()
+\begin{DoxyCompactList}\small\item\em Clears the SELECT clause. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DatabaseManager_a4af6f6c13dd73b474eaeaa08339273ad}{truncate\+Table}} (const QString \&\mbox{\hyperlink{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}{table}})
+\begin{DoxyCompactList}\small\item\em Truncates a specified table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ \mbox{\hyperlink{classDB_1_1DatabaseManager_ad56bd7bc9d99adadd8afdc5fb19ac67a}{create\+Instance}} (bool check\+DBName=false, bool new\+Connection=false, QString $\ast$err=nullptr)
+\begin{DoxyCompactList}\small\item\em Creates an instance of \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classDB_1_1DatabaseManager_aa8a5cbe7e07b4af266d2553973fe1c3f}{set\+Db\+Setting}} (const QString \&host, int port, const QString \&username, const QString \&password, const QString \&dbname)
+\begin{DoxyCompactList}\small\item\em Sets the database settings. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classDB_1_1DatabaseManager_a01d24339865f4b3199e81b5224ae22bc}{check\+Connection}} (QString \&error)
+\begin{DoxyCompactList}\small\item\em Checks the database connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages database connections and SQL operations. 
+
+This class provides methods for managing database connections, executing SQL queries, and handling transactions. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_ae5b710336cd7ac882bfd30d2b4935b8b}\label{classDB_1_1DatabaseManager_ae5b710336cd7ac882bfd30d2b4935b8b}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!beginTransaction@{beginTransaction}}
+\index{beginTransaction@{beginTransaction}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{beginTransaction()}{beginTransaction()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::begin\+Transaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Begins a transaction. 
+
+\begin{DoxyReturn}{Returns}
+True if the transaction started successfully, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a01d24339865f4b3199e81b5224ae22bc}\label{classDB_1_1DatabaseManager_a01d24339865f4b3199e81b5224ae22bc}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!checkConnection@{checkConnection}}
+\index{checkConnection@{checkConnection}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{checkConnection()}{checkConnection()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::check\+Connection (\begin{DoxyParamCaption}\item[{QString \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks the database connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & Reference to store error message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if connection is successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classRequest_ae580c02633722f323ad8a738e4952ea1}{Request\+::is\+DBConnection\+Valid()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a01d24339865f4b3199e81b5224ae22bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a01d24339865f4b3199e81b5224ae22bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_afb2b63b112c85565354b015eb9d52446}\label{classDB_1_1DatabaseManager_afb2b63b112c85565354b015eb9d52446}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!clearSelect@{clearSelect}}
+\index{clearSelect@{clearSelect}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{clearSelect()}{clearSelect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ DB\+::\+Database\+Manager\+::clear\+Select (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clears the SELECT clause. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_aec55b6bc46286fb3b5c87974a7c802e8}\label{classDB_1_1DatabaseManager_aec55b6bc46286fb3b5c87974a7c802e8}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!clone@{clone}}
+\index{clone@{clone}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clones the current \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the cloned \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_a254a5eb1d473b06d56ce36b0a8916991}{count()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classDB_1_1DatabaseManager_aec55b6bc46286fb3b5c87974a7c802e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a411a9628da2b9dba97ed5f5ca2aba8eb}\label{classDB_1_1DatabaseManager_a411a9628da2b9dba97ed5f5ca2aba8eb}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!commit@{commit}}
+\index{commit@{commit}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{commit()}{commit()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::commit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Commits a transaction. 
+
+\begin{DoxyReturn}{Returns}
+True if the transaction was committed successfully, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a254a5eb1d473b06d56ce36b0a8916991}\label{classDB_1_1DatabaseManager_a254a5eb1d473b06d56ce36b0a8916991}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!count@{count}}
+\index{count@{count}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily int Database\+Manager\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the count of records matching the query criteria. 
+
+\begin{DoxyReturn}{Returns}
+Count of records. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a254a5eb1d473b06d56ce36b0a8916991_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_ad56bd7bc9d99adadd8afdc5fb19ac67a}\label{classDB_1_1DatabaseManager_ad56bd7bc9d99adadd8afdc5fb19ac67a}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!createInstance@{createInstance}}
+\index{createInstance@{createInstance}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{createInstance()}{createInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::create\+Instance (\begin{DoxyParamCaption}\item[{bool}]{check\+DBName = {\ttfamily false},  }\item[{bool}]{new\+Connection = {\ttfamily false},  }\item[{QString $\ast$}]{err = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates an instance of \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em check\+DBName} & Flag to check database name. \\
+\hline
+{\em new\+Connection} & Flag to create a new connection. \\
+\hline
+{\em err} & Pointer to store error message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_a01d24339865f4b3199e81b5224ae22bc}{check\+Connection()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classDB_1_1DatabaseManager_ad56bd7bc9d99adadd8afdc5fb19ac67a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_ad56bd7bc9d99adadd8afdc5fb19ac67a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a807179e8d94fccdf5b5f24ac111054a3}\label{classDB_1_1DatabaseManager_a807179e8d94fccdf5b5f24ac111054a3}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!del@{del}}
+\index{del@{del}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::del (\begin{DoxyParamCaption}\item[{const QString \&}]{table }\end{DoxyParamCaption})}
+
+
+
+Deletes data from a specified table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Name of the table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the data was deleted successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, and \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a807179e8d94fccdf5b5f24ac111054a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a807179e8d94fccdf5b5f24ac111054a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}\label{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!exec@{exec}}
+\index{exec@{exec}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{exec()}{exec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} Database\+Manager\+::exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Executes the built query. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} object containing the result of the query. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request\+::execute()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}, \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request\+::execute()}}, \mbox{\hyperlink{classDB_1_1DatabaseManager_acf52a653442a49e831b08ed5e47ae7d2}{get()}}, and \mbox{\hyperlink{classDB_1_1DatabaseManager_a4af6f6c13dd73b474eaeaa08339273ad}{truncate\+Table()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_aadcbfe8aafff355cb67d2131887da3c5}\label{classDB_1_1DatabaseManager_aadcbfe8aafff355cb67d2131887da3c5}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!exec@{exec}}
+\index{exec@{exec}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{exec()}{exec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Database\+Manager\+::exec (\begin{DoxyParamCaption}\item[{const QString \&}]{sqlcommand }\end{DoxyParamCaption})}
+
+
+
+Executes a SQL command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sqlcommand} & SQL command to execute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command executed successfully, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classDB_1_1DatabaseManager_aadcbfe8aafff355cb67d2131887da3c5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_accc3976ea82ddbe22c86448958d2821c}\label{classDB_1_1DatabaseManager_accc3976ea82ddbe22c86448958d2821c}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!execResult@{execResult}}
+\index{execResult@{execResult}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{execResult()}{execResult()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} Database\+Manager\+::exec\+Result (\begin{DoxyParamCaption}\item[{const QString \&}]{sql }\end{DoxyParamCaption})}
+
+
+
+Executes a SQL query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sql} & SQL query to execute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} object containing the result of the query. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classDB_1_1DatabaseManager_accc3976ea82ddbe22c86448958d2821c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_acf52a653442a49e831b08ed5e47ae7d2}\label{classDB_1_1DatabaseManager_acf52a653442a49e831b08ed5e47ae7d2}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!get@{get}}
+\index{get@{get}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} Database\+Manager\+::get (\begin{DoxyParamCaption}\item[{const QString \&}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Executes a SELECT query on a specified table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Name} & Name of the table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} object containing the result of the query. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_acf52a653442a49e831b08ed5e47ae7d2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_abfbee5e0fdaf35b4bb998932203aea4d}\label{classDB_1_1DatabaseManager_abfbee5e0fdaf35b4bb998932203aea4d}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!getSelectQuery@{getSelectQuery}}
+\index{getSelectQuery@{getSelectQuery}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{getSelectQuery()}{getSelectQuery()}}
+{\footnotesize\ttfamily QString Database\+Manager\+::get\+Select\+Query (\begin{DoxyParamCaption}\item[{const QString \&}]{select = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+
+
+Gets the SQL SELECT query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em select} & Optional select clause. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SQL SELECT query as a string. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_a254a5eb1d473b06d56ce36b0a8916991}{count()}}, and \mbox{\hyperlink{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}{exec()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classDB_1_1DatabaseManager_abfbee5e0fdaf35b4bb998932203aea4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_abfbee5e0fdaf35b4bb998932203aea4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_ac8135a536cef557c8dd964f4058716cf}\label{classDB_1_1DatabaseManager_ac8135a536cef557c8dd964f4058716cf}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!group@{group}}
+\index{group@{group}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{group()}{group()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::group (\begin{DoxyParamCaption}\item[{const QString \&}]{group }\end{DoxyParamCaption})}
+
+
+
+Adds a GROUP BY clause to the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group} & Grouping criteria. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_ac8135a536cef557c8dd964f4058716cf}{group()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classDB_1_1DatabaseManager_ac8135a536cef557c8dd964f4058716cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classDB_1_1DatabaseManager_ac8135a536cef557c8dd964f4058716cf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_aecf836346d0d92afaa480f1215d23071}\label{classDB_1_1DatabaseManager_aecf836346d0d92afaa480f1215d23071}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!insert@{insert}}
+\index{insert@{insert}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::insert (\begin{DoxyParamCaption}\item[{const QString \&}]{table,  }\item[{const QVariant\+Map \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Inserts data into a specified table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Name of the table. \\
+\hline
+{\em data} & Data to insert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the data was inserted successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, and \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classDB_1_1DatabaseManager_aecf836346d0d92afaa480f1215d23071_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_aecf836346d0d92afaa480f1215d23071_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a00ed38d78c8bc5372bd986cc2a599813}\label{classDB_1_1DatabaseManager_a00ed38d78c8bc5372bd986cc2a599813}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!isSupportTransaction@{isSupportTransaction}}
+\index{isSupportTransaction@{isSupportTransaction}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{isSupportTransaction()}{isSupportTransaction()}}
+{\footnotesize\ttfamily bool DB\+::\+Database\+Manager\+::is\+Support\+Transaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if transactions are supported. 
+
+\begin{DoxyReturn}{Returns}
+True if transactions are supported, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_afb63c834e96b32f2605882eda73a8d6d}\label{classDB_1_1DatabaseManager_afb63c834e96b32f2605882eda73a8d6d}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!join@{join}}
+\index{join@{join}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::join (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Adds a JOIN clause to the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & JOIN clause. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, and \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_afb63c834e96b32f2605882eda73a8d6d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a0d786883976ea0f32e3566415138478d}\label{classDB_1_1DatabaseManager_a0d786883976ea0f32e3566415138478d}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!lastError@{lastError}}
+\index{lastError@{lastError}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{lastError()}{lastError()}}
+{\footnotesize\ttfamily QSql\+Error Database\+Manager\+::last\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the last error occurred. 
+
+\begin{DoxyReturn}{Returns}
+QSql\+Error object containing the last error. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_ad56bd7bc9d99adadd8afdc5fb19ac67a}{create\+Instance()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a0d786883976ea0f32e3566415138478d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_ad65a74b2688e3e15818baa4979c9d7bd}\label{classDB_1_1DatabaseManager_ad65a74b2688e3e15818baa4979c9d7bd}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!lastInsertedId@{lastInsertedId}}
+\index{lastInsertedId@{lastInsertedId}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{lastInsertedId()}{lastInsertedId()}}
+{\footnotesize\ttfamily QVariant Database\+Manager\+::last\+Inserted\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the ID of the last inserted record. 
+
+\begin{DoxyReturn}{Returns}
+ID of the last inserted record. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a8b135d7a6cfd7381d36d0f4a242bced4}\label{classDB_1_1DatabaseManager_a8b135d7a6cfd7381d36d0f4a242bced4}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!lastQuery@{lastQuery}}
+\index{lastQuery@{lastQuery}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{lastQuery()}{lastQuery()}}
+{\footnotesize\ttfamily QString Database\+Manager\+::last\+Query (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the last executed query. 
+
+\begin{DoxyReturn}{Returns}
+Last executed query as a string. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_aadcbfe8aafff355cb67d2131887da3c5}{exec()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classDB_1_1DatabaseManager_a8b135d7a6cfd7381d36d0f4a242bced4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a9310a1cd773075de1406ac8c44d2666b}\label{classDB_1_1DatabaseManager_a9310a1cd773075de1406ac8c44d2666b}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!like@{like}}
+\index{like@{like}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{like()}{like()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::like (\begin{DoxyParamCaption}\item[{const QString \&}]{value,  }\item[{const QString \&}]{val }\end{DoxyParamCaption})}
+
+
+
+Adds a LIKE clause to the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Column name. \\
+\hline
+{\em val} & Value for the LIKE clause. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_abf76eb3f769903a423ce770b36674e2f}\label{classDB_1_1DatabaseManager_abf76eb3f769903a423ce770b36674e2f}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!likeNative@{likeNative}}
+\index{likeNative@{likeNative}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{likeNative()}{likeNative()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::like\+Native (\begin{DoxyParamCaption}\item[{const QString \&}]{value,  }\item[{const QString \&}]{val }\end{DoxyParamCaption})}
+
+
+
+Adds a native LIKE clause to the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Column name. \\
+\hline
+{\em val} & Value for the LIKE clause. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_ae2955b490673aa9873f60b14656459d3}\label{classDB_1_1DatabaseManager_ae2955b490673aa9873f60b14656459d3}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!likePost@{likePost}}
+\index{likePost@{likePost}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{likePost()}{likePost()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::like\+Post (\begin{DoxyParamCaption}\item[{const QString \&}]{value,  }\item[{const QString \&}]{val }\end{DoxyParamCaption})}
+
+
+
+Adds a LIKE clause with a postfix wildcard to the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Column name. \\
+\hline
+{\em val} & Value for the LIKE clause. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a50701f4e45a73502ac02948cebd6c66f}\label{classDB_1_1DatabaseManager_a50701f4e45a73502ac02948cebd6c66f}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!limit@{limit}}
+\index{limit@{limit}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{limit()}{limit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::limit (\begin{DoxyParamCaption}\item[{int}]{limit }\end{DoxyParamCaption})}
+
+
+
+Adds a LIMIT clause to the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em limit} & Number of records to limit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_a50701f4e45a73502ac02948cebd6c66f}{limit()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classDB_1_1DatabaseManager_a50701f4e45a73502ac02948cebd6c66f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classDB_1_1DatabaseManager_a50701f4e45a73502ac02948cebd6c66f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a58d1a2ff38fcf44e8a300f5f8282936b}\label{classDB_1_1DatabaseManager_a58d1a2ff38fcf44e8a300f5f8282936b}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!reset@{reset}}
+\index{reset@{reset}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the query settings. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_a807179e8d94fccdf5b5f24ac111054a3}{del()}}, \mbox{\hyperlink{classDB_1_1DatabaseManager_a92000f766524ccf276d209617de6bfca}{exec()}}, \mbox{\hyperlink{classDB_1_1DatabaseManager_accc3976ea82ddbe22c86448958d2821c}{exec\+Result()}}, \mbox{\hyperlink{classDB_1_1DatabaseManager_aecf836346d0d92afaa480f1215d23071}{insert()}}, and \mbox{\hyperlink{classDB_1_1DatabaseManager_a01cc9f5bbaa3f4c69acf3edf05fb1924}{update()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a58d1a2ff38fcf44e8a300f5f8282936b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_ad3a76a2b3324dcf515e07e9610cb8b69}\label{classDB_1_1DatabaseManager_ad3a76a2b3324dcf515e07e9610cb8b69}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!rollback@{rollback}}
+\index{rollback@{rollback}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{rollback()}{rollback()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::rollback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rolls back a transaction. 
+
+\begin{DoxyReturn}{Returns}
+True if the transaction was rolled back successfully, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0}\label{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!select@{select}}
+\index{select@{select}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::select (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Selects columns for the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Columns to select. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request\+::execute()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}, \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request\+::execute()}}, and \mbox{\hyperlink{classDB_1_1DatabaseManager_abfbee5e0fdaf35b4bb998932203aea4d}{get\+Select\+Query()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_aa9c79b640a095bb76790c2dffe85c9a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_aa8a5cbe7e07b4af266d2553973fe1c3f}\label{classDB_1_1DatabaseManager_aa8a5cbe7e07b4af266d2553973fe1c3f}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!setDbSetting@{setDbSetting}}
+\index{setDbSetting@{setDbSetting}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{setDbSetting()}{setDbSetting()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::set\+Db\+Setting (\begin{DoxyParamCaption}\item[{const QString \&}]{host,  }\item[{int}]{port,  }\item[{const QString \&}]{username,  }\item[{const QString \&}]{password,  }\item[{const QString \&}]{dbname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the database settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & Database host. \\
+\hline
+{\em port} & Database port. \\
+\hline
+{\em username} & Database username. \\
+\hline
+{\em password} & Database password. \\
+\hline
+{\em dbname} & Database name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if settings are set successfully, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_aa8a5cbe7e07b4af266d2553973fe1c3f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a8cc4779256fe0151f13af004efd602b4}\label{classDB_1_1DatabaseManager_a8cc4779256fe0151f13af004efd602b4}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!sort@{sort}}
+\index{sort@{sort}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::sort (\begin{DoxyParamCaption}\item[{const QString \&}]{sort }\end{DoxyParamCaption})}
+
+
+
+Adds an ORDER BY clause to the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sort} & Sorting criteria. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_a8cc4779256fe0151f13af004efd602b4}{sort()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classDB_1_1DatabaseManager_a8cc4779256fe0151f13af004efd602b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classDB_1_1DatabaseManager_a8cc4779256fe0151f13af004efd602b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_ad3f3d025d0ff6f90b26732e4ee3759aa}\label{classDB_1_1DatabaseManager_ad3f3d025d0ff6f90b26732e4ee3759aa}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!start@{start}}
+\index{start@{start}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::start (\begin{DoxyParamCaption}\item[{int}]{start }\end{DoxyParamCaption})}
+
+
+
+Adds an OFFSET clause to the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Offset value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_ad3f3d025d0ff6f90b26732e4ee3759aa}{start()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classDB_1_1DatabaseManager_ad3f3d025d0ff6f90b26732e4ee3759aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classDB_1_1DatabaseManager_ad3f3d025d0ff6f90b26732e4ee3759aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}\label{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!table@{table}}
+\index{table@{table}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{table()}{table()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::table (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Sets the table for the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Table name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_a807179e8d94fccdf5b5f24ac111054a3}{del()}}, \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request\+::execute()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}, \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request\+::execute()}}, \mbox{\hyperlink{classDB_1_1DatabaseManager_acf52a653442a49e831b08ed5e47ae7d2}{get()}}, \mbox{\hyperlink{classDB_1_1DatabaseManager_aecf836346d0d92afaa480f1215d23071}{insert()}}, \mbox{\hyperlink{classDB_1_1DatabaseManager_a4af6f6c13dd73b474eaeaa08339273ad}{truncate\+Table()}}, and \mbox{\hyperlink{classDB_1_1DatabaseManager_a01cc9f5bbaa3f4c69acf3edf05fb1924}{update()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a09690342e7a7ad71165b3b38aea8e6c0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a4af6f6c13dd73b474eaeaa08339273ad}\label{classDB_1_1DatabaseManager_a4af6f6c13dd73b474eaeaa08339273ad}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!truncateTable@{truncateTable}}
+\index{truncateTable@{truncateTable}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{truncateTable()}{truncateTable()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::truncate\+Table (\begin{DoxyParamCaption}\item[{const QString \&}]{table }\end{DoxyParamCaption})}
+
+
+
+Truncates a specified table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Name of the table. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the table was truncated successfully, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a4af6f6c13dd73b474eaeaa08339273ad_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a01cc9f5bbaa3f4c69acf3edf05fb1924}\label{classDB_1_1DatabaseManager_a01cc9f5bbaa3f4c69acf3edf05fb1924}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!update@{update}}
+\index{update@{update}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool Database\+Manager\+::update (\begin{DoxyParamCaption}\item[{const QString \&}]{table,  }\item[{const QVariant\+Map \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Updates data in a specified table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & Name of the table. \\
+\hline
+{\em data} & Data to update. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the data was updated successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DatabaseManager_a807179e8d94fccdf5b5f24ac111054a3}{del()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, and \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classDB_1_1DatabaseManager_a01cc9f5bbaa3f4c69acf3edf05fb1924_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a01cc9f5bbaa3f4c69acf3edf05fb1924_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07}\label{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!where@{where}}
+\index{where@{where}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{where()}{where()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::where (\begin{DoxyParamCaption}\item[{const QString \&}]{value,  }\item[{const QVariant \&}]{val = {\ttfamily QVariant()} }\end{DoxyParamCaption})}
+
+
+
+Adds a WHERE clause to the query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Condition for the WHERE clause. \\
+\hline
+{\em val} & Value for the condition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request\+::execute()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}, and \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request\+::execute()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDB_1_1DatabaseManager_a5e0d0977ce554284a71c4a520340ae07_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DatabaseManager_a13b20cf8950ab0abb2457e7a78dba983}\label{classDB_1_1DatabaseManager_a13b20cf8950ab0abb2457e7a78dba983}} 
+\index{DB::DatabaseManager@{DB::DatabaseManager}!whereOr@{whereOr}}
+\index{whereOr@{whereOr}!DB::DatabaseManager@{DB::DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{whereOr()}{whereOr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} $\ast$ Database\+Manager\+::where\+Or (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Adds an OR condition to the WHERE clause. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Condition for the OR clause. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{Database\+Manager}} instance. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DatabaseManager_a13b20cf8950ab0abb2457e7a78dba983_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{db_8h}{db.\+h}}\item 
+db.\+cpp\end{DoxyCompactItemize}

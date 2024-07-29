@@ -1,0 +1,1236 @@
+This document describes the requests that can be sent to the server and the responses that can be received from the server.
+
+\doxysection*{1. Login \mbox{\hyperlink{classRequest}{Request}}}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}email"{}:\ "{}user@example.com"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}password"{}:\ "{}pass"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsubsection*{On Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}first\_name"{}:\ "{}User"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}role"{}:\ "{}user"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Login\ successful"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{On Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}email\ not\ found"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Invalid\ password"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysection*{2. Get Account Number (for Logged-\/in user)}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 2,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}email"{}:\ "{}user@mail.com"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsubsection*{On Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 2,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \  "{}status"{}:\ 1,}
+\DoxyCodeLine{ \  \  \  \ "{}account\_number"{}:\ 123456789}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{On Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 2,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \  "{}status"{}:\ 0,}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}No\ account\ found"{}}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 2,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \  "{}status"{}:\ 0,}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}email\ not\ found"{}}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysection*{3. Get Balance}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 3,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}account\_number"{}:\ 123456789}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsubsection*{On Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 3,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}message"{}:\ "{}Balance\ fetched\ successfully"{},}
+\DoxyCodeLine{ \  \  \  \ "{}balance"{}:\ 500.0}
+\DoxyCodeLine{ \  \  \  }
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{On Failure\+: (will not Usually happen)}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 3,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \  "{}status"{}:\ 0,}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Account\ not\ found"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysection*{4. Get Transactions History}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+\doxysubsection*{As User\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 4,}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}email"{}:\ "{}email@test.com"{}}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{As Admin\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 4,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}email"{}:\ "{}admin@test.com"{}}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsection*{As User\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 4,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \  "{}status"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}message"{}:\ "{}Transaction\ history\ retrieved\ for\ account\ number\ 123456789"{},}
+\DoxyCodeLine{ \  \  \  \ "{}List"{}:}
+\DoxyCodeLine{ \  \  \  \  \  \ [\ \ //\ User\ will\ get\ transactions\ to\ or\ from\ his\ account\ only}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}from\_account\_number"{}:\ 123456789,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}to\_account\_number"{}:\ 987654321,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}transaction\_amount"{}:\ 100.0,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}created\_at"{}:\ "{}2021-\/01-\/01"{}}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}from\_account\_number"{}:\ 987654321,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}to\_account\_number"{}:\ 123456789,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}transaction\_amount"{}:\ 130.0,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}created\_at"{}:\ "{}2021-\/01-\/03"{}}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \}}
+\DoxyCodeLine{ \  \  \  \  \  \ ]}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{As Admin\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 4,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \  "{}status"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}message"{}:\ "{}Transaction\ history\ retrieved\ for\ all\ users"{},}
+\DoxyCodeLine{ \  \  \  \ \ "{}List"{}:}
+\DoxyCodeLine{ \  \  \  \  \  \ [\ \ //\ Admin\ will\ get\ all\ transactions\ in\ the\ database}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}from\_account\_number"{}:\ 123456789,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}to\_account\_number"{}:\ 987654321,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}transaction\_amount"{}:\ 100.0,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}created\_at"{}:\ "{}2021-\/01-\/01"{}}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}from\_account\_number"{}:\ 987654321,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}to\_account\_number"{}:\ 123456789,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}transaction\_amount"{}:\ 130.0,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}created\_at"{}:\ "{}2021-\/01-\/03"{}}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}from\_account\_number"{}:\ 4343656567,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}to\_account\_number"{}:\ 123232324,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}transaction\_amount"{}:\ 1435.0,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}created\_at"{}:\ "{}2021-\/01-\/03"{}}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \}}
+\DoxyCodeLine{ \  \  \  \  \  \ ]}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{ \}}
+
+\end{DoxyCode}
+
+
+\doxysection*{5. Make Transaction}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+\doxysubsubsection*{Using email\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 5,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}from\_account\_number"{}:\ 123456789,}
+\DoxyCodeLine{ \  \  \  \ "{}to\_account\_number"{}:\ -\/1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}to\_email"{}:\ "{}user@mail.com"{},}
+\DoxyCodeLine{ \  \  \  \ "{}transaction\_amount"{}:\ 100.0}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \doxysubsubsection*{Using account number\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 5,}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}from\_account\_number"{}:\ 123456789,}
+\DoxyCodeLine{ \  \  \  \ "{}to\_account\_number"{}:\ 1222255555,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}to\_email"{}:\ "{}"{},}
+\DoxyCodeLine{ \  \  \  \ "{}transaction\_amount"{}:\ 100.0}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsubsection*{On Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 5,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Transaction\ successful"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{On Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 5,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Insufficient\ balance"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysection*{6. Transfer Amount}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 6,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}from\_account\_number"{}:\ 123456789,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}to\_account\_number"{}:\ 987654321,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}transferAmount"{}:\ 50.0}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsubsection*{On Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 6,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Transfer\ successful"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{On Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 6,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Insufficient\ balance"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 6,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Account\ not\ found"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysection*{7. Get Database (for admin)}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 7,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}email"{}:\ "{}admin@mail.com"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsubsection*{On Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 7,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}status"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}message"{}:\ "{}Database\ fetched\ successfully"{},}
+\DoxyCodeLine{ \  \  \  \ "{}users"{}:\ [}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}account\_number"{}:\ 123456789,\ //\ NULL\ if\ admin}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}first\_name"{}:\ "{}Admin"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}last\_name"{}:\ "{}User"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}email"{}:\ "{}email@mail.com"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}role"{}:\ "{}user"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}balance"{}:\ 500.0}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ \},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}account\_number"{}:\ NULL,\ //\ NULL\ if\ admin}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}first\_name"{}:\ "{}User"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}last\_name"{}:\ "{}User"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}email"{}:\ "{}admin@mail.com"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}role"{}:\ "{}admin"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}balance"{}:\ 500.0}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ ]}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{On Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \  \  \ "{}Response"{}:\ 7,}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \  \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}status"{}:\ 0,}
+\DoxyCodeLine{ \  \  \  \ \ \ \ \  "{}message"{}:\ "{}Cannot\ get\ database.\ User\ is\ not\ an\ admin"{},}
+\DoxyCodeLine{\ \ \ \  \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \  \  \ "{}Response"{}:\ 7,}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \  \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}status"{}:\ 0,}
+\DoxyCodeLine{ \  \  \  \ \ \ \ \  "{}message"{}:\ "{}No\ data\ found"{},}
+\DoxyCodeLine{\ \ \ \  \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysection*{8. Create New User (for admin)}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 8,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}email"{}:\ "{}admin@mail.com"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}newUser"{}:\ [}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}first\_name"{}:\ "{}New"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}last\_name"{}:\ "{}User"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}email"{}:\ "{}newuser@example.com"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}password"{}:\ "{}newpass"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}role"{}:\ "{}user"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}initial\_balance"{}:\ 500.0}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ ],}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsubsection*{On Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 8,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}New\ user\ created\ successfully"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 8,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}New\ admin\ created\ successfully"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{On Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 8,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}User\ already\ exists"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 8,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Cannot\ create\ new\ user.\ User\ is\ not\ an\ admin"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 8,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Missing\ required\ fields"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 8,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Invalid\ role"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 8,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Admin\ can't\ have\ account\ and\ initial\ balance"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysection*{9. Delete User (for admin)}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 9,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}email"{}:\ "{}admin@mail.com"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}account\_number"{}:\ 123456789}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsubsection*{On Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 9,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}User\ deleted\ successfully"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{On Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 9,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Account\ number\ does\ not\ exist"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 9,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Unauthorized,\ Cannot\ delete\ user."{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysection*{10. Update User (for admin)}
+
+\doxysubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 10,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}email"{}:\ "{}admin@mail.com"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}account\_number"{}:\ 123456789,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}newData"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ "{}first\_name"{}:\ "{}Updated"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ "{}last\_name"{}:\ "{}User"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ "{}email"{}:\ "{}updateduser@example.com"{},}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \  \  \ "{}role"{}:\ "{}admin"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{Receive Response\+:}
+
+\doxysubsubsection*{On Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 10,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}User\ updated\ successfully"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{On Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 10,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Account\ number\ does\ not\ exist"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 10,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Unauthorized,\ Cannot\ update\ user"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 10,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Failed\ to\ update\ user"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysection*{Special Requests}
+
+\doxysubsection*{11. Init Rquest}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 11,}
+\DoxyCodeLine{ \  \ "{}Data"{}:}
+\DoxyCodeLine{ \  \  \  \ \{}
+\DoxyCodeLine{ \  \  \  \ "{}email"{}:\ "{}user@example.com"{},}
+\DoxyCodeLine{ \  \  \  \ "{}password"{}:\ "{}pass"{}}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Receive Response\+:}
+
+\doxyparagraph*{on Success\+:}
+
+\doxysubparagraph*{As User}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 11,}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}status"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}first\_name"{}:\ "{}ahmed"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}role"{}:\ "{}user"{},}
+\DoxyCodeLine{ \  \  \  \ "{}account\_number"{}:\ 123456789,}
+\DoxyCodeLine{ \  \  \  \ "{}current\_balance"{}:\ 500.0,}
+\DoxyCodeLine{ \  \  \  \ "{}List"{}:\ //\ List\ of\ history\ transactions}
+\DoxyCodeLine{ \  \  \  \  \  \ [}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}to\_account\_number"{}:\ 987654321,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}transaction\_amount"{}:\ 100.0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}transaction\_type"{}:\ "{}+"{},\ //\ "{}+"{}\ for\ deposit}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}created\_at"{}:\ "{}2021-\/01-\/01"{}}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}to\_account\_number"{}:\ 987612321,}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}transaction\_amount"{}:\ 130.0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}transaction\_type"{}:\ "{}Withdrawal"{},\ //\ "{}-\/"{}\ for\ withdrawal}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \  \  \ "{}created\_at"{}:\ "{}2021-\/01-\/03"{}}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ \}}
+\DoxyCodeLine{ \  \  \  \  \  \ ]}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubparagraph*{As Admin}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 11,}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}status"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}first\_name"{}:\ "{}ahmed"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}role"{}:\ "{}admin"{},}
+\DoxyCodeLine{ \  \  \  \ "{}List"{}:\ //\ List\ of\ database\ users}
+\DoxyCodeLine{ \  \  \  \  \ [}
+\DoxyCodeLine{\  \  \  \  \  \ \{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}account\_number"{}:\ 123456789,\ //\ NULL\ if\ admin}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}first\_name"{}:\ "{}Admin"{},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}last\_name"{}:\ "{}User"{},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}email"{}:\ "{}email@mail.com"{},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}role"{}:\ "{}user"{},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}balance"{}:\ 500.0}
+\DoxyCodeLine{ \  \  \  \  \  \ \},}
+\DoxyCodeLine{ \  \  \  \  \  \ \{}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}account\_number"{}:\ NULL,\ //\ NULL\ if\ admin}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}first\_name"{}:\ "{}User"{},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}last\_name"{}:\ "{}User"{},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}email"{}:\ "{}admin@mail.com"{},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}role"{}:\ "{}admin"{},}
+\DoxyCodeLine{ \  \  \  \  \  \  \  \ "{}balance"{}:\ 500.0}
+\DoxyCodeLine{ \  \  \  \  \  \ \}}
+\DoxyCodeLine{ \  \  \  \  \  ]}
+\DoxyCodeLine{ \  \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{12. Update email}
+
+\doxysubsubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 12,}
+\DoxyCodeLine{ \  \ "{}Data"{}:}
+\DoxyCodeLine{ \  \  \  \ \{}
+\DoxyCodeLine{ \  \  \  \ "{}email"{}:\ "{}user@example.com"{},}
+\DoxyCodeLine{ \  \  \  \ "{}password"{}:\ "{}pass"{},}
+\DoxyCodeLine{ \  \  \  \ "{}new\_email"{}:\ "{}newmail@example.com"{}}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Receive Response\+:}
+
+\doxyparagraph*{on Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 12,}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Email\ updated\ successfully"{}}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxyparagraph*{on Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 12,}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Email\ already\ exists"{}}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+or
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 12,}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Invalid\ password"{}}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection*{12. Update Password}
+
+\doxysubsubsection*{Send \mbox{\hyperlink{classRequest}{Request}}\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{ \  \ "{}Request"{}:\ 13,}
+\DoxyCodeLine{ \  \ "{}Data"{}:}
+\DoxyCodeLine{ \  \  \  \ \{}
+\DoxyCodeLine{ \  \  \  \ "{}email"{}:\ "{}user@example.com"{},}
+\DoxyCodeLine{ \  \  \  \ "{}password"{}:\ "{}pass"{},}
+\DoxyCodeLine{ \  \  \  \ "{}new\_password"{}:\ "{}newPass"{}}
+\DoxyCodeLine{ \  \  \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Receive Response\+:}
+
+\doxyparagraph*{on Success\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 12,}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 1,}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Password\ updated\ successfully"{}}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxyparagraph*{on Failure\+:}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{ \  \ "{}Response"{}:\ 12,}
+\DoxyCodeLine{ \  \ "{}Data"{}:\ \{}
+\DoxyCodeLine{ \  \  \  \ "{}status"{}:\ 0,}
+\DoxyCodeLine{ \  \  \  \ "{}message"{}:\ "{}Invalid\ password"{}}
+\DoxyCodeLine{ \  \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

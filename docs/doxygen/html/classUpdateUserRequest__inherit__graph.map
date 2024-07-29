@@ -1,0 +1,4 @@
+<map id="UpdateUserRequest" name="UpdateUserRequest">
+<area shape="rect" id="node1" title="The UpdateUserRequest class handles user update requests." alt="" coords="21,199,179,296"/>
+<area shape="rect" id="node2" href="$classRequest.html" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="5,5,195,151"/>
+</map>

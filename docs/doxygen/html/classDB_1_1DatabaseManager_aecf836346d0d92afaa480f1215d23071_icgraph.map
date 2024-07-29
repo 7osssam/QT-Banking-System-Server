@@ -1,0 +1,5 @@
+<map id="DB::DatabaseManager::insert" name="DB::DatabaseManager::insert">
+<area shape="rect" id="node1" title="Inserts data into a specified table." alt="" coords="222,39,374,81"/>
+<area shape="rect" id="node2" href="$classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec" title="Executes the request to create a new user." alt="" coords="10,5,169,48"/>
+<area shape="rect" id="node3" href="$classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802" title="Executes the transaction request." alt="" coords="5,72,174,115"/>
+</map>

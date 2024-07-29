@@ -1,0 +1,133 @@
+\hypertarget{classServerHandler}{}\doxysection{Server\+Handler Class Reference}
+\label{classServerHandler}\index{ServerHandler@{ServerHandler}}
+
+
+The \mbox{\hyperlink{classServerHandler}{Server\+Handler}} class handles incoming client connections in a separate thread.  
+
+
+
+
+{\ttfamily \#include $<$serverhandler.\+h$>$}
+
+
+
+Inheritance diagram for Server\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classServerHandler__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classServerHandler__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServerHandler_a03e33b6790a3742dd4dc176971164cef}{Server\+Handler}} (QMutex $\ast$m, qintptr handle=0, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classServerHandler}{Server\+Handler}} object with the specified parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServerHandler_a38748a26a3142d81018863876b06164e}{$\sim$\+Server\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classServerHandler}{Server\+Handler}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServerHandler_a759cbb09760e8ca60cefe596bef59c1e}{ready\+Read}} ()
+\begin{DoxyCompactList}\small\item\em Slot to handle ready\+Read signal from QTcp\+Socket. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServerHandler_a61359b9bb16c92ca9bca3353487db090}{run}} ()
+\begin{DoxyCompactList}\small\item\em Implements QRunnable\textquotesingle{}s run method to handle the client connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classServerHandler}{Server\+Handler}} class handles incoming client connections in a separate thread. 
+
+This class is responsible for managing communication with a client, verifying data integrity using cryptographic hashes, and processing requests through the \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. It operates in a separate thread to ensure that the server remains responsive. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServerHandler_a03e33b6790a3742dd4dc176971164cef}\label{classServerHandler_a03e33b6790a3742dd4dc176971164cef}} 
+\index{ServerHandler@{ServerHandler}!ServerHandler@{ServerHandler}}
+\index{ServerHandler@{ServerHandler}!ServerHandler@{ServerHandler}}
+\doxysubsubsection{\texorpdfstring{ServerHandler()}{ServerHandler()}}
+{\footnotesize\ttfamily Server\+Handler\+::\+Server\+Handler (\begin{DoxyParamCaption}\item[{QMutex $\ast$}]{m,  }\item[{qintptr}]{handle = {\ttfamily 0},  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \mbox{\hyperlink{classServerHandler}{Server\+Handler}} object with the specified parameters. 
+
+Initializes the \mbox{\hyperlink{classServerHandler}{Server\+Handler}} with a mutex, socket handle, and optional parent QObject.
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Pointer to a QMutex used for synchronization. \\
+\hline
+{\em handle} & The socket descriptor for the incoming connection. \\
+\hline
+{\em parent} & The parent QObject. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServerHandler_a38748a26a3142d81018863876b06164e}\label{classServerHandler_a38748a26a3142d81018863876b06164e}} 
+\index{ServerHandler@{ServerHandler}!````~ServerHandler@{$\sim$ServerHandler}}
+\index{````~ServerHandler@{$\sim$ServerHandler}!ServerHandler@{ServerHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$ServerHandler()}{~ServerHandler()}}
+{\footnotesize\ttfamily Server\+Handler\+::$\sim$\+Server\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classServerHandler}{Server\+Handler}} class. 
+
+Cleans up resources by deleting the client socket and \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServerHandler_a759cbb09760e8ca60cefe596bef59c1e}\label{classServerHandler_a759cbb09760e8ca60cefe596bef59c1e}} 
+\index{ServerHandler@{ServerHandler}!readyRead@{readyRead}}
+\index{readyRead@{readyRead}!ServerHandler@{ServerHandler}}
+\doxysubsubsection{\texorpdfstring{readyRead()}{readyRead()}}
+{\footnotesize\ttfamily void Server\+Handler\+::ready\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Slot to handle ready\+Read signal from QTcp\+Socket. 
+
+Reads data from the client socket, verifies its integrity using a cryptographic hash, and processes the request using \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. Sends the response back to the client. 
+
+Referenced by \mbox{\hyperlink{classServerHandler_a61359b9bb16c92ca9bca3353487db090}{run()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classServerHandler_a759cbb09760e8ca60cefe596bef59c1e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classServerHandler_a759cbb09760e8ca60cefe596bef59c1e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classServerHandler_a61359b9bb16c92ca9bca3353487db090}\label{classServerHandler_a61359b9bb16c92ca9bca3353487db090}} 
+\index{ServerHandler@{ServerHandler}!run@{run}}
+\index{run@{run}!ServerHandler@{ServerHandler}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Server\+Handler\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implements QRunnable\textquotesingle{}s run method to handle the client connection. 
+
+Sets up the client socket, connects signals for reading data and disconnection, and starts the event loop to process client requests. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classServerHandler_a61359b9bb16c92ca9bca3353487db090_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+serverhandler.\+h\item 
+serverhandler.\+cpp\end{DoxyCompactItemize}

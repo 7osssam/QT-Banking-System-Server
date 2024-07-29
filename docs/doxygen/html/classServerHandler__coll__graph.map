@@ -1,0 +1,5 @@
+<map id="ServerHandler" name="ServerHandler">
+<area shape="rect" id="node1" title="The ServerHandler class handles incoming client connections in a separate thread." alt="" coords="26,135,155,264"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,75,87"/>
+<area shape="rect" id="node3" title=" " alt="" coords="99,5,184,87"/>
+</map>

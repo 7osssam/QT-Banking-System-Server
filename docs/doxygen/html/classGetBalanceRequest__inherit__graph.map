@@ -1,0 +1,4 @@
+<map id="GetBalanceRequest" name="GetBalanceRequest">
+<area shape="rect" id="node1" title="The GetBalanceRequest class handles the retrieval of account balances." alt="" coords="21,199,179,296"/>
+<area shape="rect" id="node2" href="$classRequest.html" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="5,5,195,151"/>
+</map>

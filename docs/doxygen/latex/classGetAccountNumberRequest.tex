@@ -1,0 +1,112 @@
+\hypertarget{classGetAccountNumberRequest}{}\doxysection{Get\+Account\+Number\+Request Class Reference}
+\label{classGetAccountNumberRequest}\index{GetAccountNumberRequest@{GetAccountNumberRequest}}
+
+
+The \mbox{\hyperlink{classGetAccountNumberRequest}{Get\+Account\+Number\+Request}} class handles the retrieval of account numbers.  
+
+
+
+
+{\ttfamily \#include $<$Get\+Account\+Number\+Request.\+h$>$}
+
+
+
+Inheritance diagram for Get\+Account\+Number\+Request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classGetAccountNumberRequest__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Get\+Account\+Number\+Request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{classGetAccountNumberRequest__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGetAccountNumberRequest_a14e657fc73874d49150b5bc25530d62d}{Get\+Account\+Number\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classGetAccountNumberRequest}{Get\+Account\+Number\+Request}} class. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{execute}} (const QJson\+Object \&json\+Obj, QMutex \&m) override
+\begin{DoxyCompactList}\small\item\em Executes the request to get the account number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRequest}{Request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRequest_a45cc5d15eb7b9c9e97bd7328c9a90d3f}{$\sim$\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classRequest}{Request}} class. \end{DoxyCompactList}\item 
+virtual QJson\+Object \mbox{\hyperlink{classRequest_a634ac3a98caa9e90d03487556bbecfed}{execute}} (const QJson\+Object \&json\+Obj, QMutex \&m)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to execute a request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classRequest}{Request}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classRequest_ae580c02633722f323ad8a738e4952ea1}{is\+DBConnection\+Valid}} (\mbox{\hyperlink{classDB_1_1DatabaseManager}{DB\+::\+Database\+Manager}} $\ast$db\+Manager)
+\begin{DoxyCompactList}\small\item\em Checks if the database connection is valid. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classRequest_ad457f5030e3f983ffdbc7439989eebcb}{Create\+DBConnection\+Error}} (QJson\+Object \&response, QJson\+Object \&data\+Obj)
+\begin{DoxyCompactList}\small\item\em Creates a JSON response indicating a database connection error. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{Create\+Error\+Response}} (QJson\+Object \&response, QJson\+Object \&data\+Obj, QString message)
+\begin{DoxyCompactList}\small\item\em Creates a generic error JSON response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGetAccountNumberRequest}{Get\+Account\+Number\+Request}} class handles the retrieval of account numbers. 
+
+This class processes requests to retrieve the account number associated with a user\textquotesingle{}s email. It performs database operations to fetch the account number and returns the result. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGetAccountNumberRequest_a14e657fc73874d49150b5bc25530d62d}\label{classGetAccountNumberRequest_a14e657fc73874d49150b5bc25530d62d}} 
+\index{GetAccountNumberRequest@{GetAccountNumberRequest}!GetAccountNumberRequest@{GetAccountNumberRequest}}
+\index{GetAccountNumberRequest@{GetAccountNumberRequest}!GetAccountNumberRequest@{GetAccountNumberRequest}}
+\doxysubsubsection{\texorpdfstring{GetAccountNumberRequest()}{GetAccountNumberRequest()}}
+{\footnotesize\ttfamily Get\+Account\+Number\+Request\+::\+Get\+Account\+Number\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classGetAccountNumberRequest}{Get\+Account\+Number\+Request}} class. 
+
+Initializes the Database\+Manager instance for handling database operations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}\label{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}} 
+\index{GetAccountNumberRequest@{GetAccountNumberRequest}!execute@{execute}}
+\index{execute@{execute}!GetAccountNumberRequest@{GetAccountNumberRequest}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily QJson\+Object Get\+Account\+Number\+Request\+::execute (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json\+Obj,  }\item[{QMutex \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the request to get the account number. 
+
+This method processes the JSON request to retrieve the account number associated with a user\textquotesingle{}s email. It validates the input data, checks the database connection, and fetches the account number from the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Obj} & The JSON object containing the request data. \\
+\hline
+{\em m} & The mutex to lock during the execution. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A JSON object containing the response data. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRequest_a634ac3a98caa9e90d03487556bbecfed}{Request}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Get\+Account\+Number\+Request.\+h\end{DoxyCompactItemize}

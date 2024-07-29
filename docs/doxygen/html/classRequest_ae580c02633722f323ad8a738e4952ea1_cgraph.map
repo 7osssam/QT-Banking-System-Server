@@ -1,0 +1,6 @@
+<map id="Request::isDBConnectionValid" name="Request::isDBConnectionValid">
+<area shape="rect" id="node1" title="Checks if the database connection is valid." alt="" coords="5,13,205,40"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#a01d24339865f4b3199e81b5224ae22bc" title="Checks the database connection." alt="" coords="253,5,405,48"/>
+<area shape="rect" id="node3" href="$classDB_1_1DatabaseManager.html#ad56bd7bc9d99adadd8afdc5fb19ac67a" title="Creates an instance of DatabaseManager." alt="" coords="453,5,605,48"/>
+<area shape="rect" id="node4" href="$classDB_1_1DatabaseManager.html#a0d786883976ea0f32e3566415138478d" title="Gets the last error occurred." alt="" coords="653,5,806,48"/>
+</map>

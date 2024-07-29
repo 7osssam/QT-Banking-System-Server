@@ -1,0 +1,193 @@
+\hypertarget{classRequestManager}{}\doxysection{Request\+Manager Class Reference}
+\label{classRequestManager}\index{RequestManager@{RequestManager}}
+
+
+The \mbox{\hyperlink{classRequestManager}{Request\+Manager}} class handles incoming requests and dispatches them to the appropriate request handler.  
+
+
+
+
+{\ttfamily \#include $<$Request\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for Request\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classRequestManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310}{Available\+Requests}} \{ \newline
+\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a517c61a4e946ec7f92a01e8622c97632}{Login}} = 1
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a1ce33251979ab4a049ebc6f80a7b1ca7}{Get\+Accountnumber}}
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a41aa3cfd8482a75d229a86203a7a7001}{Get\+Balance}}
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310af4f4491b688d2274389535e68917d549}{Get\+Transactions\+History}}
+, \newline
+\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a073436de6bc4635f6f1d6a739d15e115}{Make\+Transaction}}
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a58fc4431f7c77a667ed7d524efdb2155}{Transfer\+Amount}}
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a9aa35c99906b91e1b0b65522368682a1}{Get\+Database}}
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a0b2388382a273df5b82ddb6abff8d675}{Create\+New\+User}}
+, \newline
+\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138}{Delete\+User}}
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310abe9610f90871c52199552ba9a7eee628}{Update\+User}}
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a3d57ea768887ade2528b49470afeee2e}{User\+Init}}
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310ac8974e51516860572533ff425c9162ba}{Update\+Email}}
+, \newline
+\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a55a93a95e948c8d526ab395d9b56b7bc}{Update\+Password}}
+, \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b}{Json\+Parse\+Error}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the different types of requests handled by the \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRequestManager_adf7bfbf17876e300f0f02aaae671535a}{Request\+Manager}} (QMutex $\ast$Mutex)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classRequestManager}{Request\+Manager}} with the specified mutex for thread safety. \end{DoxyCompactList}\item 
+QByte\+Array \mbox{\hyperlink{classRequestManager_ae4c8344d4bd079620effa090b30f8234}{make\+Request}} (QByte\+Array data)
+\begin{DoxyCompactList}\small\item\em Processes an incoming request and generates an appropriate response. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRequestManager_a237db6121feaf809885dd140ee6da952}{$\sim$\+Request\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classRequestManager}{Request\+Manager}} class handles incoming requests and dispatches them to the appropriate request handler. 
+
+The \mbox{\hyperlink{classRequestManager}{Request\+Manager}} class is responsible for managing and processing different types of requests. It maintains a map of request handlers for various request types, processes incoming request data, and generates appropriate responses. The class also includes error handling for JSON parsing issues. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310}} 
+\index{RequestManager@{RequestManager}!AvailableRequests@{AvailableRequests}}
+\index{AvailableRequests@{AvailableRequests}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{AvailableRequests}{AvailableRequests}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310}{Request\+Manager\+::\+Available\+Requests}}}
+
+
+
+Enum representing the different types of requests handled by the \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. 
+
+This enum defines various request types and special requests that the \mbox{\hyperlink{classRequestManager}{Request\+Manager}} can handle. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Login@{Login}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!Login@{Login}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a517c61a4e946ec7f92a01e8622c97632}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a517c61a4e946ec7f92a01e8622c97632}} 
+Login&\mbox{\hyperlink{classRequest}{Request}} for user login. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GetAccountnumber@{GetAccountnumber}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!GetAccountnumber@{GetAccountnumber}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a1ce33251979ab4a049ebc6f80a7b1ca7}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a1ce33251979ab4a049ebc6f80a7b1ca7}} 
+Get\+Accountnumber&\mbox{\hyperlink{classRequest}{Request}} to retrieve account number. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GetBalance@{GetBalance}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!GetBalance@{GetBalance}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a41aa3cfd8482a75d229a86203a7a7001}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a41aa3cfd8482a75d229a86203a7a7001}} 
+Get\+Balance&\mbox{\hyperlink{classRequest}{Request}} to get account balance. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GetTransactionsHistory@{GetTransactionsHistory}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!GetTransactionsHistory@{GetTransactionsHistory}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310af4f4491b688d2274389535e68917d549}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310af4f4491b688d2274389535e68917d549}} 
+Get\+Transactions\+History&\mbox{\hyperlink{classRequest}{Request}} to retrieve transaction history. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MakeTransaction@{MakeTransaction}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!MakeTransaction@{MakeTransaction}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a073436de6bc4635f6f1d6a739d15e115}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a073436de6bc4635f6f1d6a739d15e115}} 
+Make\+Transaction&\mbox{\hyperlink{classRequest}{Request}} to make a transaction. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TransferAmount@{TransferAmount}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!TransferAmount@{TransferAmount}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a58fc4431f7c77a667ed7d524efdb2155}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a58fc4431f7c77a667ed7d524efdb2155}} 
+Transfer\+Amount&\mbox{\hyperlink{classRequest}{Request}} to transfer amount (not used currently). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GetDatabase@{GetDatabase}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!GetDatabase@{GetDatabase}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a9aa35c99906b91e1b0b65522368682a1}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a9aa35c99906b91e1b0b65522368682a1}} 
+Get\+Database&\mbox{\hyperlink{classRequest}{Request}} to get database information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CreateNewUser@{CreateNewUser}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!CreateNewUser@{CreateNewUser}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a0b2388382a273df5b82ddb6abff8d675}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a0b2388382a273df5b82ddb6abff8d675}} 
+Create\+New\+User&\mbox{\hyperlink{classRequest}{Request}} to create a new user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DeleteUser@{DeleteUser}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!DeleteUser@{DeleteUser}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138}} 
+Delete\+User&\mbox{\hyperlink{classRequest}{Request}} to delete a user. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UpdateUser@{UpdateUser}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!UpdateUser@{UpdateUser}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310abe9610f90871c52199552ba9a7eee628}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310abe9610f90871c52199552ba9a7eee628}} 
+Update\+User&\mbox{\hyperlink{classRequest}{Request}} to update user information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UserInit@{UserInit}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!UserInit@{UserInit}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a3d57ea768887ade2528b49470afeee2e}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a3d57ea768887ade2528b49470afeee2e}} 
+User\+Init&Special request for user initialization. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UpdateEmail@{UpdateEmail}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!UpdateEmail@{UpdateEmail}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310ac8974e51516860572533ff425c9162ba}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310ac8974e51516860572533ff425c9162ba}} 
+Update\+Email&Special request to update user email. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UpdatePassword@{UpdatePassword}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!UpdatePassword@{UpdatePassword}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a55a93a95e948c8d526ab395d9b56b7bc}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a55a93a95e948c8d526ab395d9b56b7bc}} 
+Update\+Password&Special request to update user password. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JsonParseError@{JsonParseError}!RequestManager@{RequestManager}}\index{RequestManager@{RequestManager}!JsonParseError@{JsonParseError}}}\mbox{\Hypertarget{classRequestManager_af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b}\label{classRequestManager_af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b}} 
+Json\+Parse\+Error&Special error code for JSON parsing errors. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRequestManager_adf7bfbf17876e300f0f02aaae671535a}\label{classRequestManager_adf7bfbf17876e300f0f02aaae671535a}} 
+\index{RequestManager@{RequestManager}!RequestManager@{RequestManager}}
+\index{RequestManager@{RequestManager}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{RequestManager()}{RequestManager()}}
+{\footnotesize\ttfamily Request\+Manager\+::\+Request\+Manager (\begin{DoxyParamCaption}\item[{QMutex $\ast$}]{Mutex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classRequestManager}{Request\+Manager}} with the specified mutex for thread safety. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Mutex} & A pointer to a QMutex used to ensure thread-\/safe operations. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRequestManager_a237db6121feaf809885dd140ee6da952}\label{classRequestManager_a237db6121feaf809885dd140ee6da952}} 
+\index{RequestManager@{RequestManager}!````~RequestManager@{$\sim$RequestManager}}
+\index{````~RequestManager@{$\sim$RequestManager}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$RequestManager()}{~RequestManager()}}
+{\footnotesize\ttfamily Request\+Manager\+::$\sim$\+Request\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. 
+
+Cleans up any resources allocated by the \mbox{\hyperlink{classRequestManager}{Request\+Manager}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRequestManager_ae4c8344d4bd079620effa090b30f8234}\label{classRequestManager_ae4c8344d4bd079620effa090b30f8234}} 
+\index{RequestManager@{RequestManager}!makeRequest@{makeRequest}}
+\index{makeRequest@{makeRequest}!RequestManager@{RequestManager}}
+\doxysubsubsection{\texorpdfstring{makeRequest()}{makeRequest()}}
+{\footnotesize\ttfamily QByte\+Array Request\+Manager\+::make\+Request (\begin{DoxyParamCaption}\item[{QByte\+Array}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Processes an incoming request and generates an appropriate response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A QByte\+Array containing the request data in JSON format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A QByte\+Array containing the response data in JSON format.
+\end{DoxyReturn}
+This method parses the incoming JSON data, determines the type of request, and delegates the processing to the corresponding request handler. It also handles JSON parsing errors and generates error responses if needed. 
+
+Referenced by \mbox{\hyperlink{classServerHandler_a759cbb09760e8ca60cefe596bef59c1e}{Server\+Handler\+::ready\+Read()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRequestManager_ae4c8344d4bd079620effa090b30f8234_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Request\+Manager.\+h\end{DoxyCompactItemize}

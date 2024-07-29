@@ -1,0 +1,4 @@
+<map id="GetDatabaseRequest" name="GetDatabaseRequest">
+<area shape="rect" id="node1" title="The GetDatabaseRequest class handles the retrieval of the entire database." alt="" coords="17,199,183,296"/>
+<area shape="rect" id="node2" href="$classRequest.html" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="5,5,195,151"/>
+</map>

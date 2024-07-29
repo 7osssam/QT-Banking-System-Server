@@ -1,0 +1,22 @@
+<map id="DB::DatabaseManager::reset" name="DB::DatabaseManager::reset">
+<area shape="rect" id="node1" title="Resets the query settings." alt="" coords="652,273,805,316"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#a807179e8d94fccdf5b5f24ac111054a3" title="Deletes data from a specified table." alt="" coords="213,5,390,32"/>
+<area shape="rect" id="node5" href="$classDB_1_1DatabaseManager.html#a92000f766524ccf276d209617de6bfca" title="Executes the built query." alt="" coords="452,457,604,500"/>
+<area shape="rect" id="node18" href="$classDB_1_1DatabaseManager.html#accc3976ea82ddbe22c86448958d2821c" title="Executes a SQL query." alt="" coords="452,524,604,567"/>
+<area shape="rect" id="node19" href="$classDB_1_1DatabaseManager.html#aecf836346d0d92afaa480f1215d23071" title="Inserts data into a specified table." alt="" coords="452,273,604,316"/>
+<area shape="rect" id="node20" href="$classDB_1_1DatabaseManager.html#a01cc9f5bbaa3f4c69acf3edf05fb1924" title="Updates data in a specified table." alt="" coords="452,140,604,183"/>
+<area shape="rect" id="node3" href="$classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882" title="Executes the request to delete a user." alt="" coords="7,399,149,441"/>
+<area shape="rect" id="node4" href="$classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643" title="Executes the user update request." alt="" coords="5,48,151,91"/>
+<area shape="rect" id="node6" href="$classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec" title="Executes the request to create a new user." alt="" coords="222,307,381,349"/>
+<area shape="rect" id="node7" href="$classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c" title="Executes the request to get the account number." alt="" coords="210,491,393,533"/>
+<area shape="rect" id="node8" href="$classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9" title="Executes the request to get the account balance." alt="" coords="229,557,374,600"/>
+<area shape="rect" id="node9" href="$classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613" title="Executes the request to get the entire database." alt="" coords="229,624,374,667"/>
+<area shape="rect" id="node10" href="$classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34" title="Executes the request to get the transaction history." alt="" coords="199,741,404,784"/>
+<area shape="rect" id="node11" href="$classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c" title="Executes the login request." alt="" coords="224,808,379,835"/>
+<area shape="rect" id="node12" href="$classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802" title="Executes the transaction request." alt="" coords="217,173,386,216"/>
+<area shape="rect" id="node13" href="$classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0" title="Executes the email update request." alt="" coords="230,240,373,283"/>
+<area shape="rect" id="node14" href="$classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057" title="Executes the password update request." alt="" coords="218,107,385,149"/>
+<area shape="rect" id="node15" href="$classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455" title="Executes the user initialization request." alt="" coords="218,859,385,885"/>
+<area shape="rect" id="node16" href="$classDB_1_1DatabaseManager.html#acf52a653442a49e831b08ed5e47ae7d2" title="Executes a SELECT query on a specified table." alt="" coords="212,909,391,936"/>
+<area shape="rect" id="node17" href="$classDB_1_1DatabaseManager.html#a4af6f6c13dd73b474eaeaa08339273ad" title="Truncates a specified table." alt="" coords="225,424,378,467"/>
+</map>

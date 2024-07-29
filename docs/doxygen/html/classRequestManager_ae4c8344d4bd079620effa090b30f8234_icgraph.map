@@ -1,0 +1,5 @@
+<map id="RequestManager::makeRequest" name="RequestManager::makeRequest">
+<area shape="rect" id="node1" title="Processes an incoming request and generates an appropriate response." alt="" coords="400,5,607,32"/>
+<area shape="rect" id="node2" href="$classServerHandler.html#a759cbb09760e8ca60cefe596bef59c1e" title="Slot to handle readyRead signal from QTcpSocket." alt="" coords="181,5,352,32"/>
+<area shape="rect" id="node3" href="$classServerHandler.html#a61359b9bb16c92ca9bca3353487db090" title="Implements QRunnable&#39;s run method to handle the client connection." alt="" coords="5,5,133,32"/>
+</map>

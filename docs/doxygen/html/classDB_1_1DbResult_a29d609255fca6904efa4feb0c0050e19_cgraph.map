@@ -1,0 +1,5 @@
+<map id="DB::DbResult::data" name="DB::DbResult::data">
+<area shape="rect" id="node1" title="Retrieves data at a specific position in the result set." alt="" coords="5,31,139,57"/>
+<area shape="rect" id="node2" href="$classDB_1_1DbResult.html#aa69aec34a8771cd30ea590b9e66d68f9" title="Checks if the result set is empty." alt="" coords="187,5,343,32"/>
+<area shape="rect" id="node3" href="$classDB_1_1DbResult.html#a22c99c1160b466e76ff325fc6cb2639e" title="Gets the number of items in the result set." alt="" coords="199,56,331,83"/>
+</map>

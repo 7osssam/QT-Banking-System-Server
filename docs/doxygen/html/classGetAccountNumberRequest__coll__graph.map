@@ -1,0 +1,4 @@
+<map id="GetAccountNumberRequest" name="GetAccountNumberRequest">
+<area shape="rect" id="node1" title="The GetAccountNumberRequest class handles the retrieval of account numbers." alt="" coords="5,199,209,296"/>
+<area shape="rect" id="node2" href="$classRequest.html" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="12,5,202,151"/>
+</map>

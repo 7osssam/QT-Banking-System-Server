@@ -1,0 +1,15 @@
+<map id="Request::isDBConnectionValid" name="Request::isDBConnectionValid">
+<area shape="rect" id="node1" title="Checks if the database connection is valid." alt="" coords="259,376,458,403"/>
+<area shape="rect" id="node2" href="$classCreateNewUserRequest.html#a7c470ece3a6719a1675b8bcb2059b1ec" title="Executes the request to create a new user." alt="" coords="28,5,188,48"/>
+<area shape="rect" id="node3" href="$classDeleteUserRequest.html#adcdbc3f54c4e7d8d479184de717af882" title="Executes the request to delete a user." alt="" coords="37,72,179,115"/>
+<area shape="rect" id="node4" href="$classGetAccountNumberRequest.html#a91e2118e19cf91cb91586d5b15969b9c" title="Executes the request to get the account number." alt="" coords="16,139,200,181"/>
+<area shape="rect" id="node5" href="$classGetBalanceRequest.html#a402389ca70e11f1e22f888e1b92b91a9" title="Executes the request to get the account balance." alt="" coords="35,205,181,248"/>
+<area shape="rect" id="node6" href="$classGetDatabaseRequest.html#a821a561200ba4d89d66012b9d1cd6613" title="Executes the request to get the entire database." alt="" coords="35,272,181,315"/>
+<area shape="rect" id="node7" href="$classGetTransactionsHistoryRequest.html#aabf4abfb6314b7a8712f22d67258ca34" title="Executes the request to get the transaction history." alt="" coords="5,339,211,381"/>
+<area shape="rect" id="node8" href="$classLoginRequest.html#ada002b1d5d32f5e457e6b3cca8cc547c" title="Executes the login request." alt="" coords="31,405,185,432"/>
+<area shape="rect" id="node9" href="$classMakeTransactionRequest.html#acbf1d65da80c25ae77f7a3e65d11f802" title="Executes the transaction request." alt="" coords="24,456,192,499"/>
+<area shape="rect" id="node10" href="$classUpdateEmailRequest.html#a378a8e08c236f3ad5b7b4b8d75683ac0" title="Executes the email update request." alt="" coords="36,523,180,565"/>
+<area shape="rect" id="node11" href="$classUpdatePasswordRequest.html#a33c6b088d6ae2deda23f3735ad3f7057" title="Executes the password update request." alt="" coords="24,589,192,632"/>
+<area shape="rect" id="node12" href="$classUpdateUserRequest.html#af13cf9798c3eb5d2e283dcd02e6ee643" title="Executes the user update request." alt="" coords="35,656,181,699"/>
+<area shape="rect" id="node13" href="$classUserInitRequest.html#ad53a342140eac714b3255f526d5fc455" title="Executes the user initialization request." alt="" coords="24,723,192,749"/>
+</map>

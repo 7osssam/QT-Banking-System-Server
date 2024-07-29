@@ -1,0 +1,112 @@
+\hypertarget{classDeleteUserRequest}{}\doxysection{Delete\+User\+Request Class Reference}
+\label{classDeleteUserRequest}\index{DeleteUserRequest@{DeleteUserRequest}}
+
+
+The \mbox{\hyperlink{classDeleteUserRequest}{Delete\+User\+Request}} class handles the deletion of users.  
+
+
+
+
+{\ttfamily \#include $<$Delete\+User\+Request.\+h$>$}
+
+
+
+Inheritance diagram for Delete\+User\+Request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classDeleteUserRequest__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Delete\+User\+Request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classDeleteUserRequest__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDeleteUserRequest_a1a44c17c0e3904253c781cdae70b845c}{Delete\+User\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classDeleteUserRequest}{Delete\+User\+Request}} class. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{execute}} (const QJson\+Object \&json\+Obj, QMutex \&m) override
+\begin{DoxyCompactList}\small\item\em Executes the request to delete a user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRequest}{Request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRequest_a45cc5d15eb7b9c9e97bd7328c9a90d3f}{$\sim$\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classRequest}{Request}} class. \end{DoxyCompactList}\item 
+virtual QJson\+Object \mbox{\hyperlink{classRequest_a634ac3a98caa9e90d03487556bbecfed}{execute}} (const QJson\+Object \&json\+Obj, QMutex \&m)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to execute a request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classRequest}{Request}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classRequest_ae580c02633722f323ad8a738e4952ea1}{is\+DBConnection\+Valid}} (\mbox{\hyperlink{classDB_1_1DatabaseManager}{DB\+::\+Database\+Manager}} $\ast$db\+Manager)
+\begin{DoxyCompactList}\small\item\em Checks if the database connection is valid. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classRequest_ad457f5030e3f983ffdbc7439989eebcb}{Create\+DBConnection\+Error}} (QJson\+Object \&response, QJson\+Object \&data\+Obj)
+\begin{DoxyCompactList}\small\item\em Creates a JSON response indicating a database connection error. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{Create\+Error\+Response}} (QJson\+Object \&response, QJson\+Object \&data\+Obj, QString message)
+\begin{DoxyCompactList}\small\item\em Creates a generic error JSON response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDeleteUserRequest}{Delete\+User\+Request}} class handles the deletion of users. 
+
+This class processes requests to delete users, ensuring that the request originates from an admin and that the account number provided is valid. It performs database operations to remove the user and their associated account. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDeleteUserRequest_a1a44c17c0e3904253c781cdae70b845c}\label{classDeleteUserRequest_a1a44c17c0e3904253c781cdae70b845c}} 
+\index{DeleteUserRequest@{DeleteUserRequest}!DeleteUserRequest@{DeleteUserRequest}}
+\index{DeleteUserRequest@{DeleteUserRequest}!DeleteUserRequest@{DeleteUserRequest}}
+\doxysubsubsection{\texorpdfstring{DeleteUserRequest()}{DeleteUserRequest()}}
+{\footnotesize\ttfamily Delete\+User\+Request\+::\+Delete\+User\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classDeleteUserRequest}{Delete\+User\+Request}} class. 
+
+Initializes the Database\+Manager instance for handling database operations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}\label{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}} 
+\index{DeleteUserRequest@{DeleteUserRequest}!execute@{execute}}
+\index{execute@{execute}!DeleteUserRequest@{DeleteUserRequest}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily QJson\+Object Delete\+User\+Request\+::execute (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json\+Obj,  }\item[{QMutex \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the request to delete a user. 
+
+This method processes the JSON request to delete a user. It validates the input data, checks the database connection, and ensures that the request is made by an admin. If all validations pass, it deletes the user and their account from the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Obj} & The JSON object containing the request data. \\
+\hline
+{\em m} & The mutex to lock during the execution. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A JSON object containing the response data. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRequest_a634ac3a98caa9e90d03487556bbecfed}{Request}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Delete\+User\+Request.\+h\end{DoxyCompactItemize}

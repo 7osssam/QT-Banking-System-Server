@@ -1,0 +1,203 @@
+\hypertarget{classRequest}{}\doxysection{Request Class Reference}
+\label{classRequest}\index{Request@{Request}}
+
+
+The \mbox{\hyperlink{classRequest}{Request}} class is an abstract base class for handling different types of requests.  
+
+
+
+
+{\ttfamily \#include $<$Request.\+h$>$}
+
+
+
+Inheritance diagram for Request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRequest__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classRequest__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRequest_a45cc5d15eb7b9c9e97bd7328c9a90d3f}{$\sim$\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classRequest}{Request}} class. \end{DoxyCompactList}\item 
+virtual QJson\+Object \mbox{\hyperlink{classRequest_a634ac3a98caa9e90d03487556bbecfed}{execute}} (const QJson\+Object \&json\+Obj, QMutex \&m)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to execute a request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classRequest_ae580c02633722f323ad8a738e4952ea1}{is\+DBConnection\+Valid}} (\mbox{\hyperlink{classDB_1_1DatabaseManager}{DB\+::\+Database\+Manager}} $\ast$db\+Manager)
+\begin{DoxyCompactList}\small\item\em Checks if the database connection is valid. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classRequest_ad457f5030e3f983ffdbc7439989eebcb}{Create\+DBConnection\+Error}} (QJson\+Object \&response, QJson\+Object \&data\+Obj)
+\begin{DoxyCompactList}\small\item\em Creates a JSON response indicating a database connection error. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{Create\+Error\+Response}} (QJson\+Object \&response, QJson\+Object \&data\+Obj, QString message)
+\begin{DoxyCompactList}\small\item\em Creates a generic error JSON response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classRequest}{Request}} class is an abstract base class for handling different types of requests. 
+
+This class provides the common interface and utility functions for processing various requests. It includes methods for checking database connectivity and creating error responses. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRequest_a45cc5d15eb7b9c9e97bd7328c9a90d3f}\label{classRequest_a45cc5d15eb7b9c9e97bd7328c9a90d3f}} 
+\index{Request@{Request}!````~Request@{$\sim$Request}}
+\index{````~Request@{$\sim$Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{$\sim$Request()}{~Request()}}
+{\footnotesize\ttfamily virtual Request\+::$\sim$\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classRequest}{Request}} class. 
+
+Ensures proper cleanup of derived classes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRequest_ad457f5030e3f983ffdbc7439989eebcb}\label{classRequest_ad457f5030e3f983ffdbc7439989eebcb}} 
+\index{Request@{Request}!CreateDBConnectionError@{CreateDBConnectionError}}
+\index{CreateDBConnectionError@{CreateDBConnectionError}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{CreateDBConnectionError()}{CreateDBConnectionError()}}
+{\footnotesize\ttfamily QJson\+Object Request\+::\+Create\+DBConnection\+Error (\begin{DoxyParamCaption}\item[{QJson\+Object \&}]{response,  }\item[{QJson\+Object \&}]{data\+Obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Creates a JSON response indicating a database connection error. 
+
+This method constructs a JSON response object with a status of false and a message indicating an internal server error related to database connectivity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & A reference to the QJson\+Object that will be populated with the error response. \\
+\hline
+{\em data\+Obj} & A reference to the QJson\+Object that contains additional data about the error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated QJson\+Object containing the error response. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request\+::execute()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}, and \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request\+::execute()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRequest_ad457f5030e3f983ffdbc7439989eebcb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}\label{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}} 
+\index{Request@{Request}!CreateErrorResponse@{CreateErrorResponse}}
+\index{CreateErrorResponse@{CreateErrorResponse}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{CreateErrorResponse()}{CreateErrorResponse()}}
+{\footnotesize\ttfamily QJson\+Object Request\+::\+Create\+Error\+Response (\begin{DoxyParamCaption}\item[{QJson\+Object \&}]{response,  }\item[{QJson\+Object \&}]{data\+Obj,  }\item[{QString}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Creates a generic error JSON response. 
+
+This method constructs a JSON response object with a status of false and a custom error message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & A reference to the QJson\+Object that will be populated with the error response. \\
+\hline
+{\em data\+Obj} & A reference to the QJson\+Object that contains additional data about the error. \\
+\hline
+{\em message} & A QString containing the error message to include in the response. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated QJson\+Object containing the error response. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request\+::execute()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}, and \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request\+::execute()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRequest_a634ac3a98caa9e90d03487556bbecfed}\label{classRequest_a634ac3a98caa9e90d03487556bbecfed}} 
+\index{Request@{Request}!execute@{execute}}
+\index{execute@{execute}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual QJson\+Object Request\+::execute (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json\+Obj,  }\item[{QMutex \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual method to execute a request. 
+
+This method must be implemented by derived classes to handle specific types of requests.
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Obj} & A QJson\+Object containing the request data. \\
+\hline
+{\em m} & A QMutex reference for thread-\/safe operations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A QJson\+Object containing the response data. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request}}, and \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request}}.
+
+\mbox{\Hypertarget{classRequest_ae580c02633722f323ad8a738e4952ea1}\label{classRequest_ae580c02633722f323ad8a738e4952ea1}} 
+\index{Request@{Request}!isDBConnectionValid@{isDBConnectionValid}}
+\index{isDBConnectionValid@{isDBConnectionValid}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{isDBConnectionValid()}{isDBConnectionValid()}}
+{\footnotesize\ttfamily bool Request\+::is\+DBConnection\+Valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDB_1_1DatabaseManager}{DB\+::\+Database\+Manager}} $\ast$}]{db\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Checks if the database connection is valid. 
+
+This method verifies that the database connection manager is not null and that the database is properly connected. Logs error messages if the connection fails.
+
+
+\begin{DoxyParams}{Parameters}
+{\em db\+Manager} & A pointer to the \mbox{\hyperlink{classDB_1_1DatabaseManager}{DB\+::\+Database\+Manager}} instance used for checking the connection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the database connection is valid, false otherwise. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request\+::execute()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}, and \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request\+::execute()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRequest_ae580c02633722f323ad8a738e4952ea1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRequest_ae580c02633722f323ad8a738e4952ea1_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Request_8h}{Request.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="GetTransactionsHistoryRequest" name="GetTransactionsHistoryRequest">
+<area shape="rect" id="node1" title="The GetTransactionsHistoryRequest class handles the retrieval of transaction history." alt="" coords="5,199,231,296"/>
+<area shape="rect" id="node2" href="$classRequest.html" title="The Request class is an abstract base class for handling different types of requests." alt="" coords="23,5,213,151"/>
+</map>

@@ -1,0 +1,123 @@
+\hypertarget{classServer}{}\doxysection{Server Class Reference}
+\label{classServer}\index{Server@{Server}}
+
+
+The \mbox{\hyperlink{classServer}{Server}} class extends QTcp\+Server to handle incoming network connections.  
+
+
+
+
+{\ttfamily \#include $<$server.\+h$>$}
+
+
+
+Inheritance diagram for Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classServer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classServer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classServer_aae87a306c2ee55cdb1022411da3abcbe}{start}} (qint16 port=2222)
+\begin{DoxyCompactList}\small\item\em Starts the server and listens for incoming connections on the specified port. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classServer_a1a81f6a80746cae03fc549a11c70fb35}\label{classServer_a1a81f6a80746cae03fc549a11c70fb35}} 
+void {\bfseries quit} ()
+\begin{DoxyCompactList}\small\item\em Stops the server by closing the listening socket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServer_aaf98d5194faee831c6340cc736b9b879}{Server}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classServer}{Server}} object with an optional parent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}{$\sim$\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classServer}{Server}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classServer_aa41c63566371fbfe1baf20c1c345096f}{incoming\+Connection}} (qintptr handle) override
+\begin{DoxyCompactList}\small\item\em Handles incoming connections by creating and starting a \mbox{\hyperlink{classServerHandler}{Server\+Handler}} instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classServer}{Server}} class extends QTcp\+Server to handle incoming network connections. 
+
+This class sets up a TCP server, manages incoming connections using a thread pool, and handles incoming requests with instances of the \mbox{\hyperlink{classServerHandler}{Server\+Handler}} class. It supports multithreaded processing and provides methods to start and stop the server. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classServer_aaf98d5194faee831c6340cc736b9b879}\label{classServer_aaf98d5194faee831c6340cc736b9b879}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \mbox{\hyperlink{classServer}{Server}} object with an optional parent. 
+
+Initializes the thread pool and mutex, and sets the maximum thread count for handling incoming connections.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent QObject. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}\label{classServer_a4b3aa2579cb1c8cd1d069582c14d0fa6}} 
+\index{Server@{Server}!````~Server@{$\sim$Server}}
+\index{````~Server@{$\sim$Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{$\sim$Server()}{~Server()}}
+{\footnotesize\ttfamily Server\+::$\sim$\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classServer}{Server}} class. 
+
+Cleans up resources by clearing and deleting the thread pool. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServer_aa41c63566371fbfe1baf20c1c345096f}\label{classServer_aa41c63566371fbfe1baf20c1c345096f}} 
+\index{Server@{Server}!incomingConnection@{incomingConnection}}
+\index{incomingConnection@{incomingConnection}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{incomingConnection()}{incomingConnection()}}
+{\footnotesize\ttfamily void Server\+::incoming\+Connection (\begin{DoxyParamCaption}\item[{qintptr}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Handles incoming connections by creating and starting a \mbox{\hyperlink{classServerHandler}{Server\+Handler}} instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The socket descriptor for the incoming connection. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classServer_aae87a306c2ee55cdb1022411da3abcbe}\label{classServer_aae87a306c2ee55cdb1022411da3abcbe}} 
+\index{Server@{Server}!start@{start}}
+\index{start@{start}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily void Server\+::start (\begin{DoxyParamCaption}\item[{qint16}]{port = {\ttfamily 2222} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Starts the server and listens for incoming connections on the specified port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port number to listen on (default is 2222). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+server.\+h\item 
+server.\+cpp\end{DoxyCompactItemize}

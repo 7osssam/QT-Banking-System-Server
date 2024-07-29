@@ -1,0 +1,8 @@
+<map id="DB::DatabaseManager::truncateTable" name="DB::DatabaseManager::truncateTable">
+<area shape="rect" id="node1" title="Truncates a specified table." alt="" coords="5,72,158,115"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#a92000f766524ccf276d209617de6bfca" title="Executes the built query." alt="" coords="206,39,358,81"/>
+<area shape="rect" id="node6" href="$classDB_1_1DatabaseManager.html#a09690342e7a7ad71165b3b38aea8e6c0" title="Sets the table for the query." alt="" coords="206,105,358,148"/>
+<area shape="rect" id="node3" href="$classDB_1_1DatabaseManager.html#abfbee5e0fdaf35b4bb998932203aea4d" title="Gets the SQL SELECT query." alt="" coords="406,5,558,48"/>
+<area shape="rect" id="node5" href="$classDB_1_1DatabaseManager.html#a58d1a2ff38fcf44e8a300f5f8282936b" title="Resets the query settings." alt="" coords="406,72,558,115"/>
+<area shape="rect" id="node4" href="$classDB_1_1DatabaseManager.html#aa9c79b640a095bb76790c2dffe85c9a0" title="Selects columns for the query." alt="" coords="606,5,759,48"/>
+</map>

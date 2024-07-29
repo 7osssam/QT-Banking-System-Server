@@ -1,0 +1,4 @@
+<map id="DB::DatabaseManager::clone" name="DB::DatabaseManager::clone">
+<area shape="rect" id="node1" title="Clones the current DatabaseManager instance." alt="" coords="206,5,358,48"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#a254a5eb1d473b06d56ce36b0a8916991" title="Gets the count of records matching the query criteria." alt="" coords="5,5,158,48"/>
+</map>

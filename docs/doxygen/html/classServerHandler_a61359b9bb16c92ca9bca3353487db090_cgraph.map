@@ -1,0 +1,5 @@
+<map id="ServerHandler::run" name="ServerHandler::run">
+<area shape="rect" id="node1" title="Implements QRunnable&#39;s run method to handle the client connection." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="node2" href="$classServerHandler.html#a759cbb09760e8ca60cefe596bef59c1e" title="Slot to handle readyRead signal from QTcpSocket." alt="" coords="181,5,352,32"/>
+<area shape="rect" id="node3" href="$classRequestManager.html#ae4c8344d4bd079620effa090b30f8234" title="Processes an incoming request and generates an appropriate response." alt="" coords="400,5,607,32"/>
+</map>

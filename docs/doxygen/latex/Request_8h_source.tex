@@ -1,0 +1,79 @@
+\hypertarget{Request_8h_source}{}\doxysection{Request.\+h}
+\label{Request_8h_source}\index{Request.h@{Request.h}}
+\mbox{\hyperlink{Request_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ REQUEST\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ REQUEST\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QJsonArray>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QMutexLocker>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{db_8h}{db.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRequest}{Request}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRequest_ae580c02633722f323ad8a738e4952ea1}{isDBConnectionValid}}(\mbox{\hyperlink{classDB_1_1DatabaseManager}{DB::DatabaseManager}}*\ dbManager)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dbManager\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ create\ instance"{}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ QString\ dbError;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classDB_1_1DatabaseManager_a01d24339865f4b3199e81b5224ae22bc}{DB::DatabaseManager::checkConnection}}(dbError))}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ connect\ to\ db"{}}\ <<\ dbError;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00065\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{classRequest_ad457f5030e3f983ffdbc7439989eebcb}{CreateDBConnectionError}}(QJsonObject\&\ response,\ QJsonObject\&\ dataObj)}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ dataObj.insert(\textcolor{stringliteral}{"{}status"{}},\ \textcolor{keywordtype}{int}(\textcolor{keyword}{false}));}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ dataObj.insert(\textcolor{stringliteral}{"{}message"{}},\ \textcolor{stringliteral}{"{}Internal\ server\ error"{}});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Data"{}},\ dataObj);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ QJsonDocument\ responseDoc(response);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ QByteArray\ \ \ \ responseData\ =\ responseDoc.toJson();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ qDebug().noquote()\ <<\ \textcolor{stringliteral}{"{}<-\/-\/\ DB\ Connection\ Error\ :\(\backslash\)n"{}}\ <<\ responseDoc.toJson(QJsonDocument::Indented);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ response;}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00090\ \ \ \ \ QJsonObject\ \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{CreateErrorResponse}}(QJsonObject\&\ response,\ QJsonObject\&\ dataObj,\ QString\ message)}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ dataObj.insert(\textcolor{stringliteral}{"{}status"{}},\ \textcolor{keywordtype}{int}(\textcolor{keyword}{false}));}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ dataObj.insert(\textcolor{stringliteral}{"{}message"{}},\ message);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Data"{}},\ dataObj);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ response\ to\ JSON}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ QJsonDocument\ responseDoc(response);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ QByteArray\ \ \ \ responseData\ =\ responseDoc.toJson();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ qDebug().noquote()\ <<\ \textcolor{stringliteral}{"{}<-\/-\/\ Error\ Response\ :\(\backslash\)n"{}}\ <<\ responseDoc.toJson(QJsonDocument::Indented);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ response;}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classRequest_a45cc5d15eb7b9c9e97bd7328c9a90d3f}{\string~Request}}()}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{virtual}\ QJsonObject\ \mbox{\hyperlink{classRequest_a634ac3a98caa9e90d03487556bbecfed}{execute}}(\textcolor{keyword}{const}\ QJsonObject\&\ jsonObj,\ QMutex\&\ m)\ =\ 0;}
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REQUEST\_H}}
+
+\end{DoxyCode}

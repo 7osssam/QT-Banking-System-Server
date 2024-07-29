@@ -1,0 +1,112 @@
+\hypertarget{classUpdateUserRequest}{}\doxysection{Update\+User\+Request Class Reference}
+\label{classUpdateUserRequest}\index{UpdateUserRequest@{UpdateUserRequest}}
+
+
+The \mbox{\hyperlink{classUpdateUserRequest}{Update\+User\+Request}} class handles user update requests.  
+
+
+
+
+{\ttfamily \#include $<$Update\+User\+Request.\+h$>$}
+
+
+
+Inheritance diagram for Update\+User\+Request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classUpdateUserRequest__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Update\+User\+Request\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classUpdateUserRequest__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUpdateUserRequest_a6d31dd9ab2e993a6c54eb0ecc3254406}{Update\+User\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classUpdateUserRequest}{Update\+User\+Request}} class. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{execute}} (const QJson\+Object \&json\+Obj, QMutex \&m) override
+\begin{DoxyCompactList}\small\item\em Executes the user update request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRequest}{Request}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRequest_a45cc5d15eb7b9c9e97bd7328c9a90d3f}{$\sim$\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classRequest}{Request}} class. \end{DoxyCompactList}\item 
+virtual QJson\+Object \mbox{\hyperlink{classRequest_a634ac3a98caa9e90d03487556bbecfed}{execute}} (const QJson\+Object \&json\+Obj, QMutex \&m)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to execute a request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classRequest}{Request}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classRequest_ae580c02633722f323ad8a738e4952ea1}{is\+DBConnection\+Valid}} (\mbox{\hyperlink{classDB_1_1DatabaseManager}{DB\+::\+Database\+Manager}} $\ast$db\+Manager)
+\begin{DoxyCompactList}\small\item\em Checks if the database connection is valid. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classRequest_ad457f5030e3f983ffdbc7439989eebcb}{Create\+DBConnection\+Error}} (QJson\+Object \&response, QJson\+Object \&data\+Obj)
+\begin{DoxyCompactList}\small\item\em Creates a JSON response indicating a database connection error. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classRequest_a6f5f7c7d240664a2c29dcd54bd9974d6}{Create\+Error\+Response}} (QJson\+Object \&response, QJson\+Object \&data\+Obj, QString message)
+\begin{DoxyCompactList}\small\item\em Creates a generic error JSON response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classUpdateUserRequest}{Update\+User\+Request}} class handles user update requests. 
+
+This class processes requests to update user details, including first name, last name, email, and role. It ensures that the requester has the necessary permissions and that the updated email is not already associated with another user. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUpdateUserRequest_a6d31dd9ab2e993a6c54eb0ecc3254406}\label{classUpdateUserRequest_a6d31dd9ab2e993a6c54eb0ecc3254406}} 
+\index{UpdateUserRequest@{UpdateUserRequest}!UpdateUserRequest@{UpdateUserRequest}}
+\index{UpdateUserRequest@{UpdateUserRequest}!UpdateUserRequest@{UpdateUserRequest}}
+\doxysubsubsection{\texorpdfstring{UpdateUserRequest()}{UpdateUserRequest()}}
+{\footnotesize\ttfamily Update\+User\+Request\+::\+Update\+User\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classUpdateUserRequest}{Update\+User\+Request}} class. 
+
+Initializes the Database\+Manager instance for handling database operations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}\label{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}} 
+\index{UpdateUserRequest@{UpdateUserRequest}!execute@{execute}}
+\index{execute@{execute}!UpdateUserRequest@{UpdateUserRequest}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily QJson\+Object Update\+User\+Request\+::execute (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{json\+Obj,  }\item[{QMutex \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executes the user update request. 
+
+This method processes the JSON request to update user details. It validates the requester\textquotesingle{}s role, checks if the email is already associated with another user, and updates the user information in the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\+Obj} & The JSON object containing the request data. \\
+\hline
+{\em m} & The mutex to lock during the execution. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A JSON object containing the response data. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRequest_a634ac3a98caa9e90d03487556bbecfed}{Request}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Update\+User\+Request.\+h\end{DoxyCompactItemize}

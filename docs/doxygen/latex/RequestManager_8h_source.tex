@@ -1,0 +1,144 @@
+\hypertarget{RequestManager_8h_source}{}\doxysection{Request\+Manager.\+h}
+\label{RequestManager_8h_source}\index{RequestManager.h@{RequestManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REQUESTMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ REQUESTMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QByteArray>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QJsonParseError>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Request_8h}{Requests/Request.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Requests/LoginRequest.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Requests/GetAccountNumberRequest.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Requests/GetBalanceRequest.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Requests/GetTransactionsHistoryRequest.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Requests/MakeTransactionRequest.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Requests/GetDatabaseRequest.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Requests/CreateNewUserRequest.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Requests/DeleteUserRequest.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Requests/UpdateUserRequest.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Requests/UserInitRequest.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Requests/UpdateEmailRequest.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}Requests/UpdatePasswordRequest.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRequestManager}{RequestManager}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ QMutex*\ \ \ \ \ \ \ \ \ \ \ \ \ Mutex\_;\ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ QMap<int,\ Request*>\ requests\_;\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ QJsonObject\ handleJsonParseError(\textcolor{keyword}{const}\ QJsonParseError\&\ parseError)}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ QJsonObject\ response;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ QJsonObject\ data;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Response"{}},\ -\/1);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}status"{}},\ \textcolor{keywordtype}{int}(\textcolor{keyword}{false}));}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ data.insert(\textcolor{stringliteral}{"{}message"{}},\ \textcolor{stringliteral}{"{}JSON\ Parse\ Error:\ "{}}\ +\ parseError.errorString());}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ response.insert(\textcolor{stringliteral}{"{}Data"{}},\ data);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Convert\ response\ to\ JSON}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ QJsonDocument\ responseDoc(response);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ QByteArray\ \ \ \ responseData\ =\ responseDoc.toJson();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Send\ response}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ qDebug().noquote()\ <<\ \textcolor{stringliteral}{"{}<-\/-\/\ JSON\ Parse\ Error::Response\ :\(\backslash\)n"{}}\ <<\ responseDoc.toJson(QJsonDocument::Indented);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ response;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310}{AvailableRequests}}}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a517c61a4e946ec7f92a01e8622c97632}{Login}}\ =\ 1,\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a1ce33251979ab4a049ebc6f80a7b1ca7}{GetAccountnumber}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a41aa3cfd8482a75d229a86203a7a7001}{GetBalance}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310af4f4491b688d2274389535e68917d549}{GetTransactionsHistory}},\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a073436de6bc4635f6f1d6a739d15e115}{MakeTransaction}},\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a58fc4431f7c77a667ed7d524efdb2155}{TransferAmount}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a9aa35c99906b91e1b0b65522368682a1}{GetDatabase}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a0b2388382a273df5b82ddb6abff8d675}{CreateNewUser}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138}{DeleteUser}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310abe9610f90871c52199552ba9a7eee628}{UpdateUser}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a3d57ea768887ade2528b49470afeee2e}{UserInit}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310ac8974e51516860572533ff425c9162ba}{UpdateEmail}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a55a93a95e948c8d526ab395d9b56b7bc}{UpdatePassword}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a11bb09725c432a23db823edbe06bf04b}{JsonParseError}}\ =\ -\/1\ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classRequestManager_adf7bfbf17876e300f0f02aaae671535a}{RequestManager}}(QMutex*\ Mutex)\ :\ Mutex\_(Mutex)}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a517c61a4e946ec7f92a01e8622c97632}{Login}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classLoginRequest}{LoginRequest}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a1ce33251979ab4a049ebc6f80a7b1ca7}{GetAccountnumber}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classGetAccountNumberRequest}{GetAccountNumberRequest}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a41aa3cfd8482a75d229a86203a7a7001}{GetBalance}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classGetBalanceRequest}{GetBalanceRequest}}();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310af4f4491b688d2274389535e68917d549}{GetTransactionsHistory}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classGetTransactionsHistoryRequest}{GetTransactionsHistoryRequest}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a9aa35c99906b91e1b0b65522368682a1}{GetDatabase}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classGetDatabaseRequest}{GetDatabaseRequest}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a073436de6bc4635f6f1d6a739d15e115}{MakeTransaction}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classMakeTransactionRequest}{MakeTransactionRequest}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a0b2388382a273df5b82ddb6abff8d675}{CreateNewUser}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classCreateNewUserRequest}{CreateNewUserRequest}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138}{DeleteUser}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classDeleteUserRequest}{DeleteUserRequest}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310abe9610f90871c52199552ba9a7eee628}{UpdateUser}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classUpdateUserRequest}{UpdateUserRequest}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a3d57ea768887ade2528b49470afeee2e}{UserInit}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classUserInitRequest}{UserInitRequest}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310ac8974e51516860572533ff425c9162ba}{UpdateEmail}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classUpdateEmailRequest}{UpdateEmailRequest}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ requests\_[\mbox{\hyperlink{classRequestManager_af9c93ecb9b028e390635d0e155d10310a55a93a95e948c8d526ab395d9b56b7bc}{UpdatePassword}}]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classUpdatePasswordRequest}{UpdatePasswordRequest}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00118\ \ \ \ \ QByteArray\ \mbox{\hyperlink{classRequestManager_ae4c8344d4bd079620effa090b30f8234}{makeRequest}}(QByteArray\ data)}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ requestNumber;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ QJsonParseError\ parseError;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ QJsonDocument\ \ \ jsonDoc\ =\ QJsonDocument::fromJson(data,\ \&parseError);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ qDebug().noquote()\ <<\ \textcolor{stringliteral}{"{}-\/-\/>\ Request\ received:\ "{}}\ <<\ jsonDoc.toJson(QJsonDocument::Indented);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ QJsonObject\ jsonObjResponse;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ QJsonObject\ jsonObjRequest\ =\ jsonDoc.object();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parseError.error\ ==\ QJsonParseError::NoError)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ requestNumber\ =\ jsonObjRequest.value(\textcolor{stringliteral}{"{}Request"{}}).toInt();}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qCritical()\ <<\ \textcolor{stringliteral}{"{}JSON\ Parse\ Error:\ "{}}\ <<\ parseError.errorString();}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ jsonObjResponse\ =\ handleJsonParseError(parseError);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (requests\_.contains(requestNumber))}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Request*\ request\ =\ requests\_[requestNumber];}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ jsonObjResponse\ =\ requests\_[requestNumber]-\/>execute(jsonObjRequest,\ *Mutex\_);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qCritical()\ <<\ \textcolor{stringliteral}{"{}Request\ not\ found"{}};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qCritical()\ <<\ \textcolor{stringliteral}{"{}Invalid\ request:\ "{}}\ <<\ requestNumber;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ QJsonDocument\ responseDoc(jsonObjResponse);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ QByteArray\ \ \ \ responseByteArr\ =\ responseDoc.toJson();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ responseByteArr;}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{classRequestManager_a237db6121feaf809885dd140ee6da952}{\string~RequestManager}}()}
+\DoxyCodeLine{00167\ \ \ \ \ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ request:\ requests\_)}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ request;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REQUESTMANAGER\_H}}
+
+\end{DoxyCode}

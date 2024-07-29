@@ -1,0 +1,49 @@
+\hypertarget{serverhandler_8h_source}{}\doxysection{serverhandler.\+h}
+\label{serverhandler_8h_source}\index{serverhandler.h@{serverhandler.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERVERHANDLER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERVERHANDLER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QEventLoop>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QRunnable>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QThreadPool>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QJsonDocument>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QJsonObject>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QCryptographicHash>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QByteArray>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}RequestManager.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServerHandler}{ServerHandler}}\ :\ \textcolor{keyword}{public}\ QObject,\ \textcolor{keyword}{public}\ QRunnable}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classServerHandler}{ServerHandler}}(QMutex*\ m,\ qintptr\ handle\ =\ 0,\ QObject*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classServerHandler_a38748a26a3142d81018863876b06164e}{\string~ServerHandler}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServerHandler_a759cbb09760e8ca60cefe596bef59c1e}{readyRead}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServerHandler_a61359b9bb16c92ca9bca3353487db090}{run}}();}
+\DoxyCodeLine{00063\ signals:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ No\ signals\ defined\ for\ this\ class}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ No\ slots\ defined\ for\ this\ class}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ \ \ \ \ qintptr\ \ \ \ \ \ \ \ \ handle\_;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ QTcpSocket*\ \ \ \ \ clientSocket\_;\ \ }
+\DoxyCodeLine{00072\ \ \ \ \ QMutex*\ \ \ \ \ \ \ \ \ Mutex\_;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classRequestManager}{RequestManager}}*\ requestManager;\ }
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ SERVERHANDLER\_H}}
+
+\end{DoxyCode}

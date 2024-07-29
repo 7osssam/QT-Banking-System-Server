@@ -1,0 +1,240 @@
+\hypertarget{classDB_1_1DbResult}{}\doxysection{DB\+::Db\+Result Class Reference}
+\label{classDB_1_1DbResult}\index{DB::DbResult@{DB::DbResult}}
+
+
+The \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} class represents a result set returned from a database query.  
+
+
+
+
+{\ttfamily \#include $<$dbresult.\+h$>$}
+
+
+
+Collaboration diagram for DB\+::Db\+Result\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classDB_1_1DbResult__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDB_1_1DbResult_a2990ab2f7eb48e24a3646d5695dd38fa}{Db\+Result}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDB_1_1DbResult_aaa1ecd40a8c6a179b73a73f79f31a21f}{Db\+Result}} (const QList$<$ QVariant $>$ \&\mbox{\hyperlink{classDB_1_1DbResult_a29d609255fca6904efa4feb0c0050e19}{data}})
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} from a list of QVariant data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9}{is\+Empty}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the result set is empty. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}{first}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the first item in the result set. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDB_1_1DbResult_a22c99c1160b466e76ff325fc6cb2639e}{size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of items in the result set. \end{DoxyCompactList}\item 
+QJson\+Object \mbox{\hyperlink{classDB_1_1DbResult_a29d609255fca6904efa4feb0c0050e19}{data}} (int pos) const
+\begin{DoxyCompactList}\small\item\em Retrieves data at a specific position in the result set. \end{DoxyCompactList}\item 
+QJson\+Array \mbox{\hyperlink{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3}{data}} () const
+\begin{DoxyCompactList}\small\item\em Gets all the data in the result set. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDB_1_1DbResult_ade90f923071d8f646dc0919e88d1e7cd}{to\+Json\+String}} () const
+\begin{DoxyCompactList}\small\item\em Converts the result set to a JSON string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} class represents a result set returned from a database query. 
+
+This class encapsulates the data returned from a database operation and provides methods to access and manipulate the result. It stores the result in a JSON array format. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDB_1_1DbResult_a2990ab2f7eb48e24a3646d5695dd38fa}\label{classDB_1_1DbResult_a2990ab2f7eb48e24a3646d5695dd38fa}} 
+\index{DB::DbResult@{DB::DbResult}!DbResult@{DbResult}}
+\index{DbResult@{DbResult}!DB::DbResult@{DB::DbResult}}
+\doxysubsubsection{\texorpdfstring{DbResult()}{DbResult()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Db\+Result\+::\+Db\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}}. 
+
+Initializes an empty \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} object. \mbox{\Hypertarget{classDB_1_1DbResult_aaa1ecd40a8c6a179b73a73f79f31a21f}\label{classDB_1_1DbResult_aaa1ecd40a8c6a179b73a73f79f31a21f}} 
+\index{DB::DbResult@{DB::DbResult}!DbResult@{DbResult}}
+\index{DbResult@{DbResult}!DB::DbResult@{DB::DbResult}}
+\doxysubsubsection{\texorpdfstring{DbResult()}{DbResult()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Db\+Result\+::\+Db\+Result (\begin{DoxyParamCaption}\item[{const QList$<$ QVariant $>$ \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classDB_1_1DbResult}{Db\+Result}} from a list of QVariant data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A QList$<$\+QVariant$>$ containing data to be stored in the result. The data is converted into a JSON array of QJson\+Objects. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classDB_1_1DbResult_aaa1ecd40a8c6a179b73a73f79f31a21f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3}\label{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3}} 
+\index{DB::DbResult@{DB::DbResult}!data@{data}}
+\index{data@{data}!DB::DbResult@{DB::DbResult}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QJson\+Array Db\+Result\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets all the data in the result set. 
+
+\begin{DoxyReturn}{Returns}
+A QJson\+Array containing all the items in the result set. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DbResult_aaa1ecd40a8c6a179b73a73f79f31a21f}{Db\+Result()}}, and \mbox{\hyperlink{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}{first()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DbResult_a1bd962425afaf480ea713184af2bf7c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DbResult_a29d609255fca6904efa4feb0c0050e19}\label{classDB_1_1DbResult_a29d609255fca6904efa4feb0c0050e19}} 
+\index{DB::DbResult@{DB::DbResult}!data@{data}}
+\index{data@{data}!DB::DbResult@{DB::DbResult}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QJson\+Object Db\+Result\+::data (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves data at a specific position in the result set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The index position of the item to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A QJson\+Object representing the data at the specified position. Returns an empty QJson\+Object if the position is out of bounds or if the result set is empty. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, and \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classDB_1_1DbResult_a29d609255fca6904efa4feb0c0050e19_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DbResult_a29d609255fca6904efa4feb0c0050e19_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}\label{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff}} 
+\index{DB::DbResult@{DB::DbResult}!first@{first}}
+\index{first@{first}!DB::DbResult@{DB::DbResult}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily QJson\+Object Db\+Result\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the first item in the result set. 
+
+\begin{DoxyReturn}{Returns}
+A QJson\+Object representing the first item. If the result set is empty, returns an empty QJson\+Object. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request\+::execute()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}, and \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request\+::execute()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDB_1_1DbResult_a0c6b0bd92c8bd5fa6d2d2f18607c30ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9}\label{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9}} 
+\index{DB::DbResult@{DB::DbResult}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!DB::DbResult@{DB::DbResult}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Db\+Result\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the result set is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the result set is empty, false otherwise. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DbResult_a29d609255fca6904efa4feb0c0050e19}{data()}}, \mbox{\hyperlink{classCreateNewUserRequest_a7c470ece3a6719a1675b8bcb2059b1ec}{Create\+New\+User\+Request\+::execute()}}, \mbox{\hyperlink{classDeleteUserRequest_adcdbc3f54c4e7d8d479184de717af882}{Delete\+User\+Request\+::execute()}}, \mbox{\hyperlink{classGetAccountNumberRequest_a91e2118e19cf91cb91586d5b15969b9c}{Get\+Account\+Number\+Request\+::execute()}}, \mbox{\hyperlink{classGetBalanceRequest_a402389ca70e11f1e22f888e1b92b91a9}{Get\+Balance\+Request\+::execute()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}, \mbox{\hyperlink{classLoginRequest_ada002b1d5d32f5e457e6b3cca8cc547c}{Login\+Request\+::execute()}}, \mbox{\hyperlink{classMakeTransactionRequest_acbf1d65da80c25ae77f7a3e65d11f802}{Make\+Transaction\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateEmailRequest_a378a8e08c236f3ad5b7b4b8d75683ac0}{Update\+Email\+Request\+::execute()}}, \mbox{\hyperlink{classUpdatePasswordRequest_a33c6b088d6ae2deda23f3735ad3f7057}{Update\+Password\+Request\+::execute()}}, \mbox{\hyperlink{classUpdateUserRequest_af13cf9798c3eb5d2e283dcd02e6ee643}{Update\+User\+Request\+::execute()}}, and \mbox{\hyperlink{classUserInitRequest_ad53a342140eac714b3255f526d5fc455}{User\+Init\+Request\+::execute()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DbResult_aa69aec34a8771cd30ea590b9e66d68f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DbResult_a22c99c1160b466e76ff325fc6cb2639e}\label{classDB_1_1DbResult_a22c99c1160b466e76ff325fc6cb2639e}} 
+\index{DB::DbResult@{DB::DbResult}!size@{size}}
+\index{size@{size}!DB::DbResult@{DB::DbResult}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Db\+Result\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of items in the result set. 
+
+\begin{DoxyReturn}{Returns}
+The number of items in the result set. 
+\end{DoxyReturn}
+
+
+Referenced by \mbox{\hyperlink{classDB_1_1DbResult_a29d609255fca6904efa4feb0c0050e19}{data()}}, \mbox{\hyperlink{classGetDatabaseRequest_a821a561200ba4d89d66012b9d1cd6613}{Get\+Database\+Request\+::execute()}}, and \mbox{\hyperlink{classGetTransactionsHistoryRequest_aabf4abfb6314b7a8712f22d67258ca34}{Get\+Transactions\+History\+Request\+::execute()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDB_1_1DbResult_a22c99c1160b466e76ff325fc6cb2639e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDB_1_1DbResult_ade90f923071d8f646dc0919e88d1e7cd}\label{classDB_1_1DbResult_ade90f923071d8f646dc0919e88d1e7cd}} 
+\index{DB::DbResult@{DB::DbResult}!toJsonString@{toJsonString}}
+\index{toJsonString@{toJsonString}!DB::DbResult@{DB::DbResult}}
+\doxysubsubsection{\texorpdfstring{toJsonString()}{toJsonString()}}
+{\footnotesize\ttfamily QString Db\+Result\+::to\+Json\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Converts the result set to a JSON string. 
+
+\begin{DoxyReturn}{Returns}
+A QString containing the JSON representation of the result set. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dbresult.\+h\item 
+dbresult.\+cpp\end{DoxyCompactItemize}

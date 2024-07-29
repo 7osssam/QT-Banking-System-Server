@@ -1,0 +1,5 @@
+<map id="DB::DatabaseManager::exec" name="DB::DatabaseManager::exec">
+<area shape="rect" id="node1" title="Executes a SQL command." alt="" coords="5,39,158,81"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#a8b135d7a6cfd7381d36d0f4a242bced4" title="Gets the last executed query." alt="" coords="206,5,358,48"/>
+<area shape="rect" id="node3" href="$classDB_1_1DatabaseManager.html#a58d1a2ff38fcf44e8a300f5f8282936b" title="Resets the query settings." alt="" coords="206,72,358,115"/>
+</map>

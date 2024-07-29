@@ -1,0 +1,5 @@
+<map id="DB::DatabaseManager::checkConnection" name="DB::DatabaseManager::checkConnection">
+<area shape="rect" id="node1" title="Checks the database connection." alt="" coords="5,5,158,48"/>
+<area shape="rect" id="node2" href="$classDB_1_1DatabaseManager.html#ad56bd7bc9d99adadd8afdc5fb19ac67a" title="Creates an instance of DatabaseManager." alt="" coords="206,5,358,48"/>
+<area shape="rect" id="node3" href="$classDB_1_1DatabaseManager.html#a0d786883976ea0f32e3566415138478d" title="Gets the last error occurred." alt="" coords="406,5,558,48"/>
+</map>
