@@ -1,1 +1,160 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1184px" preserveAspectRatio="none" style="width:619px;height:1184px;background:#FFFFFF;" version="1.1" viewBox="0 0 619 1184" width="619px" zoomAndPan="magnify"><defs/><g><g id="Init"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="115" x="28" y="104"/><line style="stroke:#181818;stroke-width:0.5;" x1="28" x2="143" y1="131.6094" y2="131.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="38" y="123.5332">Initialize Server</text></g><g id="SetupLogging"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="29.5" y="232"/><line style="stroke:#181818;stroke-width:0.5;" x1="29.5" x2="141.5" y1="259.6094" y2="259.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="39.5" y="251.5332">Setup Logging</text></g><g id="DBConn"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="157" x="7" y="360"/><line style="stroke:#181818;stroke-width:0.5;" x1="7" x2="164" y1="387.6094" y2="387.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="17" y="379.5332">Database Connection</text></g><g id="Listen"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="130" y="488"/><line style="stroke:#181818;stroke-width:0.5;" x1="130" x2="253" y1="515.6094" y2="515.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="140" y="507.5332">Server Listening</text></g><g id="HandleConn"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="140" x="265.5" y="616"/><line style="stroke:#181818;stroke-width:0.5;" x1="265.5" x2="405.5" y1="643.6094" y2="643.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="275.5" y="635.5332">Handle Connection</text></g><g id="ProcessReq"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="128" x="254.5" y="744"/><line style="stroke:#181818;stroke-width:0.5;" x1="254.5" x2="382.5" y1="771.6094" y2="771.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="264.5" y="763.5332">Process Request</text></g><g id="SendResp"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="121" x="424" y="872"/><line style="stroke:#181818;stroke-width:0.5;" x1="424" x2="545" y1="899.6094" y2="899.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="434" y="891.5332">Send Response</text></g><g id="StopServer"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="95" x="135" y="616"/><line style="stroke:#181818;stroke-width:0.5;" x1="135" x2="230" y1="643.6094" y2="643.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="145" y="635.5332">Stop Server</text></g><g id="LogError"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="80" x="244.5" y="1128"/><line style="stroke:#181818;stroke-width:0.5;" x1="244.5" x2="324.5" y1="1155.6094" y2="1155.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="254.5" y="1147.5332">Log Error</text></g><g id="ValidateReq"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="128" x="150.5" y="872"/><line style="stroke:#181818;stroke-width:0.5;" x1="150.5" x2="278.5" y1="899.6094" y2="899.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="160.5" y="891.5332">Validate Request</text></g><g id="HandleReqFail"><rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="130" y="1000"/><line style="stroke:#181818;stroke-width:0.5;" x1="130" x2="299" y1="1027.6094" y2="1027.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="140" y="1019.5332">Handle Request Failure</text></g><ellipse cx="85.5" cy="16" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="208.5" cy="769" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="208.5" cy="769" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1.0;"/><!--link *start* to Init--><g id="link_*start*_Init"><path d="M85.5,26.08 C85.5,42.86 85.5,73.22 85.5,97.65 " fill="none" id="*start*-to-Init" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="85.5,103.65,89.5,94.65,85.5,98.65,81.5,94.65,85.5,103.65" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="86.5" y="70.4951">Start</text></g><!--link Init to SetupLogging--><g id="link_Init_SetupLogging"><path d="M85.5,154.29 C85.5,176.61 85.5,203.49 85.5,225.78 " fill="none" id="Init-to-SetupLogging" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="85.5,231.78,89.5,222.78,85.5,226.78,81.5,222.78,85.5,231.78" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="86.5" y="198.4951">Initialize Logger</text></g><!--link SetupLogging to DBConn--><g id="link_SetupLogging_DBConn"><path d="M85.5,282.29 C85.5,304.61 85.5,331.49 85.5,353.78 " fill="none" id="SetupLogging-to-DBConn" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="85.5,359.78,89.5,350.78,85.5,354.78,81.5,350.78,85.5,359.78" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="86.5" y="326.4951">Setup Database</text></g><!--link DBConn to DBConn--><g id="link_DBConn_DBConn"><path d="M164.01,373.14 C184,373.92 199,377.88 199,385 C199,392.12 189.9954,395.8461 170.0054,396.6261 " fill="none" id="DBConn-to-DBConn" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="164.01,396.86,173.1591,400.506,169.0062,396.6651,172.8472,392.5121,164.01,396.86" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="205" y="390.4951">Check Connection</text></g><!--link DBConn to Listen--><g id="link_DBConn_Listen"><path d="M105.94,410.29 C124.71,432.61 148.5077,460.8985 167.2577,483.1885 " fill="none" id="DBConn-to-Listen" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="171.12,487.78,168.3875,478.3178,167.9014,483.9537,162.2655,483.4676,171.12,487.78" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="145.5" y="454.4951">Connection Successful</text></g><!--link DBConn to LogError--><g id="link_DBConn_LogError"><path d="M76.48,410.25 C67.97,435.34 56.5,475.86 56.5,512 C56.5,512 56.5,512 56.5,1026 C56.5,1110.8 172.8661,1138.1517 238.3161,1147.1617 " fill="none" id="DBConn-to-LogError" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="244.26,1147.98,235.8896,1142.79,239.3067,1147.2981,234.7986,1150.7152,244.26,1147.98" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="57.5" y="774.4951">Connection Failed</text></g><!--link Listen to HandleConn--><g id="link_Listen_HandleConn"><path d="M219.82,538.09 C230.7,547.39 243.21,558.15 254.5,568 C272.64,583.84 288.415,597.8432 304.135,611.8832 " fill="none" id="Listen-to-HandleConn" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="308.61,615.88,304.562,606.9015,304.8808,612.5494,299.233,612.8682,308.61,615.88" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="275.5" y="582.4951">Accept Client</text></g><!--link HandleConn to ProcessReq--><g id="link_HandleConn_ProcessReq"><path d="M332.22,666.29 C329.21,688.61 325.5703,715.5436 322.5703,737.8336 " fill="none" id="HandleConn-to-ProcessReq" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="321.77,743.78,326.9347,735.394,322.4369,738.8247,319.0062,734.3269,321.77,743.78" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="328.5" y="710.4951">Read Data</text></g><!--link ProcessReq to ValidateReq--><g id="link_ProcessReq_ValidateReq"><path d="M254.27,789.34 C206.47,803.87 149.21,821.67 147.5,824 C134.98,841.08 145.3985,855.0537 164.5385,868.4837 " fill="none" id="ProcessReq-to-ValidateReq" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="169.45,871.93,164.3802,863.4862,165.3571,869.0581,159.7852,870.0349,169.45,871.93" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="148.5" y="838.4951">Validate Data</text></g><!--link ValidateReq to ProcessReq--><g id="link_ValidateReq_ProcessReq"><path d="M231.21,871.77 C241.31,857.53 254.67,839.37 267.5,824 C275.93,813.9 281.5885,807.6118 290.3385,798.4818 " fill="none" id="ValidateReq-to-ProcessReq" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="294.49,794.15,285.3748,797.8801,291.0304,797.7599,291.1506,803.4154,294.49,794.15" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="60" x="268.5" y="838.4951">Data Valid</text></g><!--link ValidateReq to HandleReqFail--><g id="link_ValidateReq_HandleReqFail"><path d="M214.5,922.29 C214.5,944.61 214.5,971.49 214.5,993.78 " fill="none" id="ValidateReq-to-HandleReqFail" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="214.5,999.78,218.5,990.78,214.5,994.78,210.5,990.78,214.5,999.78" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="215.5" y="966.4951">Data Invalid</text></g><!--link ProcessReq to ProcessReq--><g id="link_ProcessReq_ProcessReq"><path d="M382.77,757.02 C402.26,757.32 417.5,761.31 417.5,769 C417.5,776.69 408.2593,780.5877 388.7693,780.8877 " fill="none" id="ProcessReq-to-ProcessReq" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="382.77,780.98,391.8305,784.841,387.7694,780.903,391.7074,776.842,382.77,780.98" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="423.5" y="774.4951">Process Request</text></g><!--link ProcessReq to SendResp--><g id="link_ProcessReq_SendResp"><path d="M350.51,794.29 C380,816.68 418.7312,846.0719 448.0912,868.3619 " fill="none" id="ProcessReq-to-SendResp" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="452.87,871.99,448.1205,863.362,448.8876,868.9666,443.2831,869.7338,452.87,871.99" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107" x="411.5" y="838.4951">Prepare Response</text></g><!--link SendResp to Listen--><g id="link_SendResp_Listen"><path d="M508.83,871.94 C516.14,863.23 523.32,852.85 527.5,842 C543.15,801.33 545.37,784.96 530.5,744 C493.61,642.35 458.1,618.54 362.5,568 C328.23,549.89 292.6506,538.1538 259.1806,529.3038 " fill="none" id="SendResp-to-Listen" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="253.38,527.77,261.0584,533.9378,258.2139,529.0482,263.1035,526.2036,253.38,527.77" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="519.5" y="710.4951">Send Response</text></g><!--link SendResp to LogError--><g id="link_SendResp_LogError"><path d="M478.82,922.26 C475.07,936.51 469.53,954.68 462.5,970 C434.41,1031.18 430.42,1051.75 381.5,1098 C365.11,1113.49 348.8317,1123.4676 330.1317,1132.5976 " fill="none" id="SendResp-to-LogError" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="324.74,1135.23,334.5825,1134.8758,329.2331,1133.0363,331.0726,1127.6869,324.74,1135.23" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="449.5" y="1030.4951">Response Failed</text></g><!--link HandleReqFail to LogError--><g id="link_HandleReqFail_LogError"><path d="M207.78,1050.27 C205.08,1064.85 204.12,1083.37 211.5,1098 C218.6,1112.08 226.2989,1120.07 239.1289,1128.63 " fill="none" id="HandleReqFail-to-LogError" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="244.12,1131.96,238.8533,1123.6376,239.9607,1129.185,234.4133,1130.2924,244.12,1131.96" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="212.5" y="1094.4951">Log Request Failure</text></g><!--link ProcessReq to LogError--><g id="link_ProcessReq_LogError"><path d="M326.72,794.17 C329.45,803.39 332.15,814.07 333.5,824 C341.72,884.33 355.43,1041.2 333.5,1098 C329.21,1109.1 325.6065,1114.9838 317.5165,1123.4838 " fill="none" id="ProcessReq-to-LogError" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="313.38,1127.83,322.4822,1124.0684,316.8271,1124.2082,316.6873,1118.5531,313.38,1127.83" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="345.5" y="966.4951">Processing Failed</text></g><!--link Listen to StopServer--><g id="link_Listen_StopServer"><path d="M189.76,538.29 C188.17,560.61 186.2469,587.5052 184.6569,609.7952 " fill="none" id="Listen-to-StopServer" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="184.23,615.78,188.8602,607.0874,184.5858,610.7927,180.8805,606.5182,184.23,615.78" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="188.5" y="582.4951">Shutdown</text></g><!--link StopServer to *end*--><g id="link_StopServer_*end*"><path d="M187.51,666.29 C193.27,694.18 201.2175,732.7238 205.2575,752.3038 " fill="none" id="StopServer-to-*end*" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="206.47,758.18,208.5688,748.5574,205.4596,753.2832,200.7338,750.174,206.47,758.18" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="197.5" y="710.4951">End</text></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1184px" preserveAspectRatio="none" style="width:619px;height:1184px;background:#FFFFFF;" version="1.1" viewBox="0 0 619 1184" width="619px" zoomAndPan="magnify">
+  <defs>
+    <style type="text/css">a:hover { text-decoration: underline; }</style>
+  </defs>
+  <g>
+    <g id="Init">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="115" x="28" y="104"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="28" x2="143" y1="131.6094" y2="131.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="38" y="123.5332">Initialize Server</text>
+    </g>
+    <g id="SetupLogging">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="29.5" y="232"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="29.5" x2="141.5" y1="259.6094" y2="259.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="39.5" y="251.5332">Setup Logging</text>
+    </g>
+    <g id="DBConn">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="157" x="7" y="360"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="7" x2="164" y1="387.6094" y2="387.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="17" y="379.5332">Database Connection</text>
+    </g>
+    <g id="Listen">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="130" y="488"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="130" x2="253" y1="515.6094" y2="515.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="140" y="507.5332">Server Listening</text>
+    </g>
+    <g id="HandleConn">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="140" x="265.5" y="616"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="265.5" x2="405.5" y1="643.6094" y2="643.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="275.5" y="635.5332">Handle Connection</text>
+    </g>
+    <g id="ProcessReq">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="128" x="254.5" y="744"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="254.5" x2="382.5" y1="771.6094" y2="771.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="264.5" y="763.5332">Process Request</text>
+    </g>
+    <g id="SendResp">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="121" x="424" y="872"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="424" x2="545" y1="899.6094" y2="899.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="434" y="891.5332">Send Response</text>
+    </g>
+    <g id="StopServer">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="95" x="135" y="616"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="135" x2="230" y1="643.6094" y2="643.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="145" y="635.5332">Stop Server</text>
+    </g>
+    <g id="LogError">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="80" x="244.5" y="1128"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="244.5" x2="324.5" y1="1155.6094" y2="1155.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="254.5" y="1147.5332">Log Error</text>
+    </g>
+    <g id="ValidateReq">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="128" x="150.5" y="872"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="150.5" x2="278.5" y1="899.6094" y2="899.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="160.5" y="891.5332">Validate Request</text>
+    </g>
+    <g id="HandleReqFail">
+      <rect fill="#F1F1F1" height="50" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="130" y="1000"/>
+      <line style="stroke:#181818;stroke-width:0.5;" x1="130" x2="299" y1="1027.6094" y2="1027.6094"/>
+      <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="140" y="1019.5332">Handle Request Failure</text>
+    </g>
+    <ellipse cx="85.5" cy="16" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"/>
+    <ellipse cx="208.5" cy="769" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"/>
+    <ellipse cx="208.5" cy="769" fill="#222222" rx="6" ry="6" style="stroke:#222222;stroke-width:1.0;"/>
+    <g id="link_*start*_Init">
+      <path d="M85.5,26.08 C85.5,42.86 85.5,73.22 85.5,97.65 " fill="none" id="*start*-to-Init" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="85.5,103.65,89.5,94.65,85.5,98.65,81.5,94.65,85.5,103.65" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="86.5" y="70.4951">Start</text>
+    </g>
+    <g id="link_Init_SetupLogging">
+      <path d="M85.5,154.29 C85.5,176.61 85.5,203.49 85.5,225.78 " fill="none" id="Init-to-SetupLogging" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="85.5,231.78,89.5,222.78,85.5,226.78,81.5,222.78,85.5,231.78" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="86.5" y="198.4951">Initialize Logger</text>
+    </g>
+    <g id="link_SetupLogging_DBConn">
+      <path d="M85.5,282.29 C85.5,304.61 85.5,331.49 85.5,353.78 " fill="none" id="SetupLogging-to-DBConn" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="85.5,359.78,89.5,350.78,85.5,354.78,81.5,350.78,85.5,359.78" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="86.5" y="326.4951">Setup Database</text>
+    </g>
+    <g id="link_DBConn_DBConn">
+      <path d="M164.01,373.14 C184,373.92 199,377.88 199,385 C199,392.12 189.9954,395.8461 170.0054,396.6261 " fill="none" id="DBConn-to-DBConn" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="164.01,396.86,173.1591,400.506,169.0062,396.6651,172.8472,392.5121,164.01,396.86" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="205" y="390.4951">Check Connection</text>
+    </g>
+    <g id="link_DBConn_Listen">
+      <path d="M105.94,410.29 C124.71,432.61 148.5077,460.8985 167.2577,483.1885 " fill="none" id="DBConn-to-Listen" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="171.12,487.78,168.3875,478.3178,167.9014,483.9537,162.2655,483.4676,171.12,487.78" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="145.5" y="454.4951">Connection Successful</text>
+    </g>
+    <g id="link_DBConn_LogError">
+      <path d="M76.48,410.25 C67.97,435.34 56.5,475.86 56.5,512 C56.5,512 56.5,512 56.5,1026 C56.5,1110.8 172.8661,1138.1517 238.3161,1147.1617 " fill="none" id="DBConn-to-LogError" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="244.26,1147.98,235.8896,1142.79,239.3067,1147.2981,234.7986,1150.7152,244.26,1147.98" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="57.5" y="774.4951">Connection Failed</text>
+    </g>
+    <g id="link_Listen_HandleConn">
+      <path d="M219.82,538.09 C230.7,547.39 243.21,558.15 254.5,568 C272.64,583.84 288.415,597.8432 304.135,611.8832 " fill="none" id="Listen-to-HandleConn" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="308.61,615.88,304.562,606.9015,304.8808,612.5494,299.233,612.8682,308.61,615.88" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="275.5" y="582.4951">Accept Client</text>
+    </g>
+    <g id="link_HandleConn_ProcessReq">
+      <path d="M332.22,666.29 C329.21,688.61 325.5703,715.5436 322.5703,737.8336 " fill="none" id="HandleConn-to-ProcessReq" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="321.77,743.78,326.9347,735.394,322.4369,738.8247,319.0062,734.3269,321.77,743.78" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="328.5" y="710.4951">Read Data</text>
+    </g>
+    <g id="link_ProcessReq_ValidateReq">
+      <path d="M254.27,789.34 C206.47,803.87 149.21,821.67 147.5,824 C134.98,841.08 145.3985,855.0537 164.5385,868.4837 " fill="none" id="ProcessReq-to-ValidateReq" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="169.45,871.93,164.3802,863.4862,165.3571,869.0581,159.7852,870.0349,169.45,871.93" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="148.5" y="838.4951">Validate Data</text>
+    </g>
+    <g id="link_ValidateReq_ProcessReq">
+      <path d="M231.21,871.77 C241.31,857.53 254.67,839.37 267.5,824 C275.93,813.9 281.5885,807.6118 290.3385,798.4818 " fill="none" id="ValidateReq-to-ProcessReq" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="294.49,794.15,285.3748,797.8801,291.0304,797.7599,291.1506,803.4154,294.49,794.15" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="60" x="268.5" y="838.4951">Data Valid</text>
+    </g>
+    <g id="link_ValidateReq_HandleReqFail">
+      <path d="M214.5,922.29 C214.5,944.61 214.5,971.49 214.5,993.78 " fill="none" id="ValidateReq-to-HandleReqFail" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="214.5,999.78,218.5,990.78,214.5,994.78,210.5,990.78,214.5,999.78" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="215.5" y="966.4951">Data Invalid</text>
+    </g>
+    <g id="link_ProcessReq_ProcessReq">
+      <path d="M382.77,757.02 C402.26,757.32 417.5,761.31 417.5,769 C417.5,776.69 408.2593,780.5877 388.7693,780.8877 " fill="none" id="ProcessReq-to-ProcessReq" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="382.77,780.98,391.8305,784.841,387.7694,780.903,391.7074,776.842,382.77,780.98" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="423.5" y="774.4951">Process Request</text>
+    </g>
+    <g id="link_ProcessReq_SendResp">
+      <path d="M350.51,794.29 C380,816.68 418.7312,846.0719 448.0912,868.3619 " fill="none" id="ProcessReq-to-SendResp" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="452.87,871.99,448.1205,863.362,448.8876,868.9666,443.2831,869.7338,452.87,871.99" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107" x="411.5" y="838.4951">Prepare Response</text>
+    </g>
+    <g id="link_SendResp_Listen">
+      <path d="M508.83,871.94 C516.14,863.23 523.32,852.85 527.5,842 C543.15,801.33 545.37,784.96 530.5,744 C493.61,642.35 458.1,618.54 362.5,568 C328.23,549.89 292.6506,538.1538 259.1806,529.3038 " fill="none" id="SendResp-to-Listen" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="253.38,527.77,261.0584,533.9378,258.2139,529.0482,263.1035,526.2036,253.38,527.77" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="519.5" y="710.4951">Send Response</text>
+    </g>
+    <g id="link_SendResp_LogError">
+      <path d="M478.82,922.26 C475.07,936.51 469.53,954.68 462.5,970 C434.41,1031.18 430.42,1051.75 381.5,1098 C365.11,1113.49 348.8317,1123.4676 330.1317,1132.5976 " fill="none" id="SendResp-to-LogError" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="324.74,1135.23,334.5825,1134.8758,329.2331,1133.0363,331.0726,1127.6869,324.74,1135.23" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="449.5" y="1030.4951">Response Failed</text>
+    </g>
+    <g id="link_HandleReqFail_LogError">
+      <path d="M207.78,1050.27 C205.08,1064.85 204.12,1083.37 211.5,1098 C218.6,1112.08 226.2989,1120.07 239.1289,1128.63 " fill="none" id="HandleReqFail-to-LogError" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="244.12,1131.96,238.8533,1123.6376,239.9607,1129.185,234.4133,1130.2924,244.12,1131.96" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="212.5" y="1094.4951">Log Request Failure</text>
+    </g>
+    <g id="link_ProcessReq_LogError">
+      <path d="M326.72,794.17 C329.45,803.39 332.15,814.07 333.5,824 C341.72,884.33 355.43,1041.2 333.5,1098 C329.21,1109.1 325.6065,1114.9838 317.5165,1123.4838 " fill="none" id="ProcessReq-to-LogError" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="313.38,1127.83,322.4822,1124.0684,316.8271,1124.2082,316.6873,1118.5531,313.38,1127.83" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="104" x="345.5" y="966.4951">Processing Failed</text>
+    </g>
+    <g id="link_Listen_StopServer">
+      <path d="M189.76,538.29 C188.17,560.61 186.2469,587.5052 184.6569,609.7952 " fill="none" id="Listen-to-StopServer" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="184.23,615.78,188.8602,607.0874,184.5858,610.7927,180.8805,606.5182,184.23,615.78" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="188.5" y="582.4951">Shutdown</text>
+    </g>
+    <g id="link_StopServer_*end*">
+      <path d="M187.51,666.29 C193.27,694.18 201.2175,732.7238 205.2575,752.3038 " fill="none" id="StopServer-to-*end*" style="stroke:#181818;stroke-width:1.0;"/>
+      <polygon fill="#181818" points="206.47,758.18,208.5688,748.5574,205.4596,753.2832,200.7338,750.174,206.47,758.18" style="stroke:#181818;stroke-width:1.0;"/>
+      <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="23" x="197.5" y="710.4951">End</text>
+    </g>
+  </g>
+</svg>
