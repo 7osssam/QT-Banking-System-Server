@@ -118,51 +118,45 @@ $(document).ready(function(){initNavTree('serverhandler_8h_source.html',''); ini
 <div class="title">serverhandler.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SERVERHANDLER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SERVERHANDLER_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QEventLoop&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QRunnable&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QThreadPool&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QThread&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QJsonDocument&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QJsonObject&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QCryptographicHash&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QByteArray&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QMutex&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;RequestManager.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QTcpServer&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QTcpSocket&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classServerHandler.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classServerHandler.html">ServerHandler</a> : <span class="keyword">public</span> QObject, <span class="keyword">public</span> QRunnable</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classServerHandler.html#a03e33b6790a3742dd4dc176971164cef">ServerHandler</a>(QMutex* m, qintptr handle = 0, QObject* parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classServerHandler.html#a38748a26a3142d81018863876b06164e">~ServerHandler</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classServerHandler.html#a759cbb09760e8ca60cefe596bef59c1e">readyRead</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classServerHandler.html#a61359b9bb16c92ca9bca3353487db090">run</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;signals:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// No signals defined for this class</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span> slots:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// No slots defined for this class</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    qintptr         handle_;        </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    QTcpSocket*     clientSocket_;  </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    QMutex*         Mutex_;         </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classRequestManager.html">RequestManager</a>* requestManager; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif                              </span><span class="comment">// SERVERHANDLER_H</span></div>
-<div class="ttc" id="aclassRequestManager_html"><div class="ttname"><a href="classRequestManager.html">RequestManager</a></div><div class="ttdoc">The RequestManager class handles incoming requests and dispatches them to the appropriate request han...</div><div class="ttdef"><b>Definition:</b> RequestManager.h:31</div></div>
-<div class="ttc" id="aclassServerHandler_html"><div class="ttname"><a href="classServerHandler.html">ServerHandler</a></div><div class="ttdoc">The ServerHandler class handles incoming client connections in a separate thread.</div><div class="ttdef"><b>Definition:</b> serverhandler.h:27</div></div>
+<a href="serverhandler_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef SERVERHANDLER_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define SERVERHANDLER_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QEventLoop&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QRunnable&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QThread&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QCryptographicHash&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QByteArray&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;QMutex&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RequestManager_8h.html">RequestManager.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;QTcpServer&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;QTcpSocket&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classServerHandler.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classServerHandler.html">ServerHandler</a> : <span class="keyword">public</span> QObject, <span class="keyword">public</span> QRunnable</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classServerHandler.html#a03e33b6790a3742dd4dc176971164cef">ServerHandler</a>(QMutex* m, qintptr handle = 0, QObject* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classServerHandler.html#a38748a26a3142d81018863876b06164e">~ServerHandler</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classServerHandler.html#a759cbb09760e8ca60cefe596bef59c1e">readyRead</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classServerHandler.html#a61359b9bb16c92ca9bca3353487db090">run</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    qintptr         handle_;        </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    QTcpSocket*     clientSocket_;  </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    QMutex*         Mutex_;         </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classRequestManager.html">RequestManager</a>* requestManager; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif                              </span><span class="comment">// SERVERHANDLER_H</span></div>
+<div class="ttc" id="aRequestManager_8h_html"><div class="ttname"><a href="RequestManager_8h.html">RequestManager.h</a></div><div class="ttdoc">This file contains the declaration of the RequestManager class, which handles incoming requests and d...</div></div>
+<div class="ttc" id="aclassRequestManager_html"><div class="ttname"><a href="classRequestManager.html">RequestManager</a></div><div class="ttdoc">The RequestManager class handles incoming requests and dispatches them to the appropriate request han...</div><div class="ttdef"><b>Definition:</b> RequestManager.h:38</div></div>
+<div class="ttc" id="aclassServerHandler_html"><div class="ttname"><a href="classServerHandler.html">ServerHandler</a></div><div class="ttdoc">The ServerHandler class handles incoming client connections in a separate thread.</div><div class="ttdef"><b>Definition:</b> serverhandler.h:31</div></div>
 <div class="ttc" id="aclassServerHandler_html_a03e33b6790a3742dd4dc176971164cef"><div class="ttname"><a href="classServerHandler.html#a03e33b6790a3742dd4dc176971164cef">ServerHandler::ServerHandler</a></div><div class="ttdeci">ServerHandler(QMutex *m, qintptr handle=0, QObject *parent=nullptr)</div><div class="ttdoc">Constructs a ServerHandler object with the specified parameters.</div><div class="ttdef"><b>Definition:</b> serverhandler.cpp:3</div></div>
 <div class="ttc" id="aclassServerHandler_html_a38748a26a3142d81018863876b06164e"><div class="ttname"><a href="classServerHandler.html#a38748a26a3142d81018863876b06164e">ServerHandler::~ServerHandler</a></div><div class="ttdeci">~ServerHandler()</div><div class="ttdoc">Destructor for the ServerHandler class.</div><div class="ttdef"><b>Definition:</b> serverhandler.cpp:11</div></div>
 <div class="ttc" id="aclassServerHandler_html_a61359b9bb16c92ca9bca3353487db090"><div class="ttname"><a href="classServerHandler.html#a61359b9bb16c92ca9bca3353487db090">ServerHandler::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Implements QRunnable's run method to handle the client connection.</div><div class="ttdef"><b>Definition:</b> serverhandler.cpp:56</div></div>
@@ -172,7 +166,7 @@ $(document).ready(function(){initNavTree('serverhandler_8h_source.html',''); ini
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_06cdc38b614f23f372e7c84740bf76e1.html">serverModule</a></li><li class="navelem"><b>serverhandler.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_06cdc38b614f23f372e7c84740bf76e1.html">serverModule</a></li><li class="navelem"><a class="el" href="serverhandler_8h.html">serverhandler.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

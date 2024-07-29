@@ -1,0 +1,6 @@
+<map id="GetTransactionsHistoryRequest.h" name="GetTransactionsHistoryRequest.h">
+<area shape="rect" id="node1" title="This file contains the declaration of the GetTransactionsHistoryRequest class, which handles requests..." alt="" coords="5,5,244,32"/>
+<area shape="rect" id="node2" href="$RequestManager_8h.html" title="This file contains the declaration of the RequestManager class, which handles incoming requests and d..." alt="" coords="53,80,196,107"/>
+<area shape="rect" id="node3" href="$serverhandler_8h.html" title="This file contains the declaration of the ServerHandler class, which handles incoming client connecti..." alt="" coords="63,155,186,181"/>
+<area shape="rect" id="node4" href="$server_8h.html" title="This file contains the declaration of the Server class, which extends QTcpServer to handle incoming n..." alt="" coords="87,229,162,256"/>
+</map>

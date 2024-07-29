@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['createnewuserrequest_97',['CreateNewUserRequest',['../classCreateNewUserRequest.html',1,'']]]
+  ['createnewuserrequest_113',['CreateNewUserRequest',['../classCreateNewUserRequest.html',1,'']]]
 ];

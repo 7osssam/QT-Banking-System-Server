@@ -1,0 +1,17 @@
+<map id="UpdateEmailRequest.h" name="UpdateEmailRequest.h">
+<area shape="rect" id="node1" title="This file contains the declaration of the UpdateEmailRequest class, which handles email update reques..." alt="" coords="533,5,703,32"/>
+<area shape="rect" id="node2" href="$Request_8h.html" title="This file contains the declaration of the Request class, which is an abstract base class for handling..." alt="" coords="704,80,791,107"/>
+<area shape="rect" id="node8" href="$db_8h.html" title="Database management classes for handling database connections and operations." alt="" coords="463,155,514,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="714,304,815,331"/>
+<area shape="rect" id="node4" title=" " alt="" coords="931,155,1004,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="539,155,665,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="843,304,937,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="690,155,805,181"/>
+<area shape="rect" id="node9" href="$dbresult_8h.html" title="This file contains the declaration of the DbResult class, which represents a result set returned from..." alt="" coords="717,229,804,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="239,229,354,256"/>
+<area shape="rect" id="node11" title=" " alt="" coords="378,229,461,256"/>
+<area shape="rect" id="node12" title=" " alt="" coords="485,229,575,256"/>
+<area shape="rect" id="node13" title=" " alt="" coords="599,229,693,256"/>
+<area shape="rect" id="node14" title=" " alt="" coords="5,229,84,256"/>
+<area shape="rect" id="node15" title=" " alt="" coords="109,229,215,256"/>
+</map>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="454px" preserveAspectRatio="none" style="width:340px;height:454px;background:#FFFFFF;" version="1.1" viewBox="0 0 340 454" width="340px" zoomAndPan="magnify">
+  <defs>
+    <style type="text/css">a:hover { text-decoration: underline; }</style>
+  </defs>
+  <g>
+    <rect fill="#FFFFFF" height="142.8906" style="stroke:#181818;stroke-width:1.0;" width="10" x="139.5" y="114.9609"/>
+    <rect fill="#FFFFFF" height="73.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="139.5" y="280.2031"/>
+    <rect fill="none" height="120.8906" style="stroke:#000000;stroke-width:1.5;" width="227" x="106.5" y="129.9609"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="27" x2="27" y1="82.6094" y2="371.9063"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="144.5" x2="144.5" y1="82.6094" y2="371.9063"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="5" y="79.5332">Admin</text>
+    <ellipse cx="27.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M27.5,21.5 L27.5,48.5 M14.5,29.5 L40.5,29.5 M27.5,48.5 L14.5,63.5 M27.5,48.5 L40.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="5" y="385.4395">Admin</text>
+    <ellipse cx="27.5" cy="397.0156" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M27.5,405.0156 L27.5,432.0156 M14.5,413.0156 L40.5,413.0156 M27.5,432.0156 L14.5,447.0156 M27.5,432.0156 L40.5,447.0156 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="56" x="116.5" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="123.5" y="71.5332">Server</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="56" x="116.5" y="370.9063"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="123.5" y="392.4395">Server</text>
+    <rect fill="#FFFFFF" height="142.8906" style="stroke:#181818;stroke-width:1.0;" width="10" x="139.5" y="114.9609"/>
+    <rect fill="#FFFFFF" height="73.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="139.5" y="280.2031"/>
+    <polygon fill="#181818" points="127.5,110.9609,137.5,114.9609,127.5,118.9609,131.5,114.9609" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="27.5" x2="133.5" y1="114.9609" y2="114.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="56" x="34.5" y="110.1045">start(port)</text>
+    <path d="M106.5,129.9609 L167.5,129.9609 L167.5,138.3125 L157.5,148.3125 L106.5,148.3125 L106.5,129.9609 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="120.8906" style="stroke:#000000;stroke-width:1.5;" width="227" x="106.5" y="129.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="121.5" y="144.4561">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="72" x="182.5" y="143.3799">[listen failed]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="149.5" x2="191.5" y1="170.6641" y2="170.6641"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="191.5" x2="191.5" y1="170.6641" y2="183.6641"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="150.5" x2="191.5" y1="183.6641" y2="183.6641"/>
+    <polygon fill="#181818" points="160.5,179.6641,150.5,183.6641,160.5,187.6641,156.5,183.6641" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="156.5" y="165.8076">log "Failed to start server"</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="106.5" x2="333.5" y1="192.6641" y2="192.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="103" x="111.5" y="204.083">[listen succeeded]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="149.5" x2="191.5" y1="229.8516" y2="229.8516"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="191.5" x2="191.5" y1="229.8516" y2="242.8516"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="150.5" x2="191.5" y1="242.8516" y2="242.8516"/>
+    <polygon fill="#181818" points="160.5,238.8516,150.5,242.8516,160.5,246.8516,156.5,242.8516" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="155" x="156.5" y="224.9951">log "Server started on port"</text>
+    <polygon fill="#181818" points="127.5,276.2031,137.5,280.2031,127.5,284.2031,131.5,280.2031" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="27.5" x2="133.5" y1="280.2031" y2="280.2031"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="34.5" y="275.3467">quit()</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="149.5" x2="191.5" y1="310.5547" y2="310.5547"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="191.5" x2="191.5" y1="310.5547" y2="323.5547"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="150.5" x2="191.5" y1="323.5547" y2="323.5547"/>
+    <polygon fill="#181818" points="160.5,319.5547,150.5,323.5547,160.5,327.5547,156.5,323.5547" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="39" x="156.5" y="305.6982">close()</text>
+    <polygon fill="#181818" points="38.5,349.9063,28.5,353.9063,38.5,357.9063,34.5,353.9063" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="32.5" x2="143.5" y1="353.9063" y2="353.9063"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="44.5" y="349.0498">Server Stopped</text>
+  </g>
+</svg>

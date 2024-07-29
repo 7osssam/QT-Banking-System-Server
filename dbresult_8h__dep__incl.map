@@ -1,0 +1,20 @@
+<map id="dbresult.h" name="dbresult.h">
+<area shape="rect" id="node1" title="This file contains the declaration of the DbResult class, which represents a result set returned from..." alt="" coords="1259,5,1346,32"/>
+<area shape="rect" id="node2" href="$db_8h.html" title="Database management classes for handling database connections and operations." alt="" coords="1277,80,1328,107"/>
+<area shape="rect" id="node3" href="$CreateNewUserRequest_8h.html" title="This file contains the declaration of the CreateNewUserRequest class, which handles requests to creat..." alt="" coords="5,229,195,256"/>
+<area shape="rect" id="node7" href="$DeleteUserRequest_8h.html" title="The DeleteUserRequest class handles the deletion of users." alt="" coords="219,229,379,256"/>
+<area shape="rect" id="node8" href="$GetAccountNumberRequest_8h.html" title="This file contains the declaration of the GetAccountNumberRequest class, which handles requests to re..." alt="" coords="403,229,618,256"/>
+<area shape="rect" id="node9" href="$GetBalanceRequest_8h.html" title="This file contains the declaration of the GetBalanceRequest class, which handles requests to retrieve..." alt="" coords="643,229,805,256"/>
+<area shape="rect" id="node10" href="$GetDatabaseRequest_8h.html" title="This file contains the declaration of the GetDatabaseRequest class, which handles requests to retriev..." alt="" coords="830,229,1002,256"/>
+<area shape="rect" id="node11" href="$GetTransactionsHistoryRequest_8h.html" title="This file contains the declaration of the GetTransactionsHistoryRequest class, which handles requests..." alt="" coords="1026,229,1265,256"/>
+<area shape="rect" id="node12" href="$LoginRequest_8h.html" title="This file contains the declaration of the LoginRequest class, which handles user login requests." alt="" coords="1340,229,1463,256"/>
+<area shape="rect" id="node13" href="$MakeTransactionRequest_8h.html" title="This file contains the declaration of the MakeTransactionRequest class, which handles requests to mak..." alt="" coords="1487,229,1683,256"/>
+<area shape="rect" id="node14" href="$Request_8h.html" title="This file contains the declaration of the Request class, which is an abstract base class for handling..." alt="" coords="1259,155,1346,181"/>
+<area shape="rect" id="node15" href="$UpdateEmailRequest_8h.html" title="This file contains the declaration of the UpdateEmailRequest class, which handles email update reques..." alt="" coords="1708,229,1879,256"/>
+<area shape="rect" id="node16" href="$UpdatePasswordRequest_8h.html" title="This file contains the declaration of the UpdatePasswordRequest class, which handles requests to upda..." alt="" coords="1903,229,2097,256"/>
+<area shape="rect" id="node17" href="$UpdateUserRequest_8h.html" title="This file contains the declaration of the UpdateUserRequest class, which handles user update requests..." alt="" coords="2122,229,2286,256"/>
+<area shape="rect" id="node18" href="$UserInitRequest_8h.html" title="This file contains the declaration of the UserInitRequest class, which handles user initialization re..." alt="" coords="2311,229,2449,256"/>
+<area shape="rect" id="node4" href="$RequestManager_8h.html" title="This file contains the declaration of the RequestManager class, which handles incoming requests and d..." alt="" coords="1231,304,1374,331"/>
+<area shape="rect" id="node5" href="$serverhandler_8h.html" title="This file contains the declaration of the ServerHandler class, which handles incoming client connecti..." alt="" coords="1241,379,1364,405"/>
+<area shape="rect" id="node6" href="$server_8h.html" title="This file contains the declaration of the Server class, which extends QTcpServer to handle incoming n..." alt="" coords="1265,453,1340,480"/>
+</map>

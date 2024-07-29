@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="488px" preserveAspectRatio="none" style="width:699px;height:488px;background:#FFFFFF;" version="1.1" viewBox="0 0 699 488" width="699px" zoomAndPan="magnify">
+  <defs>
+    <style type="text/css">a:hover { text-decoration: underline; }</style>
+  </defs>
+  <g>
+    <rect fill="#FFFFFF" height="99.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="91" y="145.3125"/>
+    <rect fill="#FFFFFF" height="281.6484" style="stroke:#181818;stroke-width:1.0;" width="10" x="390" y="114.9609"/>
+    <rect fill="#FFFFFF" height="91.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="631" y="290.5547"/>
+    <rect fill="none" height="229.2969" style="stroke:#000000;stroke-width:1.5;" width="652.5" x="40" y="160.3125"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="22" x2="22" y1="82.6094" y2="406.6094"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="96" x2="96" y1="82.6094" y2="406.6094"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="394.5" x2="394.5" y1="82.6094" y2="406.6094"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="635.5" x2="635.5" y1="82.6094" y2="406.6094"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="5" y="79.5332">User</text>
+    <ellipse cx="22.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M22.5,21.5 L22.5,48.5 M9.5,29.5 L35.5,29.5 M22.5,48.5 L9.5,63.5 M22.5,48.5 L35.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="5" y="420.1426">User</text>
+    <ellipse cx="22.5" cy="431.7188" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M22.5,439.7188 L22.5,466.7188 M9.5,447.7188 L35.5,447.7188 M22.5,466.7188 L9.5,481.7188 M22.5,466.7188 L35.5,481.7188 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="50" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="57" y="71.5332">QTcpSocket</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="50" y="405.6094"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="57" y="427.1426">QTcpSocket</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="342.5" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="349.5" y="71.5332">ServerHandler</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="342.5" y="405.6094"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="349.5" y="427.1426">ServerHandler</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="93" x="589.5" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="596.5" y="71.5332">QEventLoop</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="93" x="589.5" y="405.6094"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="596.5" y="427.1426">QEventLoop</text>
+    <rect fill="#FFFFFF" height="99.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="91" y="145.3125"/>
+    <rect fill="#FFFFFF" height="281.6484" style="stroke:#181818;stroke-width:1.0;" width="10" x="390" y="114.9609"/>
+    <rect fill="#FFFFFF" height="91.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="631" y="290.5547"/>
+    <polygon fill="#181818" points="378,110.9609,388,114.9609,378,118.9609,382,114.9609" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="22.5" x2="384" y1="114.9609" y2="114.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="26" x="29.5" y="110.1045">run()</text>
+    <polygon fill="#181818" points="112,141.3125,102,145.3125,112,149.3125,108,145.3125" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="106" x2="389" y1="145.3125" y2="145.3125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107" x="118" y="140.4561">new QTcpSocket()</text>
+    <path d="M40,160.3125 L101,160.3125 L101,168.6641 L91,178.6641 L40,178.6641 L40,160.3125 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="229.2969" style="stroke:#000000;stroke-width:1.5;" width="652.5" x="40" y="160.3125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="55" y="174.8076">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="155" x="116" y="173.7314">[setSocketDescriptor failed]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="400" x2="442" y1="201.0156" y2="201.0156"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="442" x2="442" y1="201.0156" y2="214.0156"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401" x2="442" y1="214.0156" y2="214.0156"/>
+    <polygon fill="#181818" points="411,210.0156,401,214.0156,411,218.0156,407,214.0156" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="207" x="407" y="196.1592">log "Failed to set socket descriptor"</text>
+    <polygon fill="#181818" points="107,240.3672,97,244.3672,107,248.3672,103,244.3672" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="101" x2="389" y1="244.3672" y2="244.3672"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="113" y="239.5107">delete QTcpSocket</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="40" x2="692.5" y1="253.3672" y2="253.3672"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="186" x="45" y="264.7861">[setSocketDescriptor succeeded]</text>
+    <polygon fill="#181818" points="619,286.5547,629,290.5547,619,294.5547,623,290.5547" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="400" x2="625" y1="290.5547" y2="290.5547"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="105" x="407" y="285.6982">new QEventLoop()</text>
+    <polygon fill="#181818" points="107,316.9063,97,320.9063,107,324.9063,103,320.9063" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="101" x2="389" y1="320.9063" y2="320.9063"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="192" x="113" y="316.0498">connect(disconnected, Loop.quit)</text>
+    <polygon fill="#181818" points="107,347.2578,97,351.2578,107,355.2578,103,351.2578" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="101" x2="389" y1="351.2578" y2="351.2578"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="270" x="113" y="346.4014">connect(readyRead, ServerHandler.readyRead)</text>
+    <polygon fill="#181818" points="624,377.6094,634,381.6094,624,385.6094,628,381.6094" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="400" x2="630" y1="381.6094" y2="381.6094"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="407" y="376.7529">exec()</text>
+  </g>
+</svg>

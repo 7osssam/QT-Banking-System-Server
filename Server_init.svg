@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="488px" preserveAspectRatio="none" style="width:415px;height:488px;background:#FFFFFF;" version="1.1" viewBox="0 0 415 488" width="415px" zoomAndPan="magnify">
+  <defs>
+    <style type="text/css">a:hover { text-decoration: underline; }</style>
+  </defs>
+  <g>
+    <rect fill="#FFFFFF" height="282.1641" style="stroke:#181818;stroke-width:1.0;" width="10" x="143.5" y="114.9609"/>
+    <rect fill="#FFFFFF" height="91.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="148.5" y="297.0703"/>
+    <rect fill="#FFFFFF" height="212.4609" style="stroke:#181818;stroke-width:1.0;" width="10" x="282.5" y="145.3125"/>
+    <rect fill="#FFFFFF" height="191.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="373" y="206.0156"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="22" x2="22" y1="82.6094" y2="406.125"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="148.5" x2="148.5" y1="82.6094" y2="406.125"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="287" x2="287" y1="82.6094" y2="406.125"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="378" x2="378" y1="82.6094" y2="406.125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="5" y="79.5332">User</text>
+    <ellipse cx="22.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M22.5,21.5 L22.5,48.5 M9.5,29.5 L35.5,29.5 M22.5,48.5 L9.5,63.5 M22.5,48.5 L35.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="5" y="419.6582">User</text>
+    <ellipse cx="22.5" cy="431.2344" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M22.5,439.2344 L22.5,466.2344 M9.5,447.2344 L35.5,447.2344 M22.5,466.2344 L9.5,481.2344 M22.5,466.2344 L35.5,481.2344 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="56" x="120.5" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="127.5" y="71.5332">Server</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="56" x="120.5" y="405.125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="127.5" y="426.6582">Server</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="99" x="238" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="245" y="71.5332">QThreadPool</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="99" x="238" y="405.125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="245" y="426.6582">QThreadPool</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="62" x="347" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="354" y="71.5332">QMutex</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="62" x="347" y="405.125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="354" y="426.6582">QMutex</text>
+    <rect fill="#FFFFFF" height="282.1641" style="stroke:#181818;stroke-width:1.0;" width="10" x="143.5" y="114.9609"/>
+    <rect fill="#FFFFFF" height="91.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="148.5" y="297.0703"/>
+    <rect fill="#FFFFFF" height="212.4609" style="stroke:#181818;stroke-width:1.0;" width="10" x="282.5" y="145.3125"/>
+    <rect fill="#FFFFFF" height="191.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="373" y="206.0156"/>
+    <polygon fill="#181818" points="131.5,110.9609,141.5,114.9609,131.5,118.9609,135.5,114.9609" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="22.5" x2="137.5" y1="114.9609" y2="114.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="29.5" y="110.1045">new Server()</text>
+    <polygon fill="#181818" points="270.5,141.3125,280.5,145.3125,270.5,149.3125,274.5,145.3125" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="153.5" x2="276.5" y1="145.3125" y2="145.3125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="110" x="160.5" y="140.4561">new QThreadPool()</text>
+    <polygon fill="#181818" points="164.5,171.6641,154.5,175.6641,164.5,179.6641,160.5,175.6641" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="158.5" x2="281.5" y1="175.6641" y2="175.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="170.5" y="170.8076">return</text>
+    <polygon fill="#181818" points="361,202.0156,371,206.0156,361,210.0156,365,206.0156" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="153.5" x2="367" y1="206.0156" y2="206.0156"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="160.5" y="201.1592">new QMutex()</text>
+    <polygon fill="#181818" points="164.5,232.3672,154.5,236.3672,164.5,240.3672,160.5,236.3672" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="158.5" x2="372" y1="236.3672" y2="236.3672"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="170.5" y="231.5107">return</text>
+    <polygon fill="#181818" points="33.5,262.7188,23.5,266.7188,33.5,270.7188,29.5,266.7188" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="27.5" x2="142.5" y1="266.7188" y2="266.7188"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="83" x="39.5" y="261.8623">Server created</text>
+    <polygon fill="#181818" points="136.5,293.0703,146.5,297.0703,136.5,301.0703,140.5,297.0703" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="22.5" x2="142.5" y1="297.0703" y2="297.0703"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="83" x="29.5" y="292.2139">delete Server()</text>
+    <polygon fill="#181818" points="270.5,323.4219,280.5,327.4219,270.5,331.4219,274.5,327.4219" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="158.5" x2="276.5" y1="327.4219" y2="327.4219"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="165.5" y="322.5654">clear()</text>
+    <polygon fill="#181818" points="275.5,353.7734,285.5,357.7734,275.5,361.7734,279.5,357.7734" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="158.5" x2="281.5" y1="357.7734" y2="357.7734"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="165.5" y="352.917">deleteLater()</text>
+    <polygon fill="#181818" points="33.5,384.125,23.5,388.125,33.5,392.125,29.5,388.125" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="27.5" x2="142.5" y1="388.125" y2="388.125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="39.5" y="383.2686">Server destroyed</text>
+  </g>
+</svg>

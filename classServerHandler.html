@@ -212,7 +212,10 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">m</td><td>Pointer to a QMutex used for synchronization. </td></tr>
     <tr><td class="paramname">handle</td><td>The socket descriptor for the incoming connection. </td></tr>
-    <tr><td class="paramname">parent</td><td>The parent QObject. </td></tr>
+    <tr><td class="paramname">parent</td><td>The parent QObject. <div class="image">
+<object type="image/svg+xml" data="ServerHandler_init.svg" style="pointer-events: none;"></object>
+</div>
+ </td></tr>
   </table>
   </dd>
 </dl>
@@ -256,8 +259,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Slot to handle readyRead signal from QTcpSocket. </p>
-<p>Reads data from the client socket, verifies its integrity using a cryptographic hash, and processes the request using <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a>. Sends the response back to the client. </p>
-
+<p>Reads data from the client socket, verifies its integrity using a cryptographic hash, and processes the request using <a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a>. Sends the response back to the client. </p><div class="image">
+<object type="image/svg+xml" data="ServerHandler_readyRead.svg" style="pointer-events: none;"></object>
+</div>
+ 
 <p class="reference">Referenced by <a class="el" href="classServerHandler.html#a61359b9bb16c92ca9bca3353487db090">run()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
@@ -296,8 +301,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Implements QRunnable's run method to handle the client connection. </p>
-<p>Sets up the client socket, connects signals for reading data and disconnection, and starts the event loop to process client requests. </p>
-<div class="dynheader">
+<p>Sets up the client socket, connects signals for reading data and disconnection, and starts the event loop to process client requests. </p><div class="image">
+<object type="image/svg+xml" data="ServerHandler_run.svg" style="pointer-events: none;"></object>
+</div>
+ <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classServerHandler_a61359b9bb16c92ca9bca3353487db090_cgraph.png" border="0" usemap="#aclassServerHandler_a61359b9bb16c92ca9bca3353487db090_cgraph" alt=""/></div>

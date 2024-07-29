@@ -1,0 +1,4 @@
+<map id="serverhandler.h" name="serverhandler.h">
+<area shape="rect" id="node1" title="This file contains the declaration of the ServerHandler class, which handles incoming client connecti..." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$server_8h.html" title="This file contains the declaration of the Server class, which extends QTcpServer to handle incoming n..." alt="" coords="29,80,104,107"/>
+</map>

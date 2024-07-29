@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1189px" preserveAspectRatio="none" style="width:1144px;height:1189px;background:#FFFFFF;" version="1.1" viewBox="0 0 1144 1189" width="1144px" zoomAndPan="magnify">
+  <defs>
+    <style type="text/css">a:hover { text-decoration: underline; }</style>
+  </defs>
+  <g>
+    <rect fill="#FFFFFF" height="91.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="391.5" y="114.9609"/>
+    <rect fill="#FFFFFF" height="86.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="391.5" y="236.3672"/>
+    <rect fill="#FFFFFF" height="501.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="391.5" y="376.6094"/>
+    <rect fill="#FFFFFF" height="190.5938" style="stroke:#181818;stroke-width:1.0;" width="10" x="391.5" y="907.0703"/>
+    <rect fill="#FFFFFF" height="184.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="782" y="411.9609"/>
+    <rect fill="none" height="626.3516" style="stroke:#000000;stroke-width:1.5;" width="1127" x="10" y="251.3672"/>
+    <rect fill="none" height="48.7031" style="stroke:#000000;stroke-width:1.5;" width="529" x="321" y="426.9609"/>
+    <rect fill="none" height="138.2422" style="stroke:#000000;stroke-width:1.5;" width="469.5" x="20" y="732.4766"/>
+    <rect fill="none" height="125.2422" style="stroke:#000000;stroke-width:1.5;" width="452" x="20" y="965.4219"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="52" x2="52" y1="82.6094" y2="1107.6641"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="396" x2="396" y1="82.6094" y2="1107.6641"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="688" x2="688" y1="82.6094" y2="1107.6641"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="787" x2="787" y1="82.6094" y2="1107.6641"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1085" x2="1085" y1="82.6094" y2="1107.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="30" y="79.5332">Admin</text>
+    <ellipse cx="52.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M52.5,21.5 L52.5,48.5 M39.5,29.5 L65.5,29.5 M52.5,48.5 L39.5,63.5 M52.5,48.5 L65.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="30" y="1121.1973">Admin</text>
+    <ellipse cx="52.5" cy="1132.7734" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M52.5,1140.7734 L52.5,1167.7734 M39.5,1148.7734 L65.5,1148.7734 M52.5,1167.7734 L39.5,1182.7734 M52.5,1167.7734 L65.5,1182.7734 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="131" x="331" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="338" y="71.5332">DatabaseManager</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="131" x="331" y="1106.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="338" y="1128.1973">DatabaseManager</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="71" x="653" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="660" y="71.5332">dbConfig</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="71" x="653" y="1106.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="660" y="1128.1973">dbConfig</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="106" x="734" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="741" y="71.5332">QSqlDatabase</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="106" x="734" y="1106.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="741" y="1128.1973">QSqlDatabase</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="84" x="1043" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="1050" y="71.5332">QSqlQuery</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="84" x="1043" y="1106.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="1050" y="1128.1973">QSqlQuery</text>
+    <rect fill="#FFFFFF" height="91.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="391.5" y="114.9609"/>
+    <rect fill="#FFFFFF" height="86.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="391.5" y="236.3672"/>
+    <rect fill="#FFFFFF" height="501.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="391.5" y="376.6094"/>
+    <rect fill="#FFFFFF" height="190.5938" style="stroke:#181818;stroke-width:1.0;" width="10" x="391.5" y="907.0703"/>
+    <rect fill="#FFFFFF" height="184.1094" style="stroke:#181818;stroke-width:1.0;" width="10" x="782" y="411.9609"/>
+    <polygon fill="#181818" points="379.5,110.9609,389.5,114.9609,379.5,118.9609,383.5,114.9609" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="52.5" x2="385.5" y1="114.9609" y2="114.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="320" x="59.5" y="110.1045">setDbSetting(host, port, username, password, dbname)</text>
+    <polygon fill="#181818" points="676.5,141.3125,686.5,145.3125,676.5,149.3125,680.5,145.3125" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="682.5" y1="145.3125" y2="145.3125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="263" x="408.5" y="140.4561">set(host, port, username, password, dbname)</text>
+    <polygon fill="#181818" points="412.5,171.6641,402.5,175.6641,412.5,179.6641,408.5,175.6641" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="406.5" x2="687.5" y1="175.6641" y2="175.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="418.5" y="170.8076">return</text>
+    <polygon fill="#181818" points="63.5,202.0156,53.5,206.0156,63.5,210.0156,59.5,206.0156" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="57.5" x2="395.5" y1="206.0156" y2="206.0156"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="69.5" y="201.1592">DB settings configured</text>
+    <polygon fill="#181818" points="379.5,232.3672,389.5,236.3672,379.5,240.3672,383.5,236.3672" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="52.5" x2="385.5" y1="236.3672" y2="236.3672"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="308" x="59.5" y="231.5107">createInstance(checkDBName, newConnection, &amp;err)</text>
+    <path d="M10,251.3672 L71,251.3672 L71,259.7188 L61,269.7188 L10,269.7188 L10,251.3672 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="626.3516" style="stroke:#000000;stroke-width:1.5;" width="1127" x="10" y="251.3672"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="265.8623">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="100" x="86" y="264.7861">[dbConfig not set]</text>
+    <polygon fill="#181818" points="63.5,288.0703,53.5,292.0703,63.5,296.0703,59.5,292.0703" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="57.5" x2="390.5" y1="292.0703" y2="292.0703"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="207" x="69.5" y="287.2139">log "Database configuration not set"</text>
+    <polygon fill="#181818" points="63.5,318.4219,53.5,322.4219,63.5,326.4219,59.5,322.4219" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="57.5" x2="395.5" y1="322.4219" y2="322.4219"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="69.5" y="317.5654">return nullptr</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="10" x2="1137" y1="331.4219" y2="331.4219"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="79" x="15" y="342.8408">[dbConfig set]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="396.5" x2="443.5" y1="363.6094" y2="363.6094"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="443.5" x2="443.5" y1="363.6094" y2="376.6094"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="402.5" x2="443.5" y1="376.6094" y2="376.6094"/>
+    <polygon fill="#181818" points="412.5,372.6094,402.5,376.6094,412.5,380.6094,408.5,376.6094" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="140" x="408.5" y="358.7529">new DatabaseManager()</text>
+    <polygon fill="#181818" points="770,407.9609,780,411.9609,770,415.9609,774,411.9609" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="776" y1="411.9609" y2="411.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="408.5" y="407.1045">getDatabase()</text>
+    <path d="M321,426.9609 L382,426.9609 L382,435.3125 L372,445.3125 L321,445.3125 L321,426.9609 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="48.7031" style="stroke:#000000;stroke-width:1.5;" width="529" x="321" y="426.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="336" y="441.4561">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="66" x="397" y="440.3799">[DB is open]</text>
+    <polygon fill="#181818" points="770,463.6641,780,467.6641,770,471.6641,774,467.6641" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="776" y1="467.6641" y2="467.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="39" x="408.5" y="462.8076">close()</text>
+    <polygon fill="#181818" points="770,501.0156,780,505.0156,770,509.0156,774,505.0156" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="776" y1="505.0156" y2="505.0156"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112" x="408.5" y="500.1592">setHostName(host)</text>
+    <polygon fill="#181818" points="770,531.3672,780,535.3672,770,539.3672,774,535.3672" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="776" y1="535.3672" y2="535.3672"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="408.5" y="530.5107">setPort(port)</text>
+    <polygon fill="#181818" points="770,561.7188,780,565.7188,770,569.7188,774,565.7188" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="776" y1="565.7188" y2="565.7188"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="408.5" y="560.8623">open()</text>
+    <polygon fill="#181818" points="1073,592.0703,1083,596.0703,1073,600.0703,1077,596.0703" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="787" x2="1079" y1="596.0703" y2="596.0703"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="269" x="794" y="591.2139">CREATE DATABASE IF NOT EXISTS dbname</text>
+    <polygon fill="#181818" points="775,622.4219,785,626.4219,775,630.4219,779,626.4219" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="781" y1="626.4219" y2="626.4219"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="161" x="408.5" y="621.5654">setDatabaseName(dbname)</text>
+    <polygon fill="#181818" points="775,652.7734,785,656.7734,775,660.7734,779,656.7734" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="781" y1="656.7734" y2="656.7734"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="144" x="408.5" y="651.917">setUserName(username)</text>
+    <polygon fill="#181818" points="775,683.125,785,687.125,775,691.125,779,687.125" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="781" y1="687.125" y2="687.125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="138" x="408.5" y="682.2686">setPassword(password)</text>
+    <polygon fill="#181818" points="775,713.4766,785,717.4766,775,721.4766,779,717.4766" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="781" y1="717.4766" y2="717.4766"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="408.5" y="712.6201">open()</text>
+    <path d="M20,732.4766 L81,732.4766 L81,740.8281 L71,750.8281 L20,750.8281 L20,732.4766 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="138.2422" style="stroke:#000000;stroke-width:1.5;" width="469.5" x="20" y="732.4766"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="35" y="746.9717">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="100" x="96" y="745.8955">[open successful]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="443.5" y1="773.1797" y2="773.1797"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="443.5" x2="443.5" y1="773.1797" y2="786.1797"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="402.5" x2="443.5" y1="786.1797" y2="786.1797"/>
+    <polygon fill="#181818" points="412.5,782.1797,402.5,786.1797,412.5,790.1797,408.5,786.1797" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="408.5" y="768.3232">return true</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="489.5" y1="795.1797" y2="795.1797"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="69" x="25" y="806.5986">[open failed]</text>
+    <polygon fill="#181818" points="63.5,828.3672,53.5,832.3672,63.5,836.3672,59.5,832.3672" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="57.5" x2="390.5" y1="832.3672" y2="832.3672"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="232" x="69.5" y="827.5107">log "Error opening database connection"</text>
+    <polygon fill="#181818" points="63.5,858.7188,53.5,862.7188,63.5,866.7188,59.5,862.7188" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="57.5" x2="390.5" y1="862.7188" y2="862.7188"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="69.5" y="857.8623">return nullptr</text>
+    <polygon fill="#181818" points="379.5,903.0703,389.5,907.0703,379.5,911.0703,383.5,907.0703" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="52.5" x2="385.5" y1="907.0703" y2="907.0703"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="143" x="59.5" y="902.2139">checkConnection(&amp;error)</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="401.5" x2="443.5" y1="937.4219" y2="937.4219"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="443.5" x2="443.5" y1="937.4219" y2="950.4219"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="402.5" x2="443.5" y1="950.4219" y2="950.4219"/>
+    <polygon fill="#181818" points="412.5,946.4219,402.5,950.4219,412.5,954.4219,408.5,950.4219" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="182" x="408.5" y="932.5654">createInstance(true, false, &amp;err)</text>
+    <path d="M20,965.4219 L81,965.4219 L81,973.7734 L71,983.7734 L20,983.7734 L20,965.4219 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="125.2422" style="stroke:#000000;stroke-width:1.5;" width="452" x="20" y="965.4219"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="35" y="979.917">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="123" x="96" y="978.8408">[createInstance failed]</text>
+    <polygon fill="#181818" points="63.5,1002.125,53.5,1006.125,63.5,1010.125,59.5,1006.125" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="57.5" x2="390.5" y1="1006.125" y2="1006.125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="69.5" y="1001.2686">log err</text>
+    <polygon fill="#181818" points="63.5,1032.4766,53.5,1036.4766,63.5,1040.4766,59.5,1036.4766" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="57.5" x2="390.5" y1="1036.4766" y2="1036.4766"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="64" x="69.5" y="1031.6201">return false</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="472" y1="1045.4766" y2="1045.4766"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="154" x="25" y="1056.8955">[createInstance successful]</text>
+    <polygon fill="#181818" points="63.5,1078.6641,53.5,1082.6641,63.5,1086.6641,59.5,1082.6641" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="57.5" x2="390.5" y1="1082.6641" y2="1082.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="69.5" y="1077.8076">return true</text>
+  </g>
+</svg>

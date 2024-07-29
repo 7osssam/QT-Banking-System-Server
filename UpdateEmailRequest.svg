@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1262px" preserveAspectRatio="none" style="width:1201px;height:1262px;background:#FFFFFF;" version="1.1" viewBox="0 0 1201 1262" width="1201px" zoomAndPan="magnify">
+  <defs>
+    <style type="text/css">a:hover { text-decoration: underline; }</style>
+  </defs>
+  <g>
+    <rect fill="#FFFFFF" height="233.4609" style="stroke:#181818;stroke-width:1.0;" width="10" x="213.5" y="114.9609"/>
+    <rect fill="#FFFFFF" height="1025.0234" style="stroke:#181818;stroke-width:1.0;" width="10" x="773.5" y="145.3125"/>
+    <rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="915" y="394.6094"/>
+    <rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="915" y="570.2031"/>
+    <rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="915" y="745.7969"/>
+    <rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="915" y="921.3906"/>
+    <rect fill="none" height="942.3203" style="stroke:#000000;stroke-width:1.5;" width="1184.5" x="10" y="221.0156"/>
+    <rect fill="none" height="716.375" style="stroke:#000000;stroke-width:1.5;" width="1164.5" x="20" y="439.9609"/>
+    <rect fill="none" height="533.7813" style="stroke:#000000;stroke-width:1.5;" width="1144.5" x="30" y="615.5547"/>
+    <rect fill="none" height="351.1875" style="stroke:#000000;stroke-width:1.5;" width="1124.5" x="40" y="791.1484"/>
+    <rect fill="none" height="168.5938" style="stroke:#000000;stroke-width:1.5;" width="604" x="50" y="966.7422"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="77" x2="77" y1="82.6094" y2="1180.3359"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="218.5" x2="218.5" y1="82.6094" y2="1180.3359"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="596" x2="596" y1="82.6094" y2="1180.3359"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="685" x2="685" y1="82.6094" y2="1180.3359"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="778" x2="778" y1="82.6094" y2="1180.3359"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="920" x2="920" y1="82.6094" y2="1180.3359"/>
+    <line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1104.5" x2="1104.5" y1="82.6094" y2="1180.3359"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="60" y="79.5332">User</text>
+    <ellipse cx="77.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M77.5,21.5 L77.5,48.5 M64.5,29.5 L90.5,29.5 M77.5,48.5 L64.5,63.5 M77.5,48.5 L90.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="60" y="1193.8691">User</text>
+    <ellipse cx="77.5" cy="1205.4453" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/>
+    <path d="M77.5,1213.4453 L77.5,1240.4453 M64.5,1221.4453 L90.5,1221.4453 M77.5,1240.4453 L64.5,1255.4453 M77.5,1240.4453 L90.5,1255.4453 " fill="none" style="stroke:#181818;stroke-width:0.5;"/>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="145.5" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="152.5" y="71.5332">UpdateEmailRequest</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="145.5" y="1179.3359"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="152.5" y="1200.8691">UpdateEmailRequest</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="95" x="549" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="556" y="71.5332">QJsonObject</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="95" x="549" y="1179.3359"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="556" y="1200.8691">QJsonObject</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="62" x="654" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="661" y="71.5332">QMutex</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="62" x="654" y="1179.3359"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="661" y="1200.8691">QMutex</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="726" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="733" y="71.5332">QMutexLocker</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="726" y="1179.3359"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="733" y="1200.8691">QMutexLocker</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="158" x="841" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="848" y="71.5332">DB::DatabaseManager</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="158" x="841" y="1179.3359"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="848" y="1200.8691">DB::DatabaseManager</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="99" x="1055.5" y="50"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="1062.5" y="71.5332">DB::DbResult</text>
+    <rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="99" x="1055.5" y="1179.3359"/>
+    <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="1062.5" y="1200.8691">DB::DbResult</text>
+    <rect fill="#FFFFFF" height="233.4609" style="stroke:#181818;stroke-width:1.0;" width="10" x="213.5" y="114.9609"/>
+    <rect fill="#FFFFFF" height="1025.0234" style="stroke:#181818;stroke-width:1.0;" width="10" x="773.5" y="145.3125"/>
+    <rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="915" y="394.6094"/>
+    <rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="915" y="570.2031"/>
+    <rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="915" y="745.7969"/>
+    <rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="915" y="921.3906"/>
+    <polygon fill="#181818" points="201.5,110.9609,211.5,114.9609,201.5,118.9609,205.5,114.9609" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="77.5" x2="207.5" y1="114.9609" y2="114.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="84.5" y="110.1045">execute(jsonObj, m)</text>
+    <polygon fill="#181818" points="761.5,141.3125,771.5,145.3125,761.5,149.3125,765.5,145.3125" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="223.5" x2="767.5" y1="145.3125" y2="145.3125"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="113" x="230.5" y="140.4561">QMutexLocker(&amp;m)</text>
+    <polygon fill="#181818" points="584.5,171.6641,594.5,175.6641,584.5,179.6641,588.5,175.6641" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="223.5" x2="590.5" y1="175.6641" y2="175.6641"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="207" x="230.5" y="170.8076">extract email, password, new_email</text>
+    <polygon fill="#181818" points="234.5,202.0156,224.5,206.0156,234.5,210.0156,230.5,206.0156" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="228.5" x2="595.5" y1="206.0156" y2="206.0156"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="240.5" y="201.1592">return credentials</text>
+    <path d="M10,221.0156 L71,221.0156 L71,229.3672 L61,239.3672 L10,239.3672 L10,221.0156 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="942.3203" style="stroke:#000000;stroke-width:1.5;" width="1184.5" x="10" y="221.0156"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="235.5107">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="124" x="86" y="234.4346">[DB connection invalid]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="223.5" x2="265.5" y1="261.7188" y2="261.7188"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="265.5" x2="265.5" y1="261.7188" y2="274.7188"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="224.5" x2="265.5" y1="274.7188" y2="274.7188"/>
+    <polygon fill="#181818" points="234.5,270.7188,224.5,274.7188,234.5,278.7188,230.5,274.7188" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="194" x="230.5" y="256.8623">isDBConnectionValid(dbManager)</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="223.5" x2="265.5" y1="305.0703" y2="305.0703"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="265.5" x2="265.5" y1="305.0703" y2="318.0703"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="224.5" x2="265.5" y1="318.0703" y2="318.0703"/>
+    <polygon fill="#181818" points="234.5,314.0703,224.5,318.0703,234.5,322.0703,230.5,318.0703" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="243" x="230.5" y="300.2139">CreateDBConnectionError(response, data)</text>
+    <polygon fill="#181818" points="88.5,344.4219,78.5,348.4219,88.5,352.4219,84.5,348.4219" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="82.5" x2="217.5" y1="348.4219" y2="348.4219"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="94.5" y="343.5654">return response</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="10" x2="1194.5" y1="357.4219" y2="357.4219"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="114" x="15" y="368.8408">[DB connection valid]</text>
+    <polygon fill="#181818" points="903,390.6094,913,394.6094,903,398.6094,907,394.6094" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="218.5" x2="909" y1="394.6094" y2="394.6094"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="318" x="225.5" y="389.7529">select("*").table("users").where("email =", email).exec()</text>
+    <polygon fill="#181818" points="1093,420.9609,1103,424.9609,1093,428.9609,1097,424.9609" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="920" x2="1099" y1="424.9609" y2="424.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="927" y="420.1045">return user data</text>
+    <path d="M20,439.9609 L81,439.9609 L81,448.3125 L71,458.3125 L20,458.3125 L20,439.9609 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="716.375" style="stroke:#000000;stroke-width:1.5;" width="1164.5" x="20" y="439.9609"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="35" y="454.4561">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="90" x="96" y="453.3799">[user not found]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="218.5" x2="260.5" y1="480.6641" y2="480.6641"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="260.5" x2="260.5" y1="480.6641" y2="493.6641"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="219.5" x2="260.5" y1="493.6641" y2="493.6641"/>
+    <polygon fill="#181818" points="229.5,489.6641,219.5,493.6641,229.5,497.6641,225.5,493.6641" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="324" x="225.5" y="475.8076">CreateErrorResponse(response, data, "email not found")</text>
+    <polygon fill="#181818" points="88.5,520.0156,78.5,524.0156,88.5,528.0156,84.5,524.0156" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="82.5" x2="217.5" y1="524.0156" y2="524.0156"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="94.5" y="519.1592">return response</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="20" x2="1184.5" y1="533.0156" y2="533.0156"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="69" x="25" y="544.4346">[user found]</text>
+    <polygon fill="#181818" points="903,566.2031,913,570.2031,903,574.2031,907,570.2031" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="218.5" x2="909" y1="570.2031" y2="570.2031"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="358" x="225.5" y="565.3467">select("password").table("users").where("id =", user_id).exec()</text>
+    <polygon fill="#181818" points="1093,596.5547,1103,600.5547,1093,604.5547,1097,600.5547" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="920" x2="1099" y1="600.5547" y2="600.5547"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="92" x="927" y="595.6982">return password</text>
+    <path d="M30,615.5547 L91,615.5547 L91,623.9063 L81,633.9063 L30,633.9063 L30,615.5547 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="533.7813" style="stroke:#000000;stroke-width:1.5;" width="1144.5" x="30" y="615.5547"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="45" y="630.0498">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="102" x="106" y="628.9736">[password invalid]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="218.5" x2="260.5" y1="656.2578" y2="656.2578"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="260.5" x2="260.5" y1="656.2578" y2="669.2578"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="219.5" x2="260.5" y1="669.2578" y2="669.2578"/>
+    <polygon fill="#181818" points="229.5,665.2578,219.5,669.2578,229.5,673.2578,225.5,669.2578" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="330" x="225.5" y="651.4014">CreateErrorResponse(response, data, "Invalid password")</text>
+    <polygon fill="#181818" points="88.5,695.6094,78.5,699.6094,88.5,703.6094,84.5,699.6094" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="82.5" x2="217.5" y1="699.6094" y2="699.6094"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="94.5" y="694.7529">return response</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="30" x2="1174.5" y1="708.6094" y2="708.6094"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="92" x="35" y="720.0283">[password valid]</text>
+    <polygon fill="#181818" points="903,741.7969,913,745.7969,903,749.7969,907,745.7969" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="218.5" x2="909" y1="745.7969" y2="745.7969"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="348" x="225.5" y="740.9404">select("*").table("users").where("email =", new_email).exec()</text>
+    <polygon fill="#181818" points="1093,772.1484,1103,776.1484,1093,780.1484,1097,776.1484" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="920" x2="1099" y1="776.1484" y2="776.1484"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="156" x="927" y="771.292">return existing email check</text>
+    <path d="M40,791.1484 L101,791.1484 L101,799.5 L91,809.5 L40,809.5 L40,791.1484 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="351.1875" style="stroke:#000000;stroke-width:1.5;" width="1124.5" x="40" y="791.1484"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="55" y="805.6436">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="118" x="116" y="804.5674">[email already exists]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="218.5" x2="260.5" y1="831.8516" y2="831.8516"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="260.5" x2="260.5" y1="831.8516" y2="844.8516"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="219.5" x2="260.5" y1="844.8516" y2="844.8516"/>
+    <polygon fill="#181818" points="229.5,840.8516,219.5,844.8516,229.5,848.8516,225.5,844.8516" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="354" x="225.5" y="826.9951">CreateErrorResponse(response, data, "Email already exists")</text>
+    <polygon fill="#181818" points="88.5,871.2031,78.5,875.2031,88.5,879.2031,84.5,875.2031" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="82.5" x2="217.5" y1="875.2031" y2="875.2031"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="94.5" y="870.3467">return response</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="40" x2="1164.5" y1="884.2031" y2="884.2031"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="88" x="45" y="895.6221">[email available]</text>
+    <polygon fill="#181818" points="903,917.3906,913,921.3906,903,925.3906,907,921.3906" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="218.5" x2="909" y1="921.3906" y2="921.3906"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="361" x="225.5" y="916.5342">update("users", {{"email", new_email}}).where("email =", email)</text>
+    <polygon fill="#181818" points="1093,947.7422,1103,951.7422,1093,955.7422,1097,951.7422" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="920" x2="1099" y1="951.7422" y2="951.7422"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="927" y="946.8857">return success</text>
+    <path d="M50,966.7422 L111,966.7422 L111,975.0938 L101,985.0938 L50,985.0938 L50,966.7422 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/>
+    <rect fill="none" height="168.5938" style="stroke:#000000;stroke-width:1.5;" width="604" x="50" y="966.7422"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="65" y="981.2373">alt</text>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="79" x="126" y="980.1611">[update failed]</text>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="218.5" x2="260.5" y1="1007.4453" y2="1007.4453"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="260.5" x2="260.5" y1="1007.4453" y2="1020.4453"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="219.5" x2="260.5" y1="1020.4453" y2="1020.4453"/>
+    <polygon fill="#181818" points="229.5,1016.4453,219.5,1020.4453,229.5,1024.4453,225.5,1020.4453" style="stroke:#181818;stroke-width:1.0;"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="364" x="225.5" y="1002.5889">CreateErrorResponse(response, data, "Failed to update email")</text>
+    <polygon fill="#181818" points="88.5,1046.7969,78.5,1050.7969,88.5,1054.7969,84.5,1050.7969" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="82.5" x2="217.5" y1="1050.7969" y2="1050.7969"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="94.5" y="1045.9404">return response</text>
+    <line style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="50" x2="654" y1="1059.7969" y2="1059.7969"/>
+    <text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="110" x="55" y="1071.2158">[update successful]</text>
+    <polygon fill="#181818" points="584.5,1092.9844,594.5,1096.9844,584.5,1100.9844,588.5,1096.9844" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="218.5" x2="590.5" y1="1096.9844" y2="1096.9844"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="225.5" y="1092.1279">construct success response</text>
+    <polygon fill="#181818" points="88.5,1123.3359,78.5,1127.3359,88.5,1131.3359,84.5,1127.3359" style="stroke:#181818;stroke-width:1.0;"/>
+    <line style="stroke:#181818;stroke-width:1.0;" x1="82.5" x2="595.5" y1="1127.3359" y2="1127.3359"/>
+    <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="94.5" y="1122.4795">return response</text>
+  </g>
+</svg>
