@@ -69,7 +69,7 @@ test:
 
 # Define variables
 PLANTUML_DIRS = docs/diagrams/plantuml docs/diagrams/plantuml/sequence-diagrams docs/diagrams/plantuml/sequence-diagrams/Modules docs/diagrams/plantuml/sequence-diagrams/Requests
-MERMAID_DIRS = docs/diagrams/mermaid docs/diagrams/mermaid/sequence-diagrams docs/diagrams/mermaid/sequence-diagrams/Modules docs/diagrams/mermaid/sequence-diagrams/Requests
+MERMAID_DIRS = docs/diagrams/mermaid
 SVG_DIRS = docs/diagrams/plantuml docs/diagrams/mermaid docs/diagrams/plantuml/sequence-diagrams/Modules docs/diagrams/plantuml/sequence-diagrams/Requests
 
 # Target to generate diagrams
@@ -83,8 +83,8 @@ ifeq ($(OS), Windows_NT)
 	plantuml -tpng -nometadata -o plantuml docs/diagrams/*.puml
 	plantuml -tsvg -nometadata -o ../../plantuml/sequence-diagrams/Modules docs/diagrams/sequence-diagrams/Modules/*.puml
 	plantuml -tpng -nometadata -o ../../plantuml/sequence-diagrams/Modules docs/diagrams/sequence-diagrams/Modules/*.puml
-	plantuml -tsvg -nometadata -o ../plantuml/sequence-diagrams/Requests docs/diagrams/sequence-diagrams/Requests/*.puml
-	plantuml -tpng -nometadata -o ../plantuml/sequence-diagrams/Requests docs/diagrams/sequence-diagrams/Requests/*.puml
+	plantuml -tsvg -nometadata -o ../../plantuml/sequence-diagrams/Requests docs/diagrams/sequence-diagrams/Requests/*.puml
+	plantuml -tpng -nometadata -o ../../plantuml/sequence-diagrams/Requests docs/diagrams/sequence-diagrams/Requests/*.puml
 	@echo "Converting .mmd files to SVG..."
 	py utils/generate_mermaid.py "docs/diagrams/*.mmd"
 	@echo "Formatting generated SVG files..."
