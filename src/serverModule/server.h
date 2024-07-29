@@ -1,3 +1,10 @@
+/**
+ * @file server.h
+ *
+ * @brief This file contains the declaration of the Server class, which extends QTcpServer to handle incoming network connections.
+ * @image html ServerModule.svg
+ */
+
 #ifndef SERVER_H
 #define SERVER_H
 
@@ -33,6 +40,7 @@ public:
      * incoming connections.
      *
      * @param parent The parent QObject.
+	 * @image html Server_init.svg
      */
 	explicit Server(QObject* parent = nullptr);
 
@@ -51,6 +59,7 @@ public slots:
      * @brief Starts the server and listens for incoming connections on the specified port.
      *
      * @param port The port number to listen on (default is 2222).
+	 * @image html Server_start_stop.svg
      */
 	void start(qint16 port = 2222);
 
@@ -64,6 +73,7 @@ protected:
      * @brief Handles incoming connections by creating and starting a ServerHandler instance.
      *
      * @param handle The socket descriptor for the incoming connection.
+	 * @image html Server_incomingConnection.svg
      */
 	void incomingConnection(qintptr handle) override;
 

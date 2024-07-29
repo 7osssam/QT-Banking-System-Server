@@ -1,3 +1,10 @@
+/**
+ * @file serverhandler.h
+ *
+ * @brief This file contains the declaration of the ServerHandler class, which handles incoming client connections in a separate thread.
+ * @image html ServerModule.svg
+ */
+
 #ifndef SERVERHANDLER_H
 #define SERVERHANDLER_H
 
@@ -5,10 +12,7 @@
 #include <QObject>
 #include <QDebug>
 #include <QRunnable>
-#include <QThreadPool>
 #include <QThread>
-#include <QJsonDocument>
-#include <QJsonObject>
 #include <QCryptographicHash>
 #include <QByteArray>
 #include <QMutex>
@@ -35,6 +39,7 @@ public:
      * @param m Pointer to a QMutex used for synchronization.
      * @param handle The socket descriptor for the incoming connection.
      * @param parent The parent QObject.
+	 * @image html ServerHandler_init.svg
      */
 	explicit ServerHandler(QMutex* m, qintptr handle = 0, QObject* parent = nullptr);
 
@@ -50,6 +55,7 @@ public:
      *
      * Reads data from the client socket, verifies its integrity using a cryptographic hash, and
      * processes the request using RequestManager. Sends the response back to the client.
+	 * @image html ServerHandler_readyRead.svg
      */
 	void readyRead();
 
@@ -58,13 +64,9 @@ public:
      *
      * Sets up the client socket, connects signals for reading data and disconnection, and starts
      * the event loop to process client requests.
+	 * @image html ServerHandler_run.svg
      */
 	void run();
-signals:
-	// No signals defined for this class
-
-public slots:
-	// No slots defined for this class
 
 private:
 	qintptr			handle_;		///< The socket descriptor for the incoming connection.
