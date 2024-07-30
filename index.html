@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>BankingSystem_Server: QT Banking System (Server side)</title>
+<title>Banking_System_Server: QT-Banking-System-Server</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -56,10 +56,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">BankingSystem_Server
+   <div id="projectname">Banking_System_Server
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">This is a qt project for a banking system (Server side)</div>
+   <div id="projectbrief">Qt-based banking app for user/admin account management, transactions, secure server communication via PostgreSQL/Supabase.</div>
   </td>
  </tr>
  </tbody>
@@ -115,10 +115,113 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">QT Banking System (<a class="el" href="classServer.html" title="The Server class extends QTcpServer to handle incoming network connections.">Server</a> side) </div>  </div>
+<div class="title">QT-Banking-System-Server </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_README"></a></p>
+<div class="textblock"><p><a class="anchor" id="md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_README"></a> </p><h1>Overview</h1>
+<p>QT-Banking-System-Server is the server-side implementation of a banking system, developed using the Qt 6/C++ framework. The server handles client requests, performs database operations using PostgreSQL with Supabase hosting, and ensures secure and efficient communication between clients and the database.</p>
+<p>The server application is designed to be multi-threaded, enabling concurrent handling of multiple clients and requests. It includes features such as request handling, database operations, logging, and secure communication to provide a robust and reliable banking system.</p>
+<blockquote class="doxtable">
+<p>[!NOTE] This project is part of a Banking System (TCP Client-Server) project, which includes the following repositories:</p><ul>
+<li><a href="https://github.com/7osssam/QT-Banking-System-Client">QT-Banking-System-Client</a>: The client-side implementation of the banking system.</li>
+<li><a href="https://github.com/7osssam/QT-Banking-System-Server">QT-Banking-System-Server</a>: The server-side implementation of the banking system. </li>
+</ul>
+</blockquote>
+<h1>Features</h1>
+<ul>
+<li><b><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> Handling:</b> Manages various client requests such as user management, transaction processing, and data retrieval.</li>
+<li><b>Database Operations:</b> Performs CRUD operations on user accounts and transaction records.<ul>
+<li>By using the <a href="src/dbModule">Database Module</a>, the server can connect to the database, execute queries, and handle results in a multi-threaded environment using Qt's <code>QThreadStorage</code> for thread-local storage.</li>
+</ul>
+</li>
+<li><b>Logging:</b> Logs server activities and client requests for monitoring and debugging purposes in a multi-threaded fashion.<ul>
+<li>For more details, see the <a href="https://github.com/7osssam/LogByThread">LogByThread</a> library used in the project.</li>
+</ul>
+</li>
+<li><b>Secure Communication:</b> Implements security measures to ensure secure communication with clients and database.<ul>
+<li>For example, hashing and encryption techniques are used to protect sensitive data.</li>
+</ul>
+</li>
+<li><b>Concurrency server:</b> The server can handle multiple clients concurrently using Qt's <code>QTcpServer</code> and <code>QTcpSocket</code> classes.<ul>
+<li>The server can process multiple requests simultaneously using a thread pool.</li>
+</ul>
+</li>
+</ul>
+<h1>Technologies Used</h1>
+<ul>
+<li><b>C++/Qt 6:</b> Core language and framework for building the server application.<ul>
+<li><b>Qt Components:</b> Core, Network and Sql modules.</li>
+</ul>
+</li>
+<li><b>PostgreSQL with Supabase:</b> Database management system for handling data operations.</li>
+<li><b>JSON:</b> Data format for communication between client and server.</li>
+<li><b>CMake:</b> Build system for managing the build process.</li>
+<li><b>GoogleTest:</b> Framework for unit testing the application.</li>
+<li><b>GitHub Actions:</b> Continuous integration for automated testing and documentation generation.</li>
+<li><b>Doxygen:</b> Tool for generating documentation from source code.</li>
+</ul>
+<h1>Setup and Installation</h1>
+<h2>Prerequisites</h2>
+<ul>
+<li>Qt 6.7.1 or later</li>
+<li>CMake</li>
+<li>MinGW or another compatible compiler</li>
+<li>PostgreSQL database</li>
+<li>Supabase account and configuration</li>
+</ul>
+<h2>Building the Project</h2>
+<ol type="1">
+<li>Clone the repository: <div class="fragment"><div class="line">git clone https://github.com/7osssam/QT-Banking-System-Server.git</div>
+<div class="line">cd QT-Banking-System-Server</div>
+</div><!-- fragment --></li>
+<li>Install dependencies: <div class="fragment"><div class="line">make dependency</div>
+</div><!-- fragment --></li>
+<li>Configure the project using CMake: <div class="fragment"><div class="line">make clean-cache-reconfigure</div>
+</div><!-- fragment --></li>
+<li>Build the project: <div class="fragment"><div class="line">make build</div>
+</div><!-- fragment --></li>
+</ol>
+<h2>Running the <a class="el" href="classServer.html" title="The Server class extends QTcpServer to handle incoming network connections.">Server</a></h2>
+<p>To run the server application, execute the following command: </p><div class="fragment"><div class="line">make run</div>
+</div><!-- fragment --><h1><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> Handling</h1>
+<p>The server handles various requests through the <code><a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a></code> and specific request classes located in the <code>requestModule/Requests</code> directory. Each request class inherits from the base <code><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a></code> class and implements the necessary logic for processing the request, including validation, database operations, and response generation.</p>
+<p>for more details, see the <a class="el" href="md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_src_requestModule_Requests_Requests.html">Requests Documentation</a>.</p>
+<ul>
+<li>This sequence diagram illustrates the process of handling a client request by the server: <img src="Request.svg" alt="" style="pointer-events: none;" class="inline" title="Request Handling Sequence Diagram"/> <blockquote class="doxtable">
+<p>More detailed diagrams for each module can be found in the <a href="docs/diagrams/">Diagrams Directory</a>. </p>
+</blockquote>
+<h1>Database Operations</h1>
+</li>
+</ul>
+<p>Database operations are managed through the <code>dbModule</code> (or <code>DB</code> namespace), which includes classes for connecting to the database, executing queries, and handling results in a multi-threaded environment using Qt's <code>QThreadStorage</code> for thread-local storage. This module is built as a separate library to ensure modularity and reusability across the server application.</p>
+<ul>
+<li>This sequence diagram illustrates the process of the initialization of the database connection:</li>
+</ul>
+<p><img src="DatabaseManager_init.svg" alt="" style="pointer-events: none;" class="inline" title="Database Connection Sequence Diagram"/></p>
+<ul>
+<li>This sequence diagram illustrates the process of executing a query and handling the result:</li>
+</ul>
+<p><img src="DatabaseManager_query.svg" alt="" style="pointer-events: none;" class="inline" title="Database Query Sequence Diagram"/> </p><blockquote class="doxtable">
+<p>More detailed diagrams for each module can be found in the <a href="docs/diagrams/">Diagrams Directory</a>. </p>
+</blockquote>
+<h1>Testing</h1>
+<p>Unit tests are written using GoogleTest. To build and run the tests, execute the following command: </p><div class="fragment"><div class="line">make test</div>
+</div><!-- fragment --><h1>Documentation</h1>
+<p>Comprehensive documentation is available, detailing the purpose, design, and usage of each class and function within the project. The documentation is generated using Doxygen and can be viewed by opening the <code>docs/html/index.html</code> file in a web browser or by visiting the <a href="https://7osssam.github.io/QT-Banking-System-Server/">GitHub Page</a> site.</p>
+<h1>Continuous Integration</h1>
+<p>The project uses GitHub Actions for continuous integration. The build and test status can be monitored through the following badges:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Documentation   </th><th class="markdownTableHeadNone">Pages Build Deployment   </th><th class="markdownTableHeadNone">Ubuntu CI Test    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="https://github.com/7osssam/QT-Banking-System-Server/actions/workflows/documentation.yml"><img src="https://github.com/7osssam/QT-Banking-System-Server/actions/workflows/documentation.yml/badge.svg" alt="Documentation" style="pointer-events: none;" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://github.com/7osssam/QT-Banking-System-Server/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/7osssam/QT-Banking-System-Server/actions/workflows/pages/pages-build-deployment/badge.svg" alt="pages-build-deployment" style="pointer-events: none;" class="inline"/></a>   </td><td class="markdownTableBodyNone"><a href="https://github.com/7osssam/QT-Banking-System-Server/actions/workflows/Ubuntu.yml"><img src="https://github.com/7osssam/QT-Banking-System-Server/actions/workflows/Ubuntu.yml/badge.svg" alt="Ubuntu CI Test" style="pointer-events: none;" class="inline"/></a>   </td></tr>
+</table>
+<h1>Contribution</h1>
+<p>Contributions are welcome! Please open an issue or submit a pull request for any changes or enhancements.</p>
+<h1>License</h1>
+<p>This project is licensed under the MIT License. See the LICENSE file for details.</p>
+<hr  />
+<p>Happy coding! </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
