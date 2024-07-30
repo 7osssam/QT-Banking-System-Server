@@ -1,2 +1,194 @@
 \label{index_md_D__XDUMP_BankingSystem_QT_Banking_System_Server_README}%
 \Hypertarget{index_md_D__XDUMP_BankingSystem_QT_Banking_System_Server_README}%
+ \doxysection*{Overview}
+
+QT-\/\+Banking-\/\+System-\/\+Server is the server-\/side implementation of a banking system, developed using the Qt 6/\+C++ framework. The server handles client requests, performs database operations using Postgre\+SQL with Supabase hosting, and ensures secure and efficient communication between clients and the database.
+
+The server application is designed to be multi-\/threaded, enabling concurrent handling of multiple clients and requests. It includes features such as request handling, database operations, logging, and secure communication to provide a robust and reliable banking system.
+
+\begin{quote}
+\mbox{[}!\+NOTE\mbox{]} This project is part of a Banking System (TCP Client-\/\+Server) project, which includes the following repositories\+:
+\begin{DoxyItemize}
+\item \href{https://github.com/7osssam/QT-Banking-System-Client}{\texttt{ QT-\/\+Banking-\/\+System-\/\+Client}}\+: The client-\/side implementation of the banking system.
+\item \href{https://github.com/7osssam/QT-Banking-System-Server}{\texttt{ QT-\/\+Banking-\/\+System-\/\+Server}}\+: The server-\/side implementation of the banking system. 
+\end{DoxyItemize}\end{quote}
+
+
+\doxysection*{Features}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{\mbox{\hyperlink{classRequest}{Request}} Handling\+:}} Manages various client requests such as user management, transaction processing, and data retrieval.
+\item {\bfseries{Database Operations\+:}} Performs CRUD operations on user accounts and transaction records.
+\begin{DoxyItemize}
+\item By using the \href{src/dbModule}{\texttt{ Database Module}}, the server can connect to the database, execute queries, and handle results in a multi-\/threaded environment using Qt\textquotesingle{}s {\ttfamily QThread\+Storage} for thread-\/local storage.
+\end{DoxyItemize}
+\item {\bfseries{Logging\+:}} Logs server activities and client requests for monitoring and debugging purposes in a multi-\/threaded fashion.
+\begin{DoxyItemize}
+\item For more details, see the \href{https://github.com/7osssam/LogByThread}{\texttt{ Log\+By\+Thread}} library used in the project.
+\end{DoxyItemize}
+\item {\bfseries{Secure Communication\+:}} Implements security measures to ensure secure communication with clients and database.
+\begin{DoxyItemize}
+\item For example, hashing and encryption techniques are used to protect sensitive data.
+\end{DoxyItemize}
+\item {\bfseries{Concurrency server\+:}} The server can handle multiple clients concurrently using Qt\textquotesingle{}s {\ttfamily QTcp\+Server} and {\ttfamily QTcp\+Socket} classes.
+\begin{DoxyItemize}
+\item The server can process multiple requests simultaneously using a thread pool.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\doxysection*{Technologies Used}
+
+
+\begin{DoxyItemize}
+\item {\bfseries{C++/\+Qt 6\+:}} Core language and framework for building the server application.
+\begin{DoxyItemize}
+\item {\bfseries{Qt Components\+:}} Core, Network and Sql modules.
+\end{DoxyItemize}
+\item {\bfseries{Postgre\+SQL with Supabase\+:}} Database management system for handling data operations.
+\item {\bfseries{JSON\+:}} Data format for communication between client and server.
+\item {\bfseries{CMake\+:}} Build system for managing the build process.
+\item {\bfseries{Google\+Test\+:}} Framework for unit testing the application.
+\item {\bfseries{Git\+Hub Actions\+:}} Continuous integration for automated testing and documentation generation.
+\item {\bfseries{Doxygen\+:}} Tool for generating documentation from source code.
+\end{DoxyItemize}
+
+\doxysection*{Setup and Installation}
+
+\doxysubsection*{Prerequisites}
+
+
+\begin{DoxyItemize}
+\item Qt 6.\+7.\+1 or later
+\item CMake
+\item Min\+GW or another compatible compiler
+\item Postgre\+SQL database
+\item Supabase account and configuration
+\end{DoxyItemize}
+
+\doxysubsection*{Building the Project}
+
+
+\begin{DoxyEnumerate}
+\item Clone the repository\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/7osssam/QT-\/Banking-\/System-\/Server.git}
+\DoxyCodeLine{cd\ QT-\/Banking-\/System-\/Server}
+
+\end{DoxyCode}
+
+\item Install dependencies\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ dependency}
+
+\end{DoxyCode}
+
+\item Configure the project using CMake\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ clean-\/cache-\/reconfigure}
+
+\end{DoxyCode}
+
+\item Build the project\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ build}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\doxysubsection*{Running the \mbox{\hyperlink{classServer}{Server}}}
+
+To run the server application, execute the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ run}
+
+\end{DoxyCode}
+
+
+\doxysection*{\mbox{\hyperlink{classRequest}{Request}} Handling}
+
+The server handles various requests through the {\ttfamily \mbox{\hyperlink{classRequestManager}{Request\+Manager}}} and specific request classes located in the {\ttfamily request\+Module/\+Requests} directory. Each request class inherits from the base {\ttfamily \mbox{\hyperlink{classRequest}{Request}}} class and implements the necessary logic for processing the request, including validation, database operations, and response generation.
+
+for more details, see the \mbox{\hyperlink{md_D__XDUMP_BankingSystem_QT_Banking_System_Server_src_requestModule_Requests_Requests}{Requests Documentation}}.
+
+
+\begin{DoxyItemize}
+\item This sequence diagram illustrates the process of handling a client request by the server\+:  
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{Request.svg}%Request Handling Sequence Diagram
+\end{DoxyInlineImage}
+    \begin{quote}
+More detailed diagrams for each module can be found in the \href{docs/diagrams/}{\texttt{ Diagrams Directory}}. \end{quote}
+\doxysection*{Database Operations}
+\end{DoxyItemize}
+
+Database operations are managed through the {\ttfamily db\+Module} (or {\ttfamily DB} namespace), which includes classes for connecting to the database, executing queries, and handling results in a multi-\/threaded environment using Qt\textquotesingle{}s {\ttfamily QThread\+Storage} for thread-\/local storage. This module is built as a separate library to ensure modularity and reusability across the server application.
+
+
+\begin{DoxyItemize}
+\item This sequence diagram illustrates the process of the initialization of the database connection\+:
+\end{DoxyItemize}
+
+ 
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{DatabaseManager_init.svg}%Database Connection Sequence Diagram
+\end{DoxyInlineImage}
+   
+
+
+\begin{DoxyItemize}
+\item This sequence diagram illustrates the process of executing a query and handling the result\+:
+\end{DoxyItemize}
+
+ 
+\begin{DoxyInlineImage}
+\includegraphics[height=\baselineskip,keepaspectratio=true]{DatabaseManager_query.svg}%Database Query Sequence Diagram
+\end{DoxyInlineImage}
+    \begin{quote}
+More detailed diagrams for each module can be found in the \href{docs/diagrams/}{\texttt{ Diagrams Directory}}. \end{quote}
+
+
+\doxysection*{Testing}
+
+Unit tests are written using Google\+Test. To build and run the tests, execute the following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ test}
+
+\end{DoxyCode}
+
+
+\doxysection*{Documentation}
+
+Comprehensive documentation is available, detailing the purpose, design, and usage of each class and function within the project. The documentation is generated using Doxygen and can be viewed by opening the {\ttfamily docs/html/index.\+html} file in a web browser or by visiting the \href{https://7osssam.github.io/QT-Banking-System-Server/}{\texttt{ Git\+Hub Page}} site.
+
+\doxysection*{Continuous Integration}
+
+The project uses Git\+Hub Actions for continuous integration. The build and test status can be monitored through the following badges\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Documentation   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pages Build Deployment   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Ubuntu CI Test    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Documentation   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pages Build Deployment   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Ubuntu CI Test    }\\\cline{1-3}
+\endhead
+\href{https://github.com/7osssam/QT-Banking-System-Server/actions/workflows/documentation.yml}{\texttt{ }}   &\href{https://github.com/7osssam/QT-Banking-System-Server/actions/workflows/pages/pages-build-deployment}{\texttt{ }}   &\href{https://github.com/7osssam/QT-Banking-System-Server/actions/workflows/Ubuntu.yml}{\texttt{ }}   \\\cline{1-3}
+\end{longtabu}
+
+
+\doxysection*{Contribution}
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes or enhancements.
+
+\doxysection*{License}
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+\DoxyHorRuler{0}
+
+
+Happy coding! 
