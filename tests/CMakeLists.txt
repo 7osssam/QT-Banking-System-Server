@@ -41,7 +41,6 @@ add_subdirectory(handleDeleteUser)
 add_subdirectory(handleUpdateUser)
 add_subdirectory(handleUpdateEmail)
 add_subdirectory(handleUpdatePassword)
-#add_subdirectory(RequestManager)
 
 
 ############# etc....
