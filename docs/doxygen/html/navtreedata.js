@@ -26,7 +26,8 @@ var NAVTREE =
 [
   [ "Banking_System_Server", "index.html", [
     [ "QT-Banking-System-Server", "index.html", null ],
-    [ "Requests Documentation for Bank System", "md_D__XDUMP_BankingSystem_QT_Banking_System_Server_src_requestModule_Requests_Requests.html", null ],
+    [ "Requests Documentation", "md_D__XDUMP_BankingSystem_QT_Banking_System_Server_Requests_Documentation.html", null ],
+    [ "Modules Sequence Diagrams", "md_D__XDUMP_BankingSystem_QT_Banking_System_Server_Modules_Sequence_Diagrams.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

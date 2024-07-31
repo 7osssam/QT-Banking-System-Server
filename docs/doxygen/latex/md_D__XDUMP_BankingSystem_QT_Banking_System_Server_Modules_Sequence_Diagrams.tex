@@ -1,0 +1,108 @@
+\doxysection*{\mbox{\hyperlink{classServerHandler}{Server\+Handler}} Diagrams\+:}
+
+\doxysubsection*{Sequence diagram \+: \mbox{\hyperlink{classServerHandler}{Server\+Handler}} initialization and destruction}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{ServerHandler_init.svg}
+\doxyfigcaption{Server\+Handler}
+\end{DoxyImage}
+   
+
+\doxysubsection*{Sequence diagram \+: {\ttfamily \mbox{\hyperlink{classServerHandler}{Server\+Handler}}} processes {\ttfamily ready\+Read} event}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{ServerHandler_readyRead.svg}
+\doxyfigcaption{Server\+Handler\+\_\+ready\+Read}
+\end{DoxyImage}
+   
+
+\doxysubsection*{Sequence diagram \+: {\ttfamily \mbox{\hyperlink{classServerHandler}{Server\+Handler}}} runs the {\ttfamily run} method}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{ServerHandler_run.svg}
+\doxyfigcaption{Server\+Handler\+\_\+run}
+\end{DoxyImage}
+   
+
+\doxysection*{\mbox{\hyperlink{classRequestManager}{Request\+Manager}} Diagrams\+:}
+
+\doxysubsection*{Sequence diagram \+: {\ttfamily \mbox{\hyperlink{classRequestManager}{Request\+Manager}}} processes requests}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{RequestManager_requests.svg}
+\doxyfigcaption{Request\+Manager}
+\end{DoxyImage}
+   
+
+\doxysection*{\mbox{\hyperlink{classServer}{Server}} Diagrams\+:}
+
+\doxysubsection*{Sequence diagram \+: Initialization and destruction of {\ttfamily \mbox{\hyperlink{classServer}{Server}}}}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{Server_init.svg}
+\doxyfigcaption{Server}
+\end{DoxyImage}
+   
+
+\doxysubsection*{Sequence diagram \+: {\ttfamily \mbox{\hyperlink{classServer}{Server}}} starts and stops}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{Server_start_stop.svg}
+\doxyfigcaption{Server\+\_\+start\+\_\+stop}
+\end{DoxyImage}
+   
+
+\doxysubsection*{Sequence diagram \+: {\ttfamily \mbox{\hyperlink{classServer}{Server}}} processes {\ttfamily incoming\+Connection}}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{Server_incomingConnection.svg}
+\doxyfigcaption{Server\+\_\+incoming\+Connection}
+\end{DoxyImage}
+   
+
+\doxysection*{\mbox{\hyperlink{classRequest}{Request}} Diagrams\+:}
+
+\doxysubsection*{Sequence diagram \+: {\ttfamily \mbox{\hyperlink{classRequest}{Request}}} processes a request}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{Request.svg}
+\doxyfigcaption{Request}
+\end{DoxyImage}
+   
+
+\doxysubsection*{Sequence diagram \+: {\ttfamily \mbox{\hyperlink{classRequest}{Request}}} base class handles database connection and error response}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{Request_base.svg}
+\doxyfigcaption{Request\+\_\+base}
+\end{DoxyImage}
+   
+
+\doxysection*{Database\+Manager Diagrams\+:}
+
+\doxysubsection*{Sequence diagram \+: {\ttfamily Database\+Manager} initialization and connection check}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{DatabaseManager_init.svg}
+\doxyfigcaption{Database\+Manager\+\_\+init}
+\end{DoxyImage}
+   
+
+\doxysection*{Sequence diagram \+: {\ttfamily Database\+Manager} processes queries (Example\+: select query) and returns results}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{DatabaseManager_query.svg}
+\doxyfigcaption{Database\+Manager\+\_\+query}
+\end{DoxyImage}
+    
