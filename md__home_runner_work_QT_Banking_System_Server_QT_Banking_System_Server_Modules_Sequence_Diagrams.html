@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>Banking_System_Server: Related Pages</title>
+<title>Banking_System_Server: Modules Sequence Diagrams</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -95,7 +95,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_Modules_Sequence_Diagrams.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -113,18 +113,40 @@ $(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Related Pages</div>  </div>
+<div class="title">Modules Sequence Diagrams </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all related documentation pages:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_Requests_Documentation.html" target="_self">Requests Documentation</a></td><td class="desc"></td></tr>
-<tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__home_runner_work_QT_Banking_System_Server_QT_Banking_System_Server_Modules_Sequence_Diagrams.html" target="_self">Modules Sequence Diagrams</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+<div class="textblock"><h1><a class="el" href="classServerHandler.html" title="The ServerHandler class handles incoming client connections in a separate thread.">ServerHandler</a> Diagrams:</h1>
+<h2>Sequence diagram : <a class="el" href="classServerHandler.html" title="The ServerHandler class handles incoming client connections in a separate thread.">ServerHandler</a> initialization and destruction</h2>
+<p><img src="ServerHandler_init.svg" alt="" style="pointer-events: none;" class="inline" title="ServerHandler"/></p>
+<h2>Sequence diagram : <code><a class="el" href="classServerHandler.html" title="The ServerHandler class handles incoming client connections in a separate thread.">ServerHandler</a></code> processes <code>readyRead</code> event</h2>
+<p><img src="ServerHandler_readyRead.svg" alt="" style="pointer-events: none;" class="inline" title="ServerHandler_readyRead"/></p>
+<h2>Sequence diagram : <code><a class="el" href="classServerHandler.html" title="The ServerHandler class handles incoming client connections in a separate thread.">ServerHandler</a></code> runs the <code>run</code> method</h2>
+<p><img src="ServerHandler_run.svg" alt="" style="pointer-events: none;" class="inline" title="ServerHandler_run"/></p>
+<h1><a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a> Diagrams:</h1>
+<h2>Sequence diagram : <code><a class="el" href="classRequestManager.html" title="The RequestManager class handles incoming requests and dispatches them to the appropriate request han...">RequestManager</a></code> processes requests</h2>
+<p><img src="RequestManager_requests.svg" alt="" style="pointer-events: none;" class="inline" title="RequestManager"/></p>
+<h1><a class="el" href="classServer.html" title="The Server class extends QTcpServer to handle incoming network connections.">Server</a> Diagrams:</h1>
+<h2>Sequence diagram : Initialization and destruction of <code><a class="el" href="classServer.html" title="The Server class extends QTcpServer to handle incoming network connections.">Server</a></code></h2>
+<p><img src="Server_init.svg" alt="" style="pointer-events: none;" class="inline" title="Server"/></p>
+<h2>Sequence diagram : <code><a class="el" href="classServer.html" title="The Server class extends QTcpServer to handle incoming network connections.">Server</a></code> starts and stops</h2>
+<p><img src="Server_start_stop.svg" alt="" style="pointer-events: none;" class="inline" title="Server_start_stop"/></p>
+<h2>Sequence diagram : <code><a class="el" href="classServer.html" title="The Server class extends QTcpServer to handle incoming network connections.">Server</a></code> processes <code>incomingConnection</code></h2>
+<p><img src="Server_incomingConnection.svg" alt="" style="pointer-events: none;" class="inline" title="Server_incomingConnection"/></p>
+<h1><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a> Diagrams:</h1>
+<h2>Sequence diagram : <code><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a></code> processes a request</h2>
+<p><img src="Request.svg" alt="" style="pointer-events: none;" class="inline" title="Request"/></p>
+<h2>Sequence diagram : <code><a class="el" href="classRequest.html" title="The Request class is an abstract base class for handling different types of requests.">Request</a></code> base class handles database connection and error response</h2>
+<p><img src="Request_base.svg" alt="" style="pointer-events: none;" class="inline" title="Request_base"/></p>
+<h1>DatabaseManager Diagrams:</h1>
+<h2>Sequence diagram : <code>DatabaseManager</code> initialization and connection check</h2>
+<p><img src="DatabaseManager_init.svg" alt="" style="pointer-events: none;" class="inline" title="DatabaseManager_init"/></p>
+<h1>Sequence diagram : <code>DatabaseManager</code> processes queries (Example: select query) and returns results</h1>
+<p><img src="DatabaseManager_query.svg" alt="" style="pointer-events: none;" class="inline" title="DatabaseManager_query"/> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

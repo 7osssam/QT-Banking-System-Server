@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['updateemailrequest_128',['UpdateEmailRequest',['../classUpdateEmailRequest.html',1,'']]],
-  ['updatepasswordrequest_129',['UpdatePasswordRequest',['../classUpdatePasswordRequest.html',1,'']]],
-  ['updateuserrequest_130',['UpdateUserRequest',['../classUpdateUserRequest.html',1,'']]],
-  ['userinitrequest_131',['UserInitRequest',['../classUserInitRequest.html',1,'']]]
+  ['updateemailrequest_129',['UpdateEmailRequest',['../classUpdateEmailRequest.html',1,'']]],
+  ['updatepasswordrequest_130',['UpdatePasswordRequest',['../classUpdatePasswordRequest.html',1,'']]],
+  ['updateuserrequest_131',['UpdateUserRequest',['../classUpdateUserRequest.html',1,'']]],
+  ['userinitrequest_132',['UserInitRequest',['../classUserInitRequest.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deleteuser_228',['DeleteUser',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138',1,'RequestManager']]]
+  ['deleteuser_229',['DeleteUser',['../classRequestManager.html#af9c93ecb9b028e390635d0e155d10310aaadb31279034a82211cbcbcb6f32f138',1,'RequestManager']]]
 ];
