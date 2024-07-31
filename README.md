@@ -7,7 +7,7 @@ QT-Banking-System-Server is the server-side implementation of a banking system, 
 The server application is designed to be multi-threaded, enabling concurrent handling of multiple clients and requests. It includes features such as request handling, database operations, logging, and secure communication to provide a robust and reliable banking system.
 
 <!-- link for Client-Server project -->
-> [!NOTE] 
+> [!NOTE]
 > This project is part of a Banking System (TCP Client-Server) project, which includes the following repositories:
 > - [QT-Banking-System-Client](https://github.com/7osssam/QT-Banking-System-Client): The client-side implementation of the banking system.
 > - [QT-Banking-System-Server](https://github.com/7osssam/QT-Banking-System-Server): The server-side implementation of the banking system.
@@ -82,11 +82,11 @@ make run
 
 The server handles various requests through the `RequestManager` and specific request classes located in the `requestModule/Requests` directory. Each request class inherits from the base `Request` class and implements the necessary logic for processing the request, including validation, database operations, and response generation.
 
-for more details, see the [Requests Documentation](src/requestModule/Requests/Requests.md).
+for more details, see the [Requests Documentation](Requests-Documentation.md).
 
 - This sequence diagram illustrates the process of handling a client request by the server:
 ![Request Handling Sequence Diagram](docs/diagrams/plantuml/sequence-diagrams/Modules/Request.svg)
-> More detailed diagrams for each module can be found in the [Diagrams Directory](docs/diagrams/).
+> More detailed diagrams for each module can be found in the [Modules Sequence Diagrams](Modules-Sequence-Diagrams.md) or `docs/diagrams/` directory.
 
 ## Database Operations
 
@@ -99,7 +99,7 @@ Database operations are managed through the `dbModule` (or `DB` namespace), whic
 - This sequence diagram illustrates the process of executing a query and handling the result:
 <!-- docs\diagrams\plantuml\sequence-diagrams\Modules\DatabaseManager_query.svg -->
 ![Database Query Sequence Diagram](docs/diagrams/plantuml/sequence-diagrams/Modules/DatabaseManager_query.svg)
-> More detailed diagrams for each module can be found in the [Diagrams Directory](docs/diagrams/).
+> More detailed diagrams for each module can be found in the [Modules Sequence Diagrams](Modules-Sequence-Diagrams.md) or `docs/diagrams/` directory.
 
 
 ## Testing
