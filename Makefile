@@ -5,9 +5,9 @@
 # Variables
 BUILD_DIR := build
 
-.PHONY: all install dependency clean-cache-reconfigure build run clean doc test
+.PHONY: all install dependency build run clean doc test
 
-all: install dependency clean-cache-reconfigure build run doc test
+all: install dependency build run doc test
 
 # Install dependencies
 dependency:
@@ -31,16 +31,41 @@ clean:
 	@rm -rf $(BUILD_DIR)
 	@mkdir $(BUILD_DIR)
 
-# Clean cache and reconfigure
-clean-cache-reconfigure:
-	@echo "Cleaning cache and reconfiguring..."
+	@echo "Cleaning cmake cache..."
 	@rm -rf $(BUILD_DIR)/CMakeCache.txt $(BUILD_DIR)/CMakeFiles $(BUILD_DIR)/Makefile $(BUILD_DIR)/cmake_install.cmake
-	@cmake -S . -B $(BUILD_DIR) -DCMAKE_BUILD_TYPE=Debug -G "Ninja"
 
-# Build the project
-build:
-	@echo "Building the project..."
+# Build debug
+build-debug:
+	@echo "Cleaning cmake cache..."
+	@rm -rf $(BUILD_DIR)/CMakeCache.txt $(BUILD_DIR)/CMakeFiles $(BUILD_DIR)/Makefile $(BUILD_DIR)/cmake_install.cmake
+
+	@echo "Configuring Debug build..."
+	@cmake -DCMAKE_BUILD_TYPE=Debug \
+	       -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE \
+	       --no-warn-unused-cli \
+	       -S . \
+	       -B $(BUILD_DIR) \
+	       -G "Ninja"
+
+	@echo "Building Debug..."
 	@cd $(BUILD_DIR) && cmake .. && cmake --build . --config Debug -j 4
+
+# Build release
+build-release:
+	@echo "Cleaning cmake cache..."
+	@rm -rf $(BUILD_DIR)/CMakeCache.txt $(BUILD_DIR)/CMakeFiles $(BUILD_DIR)/Makefile $(BUILD_DIR)/cmake_install.cmake
+
+	@echo "Configuring release build..."
+	@cmake -DCMAKE_BUILD_TYPE=Release \
+	       -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE \
+	       --no-warn-unused-cli \
+	       -S . \
+	       -B $(BUILD_DIR) \
+	       -G "Ninja" \
+		   -DENABLE_TESTS=OFF
+		   
+	@echo "Building release..."
+	@cmake --build $(BUILD_DIR) --config Release --target all -- -j 4
 
 # Run the project
 run:
