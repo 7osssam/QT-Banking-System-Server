@@ -61,14 +61,14 @@ cd QT-Banking-System-Server
 make dependency
 ```
 
-3. Configure the project using CMake:
+3. Clean the project (optional):
 ```sh
-make clean-cache-reconfigure
+make clean
 ```
 
-4. Build the project:
+4. Build the project using the Makefile:
 ```sh
-make build
+make build-debug
 ```
 
 ### Running the Server
