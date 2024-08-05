@@ -32,17 +32,13 @@ jobs:
         modules: 'qtconnectivity qthttpserver qtmultimedia qtnetworkauth qtremoteobjects qtscxml'
         tools: 'tools_ninja'
 
-    - name: prepare
+    - name: cleaning up
       run: |
         make clean
 
-    - name: clean configure
-      run: |
-        make clean-cache-reconfigure
-
     - name: building
       run: |
-        make build
+        make build-debug
 
     - name: Documentation generation
       run: |
